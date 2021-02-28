@@ -1,6 +1,7 @@
 # ValheimPlus Manager
 ValheimPlus Manager makes the installation and configuration of ValheimPlus on Windows a breeze!
-![Image of UI of ValheimPlus Manager](/Gfx/ValheimPlusManager.png)
+
+![Image of UI of ValheimPlus Manager](ValheimPlusManagerWPF/Gfx/ValheimPlusManager.png)
 
 ## Features
 - Automatically install ValheimPlus to your game client or server client directory
@@ -27,8 +28,10 @@ ValheimPlus Manager makes the installation and configuration of ValheimPlus on W
 - If using a VPN where your assigned IP has been polling the Github API over 60 times in the last hour an error will be thrown. Try changing your VPN IP-address or disabling your VPN when checking for updates.
 - On first launch/before first update through the manager the installed version reported might be incorrect, waiting for ValheimPlus dev to implement easy way to check current version.
 ## Screenshots
-![Image of UI of ValheimPlus Manager](/Gfx/ValheimPlusManager.png)
-![Image of UI of ValheimPlus Manager](/Gfx/ValheimPlusManager-ConfigurationManager.png)
+
+![Image of UI of ValheimPlus Manager](ValheimPlusManagerWPF/Gfx/ValheimPlusManager.png)
+
+![Image of UI of ValheimPlus Manager](ValheimPlusManagerWPF/Gfx/ValheimPlusManager-ConfigurationManager.png)
 
 ## Building the project
 Just download the source code, open in Visual Studio 2019 and restore the NuGet packages. Hit F5 to start running/debugging the project.
