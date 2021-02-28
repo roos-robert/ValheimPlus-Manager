@@ -78,7 +78,7 @@ namespace ValheimPlusManager.SupportClasses
 
                 try
                 {
-                    FileManager.InstallValheimPlus(settings.ClientPath, settings.ClientInstallationPath);
+                    FileManager.CopyFromTo(settings.ClientPath, settings.ClientInstallationPath);
                     settings.ValheimPlusGameClientVersion = valheimPlusVersion;
                     SettingsDAL.UpdateSettings(settings, true);
                 }
@@ -96,7 +96,7 @@ namespace ValheimPlusManager.SupportClasses
 
                 try
                 {
-                    FileManager.InstallValheimPlus(settings.ServerPath, settings.ServerInstallationPath);
+                    FileManager.CopyFromTo(settings.ServerPath, settings.ServerInstallationPath);
                     settings.ValheimPlusServerClientVersion = valheimPlusVersion;
                     SettingsDAL.UpdateSettings(settings, false);
                 }

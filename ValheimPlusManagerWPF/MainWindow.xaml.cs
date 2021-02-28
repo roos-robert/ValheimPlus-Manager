@@ -180,7 +180,7 @@ namespace ValheimPlusManager
             {
                 try
                 {
-                    FileManager.InstallValheimPlus(Settings.ServerPath, Settings.ServerInstallationPath);
+                    FileManager.CopyFromTo(Settings.ServerPath, Settings.ServerInstallationPath);
                     ValheimPlusInstalledServer = ValidationManager.CheckInstallationStatus(Settings.ServerInstallationPath);
                     if (ValheimPlusInstalledServer)
                     {
@@ -370,7 +370,9 @@ namespace ValheimPlusManager
 
         private void backupServerButton_Click(object sender, RoutedEventArgs e)
         {
-
+            FileManager.CopyFromTo("C:/Users/msn/AppData/LocalLow/IronGate", String.Format("C:/ValheimServerBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
+            statusLabel.Foreground = Brushes.Green;
+            statusLabel.Content = "Server data backup complete!";
         }
     }
 }
