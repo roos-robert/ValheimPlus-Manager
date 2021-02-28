@@ -304,7 +304,7 @@
         </TabControl>
 
         <Border BorderThickness="0,1,0,0" BorderBrush="#FFE5E5E5" Grid.Row="1" Grid.ColumnSpan="2" />
-        <Label x:Name="statusLabel" Grid.Row="1" Grid.Column="0" Content="Test" HorizontalAlignment="Left" Margin="16,0,0,0" VerticalAlignment="Center" FontSize="14"/>
+        <Label x:Name="statusLabel" Grid.Row="1" Grid.Column="0" Content="" HorizontalAlignment="Left" Margin="16,0,0,0" VerticalAlignment="Center" FontSize="14"/>
         <Button x:Name="saveChangesButton" Grid.Row="1" Grid.Column="1" Content="Save all changes" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="saveChangesButton_Click"/>
     </Grid>
 </Window>
