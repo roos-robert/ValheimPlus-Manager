@@ -94,6 +94,10 @@ namespace ValheimPlusManager
                 {
                     serverInstalledLabel.Content = "ValheimPlus not installed on server";
                     serverInstalledLabel.Foreground = Brushes.Red;
+
+                    manageServerButton.Visibility = Visibility.Hidden;
+                    installServerUpdateButton.Visibility = Visibility.Hidden;
+                    checkServerUpdatesButton.Visibility = Visibility.Hidden;
                 }
             }
             else
