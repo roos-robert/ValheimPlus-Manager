@@ -33,6 +33,9 @@ namespace ValheimPlusManager.Data
             {
                 XmlNode node = xml.SelectSingleNode("Settings/ValheimPlusServerClientVersion");
                 node.InnerText = settings.ValheimPlusServerClientVersion;
+
+                XmlNode node2 = xml.SelectSingleNode("Settings/ServerInstallationPath");
+                node2.InnerText = settings.ServerInstallationPath;
             }
 
             xml.Save("Data/Settings.xml");

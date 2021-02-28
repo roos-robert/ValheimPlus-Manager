@@ -16,6 +16,12 @@ namespace ValheimPlusManager.SupportClasses
             return System.IO.File.Exists(String.Format("{0}{1}", installationPath, "valheim.exe"));
         }
 
+        public static bool CheckServerInstallationPath(string installationPath)
+        {
+            // Checking if ValheimPlus is already installed for the client or server
+            return System.IO.File.Exists(String.Format("{0}{1}", installationPath, "valheim_server.exe"));
+        }
+
         private ValidationManager()
         {
         }
