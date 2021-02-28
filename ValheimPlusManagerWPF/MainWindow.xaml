@@ -19,7 +19,7 @@
             <materialDesign:Card Padding="20" Margin="16">
                 <Grid>
                     <TextBlock Style="{DynamicResource MaterialDesignHeadline4TextBlock}" Text="ValheimPlus Manager" FontWeight="Normal"/>
-                    <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Version 0.1.2" FontWeight="Normal" Margin="0,40,0,0"/>
+                    <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Version 0.1.3" FontWeight="Normal" Margin="0,40,0,0"/>
                 </Grid>
             </materialDesign:Card>
         </StackPanel>
