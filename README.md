@@ -21,9 +21,9 @@ ValheimPlus Manager makes the installation and configuration of ValheimPlus on W
 ## Requirements
 .NET 5 available for download at: https://dotnet.microsoft.com/download/dotnet/5.0/runtime
 ## Installation
-- Download the pre-built project from the releases tab, unzip the .zip archive
-- In Data/Settings.xml open the Settings.xml file and replace the installation paths with your own
-- Start the manager through the .exe file
+- Download 'ValheimPlusManager.zip'
+- Unzip wherever you like
+- Start manager through the 'ValheimPlusManager.exe'
 ## Known issues
 - If using a VPN where your assigned IP has been polling the Github API over 60 times in the last hour an error will be thrown. Try changing your VPN IP-address or disabling your VPN when checking for updates.
 - On first launch/before first update through the manager the installed version reported might be incorrect, waiting for ValheimPlus dev to implement easy way to check current version.
