@@ -83,6 +83,7 @@ namespace ValheimPlusManager
         private async void installClientUpdateButton_Click(object sender, RoutedEventArgs e)
         {
             installClientUpdateButton.IsEnabled = false;
+            installClientUpdateButton.Content = "Installing update ...";
 
             ValheimPlusUpdate valheimPlusUpdate = await UpdateManager.CheckForValheimPlusUpdatesAsync(Settings.ValheimPlusGameClientVersion);
 
@@ -96,6 +97,7 @@ namespace ValheimPlusManager
                     clientInstalledLabel.Content = String.Format("ValheimPlus {0} installed on game client", Settings.ValheimPlusServerClientVersion);
                     statusLabel.Foreground = Brushes.Green;
                     statusLabel.Content = "Success! Game client updated to latest version.";
+                    installClientUpdateButton.Content = "Update installed!";
                     installClientUpdateButton.IsEnabled = false;
                 }
             }
@@ -217,6 +219,7 @@ namespace ValheimPlusManager
         private async void installServerUpdateButton_Click(object sender, RoutedEventArgs e)
         {
             installServerUpdateButton.IsEnabled = false;
+            installServerUpdateButton.Content = "Installing update ...";
 
             ValheimPlusUpdate valheimPlusUpdate = await UpdateManager.CheckForValheimPlusUpdatesAsync(Settings.ValheimPlusServerClientVersion);
 
@@ -230,6 +233,7 @@ namespace ValheimPlusManager
                     serverInstalledLabel.Content = String.Format("ValheimPlus {0} installed on server", Settings.ValheimPlusServerClientVersion);
                     statusLabel.Foreground = Brushes.Green;
                     statusLabel.Content = "Success! Server client updated to latest version.";
+                    installServerUpdateButton.Content = "Update installed!";
                     installServerUpdateButton.IsEnabled = false;
                 }
             }

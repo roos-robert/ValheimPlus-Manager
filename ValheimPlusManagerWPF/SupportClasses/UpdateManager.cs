@@ -80,7 +80,7 @@ namespace ValheimPlusManager.SupportClasses
                 {
                     FileManager.InstallValheimPlus(settings.ClientPath, settings.ClientInstallationPath);
                     settings.ValheimPlusGameClientVersion = valheimPlusVersion;
-                    SettingsDAL.UpdateSettings(settings, false);
+                    SettingsDAL.UpdateSettings(settings, true);
                 }
                 catch (Exception)
                 {
