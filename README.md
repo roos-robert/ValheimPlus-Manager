@@ -13,7 +13,7 @@ ValheimPlus Manager makes the installation and configuration of ValheimPlus on W
 - In-app settings of installation paths for game client and server client
 - Backup your game client data and server client data
 ## Roadmap
-- UI cleanups and corrections
+- UI/UX enhancements
 - Server list manager, join servers from the Manager
 - Backup your configuration files
 - Management of server admins
