@@ -2,7 +2,7 @@
 {
     public sealed class FileManager
     {
-        public static bool InstallValheimPlus(string fromPath, string toPath)
+        public static bool CopyFromTo(string fromPath, string toPath)
         {
             // Create subdirectory structure in destination    
             foreach (string dir in System.IO.Directory.GetDirectories(fromPath, "*", System.IO.SearchOption.AllDirectories))
