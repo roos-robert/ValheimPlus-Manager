@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ValheimPlusManager"
         mc:Ignorable="d"
-        Title="ValheimPlus Manager" Height="775" Width="732"
+        Title="ValheimPlus Manager" Height="775" Width="1100"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -19,7 +19,7 @@
             <materialDesign:Card Padding="20" Margin="16">
                 <Grid>
                     <TextBlock Style="{DynamicResource MaterialDesignHeadline4TextBlock}" Text="ValheimPlus Manager" FontWeight="Normal"/>
-                    <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Version 0.1.0" FontWeight="Normal" Margin="0,40,0,0"/>
+                    <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Version 0.1.1" FontWeight="Normal" Margin="0,40,0,0"/>
                 </Grid>
             </materialDesign:Card>
         </StackPanel>
@@ -45,7 +45,7 @@
                     <Button x:Name="checkServerUpdatesButton" Content="Check for updates" HorizontalAlignment="Left" Margin="345,85,0,0" VerticalAlignment="Top" Width="319" Click="checkServerUpdatesButton_Click"/>
                     <Button x:Name="installServerUpdateButton" Content="Install update" HorizontalAlignment="Left" Margin="345,125,0,0" VerticalAlignment="Top" Width="319" IsEnabled="False" Click="installServerUpdateButton_Click"/>
                     <Label x:Name="statusLabel" Content="" HorizontalAlignment="Left" Margin="16,200,0,0" VerticalAlignment="Top" FontSize="14"/>
-                    <Button x:Name="launchGameButton" Content="Launch Valheim" HorizontalAlignment="Left" Margin="522,180,0,0" VerticalAlignment="Top" Height="48" Width="137" Click="launchGameButton_Click" Visibility="Hidden"/>
+                    <Button x:Name="launchGameButton" Content="Launch Valheim" HorizontalAlignment="Left" Margin="522,180,0,0" VerticalAlignment="Top" Height="48" Width="137" Click="launchGameButton_Click"/>
                     <Button x:Name="setServerPathButton" Content="Find and set installation path" HorizontalAlignment="Left" Margin="16,165,0,0" VerticalAlignment="Top" Width="319" Click="setServerPathButton_Click"/>
                 </Grid>
             </materialDesign:Card>
