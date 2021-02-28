@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ValheimPlusManager"
         mc:Ignorable="d"
-        Title="ValheimPlus Manager" Height="775" Width="1100"
+        Title="ValheimPlus Manager" Height="820" Width="1100"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -24,35 +24,38 @@
             </materialDesign:Card>
         </StackPanel>
         <Grid Grid.Row="1" Grid.ColumnSpan="2">
-            <materialDesign:Card Width="678" Height="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,10,20,20">
+            <materialDesign:Card Width="678" Height="270" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,10,20,20">
                 <Grid>
-                <Button x:Name="installClientButton" Content="Install ValheimPlus on game client" HorizontalAlignment="Left" Margin="16,78,0,0" VerticalAlignment="Top" Click="installClientButton_Click" Width="319"/>
-                <Label x:Name="clientInstalledLabel" Content="Valheim plus installed on client" HorizontalAlignment="Left" Margin="16,47,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,-1.817"/>
-                <Label Content="Game client" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Normal"/>
-                <Button x:Name="manageClientButton" Content="Manage configuration settings" HorizontalAlignment="Left" Margin="16,115,0,0" VerticalAlignment="Top" Width="319" Click="manageClientButton_Click"/>
-                <Button x:Name="checkClientUpdatesButtons" Content="Check for updates" HorizontalAlignment="Left" Margin="340,78,0,0" VerticalAlignment="Top" Width="319" Click="checkClientUpdatesButtons_Click"/>
-                <Button x:Name="installClientUpdateButton" Content="Install update" HorizontalAlignment="Left" Margin="340,115,0,0" VerticalAlignment="Top" Width="319" IsEnabled="False" Click="installClientUpdateButton_Click"/>
-                <Button x:Name="setClientPathButton" Content="Find and set installation path" HorizontalAlignment="Left" Margin="16,189,0,0" VerticalAlignment="Top" Width="319" Click="setClientPathButton_Click"/>
-                <Button x:Name="enableDisableValheimPlusGameClientButton" Content="Disable ValheimPlus" HorizontalAlignment="Left" Margin="16,152,0,0" VerticalAlignment="Top" Width="319" Click="enableDisableValheimPlusGameClientButton_Click" />
+                <Label Content="Game client" HorizontalAlignment="Left" Margin="16,20,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Normal"/>
+                <Label x:Name="clientInstalledLabel" Content="Valheim plus installed on client" HorizontalAlignment="Left" Margin="16,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,-1.817"/>
+                <Button x:Name="installClientButton" Content="Install ValheimPlus on game client" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Click="installClientButton_Click" Width="319"/>
+                <Button x:Name="manageClientButton" Content="Manage configuration settings" HorizontalAlignment="Left" Margin="16,125,0,0" VerticalAlignment="Top" Width="319" Click="manageClientButton_Click"/>
+                <Button x:Name="checkClientUpdatesButtons" Content="Check for updates" HorizontalAlignment="Left" Margin="345,85,0,0" VerticalAlignment="Top" Width="319" Click="checkClientUpdatesButtons_Click"/>
+                <Button x:Name="installClientUpdateButton" Content="Install update" HorizontalAlignment="Left" Margin="345,125,0,0" VerticalAlignment="Top" Width="319" IsEnabled="False" Click="installClientUpdateButton_Click"/>
+                <Button x:Name="setClientPathButton" Content="Find and set installation path" HorizontalAlignment="Left" Margin="16,165,0,0" VerticalAlignment="Top" Width="319" Click="setClientPathButton_Click"/>
+                <Button x:Name="enableDisableValheimPlusGameClientButton" Content="Disable ValheimPlus" HorizontalAlignment="Left" Margin="16,205,0,0" VerticalAlignment="Top" Width="319" Click="enableDisableValheimPlusGameClientButton_Click" />
                 </Grid>
             </materialDesign:Card>
-            <materialDesign:Card Width="678" Height="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,280,20,20">
+            <materialDesign:Card Width="678" Height="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,300,20,20">
                 <Grid>
-                    <Label x:Name="serverInstalledLabel" Content="Valheim plus installed on server" HorizontalAlignment="Left" Margin="16,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,-1.817"/>
                     <Label Content="Server client" HorizontalAlignment="Left" Margin="16,20,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Normal"/>
+                    <Label x:Name="serverInstalledLabel" Content="Valheim plus installed on server" HorizontalAlignment="Left" Margin="16,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,-1.817"/>
                     <Button x:Name="installServerButton" Content="Install ValheimPlus on server" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Click="installServerButton_Click" Width="319"/>
                     <Button x:Name="manageServerButton" Content="Manage configuration settings" HorizontalAlignment="Left" Margin="16,125,0,0" VerticalAlignment="Top" Width="319" Click="manageServerButton_Click"/>
                     <Button x:Name="checkServerUpdatesButton" Content="Check for updates" HorizontalAlignment="Left" Margin="345,85,0,0" VerticalAlignment="Top" Width="319" Click="checkServerUpdatesButton_Click"/>
                     <Button x:Name="installServerUpdateButton" Content="Install update" HorizontalAlignment="Left" Margin="345,125,0,0" VerticalAlignment="Top" Width="319" IsEnabled="False" Click="installServerUpdateButton_Click"/>
-                    <Label x:Name="statusLabel" Content="" HorizontalAlignment="Left" Margin="16,200,0,0" VerticalAlignment="Top" FontSize="14"/>
-                    <Button x:Name="launchGameButton" Content="Launch Valheim" HorizontalAlignment="Left" Margin="522,180,0,0" VerticalAlignment="Top" Height="48" Width="137" Click="launchGameButton_Click"/>
                     <Button x:Name="setServerPathButton" Content="Find and set installation path" HorizontalAlignment="Left" Margin="16,165,0,0" VerticalAlignment="Top" Width="319" Click="setServerPathButton_Click"/>
                 </Grid>
             </materialDesign:Card>
         </Grid>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Label x:Name="statusLabel" Content="" HorizontalAlignment="Left" Margin="16,0,0,0" VerticalAlignment="Center" FontSize="14"/>
+            <Button x:Name="launchGameButton" Content="Launch Valheim" HorizontalAlignment="Right" Margin="0,0,16,0" VerticalAlignment="Center" Height="48" Width="137" Click="launchGameButton_Click"/>
+        </Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="125" />
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
