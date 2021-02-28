@@ -374,5 +374,12 @@ namespace ValheimPlusManager
             statusLabel.Foreground = Brushes.Green;
             statusLabel.Content = "Server data backup complete!";
         }
+
+        private void backupClientButton_Click(object sender, RoutedEventArgs e)
+        {
+            FileManager.CopyFromTo("C:/Users/msn/AppData/LocalLow/IronGate", String.Format("C:/ValheimGameBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
+            statusLabel.Foreground = Brushes.Green;
+            statusLabel.Content = "Game data backup complete!";
+        }
     }
 }

@@ -23,7 +23,7 @@
                 </Grid>
             </materialDesign:Card>
         </StackPanel>
-        <Grid Grid.Row="1" Grid.ColumnSpan="1">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <materialDesign:Card Width="678" Height="270" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,10,0,0">
                 <Grid>
                     <TextBlock Text="Game client" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
@@ -36,7 +36,12 @@
                     <Button x:Name="setClientPathButton" Content="Find and set installation path" HorizontalAlignment="Left" Margin="16,205,0,0" VerticalAlignment="Top" Width="319" Click="setClientPathButton_Click"/>
                 </Grid>
             </materialDesign:Card>
-            
+            <materialDesign:Card Width="354" Height="270" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="18,10,16,0">
+                <Grid>
+                    <TextBlock Text="Game management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Normal"/>
+                    <Button x:Name="backupClientButton" Content="Backup game client data" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Width="321" Click="backupClientButton_Click"/>
+                </Grid>
+            </materialDesign:Card>
         </Grid>
         <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,0">
             <materialDesign:Card Width="678" Height="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,10,20,20">
