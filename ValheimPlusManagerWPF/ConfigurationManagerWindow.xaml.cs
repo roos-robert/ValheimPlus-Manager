@@ -1,6 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Threading;
 using ValheimPlusManager.Models;
 using ValheimPlusManager.SupportClasses;
 
@@ -38,25 +41,25 @@ namespace ValheimPlusManager
 
             if (success)
             {
-                //saveChangesLabel.Text = String.Format("Changes saved!");
-                //saveChangesLabel.ForeColor = Color.Green;
+                statusLabel.Content = String.Format("Changes saved!");
+                statusLabel.Foreground = Brushes.Green;
             }
             else
             {
-                //saveChangesLabel.Text = String.Format("Error, changes not saved!");
-                //saveChangesLabel.ForeColor = Color.Red;
+                statusLabel.Content = String.Format("Error, changes not saved!");
+                statusLabel.Foreground = Brushes.Red;
             }
 
-            //var t = new Timer
-            //{
-            //    Interval = 3000 // it will Tick in 3 seconds
-            //};
-            //t.Tick += (s, e) =>
-            //{
-            //    saveChangesLabel.Hide();
-            //    t.Stop();
-            //};
-            //t.Start();
+            // Timer to show status for set time (3)
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Tick += HideStatusLabel;
+            timer.Interval = TimeSpan.FromSeconds(3);
+            timer.Start();
+        }
+
+        private void HideStatusLabel(object sender, EventArgs e)
+        {
+            statusLabel.Visibility = Visibility.Hidden;
         }
 
         private void IntValidationTextBox(object sender, TextCompositionEventArgs e)
