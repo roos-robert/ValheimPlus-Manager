@@ -10,7 +10,7 @@ ValheimPlus Manager makes the installation and configuration of ValheimPlus on W
 - Keep settings from previous versions and just add/activate new settings automagically
 - Enable/disable ValheimPlus on game client, so you can join non-modded servers on the fly
 - Launch Valheim(Plus) from the Manager
-- In-app settings of installation paths (ToDo: server paths)
+- In-app settings of installation paths for game client and server client
 ## Roadmap
 - UI cleanups and corrections
 - Server list manager, join servers from the Manager
