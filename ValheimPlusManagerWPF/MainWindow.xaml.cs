@@ -367,5 +367,10 @@ namespace ValheimPlusManager
                 setServerPathButton.Margin = new Thickness(16, 85, 0, 0);
             }
         }
+
+        private void backupServerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
