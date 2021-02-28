@@ -368,16 +368,18 @@ namespace ValheimPlusManager
             }
         }
 
+        // Why two methods? 1. To reduce confusion, 2. In case IronGate adds a dedicated folder for server/client only
         private void backupServerButton_Click(object sender, RoutedEventArgs e)
         {
-            FileManager.CopyFromTo("C:/Users/msn/AppData/LocalLow/IronGate", String.Format("C:/ValheimServerBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
+            FileManager.CopyFromTo(String.Format("C:/Users/{0}/AppData/LocalLow/IronGate", Environment.UserName), String.Format("C:/ValheimServerBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
             statusLabel.Foreground = Brushes.Green;
             statusLabel.Content = "Server data backup complete!";
         }
 
+        // Why two methods? 1. To reduce confusion, 2. In case IronGate adds a dedicated folder for server/client only
         private void backupClientButton_Click(object sender, RoutedEventArgs e)
         {
-            FileManager.CopyFromTo("C:/Users/msn/AppData/LocalLow/IronGate", String.Format("C:/ValheimGameBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
+            FileManager.CopyFromTo(String.Format("C:/Users/{0}/AppData/LocalLow/IronGate", Environment.UserName), String.Format("C:/ValheimGameBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
             statusLabel.Foreground = Brushes.Green;
             statusLabel.Content = "Game data backup complete!";
         }

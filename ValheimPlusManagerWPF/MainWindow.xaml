@@ -19,7 +19,7 @@
             <materialDesign:Card Padding="20" Margin="16">
                 <Grid>
                     <TextBlock Style="{DynamicResource MaterialDesignHeadline4TextBlock}" Text="ValheimPlus Manager" FontWeight="Normal"/>
-                    <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Version 0.1.3" FontWeight="Normal" Margin="0,40,0,0"/>
+                    <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Version 0.2.0" FontWeight="Normal" Margin="0,40,0,0"/>
                 </Grid>
             </materialDesign:Card>
         </StackPanel>
@@ -38,8 +38,8 @@
             </materialDesign:Card>
             <materialDesign:Card Width="354" Height="270" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="18,10,16,0">
                 <Grid>
-                    <TextBlock Text="Game management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Normal"/>
-                    <Button x:Name="backupClientButton" Content="Backup game client data" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Width="321" Click="backupClientButton_Click"/>
+                    <TextBlock Text="Game management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <Button x:Name="backupClientButton" Content="Backup game client data" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Width="322" Click="backupClientButton_Click"/>
                 </Grid>
             </materialDesign:Card>
         </Grid>
@@ -57,8 +57,8 @@
             </materialDesign:Card>
             <materialDesign:Card Width="354" Height="250" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="18,10,16,0">
                 <Grid>
-                    <TextBlock Text="Server management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Normal"/>
-                    <Button x:Name="backupServerButton" Content="Backup server data" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Width="321" Click="backupServerButton_Click"/>
+                    <TextBlock Text="Server management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <Button x:Name="backupServerButton" Content="Backup server data" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Width="322" Click="backupServerButton_Click"/>
                 </Grid>
             </materialDesign:Card>
         </Grid>
