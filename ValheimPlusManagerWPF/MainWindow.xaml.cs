@@ -276,7 +276,7 @@ namespace ValheimPlusManager
 
         public void UISettingsInit()
         {
-            if (ValidationManager.CheckClientInstallationPath(Settings.ClientInstallationPath))
+            if (!ValidationManager.CheckClientInstallationPath(Settings.ClientInstallationPath))
             {
                 ValheimPlusInstalledClient = ValidationManager.CheckInstallationStatus(Settings.ClientInstallationPath);
 
