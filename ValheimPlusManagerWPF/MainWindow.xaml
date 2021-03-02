@@ -19,7 +19,7 @@
             <materialDesign:Card Padding="16" Margin="16">
                 <Grid>
                     <TextBlock Style="{DynamicResource MaterialDesignHeadline4TextBlock}" Text="ValheimPlus Manager" FontWeight="Normal"/>
-                    <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Version 0.3.1" FontWeight="Normal" Margin="0,40,0,0"/>
+                    <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Version 0.3.1" FontWeight="Normal" Margin="3,40,0,0"/>
                 </Grid>
             </materialDesign:Card>
         </StackPanel>
@@ -64,6 +64,7 @@
         </Grid>
         <Grid Grid.Row="3" Grid.ColumnSpan="2">
             <Label x:Name="statusLabel" Content="" HorizontalAlignment="Left" Margin="16,0,0,0" VerticalAlignment="Center" FontSize="14"/>
+            <materialDesign:Snackbar x:Name="statusSnackBar" Message="Status message" IsActive="False" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="2" Margin="0"/>
             <Button x:Name="launchGameButton" Content="Launch Valheim" HorizontalAlignment="Right" Margin="0,0,16,0" VerticalAlignment="Center" Height="48" Width="137" Click="launchGameButton_Click"/>
         </Grid>
         <Grid.RowDefinitions>

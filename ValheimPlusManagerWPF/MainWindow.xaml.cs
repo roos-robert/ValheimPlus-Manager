@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -18,9 +19,12 @@ namespace ValheimPlusManager
         private bool ValheimPlusInstalledServer { get; set; } = false;
         private Settings Settings { get; set; }
 
+        SnackbarMessageQueue myMessageQueue = new SnackbarMessageQueue(TimeSpan.FromMilliseconds(3000));
+
         public MainWindow()
         {
             InitializeComponent();
+            statusSnackBar.MessageQueue = myMessageQueue;
             FetchSettings();
         }
 
@@ -55,8 +59,7 @@ namespace ValheimPlusManager
                 {
                     Settings = SettingsDAL.GetSettings();
                     clientInstalledLabel.Content = String.Format("ValheimPlus {0} installed on client", Settings.ValheimPlusGameClientVersion);
-                    statusLabel.Foreground = Brushes.Green;
-                    statusLabel.Content = "Success! Game client updated to latest version.";
+                    statusSnackBar.MessageQueue.Enqueue("Success! Game client updated to latest version");
                     installClientUpdateButton.IsEnabled = false;
                 }
             }
@@ -75,8 +78,7 @@ namespace ValheimPlusManager
             }
             else
             {
-                statusLabel.Foreground = Brushes.Red;
-                statusLabel.Content = "No new game client updates available";
+                statusSnackBar.MessageQueue.Enqueue("No new game client updates available");
             }
         }
 
@@ -95,8 +97,7 @@ namespace ValheimPlusManager
                 {
                     Settings = SettingsDAL.GetSettings();
                     clientInstalledLabel.Content = String.Format("ValheimPlus {0} installed on game client", Settings.ValheimPlusServerClientVersion);
-                    statusLabel.Foreground = Brushes.Green;
-                    statusLabel.Content = "Success! Game client updated to latest version.";
+                    statusSnackBar.MessageQueue.Enqueue("Success! Game client updated to latest version");
                     installClientUpdateButton.Content = "Update installed!";
                     installClientUpdateButton.IsEnabled = false;
                 }
@@ -115,26 +116,24 @@ namespace ValheimPlusManager
                 var modActive = File.Exists(String.Format("{0}winhttp.dll", Settings.ClientInstallationPath));
                 if (modActive)
                 {
-                    System.IO.File.Move(String.Format("{0}winhttp.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath));
+                    File.Move(String.Format("{0}winhttp.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath));
                     enableDisableValheimPlusGameClientButton.Content = "Enable ValheimPlus";
                     enableDisableValheimPlusGameClientButton.Style = Application.Current.TryFindResource("MaterialDesignRaisedButton") as Style;
 
-                    statusLabel.Foreground = Brushes.Green;
-                    statusLabel.Content = "ValheimPlus disabled on game client!";
+                    statusSnackBar.MessageQueue.Enqueue("ValheimPlus disabled on game client");
                 }
                 else
                 {
-                    System.IO.File.Move(String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp.dll", Settings.ClientInstallationPath));
+                    File.Move(String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp.dll", Settings.ClientInstallationPath));
                     enableDisableValheimPlusGameClientButton.Content = "Disable ValheimPlus";
                     enableDisableValheimPlusGameClientButton.Style = Application.Current.TryFindResource("MaterialDesignOutlinedButton") as Style;
 
-                    statusLabel.Foreground = Brushes.Green;
-                    statusLabel.Content = "ValheimPlus enabled on game client!";
+                    statusSnackBar.MessageQueue.Enqueue("ValheimPlus enabled on game client");
                 }
             }
             catch (Exception)
             {
-                //
+                statusSnackBar.MessageQueue.Enqueue("An error occured, report it to the devs!");
             }
         }
 
@@ -157,8 +156,7 @@ namespace ValheimPlusManager
 
                 FetchSettings();
 
-                statusLabel.Foreground = Brushes.Green;
-                statusLabel.Content = "Path for game client set!";
+                statusSnackBar.MessageQueue.Enqueue("Path for game client set");
             }
         }
 
@@ -187,13 +185,13 @@ namespace ValheimPlusManager
                         serverInstalledLabel.Content = String.Format("ValheimPlus {0} installed on server", Settings.ValheimPlusServerClientVersion);
                         serverInstalledLabel.Foreground = Brushes.Green;
                         installServerButton.Content = "Reinstall ValheimPlus on server";
-                        statusLabel.Foreground = Brushes.Green;
-                        statusLabel.Content = "Success! Server client has been installed.";
+
+                        statusSnackBar.MessageQueue.Enqueue("Success! Server client has been installed");
                     }
                 }
                 catch (Exception)
                 {
-                    throw new Exception(); // ToDo - handling of errors
+                    statusSnackBar.MessageQueue.Enqueue("An error occured, report it to the devs!");
                 }
             }
         }
@@ -211,8 +209,7 @@ namespace ValheimPlusManager
             }
             else
             {
-                statusLabel.Foreground = Brushes.Red;
-                statusLabel.Content = "No new server updates available";
+                statusSnackBar.MessageQueue.Enqueue("No new server updates available");
             }
         }
 
@@ -231,8 +228,8 @@ namespace ValheimPlusManager
                 {
                     Settings = SettingsDAL.GetSettings();
                     serverInstalledLabel.Content = String.Format("ValheimPlus {0} installed on server", Settings.ValheimPlusServerClientVersion);
-                    statusLabel.Foreground = Brushes.Green;
-                    statusLabel.Content = "Success! Server client updated to latest version.";
+
+                    statusSnackBar.MessageQueue.Enqueue("Success! Server client updated to latest version");
                     installServerUpdateButton.Content = "Update installed!";
                     installServerUpdateButton.IsEnabled = false;
                 }
@@ -263,8 +260,7 @@ namespace ValheimPlusManager
 
                 FetchSettings();
 
-                statusLabel.Foreground = Brushes.Green;
-                statusLabel.Content = "Path for server client set!";
+                statusSnackBar.MessageQueue.Enqueue("Path for server client set");
             }
         }
 
@@ -372,16 +368,16 @@ namespace ValheimPlusManager
         private void backupServerButton_Click(object sender, RoutedEventArgs e)
         {
             FileManager.CopyFromTo(String.Format("C:/Users/{0}/AppData/LocalLow/IronGate", Environment.UserName), String.Format("C:/ValheimServerBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
-            statusLabel.Foreground = Brushes.Green;
-            statusLabel.Content = "Server data backup to 'C:/ValheimServerBackups' complete!";
+
+            statusSnackBar.MessageQueue.Enqueue("Server data backed up to 'C:/ValheimServerBackups' complete");
         }
 
         // Why two methods? 1. To reduce confusion, 2. In case IronGate adds a dedicated folder for server/client only
         private void backupClientButton_Click(object sender, RoutedEventArgs e)
         {
             FileManager.CopyFromTo(String.Format("C:/Users/{0}/AppData/LocalLow/IronGate", Environment.UserName), String.Format("C:/ValheimGameBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
-            statusLabel.Foreground = Brushes.Green;
-            statusLabel.Content = "Game data backup to 'C:/ValheimGameBackups' complete!";
+
+            statusSnackBar.MessageQueue.Enqueue("Game data backed up to 'C:/ValheimGameBackups' complete");
         }
     }
 }
