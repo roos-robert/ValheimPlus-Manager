@@ -18,8 +18,11 @@ ValheimPlus Manager makes the installation and configuration of ValheimPlus on W
 - Backup your configuration files
 - Management of server admins
 - Uninstall ValheimPlus from game client/server client
+- Automatic updates for the ValheimPlus Manager
 ## Requirements
-.NET 5 available for download at: https://dotnet.microsoft.com/download/dotnet/5.0/runtime
+- .NET 5 available for download at: https://dotnet.microsoft.com/download/dotnet/5.0/runtime
+- Windows 7, Windows 8.1 or Windows 10
+- x64 operating system (you have this if you have more than 4GB of RAM)
 ## Installation
 - Download 'ValheimPlusManager.zip'
 - Unzip wherever you like
