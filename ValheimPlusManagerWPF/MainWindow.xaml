@@ -16,10 +16,10 @@
         FontFamily="{DynamicResource MaterialDesignFont}" Icon="/valheim-plus.png" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Height="200" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <materialDesign:Card Padding="20" Margin="16">
+            <materialDesign:Card Padding="16" Margin="16">
                 <Grid>
                     <TextBlock Style="{DynamicResource MaterialDesignHeadline4TextBlock}" Text="ValheimPlus Manager" FontWeight="Normal"/>
-                    <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Version 0.3.0" FontWeight="Normal" Margin="0,40,0,0"/>
+                    <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Version 0.3.1" FontWeight="Normal" Margin="0,40,0,0"/>
                 </Grid>
             </materialDesign:Card>
         </StackPanel>

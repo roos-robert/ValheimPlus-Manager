@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
@@ -18,10 +19,13 @@ namespace ValheimPlusManager
 
         private bool ManageClient { get; set; }
 
+        SnackbarMessageQueue myMessageQueue = new SnackbarMessageQueue(TimeSpan.FromMilliseconds(3000));
+
         public ConfigurationManagerWindow(bool manageClient)
         {
             InitializeComponent();
             this.ManageClient = manageClient;
+            statusSnackBar.MessageQueue = myMessageQueue;
 
             if (manageClient)
             {
@@ -41,25 +45,12 @@ namespace ValheimPlusManager
 
             if (success)
             {
-                statusLabel.Content = String.Format("Changes saved!");
-                statusLabel.Foreground = Brushes.Green;
+                statusSnackBar.MessageQueue.Enqueue("Changes saved!");
             }
             else
             {
-                statusLabel.Content = String.Format("Error, changes not saved!");
-                statusLabel.Foreground = Brushes.Red;
+                statusSnackBar.MessageQueue.Enqueue("Error, changes not saved!");
             }
-
-            // Timer to show status for set time (3)
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Tick += HideStatusLabel;
-            timer.Interval = TimeSpan.FromSeconds(3);
-            timer.Start();
-        }
-
-        private void HideStatusLabel(object sender, EventArgs e)
-        {
-            statusLabel.Visibility = Visibility.Hidden;
         }
 
         private void IntValidationTextBox(object sender, TextCompositionEventArgs e)
