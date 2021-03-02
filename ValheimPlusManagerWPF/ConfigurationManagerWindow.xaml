@@ -198,7 +198,8 @@
                     <TextBox PreviewTextInput="IntValidationTextBox" Width="480" Text="{Binding dataRate}" materialDesign:HintAssist.Hint="The total amount of data that the server and client can send per second in kilobytes" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                     <TextBox PreviewTextInput="IntValidationTextBox" Width="480" Text="{Binding autoSaveInterval}" materialDesign:HintAssist.Hint="The interval in seconds that the game auto saves at (client only)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                     <CheckBox Content="Removes the requirement to have a server password" IsChecked="{Binding disableServerPassword}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
-                    <CheckBox Content="Add version control to make sure that people that try to join your game or the server you try to join has V+ installed" IsChecked="{Binding enforceMod}" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Enable that the server will force it's config on clients that connect. Only affects servers" IsChecked="{Binding serverSyncsConfig}" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Add version control to make sure that people that try to join your game or the server you try to join has V+ installed" IsChecked="{Binding enforceMod}" HorizontalAlignment="Left" Margin="10,290,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
             <TabItem IsEnabled="{Binding staminaSettingsEnabled}" Header="Stamina">

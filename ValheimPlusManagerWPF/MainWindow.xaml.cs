@@ -373,7 +373,7 @@ namespace ValheimPlusManager
         {
             FileManager.CopyFromTo(String.Format("C:/Users/{0}/AppData/LocalLow/IronGate", Environment.UserName), String.Format("C:/ValheimServerBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
             statusLabel.Foreground = Brushes.Green;
-            statusLabel.Content = "Server data backup to C:/ValheimServerBackups complete!";
+            statusLabel.Content = "Server data backup to 'C:/ValheimServerBackups' complete!";
         }
 
         // Why two methods? 1. To reduce confusion, 2. In case IronGate adds a dedicated folder for server/client only
@@ -381,7 +381,7 @@ namespace ValheimPlusManager
         {
             FileManager.CopyFromTo(String.Format("C:/Users/{0}/AppData/LocalLow/IronGate", Environment.UserName), String.Format("C:/ValheimGameBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
             statusLabel.Foreground = Brushes.Green;
-            statusLabel.Content = "Game data backup to C:/ValheimGameBackups complete!";
+            statusLabel.Content = "Game data backup to 'C:/ValheimGameBackups' complete!";
         }
     }
 }

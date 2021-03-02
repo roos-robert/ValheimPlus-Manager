@@ -97,6 +97,7 @@
         public bool disableServerPassword { get; set; } = false;
         public bool enforceConfiguration { get; set; } = true;
         public bool enforceMod { get; set; } = true;
+        public bool serverSyncsConfig { get; set; } = true;
         public int dataRate { get; set; } = 60; // 60*1024 = 614440 == 60kbs
 
         // Stamina
