@@ -442,18 +442,18 @@ namespace ValheimPlusManager.SupportClasses
             #endregion Workbench
 
             #region Time
-            if (bool.TryParse(data["Time"]["enabled"], out bool timeSettingsEnabled))
-            {
-                valheimPlusConfiguration.timeSettingsEnabled = timeSettingsEnabled;
-            }
-            if (int.TryParse(data["Time"]["totalDayTimeInSeconds"], out int totalDayTimeInSeconds))
-            {
-                valheimPlusConfiguration.totalDayTimeInSeconds = totalDayTimeInSeconds;
-            }
-            if (int.TryParse(data["Time"]["nightTimeSpeedMultiplier"], out int nightTimeSpeedMultiplier))
-            {
-                valheimPlusConfiguration.nightTimeSpeedMultiplier = nightTimeSpeedMultiplier;
-            }
+            //if (bool.TryParse(data["Time"]["enabled"], out bool timeSettingsEnabled))
+            //{
+            //    valheimPlusConfiguration.timeSettingsEnabled = timeSettingsEnabled;
+            //}
+            //if (int.TryParse(data["Time"]["totalDayTimeInSeconds"], out int totalDayTimeInSeconds))
+            //{
+            //    valheimPlusConfiguration.totalDayTimeInSeconds = totalDayTimeInSeconds;
+            //}
+            //if (int.TryParse(data["Time"]["nightTimeSpeedMultiplier"], out int nightTimeSpeedMultiplier))
+            //{
+            //    valheimPlusConfiguration.nightTimeSpeedMultiplier = nightTimeSpeedMultiplier;
+            //}
             #endregion Time
 
             #region Ward
@@ -760,9 +760,9 @@ namespace ValheimPlusManager.SupportClasses
             data["Workbench"]["disableRoofCheck"] = valheimPlusConfiguration.disableRoofCheck.ToString().ToLower();
 
             // Time
-            data["Time"]["enabled"] = valheimPlusConfiguration.timeSettingsEnabled.ToString().ToLower();
-            data["Time"]["totalDayTimeInSeconds"] = valheimPlusConfiguration.totalDayTimeInSeconds.ToString();
-            data["Time"]["nightTimeSpeedMultiplier"] = valheimPlusConfiguration.nightTimeSpeedMultiplier.ToString();
+            //data["Time"]["enabled"] = valheimPlusConfiguration.timeSettingsEnabled.ToString().ToLower();
+            //data["Time"]["totalDayTimeInSeconds"] = valheimPlusConfiguration.totalDayTimeInSeconds.ToString();
+            //data["Time"]["nightTimeSpeedMultiplier"] = valheimPlusConfiguration.nightTimeSpeedMultiplier.ToString();
 
             // Ward
             data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();

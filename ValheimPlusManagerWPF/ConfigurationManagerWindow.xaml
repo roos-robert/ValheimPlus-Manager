@@ -65,7 +65,7 @@
                 <CheckBox IsChecked="{Binding staminaSettingsEnabled}" Content="Enable stamina settings" />
                 <CheckBox IsChecked="{Binding staminaUsageSettingsEnabled}" Content="Enable stamina usage settings" />
                 <CheckBox IsChecked="{Binding workbenchSettingsEnabled}" Content="Enable workbench settings" />
-                <CheckBox IsChecked="{Binding timeSettingsEnabled}" Content="Enable time settings" />
+                <!--<CheckBox IsChecked="{Binding timeSettingsEnabled}" Content="Enable time settings" />-->
                 <CheckBox IsChecked="{Binding wardSettingsEnabled}" Content="Enable ward settings" />
                 <CheckBox IsChecked="{Binding structuralIntegritySettingsEnabled}" Content="Enable structural integrity settings" />
                 <CheckBox IsChecked="{Binding experienceSettingsEnabled}" Content="Enable experience settings" />
@@ -243,13 +243,13 @@
                         <CheckBox Content="Disables the roof and exposure requirement to use a workbench" IsChecked="{Binding disableRoofCheck}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
-                <TabItem IsEnabled="{Binding timeSettingsEnabled}" Header="Time">
+                <!--<TabItem IsEnabled="{Binding timeSettingsEnabled}" Header="Time">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Time" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="635" Text="{Binding totalDayTimeInSeconds}" materialDesign:HintAssist.Hint="Total amount of time one complete day and night circle takes to complete" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="635" Text="{Binding nightTimeSpeedMultiplier}" materialDesign:HintAssist.Hint="Increase the speed at which time passes at night by %. The value 50 would result in a 50% reduced amount of night time" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                     </Grid>
-                </TabItem>
+                </TabItem>-->
                 <TabItem IsEnabled="{Binding wardSettingsEnabled}" Header="Ward">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Ward" TextWrapping="Wrap" VerticalAlignment="Top" />
