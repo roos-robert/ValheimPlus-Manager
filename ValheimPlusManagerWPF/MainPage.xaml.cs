@@ -46,6 +46,13 @@ namespace ValheimPlusManager
                 // Fetching path settings
                 Settings = SettingsDAL.GetSettings();
 
+                System.Diagnostics.FileVersionInfo fvo =
+                System.Diagnostics.FileVersionInfo.GetVersionInfo(String.Format("{0}BepInEx/plugins/ValheimPlus.dll", Settings.ClientInstallationPath));
+
+                string versionNumber = fvo.FileVersion;
+
+                statusLabel.Content = versionNumber;
+
                 // Checking paths and installation status
                 UISettingsInit();
             }
