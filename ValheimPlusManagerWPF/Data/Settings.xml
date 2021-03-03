@@ -7,6 +7,6 @@
   <ValheimPlusGameClientVersion>0.9</ValheimPlusGameClientVersion>
   <ValheimPlusServerClientVersion>0.9</ValheimPlusServerClientVersion>
   <Servers>
-    <ServerIP Name="Test" Address="192.168.99.176" Port="" />
+    <Server Name="Test" Address="192.168.99.176" Port="" />
   </Servers>
 </Settings>
