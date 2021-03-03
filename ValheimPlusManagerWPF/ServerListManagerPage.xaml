@@ -16,7 +16,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}">
 
     <Grid>
-        <Label Content="TEST" HorizontalAlignment="Left" Margin="357,0,0,0" VerticalAlignment="Center"/>
+        <Label Content="Coming soon..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
     </Grid>
 </Page>

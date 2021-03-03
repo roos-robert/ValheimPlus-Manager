@@ -29,6 +29,7 @@
                 <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
                               IsChecked="{Binding IsLeftDrawerOpen, ElementName=DrawerHost}"
                               HorizontalAlignment="Right"/>
+                <Button x:Name="overviewNavigateButton" Content="Overview" Margin="0,30,0,10" Click="overviewNavigateButton_Click"/>
                 <Button x:Name="serverListManagerNavigateButton" Content="Server list manager" Margin="0,0,0,10" Click="serverListManagerNavigateButton_Click"/>
             </StackPanel>
         </materialDesign:DrawerHost.LeftDrawerContent>
