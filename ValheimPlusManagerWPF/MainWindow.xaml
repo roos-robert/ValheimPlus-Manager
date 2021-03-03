@@ -23,13 +23,16 @@
         </ResourceDictionary>
     </Window.Resources>
     
-    <materialDesign:DrawerHost LeftDrawerBackground="{DynamicResource MaterialDesignPaper}" x:Name="DrawerHost">
+    <materialDesign:DrawerHost LeftDrawerBackground="{DynamicResource MaterialDesignPaper}" x:Name="DrawerHost" IsLeftDrawerOpen="False">
         <materialDesign:DrawerHost.LeftDrawerContent>
             <StackPanel Width="300" Margin="5">
-                <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
+                <Grid>
+                <TextBlock Text="Navigation" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="0,15,0,0" Style="{DynamicResource MaterialDesignHeadline5TextBlock}"/>
+                <!--<ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
                               IsChecked="{Binding IsLeftDrawerOpen, ElementName=DrawerHost}"
-                              HorizontalAlignment="Right"/>
-                <Button x:Name="overviewNavigateButton" Content="Overview" Margin="0,30,0,10" Click="overviewNavigateButton_Click"/>
+                              HorizontalAlignment="Right" VerticalAlignment="Top"/>-->
+                </Grid>
+                <Button x:Name="overviewNavigateButton" Content="Overview" Margin="0,25,0,10" Click="overviewNavigateButton_Click"/>
                 <Button x:Name="serverListManagerNavigateButton" Content="Server list manager" Margin="0,0,0,10" Click="serverListManagerNavigateButton_Click"/>
             </StackPanel>
         </materialDesign:DrawerHost.LeftDrawerContent>
