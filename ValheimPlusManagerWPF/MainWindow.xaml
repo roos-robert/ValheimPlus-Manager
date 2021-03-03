@@ -29,7 +29,7 @@
                 <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
                               IsChecked="{Binding IsLeftDrawerOpen, ElementName=DrawerHost}"
                               HorizontalAlignment="Right"/>
-                <Button Content="Server list manager" Margin="0,0,0,10"/>
+                <Button x:Name="serverListManagerNavigateButton" Content="Server list manager" Margin="0,0,0,10" Click="serverListManagerNavigateButton_Click"/>
             </StackPanel>
         </materialDesign:DrawerHost.LeftDrawerContent>
         
@@ -63,7 +63,7 @@
             
             <Grid Grid.Row="2" Grid.ColumnSpan="2">
                 <DockPanel Grid.ColumnSpan="2">
-                    <Frame x:Name="_mainFrame" />
+                    <Frame x:Name="_mainFrame" NavigationUIVisibility="Hidden" />
                 </DockPanel>
             </Grid>
             

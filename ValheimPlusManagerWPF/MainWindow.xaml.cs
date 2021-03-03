@@ -21,5 +21,10 @@ namespace ValheimPlusManager
 
             _mainFrame.Navigate(new MainPage());
         }
+
+        private void serverListManagerNavigateButton_Click(object sender, RoutedEventArgs e)
+        {
+            _mainFrame.Navigate(new ServerListManagerPage());
+        }
     }
 }

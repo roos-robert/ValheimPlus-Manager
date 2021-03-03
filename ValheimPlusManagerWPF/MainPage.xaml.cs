@@ -278,7 +278,6 @@ namespace ValheimPlusManager
         private void launchGameButton_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(@"C:\Program Files (x86)\Steam\steam.exe", "steam://rungameid/892970");
-            //Process.Start(String.Format("{0}valheim.exe", Settings.ClientInstallationPath));
         }
 
         public void UISettingsInit()
