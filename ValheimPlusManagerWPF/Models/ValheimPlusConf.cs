@@ -43,6 +43,7 @@
         public bool noTeleportPrevention { get; set; } = false;
         public float baseItemWeightReduction { get; set; } = 0;
         public float itemStackMultiplier { get; set; } = 1;
+        public int droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
 
         // Fermenter
         public bool fermenterSettingsEnabled { get; set; } = false;

@@ -124,7 +124,6 @@
                         <TextBlock Text="* This also affects the cart and boat inventory" Margin="10,130,0,0" Height="25" />
                         <TextBlock Text="** Iron chests already have 8 columns by default but now you can lower it, this also affects the cart and boat inventory" Margin="10,180,0,0" Height="25" />
                         <TextBlock Margin="10,248,0,0" HorizontalAlignment="Left" Height="40">*** By default tools and weapons go into inventories top to bottom and other materials bottom to top. Set to true to make all<LineBreak /> items go into the inventory top to bottom</TextBlock>
-
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding itemsSettingsEnabled}" Header="Items">
@@ -132,7 +131,8 @@
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Items" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding baseItemWeightReduction}" materialDesign:HintAssist.Hint="Increase or reduce item weight by % percent. The value -50 will reduce item weight of every object by 50%" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding itemStackMultiplier}" materialDesign:HintAssist.Hint="Increase the size of all item stacks by %. The value 50 would set a usual item stack of 100 to be 150" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
-                        <CheckBox Content="Enable teleport with ores and other usually restricted objects" IsChecked="{Binding noTeleportPrevention}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding droppedItemOnGroundDurationInSeconds}" materialDesign:HintAssist.Hint="Set duration that dropped items live before despawning, default is 3600 seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <CheckBox Content="Enable teleport with ores and other usually restricted objects" IsChecked="{Binding noTeleportPrevention}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding fermenterSettingsEnabled}" Header="Fermenter">

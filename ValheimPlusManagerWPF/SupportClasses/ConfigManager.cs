@@ -167,6 +167,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.itemStackMultiplier = itemStackMultiplier;
             }
+            if (int.TryParse(data["Items"]["droppedItemOnGroundDurationInSeconds"], out int droppedItemOnGroundDurationInSeconds))
+            {
+                valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds = droppedItemOnGroundDurationInSeconds;
+            }
             #endregion Items
 
             #region Fermenter
@@ -737,6 +741,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Items"]["noTeleportPrevention"] = valheimPlusConfiguration.noTeleportPrevention.ToString().ToLower();
             data["Items"]["baseItemWeightReduction"] = valheimPlusConfiguration.baseItemWeightReduction.ToString();
             data["Items"]["itemStackMultiplier"] = valheimPlusConfiguration.itemStackMultiplier.ToString();
+            data["Items"]["droppedItemOnGroundDurationInSeconds"] = valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds.ToString();
 
             // Fermenter
             data["Fermenter"]["enabled"] = valheimPlusConfiguration.fermenterSettingsEnabled.ToString().ToLower();
