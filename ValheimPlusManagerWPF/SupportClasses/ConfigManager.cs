@@ -758,6 +758,8 @@ namespace ValheimPlusManager.SupportClasses
             data["Furnace"]["maximumCoal"] = valheimPlusConfiguration.maximumCoal.ToString();
             data["Furnace"]["coalUsedPerProduct"] = valheimPlusConfiguration.coalUsedPerProduct.ToString();
             data["Furnace"]["productionSpeed"] = valheimPlusConfiguration.furnaceProductionSpeed.ToString();
+            data["Furnace"]["autoDepositFurnace"] = valheimPlusConfiguration.autoDepositFurnace.ToString().ToLower();
+            data["Furnace"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
 
             // Game
             data["Game"]["enabled"] = valheimPlusConfiguration.gameSettingsEnabled.ToString().ToLower();
@@ -804,7 +806,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Server"]["disableServerPassword"] = valheimPlusConfiguration.disableServerPassword.ToString().ToLower();
             data["Server"]["enforceMod"] = valheimPlusConfiguration.enforceMod.ToString().ToLower();
             data["Server"]["dataRate"] = valheimPlusConfiguration.dataRate.ToString();
-            data["Server"]["autoSaveInterval"] = valheimPlusConfiguration.autoSaveInterval.ToString();
+            //data["Server"]["autoSaveInterval"] = valheimPlusConfiguration.autoSaveInterval.ToString();
 
             // Stamina
             data["Stamina"]["enabled"] = valheimPlusConfiguration.staminaSettingsEnabled.ToString().ToLower();
