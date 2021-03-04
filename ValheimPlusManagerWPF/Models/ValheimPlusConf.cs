@@ -15,6 +15,8 @@
         public string resetAdvancedEditingMode { get; set; } = "F7";
         public string abortAndExitAdvancedEditingMode { get; set; } = "F8";
         public string confirmPlacementOfAdvancedEditingMode { get; set; } = "KeypadEnter";
+        public string copyObjectRotationAEM { get; set; } = "Keypad7";
+        public string pasteObjectRotationAEM { get; set; } = "Keypad8";
 
         // Beehive
         public bool beehiveSettingsEnabled { get; set; } = false;

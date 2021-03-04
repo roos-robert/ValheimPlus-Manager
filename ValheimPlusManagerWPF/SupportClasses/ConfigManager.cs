@@ -75,6 +75,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.confirmPlacementOfAdvancedEditingMode = data["AdvancedEditingMode"]["confirmPlacementOfAdvancedEditingMode"];
             }
+            if (data["AdvancedEditingMode"]["copyObjectRotation"] != null)
+            {
+                valheimPlusConfiguration.copyObjectRotationAEM = data["AdvancedEditingMode"]["copyObjectRotation"];
+            }
+            if (data["AdvancedEditingMode"]["pasteObjectRotation"] != null)
+            {
+                valheimPlusConfiguration.pasteObjectRotationAEM = data["AdvancedEditingMode"]["pasteObjectRotation"];
+            }
             #endregion Advanced editing mode
 
             #region Beehive
@@ -689,6 +697,8 @@ namespace ValheimPlusManager.SupportClasses
             data["AdvancedEditingMode"]["resetAdvancedEditingMode"] = valheimPlusConfiguration.resetAdvancedEditingMode.ToString();
             data["AdvancedEditingMode"]["abortAndExitAdvancedEditingMode"] = valheimPlusConfiguration.abortAndExitAdvancedEditingMode.ToString();
             data["AdvancedEditingMode"]["confirmPlacementOfAdvancedEditingMode"] = valheimPlusConfiguration.confirmPlacementOfAdvancedEditingMode.ToString();
+            data["AdvancedEditingMode"]["copyObjectRotation"] = valheimPlusConfiguration.copyObjectRotationAEM.ToString();
+            data["AdvancedEditingMode"]["pasteObjectRotation"] = valheimPlusConfiguration.pasteObjectRotationAEM.ToString();
 
             // Beehive
             data["Beehive"]["enabled"] = valheimPlusConfiguration.beehiveSettingsEnabled.ToString().ToLower();

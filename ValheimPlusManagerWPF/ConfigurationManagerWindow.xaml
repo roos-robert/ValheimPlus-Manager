@@ -93,6 +93,8 @@
                         <TextBox Width="382" Text="{Binding resetAdvancedEditingMode}" materialDesign:HintAssist.Hint="Reset the object to its original position and rotation" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox Width="382" Text="{Binding abortAndExitAdvancedEditingMode}" materialDesign:HintAssist.Hint="Exit the advanced editing mode with this key and reset the object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <TextBox Width="382" Text="{Binding confirmPlacementOfAdvancedEditingMode}" materialDesign:HintAssist.Hint="Confirm the placement of the object and place it" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox Width="382" Text="{Binding copyObjectRotationAEM}" materialDesign:HintAssist.Hint="Copy the object rotation of the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
+                        <TextBox Width="382" Text="{Binding pasteObjectRotationAEM}" materialDesign:HintAssist.Hint="Apply the copied object rotation to the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding beehiveSettingsEnabled}" Header="Beehive">
