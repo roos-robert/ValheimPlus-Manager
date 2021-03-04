@@ -224,6 +224,8 @@
                 </TabItem>
                 <TabItem IsEnabled="{Binding staminaSettingsEnabled}" Header="Stamina">
                     <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Each of these values modifies the stamina drain by %. The value -50 would result in 50% less stamina cost" TextWrapping="Wrap" VerticalAlignment="Top" />
+
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Stamina" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding dodgeStaminaUsage}" materialDesign:HintAssist.Hint="The flat amount of stamina cost of using the dodge roll" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding encumberedStaminaDrain}" materialDesign:HintAssist.Hint="The stamina drain of being over encumbered" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />

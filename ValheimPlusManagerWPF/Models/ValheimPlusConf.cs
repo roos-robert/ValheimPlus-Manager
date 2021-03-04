@@ -111,14 +111,14 @@
 
         // Stamina
         public bool staminaSettingsEnabled { get; set; } = false;
-        public float dodgeStaminaUsage { get; set; } = 10;
-        public float encumberedStaminaDrain { get; set; } = 10;
-        public float jumpStaminaDrain { get; set; } = 10;
-        public float runStaminaDrain { get; set; } = 10;
-        public float sneakStaminaDrain { get; set; } = 10;
-        public float staminaRegen { get; set; } = 5;
-        public float staminaRegenDelay { get; set; } = 0.5f;
-        public float swimStaminaDrain { get; set; } = 5;
+        public float dodgeStaminaUsage { get; set; } = 0;
+        public float encumberedStaminaDrain { get; set; } = 0;
+        public float jumpStaminaDrain { get; set; } = 0;
+        public float runStaminaDrain { get; set; } = 0;
+        public float sneakStaminaDrain { get; set; } = 0;
+        public float staminaRegen { get; set; } = 0;
+        public float staminaRegenDelay { get; set; } = 0;
+        public float swimStaminaDrain { get; set; } = 0;
 
         // Stamina usage
         public bool staminaUsageSettingsEnabled { get; set; } = false;
