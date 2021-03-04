@@ -393,10 +393,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.dataRate = dataRate;
             }
-            if (int.TryParse(data["Server"]["autoSaveInterval"], out int autoSaveInterval))
-            {
-                valheimPlusConfiguration.autoSaveInterval = autoSaveInterval;
-            }
+            //if (int.TryParse(data["Server"]["autoSaveInterval"], out int autoSaveInterval))
+            //{
+            //    valheimPlusConfiguration.autoSaveInterval = autoSaveInterval;
+            //}
             #endregion Server
 
             #region Stamina
