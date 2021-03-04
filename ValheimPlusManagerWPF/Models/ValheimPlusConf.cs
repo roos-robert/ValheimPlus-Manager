@@ -48,6 +48,7 @@
         public bool fermenterSettingsEnabled { get; set; } = false;
         public float fermenterDuration { get; set; } = 2400;
         public int fermenterItemsProduced { get; set; } = 4;
+        public bool showFermenterDuration { get; set; } = false;
 
         // Fireplace
         public bool fireplaceSettingsEnabled { get; set; } = false;
@@ -70,7 +71,7 @@
         public float gameDifficultyHealthScale { get; set; } = 0.4f;
         public int extraPlayerCountNearby { get; set; } = 0;
         public int setFixedPlayerCountTo { get; set; } = 0;
-        public float autoSaveInterval { get; set; } = 1200;
+        //public float autoSaveInterval { get; set; } = 1200;
         public int difficultyScaleRange { get; set; } = 200;
 
         // Hotkeys

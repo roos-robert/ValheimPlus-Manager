@@ -140,6 +140,7 @@
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Fermenter" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding fermenterDuration}" materialDesign:HintAssist.Hint="Speed at which the fermenter produce product in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding fermenterItemsProduced}" materialDesign:HintAssist.Hint="Amount produced items" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <CheckBox Content="Display the minutes and seconds until the fermenter is done on hover" IsChecked="{Binding showFermenterDuration}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding fireplaceSettingsEnabled}" Header="Fireplace">
