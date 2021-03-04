@@ -82,6 +82,8 @@
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Advanced building mode" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox Width="382" Text="{Binding enterAdvancedBuildingMode}" materialDesign:HintAssist.Hint="Enter the advanced building mode with this key when building" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <TextBox Width="382" Text="{Binding exitAdvancedBuildingMode}" materialDesign:HintAssist.Hint="Exit the advanced building mode with this key when building" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox Width="382" Text="{Binding copyObjectRotation}" materialDesign:HintAssist.Hint="Copy the object rotation of the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox Width="382" Text="{Binding pasteObjectRotation}" materialDesign:HintAssist.Hint="Apply the copied object rotation to the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding advancedEditingModeEnabled}" Header="Advanced editing mode">

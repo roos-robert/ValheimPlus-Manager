@@ -43,6 +43,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.exitAdvancedBuildingMode = data["AdvancedBuildingMode"]["exitAdvancedBuildingMode"];
             }
+            if (data["AdvancedBuildingMode"]["copyObjectRotation"] != null)
+            {
+                valheimPlusConfiguration.copyObjectRotation = data["AdvancedBuildingMode"]["copyObjectRotation"];
+            }
+            if (data["AdvancedBuildingMode"]["pasteObjectRotation"] != null)
+            {
+                valheimPlusConfiguration.pasteObjectRotation = data["AdvancedBuildingMode"]["pasteObjectRotation"];
+            }
 
             #endregion Advanced building mode
 
@@ -672,6 +680,8 @@ namespace ValheimPlusManager.SupportClasses
             data["AdvancedBuildingMode"]["enabled"] = valheimPlusConfiguration.advancedBuildingModeEnabled.ToString().ToLower();
             data["AdvancedBuildingMode"]["enterAdvancedBuildingMode"] = valheimPlusConfiguration.enterAdvancedBuildingMode.ToString();
             data["AdvancedBuildingMode"]["exitAdvancedBuildingMode"] = valheimPlusConfiguration.exitAdvancedBuildingMode.ToString();
+            data["AdvancedBuildingMode"]["copyObjectRotation"] = valheimPlusConfiguration.copyObjectRotation.ToString();
+            data["AdvancedBuildingMode"]["pasteObjectRotation"] = valheimPlusConfiguration.pasteObjectRotation.ToString();
 
             // Advanced editing mode settings
             data["AdvancedEditingMode"]["enabled"] = valheimPlusConfiguration.advancedEditingModeEnabled.ToString().ToLower();

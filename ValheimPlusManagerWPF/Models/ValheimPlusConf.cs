@@ -6,6 +6,8 @@
         public bool advancedBuildingModeEnabled { get; set; } = false;
         public string enterAdvancedBuildingMode { get; set; } = "F1";
         public string exitAdvancedBuildingMode { get; set; } = "F3";
+        public string copyObjectRotation { get; set; } = "Keypad7";
+        public string pasteObjectRotation { get; set; } = "Keypad8";
 
         // Advanced editing mode
         public bool advancedEditingModeEnabled { get; set; } = false;
