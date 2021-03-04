@@ -455,6 +455,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.hoe = hoe;
             }
+            if (int.TryParse(data["StaminaUsage"]["cultivator"], out int cultivator))
+            {
+                valheimPlusConfiguration.cultivator = cultivator;
+            }
             #endregion StaminaUsage
 
             #region Workbench
@@ -793,6 +797,7 @@ namespace ValheimPlusManager.SupportClasses
             data["StaminaUsage"]["unarmed"] = valheimPlusConfiguration.unarmed.ToString();
             data["StaminaUsage"]["hammer"] = valheimPlusConfiguration.hammer.ToString();
             data["StaminaUsage"]["hoe"] = valheimPlusConfiguration.hoe.ToString();
+            data["StaminaUsage"]["cultivator"] = valheimPlusConfiguration.cultivator.ToString();
 
             // Workbench
             data["Workbench"]["enabled"] = valheimPlusConfiguration.workbenchSettingsEnabled.ToString().ToLower();

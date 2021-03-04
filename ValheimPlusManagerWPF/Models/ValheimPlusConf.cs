@@ -133,6 +133,7 @@
         public float unarmed { get; set; } = 0;
         public float hammer { get; set; } = 0;
         public float hoe { get; set; } = 0;
+        public float cultivator { get; set; } = 0;
 
         // Workbench
         public bool workbenchSettingsEnabled { get; set; } = false;
