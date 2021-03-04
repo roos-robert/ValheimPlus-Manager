@@ -103,6 +103,37 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Building
 
+            #region Inventory
+            if (bool.TryParse(data["Inventory"]["enabled"], out bool inventorySettingsEnabled))
+            {
+                valheimPlusConfiguration.inventorySettingsEnabled = inventorySettingsEnabled;
+            }
+            if (bool.TryParse(data["Inventory"]["inventoryFillTopToBottom"], out bool inventoryFillTopToBottom))
+            {
+                valheimPlusConfiguration.inventoryFillTopToBottom = inventoryFillTopToBottom;
+            }
+            if (int.TryParse(data["Inventory"]["playerInventoryRows"], out int playerInventoryRows))
+            {
+                valheimPlusConfiguration.playerInventoryRows = playerInventoryRows;
+            }
+            if (int.TryParse(data["Inventory"]["woodChestColumns"], out int woodChestColumns))
+            {
+                valheimPlusConfiguration.woodChestColumns = woodChestColumns;
+            }
+            if (int.TryParse(data["Inventory"]["woodChestRows"], out int woodChestRows))
+            {
+                valheimPlusConfiguration.woodChestRows = woodChestRows;
+            }
+            if (int.TryParse(data["Inventory"]["ironChestColumns"], out int ironChestColumns))
+            {
+                valheimPlusConfiguration.ironChestColumns = ironChestColumns;
+            }
+            if (int.TryParse(data["Inventory"]["ironChestRows"], out int ironChestRows))
+            {
+                valheimPlusConfiguration.ironChestRows = ironChestRows;
+            }
+            #endregion Inventory
+
             #region Items
             if (bool.TryParse(data["Items"]["enabled"], out bool itemsSettingsEnabled))
             {
@@ -655,6 +686,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Building"]["maximumPlacementDistance"] = valheimPlusConfiguration.maximumPlacementDistance.ToString().ToLower();
             data["Building"]["noWeatherDamage"] = valheimPlusConfiguration.noWeatherDamage.ToString();
             data["Building"]["noInvalidPlacementRestriction"] = valheimPlusConfiguration.noInvalidPlacementRestriction.ToString();
+
+            // Inventory
+            data["Inventory"]["enabled"] = valheimPlusConfiguration.inventorySettingsEnabled.ToString().ToLower();
+            data["Inventory"]["inventoryFillTopToBottom"] = valheimPlusConfiguration.inventoryFillTopToBottom.ToString().ToLower();
+            data["Inventory"]["playerInventoryRows"] = valheimPlusConfiguration.playerInventoryRows.ToString();
+            data["Inventory"]["woodChestColumns"] = valheimPlusConfiguration.woodChestColumns.ToString();
+            data["Inventory"]["woodChestRows"] = valheimPlusConfiguration.woodChestRows.ToString();
+            data["Inventory"]["ironChestColumns"] = valheimPlusConfiguration.ironChestColumns.ToString();
+            data["Inventory"]["ironChestRows"] = valheimPlusConfiguration.ironChestRows.ToString();
 
             // Items
             data["Items"]["enabled"] = valheimPlusConfiguration.itemsSettingsEnabled.ToString().ToLower();

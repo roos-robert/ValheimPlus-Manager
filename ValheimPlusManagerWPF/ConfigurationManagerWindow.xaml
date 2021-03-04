@@ -50,6 +50,7 @@
                 <CheckBox IsChecked="{Binding advancedEditingModeEnabled}" Content="Enable advanced editing mode" />
                 <CheckBox IsChecked="{Binding beehiveSettingsEnabled}" Content="Enable beehive settings" />
                 <CheckBox IsChecked="{Binding buildingSettingsEnabled}" Content="Enable building settings" />
+                <CheckBox IsChecked="{Binding inventorySettingsEnabled}" Content="Enable inventory settings" />
                 <CheckBox IsChecked="{Binding itemsSettingsEnabled}" Content="Enable item settings" />
                 <CheckBox IsChecked="{Binding fermenterSettingsEnabled}" Content="Enable fermenter settings" />
                 <CheckBox IsChecked="{Binding fireplaceSettingsEnabled}" Content="Enable fireplace settings" />
@@ -105,6 +106,21 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding maximumPlacementDistance}" materialDesign:HintAssist.Hint="The maximum range that you can place build objects at" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <CheckBox Content="No invalid placement restrictions" IsChecked="{Binding noInvalidPlacementRestriction}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="No weather damage" IsChecked="{Binding noWeatherDamage}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding inventorySettingsEnabled}" Header="Inventory">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Inventory" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding playerInventoryRows}" materialDesign:HintAssist.Hint="Player inventory number of rows (min 4, max 20, more than 6 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding woodChestColumns}" materialDesign:HintAssist.Hint="Wood chest number of columns (min 5, max 8)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding woodChestRows}" materialDesign:HintAssist.Hint="Wood chest number of rows (min 2, max 10, more than 4 rows will add a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding ironChestRows}" materialDesign:HintAssist.Hint="Iron chest rows (min 3, max 20, more than 4 will result in a scrollbar) *" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding ironChestColumns}" materialDesign:HintAssist.Hint="Iron chest columns (min 6, max 8) **" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
+                        <CheckBox Content="Top to bottom sorting ***" IsChecked="{Binding inventoryFillTopToBottom}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+                        <TextBlock Text="* This also affects the cart and boat inventory" Margin="10,130,0,0" Height="25" />
+                        <TextBlock Text="** Iron chests already have 8 columns by default but now you can lower it, this also affects the cart and boat inventory" Margin="10,180,0,0" Height="25" />
+                        <TextBlock Margin="10,248,0,0" HorizontalAlignment="Left" Height="40">*** By default tools and weapons go into inventories top to bottom and other materials bottom to top. Set to true to make all<LineBreak /> items go into the inventory top to bottom</TextBlock>
+
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding itemsSettingsEnabled}" Header="Items">

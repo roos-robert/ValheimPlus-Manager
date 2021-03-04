@@ -25,6 +25,15 @@
         public bool noWeatherDamage { get; set; } = false;
         public float maximumPlacementDistance { get; set; } = 5;
 
+        // Inventory
+        public bool inventorySettingsEnabled { get; set; } = false;
+        public bool inventoryFillTopToBottom { get; set; } = false;
+        public int playerInventoryRows { get; set; } = 4;
+        public int woodChestColumns { get; set; } = 5;
+        public int woodChestRows { get; set; } = 2;
+        public int ironChestColumns { get; set; } = 8;
+        public int ironChestRows { get; set; } = 3;
+
         // Items
         public bool itemsSettingsEnabled { get; set; } = false;
         public bool noTeleportPrevention { get; set; } = false;
