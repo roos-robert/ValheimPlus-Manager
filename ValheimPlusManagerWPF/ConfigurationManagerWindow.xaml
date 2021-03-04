@@ -163,6 +163,8 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding maximumCoal}" materialDesign:HintAssist.Hint="Maximum amount of coal in a furnace" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding coalUsedPerProduct}" materialDesign:HintAssist.Hint="The total amount of coal used to produce a single smelted ingot" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding furnaceProductionSpeed}" materialDesign:HintAssist.Hint="The time it takes for the furnace to produce a single ingot in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="382" Text="{Binding autoDepositRangeFurnace}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit feature (max 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
+                        <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositFurnace}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding gameSettingsEnabled}" Header="Game">

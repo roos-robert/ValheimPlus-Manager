@@ -231,6 +231,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.furnaceProductionSpeed = furnaceProductionSpeed;
             }
+            if (float.TryParse(data["Furnace"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositRangeFurnace))
+            {
+                valheimPlusConfiguration.autoDepositRangeFurnace = autoDepositRangeFurnace;
+            }
+            if (bool.TryParse(data["Furnace"]["autoDeposit"], out bool autoDepositFurnace))
+            {
+                valheimPlusConfiguration.autoDepositFurnace = autoDepositFurnace;
+            }
             #endregion Furnace
 
             #region Game

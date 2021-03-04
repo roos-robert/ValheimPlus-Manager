@@ -64,6 +64,8 @@
         public int maximumCoal { get; set; } = 20;
         public int coalUsedPerProduct { get; set; } = 2;
         public float furnaceProductionSpeed { get; set; } = 10;
+        public bool autoDepositFurnace { get; set; } = false;
+        public float autoDepositRangeFurnace { get; set; } = 10;
 
         // Game
         public bool gameSettingsEnabled { get; set; } = false;
