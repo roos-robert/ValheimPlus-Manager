@@ -34,7 +34,7 @@
                 <Grid>
                     <TextBlock Text="Game management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
                     <Button x:Name="backupClientButton" Content="Backup game client data" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Width="322" Click="backupClientButton_Click"/>
-                    <Button x:Name="serverListManager" Content="Server list manager" HorizontalAlignment="Left" Margin="16,125,0,0" VerticalAlignment="Top" Width="322"/>
+                    <!--<Button x:Name="serverListManager" Content="Server list manager" HorizontalAlignment="Left" Margin="16,125,0,0" VerticalAlignment="Top" Width="322"/>-->
                 </Grid>
             </materialDesign:Card>
         </Grid>

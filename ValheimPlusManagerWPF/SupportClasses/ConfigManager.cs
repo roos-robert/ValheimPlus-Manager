@@ -436,6 +436,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.kilnProductionSpeed = kilnProductionSpeed;
             }
+            if (float.TryParse(data["Kiln"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositRangeKiln))
+            {
+                valheimPlusConfiguration.autoDepositRangeKiln = autoDepositRangeKiln;
+            }
+            if (bool.TryParse(data["Kiln"]["autoDeposit"], out bool autoDepositKiln))
+            {
+                valheimPlusConfiguration.autoDepositKiln = autoDepositKiln;
+            }
             #endregion Kiln
 
             #region Map
@@ -903,7 +911,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Furnace"]["maximumCoal"] = valheimPlusConfiguration.maximumCoal.ToString();
             data["Furnace"]["coalUsedPerProduct"] = valheimPlusConfiguration.coalUsedPerProduct.ToString();
             data["Furnace"]["productionSpeed"] = valheimPlusConfiguration.furnaceProductionSpeed.ToString();
-            data["Furnace"]["autoDepositFurnace"] = valheimPlusConfiguration.autoDepositFurnace.ToString().ToLower();
+            data["Furnace"]["autoDeposit"] = valheimPlusConfiguration.autoDepositFurnace.ToString().ToLower();
             data["Furnace"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
 
             // Game
@@ -943,6 +951,8 @@ namespace ValheimPlusManager.SupportClasses
             data["Kiln"]["enabled"] = valheimPlusConfiguration.kilnSettingsEnabled.ToString().ToLower();
             data["Kiln"]["maximumWood"] = valheimPlusConfiguration.maximumWood.ToString();
             data["Kiln"]["productionSpeed"] = valheimPlusConfiguration.kilnProductionSpeed.ToString();
+            data["Kiln"]["autoDeposit"] = valheimPlusConfiguration.autoDepositKiln.ToString().ToLower();
+            data["Kiln"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeKiln.ToString();
 
             // Map
             data["Map"]["enabled"] = valheimPlusConfiguration.mapSettingsEnabled.ToString().ToLower();

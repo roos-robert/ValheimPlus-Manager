@@ -126,6 +126,8 @@
         public bool kilnSettingsEnabled { get; set; } = false;
         public float kilnProductionSpeed { get; set; } = 30;
         public int maximumWood { get; set; } = 25;
+        public bool autoDepositKiln { get; set; } = false;
+        public float autoDepositRangeKiln { get; set; } = 10;
 
         // Map
         public bool mapSettingsEnabled { get; set; } = false;
