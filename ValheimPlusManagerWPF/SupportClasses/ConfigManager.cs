@@ -272,6 +272,53 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Game
 
+            #region Gathering
+            if (bool.TryParse(data["Gathering"]["enabled"], out bool gatheringSettingsEnabled))
+            {
+                valheimPlusConfiguration.gatheringSettingsEnabled = gatheringSettingsEnabled;
+            }
+            if (float.TryParse(data["Gathering"]["wood"], NumberStyles.Any, ci, out float woodGathering))
+            {
+                valheimPlusConfiguration.woodGathering = woodGathering;
+            }
+            if (float.TryParse(data["Gathering"]["stone"], NumberStyles.Any, ci, out float stoneGathering))
+            {
+                valheimPlusConfiguration.stoneGathering = stoneGathering;
+            }
+            if (float.TryParse(data["Gathering"]["fineWood"], NumberStyles.Any, ci, out float fineWoodGathering))
+            {
+                valheimPlusConfiguration.fineWoodGathering = fineWoodGathering;
+            }
+            if (float.TryParse(data["Gathering"]["coreWood"], NumberStyles.Any, ci, out float coreWoodGathering))
+            {
+                valheimPlusConfiguration.coreWoodGathering = coreWoodGathering;
+            }
+            if (float.TryParse(data["Gathering"]["elderBark"], NumberStyles.Any, ci, out float elderBarkGathering))
+            {
+                valheimPlusConfiguration.elderBarkGathering = elderBarkGathering;
+            }
+            if (float.TryParse(data["Gathering"]["ironScrap"], NumberStyles.Any, ci, out float ironScrapGathering))
+            {
+                valheimPlusConfiguration.ironScrapGathering = ironScrapGathering;
+            }
+            if (float.TryParse(data["Gathering"]["tinOre"], NumberStyles.Any, ci, out float tinOreGathering))
+            {
+                valheimPlusConfiguration.tinOreGathering = tinOreGathering;
+            }
+            if (float.TryParse(data["Gathering"]["copperOre"], NumberStyles.Any, ci, out float copperOreGathering))
+            {
+                valheimPlusConfiguration.copperOreGathering = copperOreGathering;
+            }
+            if (float.TryParse(data["Gathering"]["silverOre"], NumberStyles.Any, ci, out float silverOreGathering))
+            {
+                valheimPlusConfiguration.silverOreGathering = silverOreGathering;
+            }
+            if (float.TryParse(data["Gathering"]["chitin"], NumberStyles.Any, ci, out float chitinGathering))
+            {
+                valheimPlusConfiguration.chitinGathering = chitinGathering;
+            }
+            #endregion Gathering
+
             #region Hotkeys
             if (bool.TryParse(data["Hotkeys"]["enabled"], out bool hotkeysSettingsEnabled))
             {
@@ -781,6 +828,19 @@ namespace ValheimPlusManager.SupportClasses
             data["Game"]["extraPlayerCountNearby"] = valheimPlusConfiguration.extraPlayerCountNearby.ToString();
             data["Game"]["setFixedPlayerCountTo"] = valheimPlusConfiguration.setFixedPlayerCountTo.ToString();
             data["Game"]["difficultyScaleRange"] = valheimPlusConfiguration.difficultyScaleRange.ToString();
+
+            // Gathering
+            data["Gathering"]["enabled"] = valheimPlusConfiguration.gatheringSettingsEnabled.ToString().ToLower();
+            data["Gathering"]["wood"] = valheimPlusConfiguration.woodGathering.ToString();
+            data["Gathering"]["stone"] = valheimPlusConfiguration.stoneGathering.ToString();
+            data["Gathering"]["fineWood"] = valheimPlusConfiguration.fineWoodGathering.ToString();
+            data["Gathering"]["coreWood"] = valheimPlusConfiguration.coreWoodGathering.ToString();
+            data["Gathering"]["elderBark"] = valheimPlusConfiguration.elderBarkGathering.ToString();
+            data["Gathering"]["ironScrap"] = valheimPlusConfiguration.ironScrapGathering.ToString();
+            data["Gathering"]["tinOre"] = valheimPlusConfiguration.tinOreGathering.ToString();
+            data["Gathering"]["copperOre"] = valheimPlusConfiguration.copperOreGathering.ToString();
+            data["Gathering"]["silverOre"] = valheimPlusConfiguration.silverOreGathering.ToString();
+            data["Gathering"]["chitin"] = valheimPlusConfiguration.chitinGathering.ToString();
 
             // Hotkeys
             data["Hotkeys"]["enabled"] = valheimPlusConfiguration.hotkeysSettingsEnabled.ToString().ToLower();

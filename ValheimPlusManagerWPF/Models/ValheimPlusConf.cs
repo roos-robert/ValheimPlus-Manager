@@ -90,6 +90,19 @@
         public bool displayStaminaValue { get; set; } = false;
         public bool removeDamageFlash { get; set; } = false;
 
+        // Gathering
+        public bool gatheringSettingsEnabled { get; set; } = false;
+        public float woodGathering { get; set; } = 0;
+        public float stoneGathering { get; set; } = 0;
+        public float fineWoodGathering { get; set; } = 0;
+        public float coreWoodGathering { get; set; } = 0;
+        public float elderBarkGathering { get; set; } = 0;
+        public float ironScrapGathering { get; set; } = 0;
+        public float tinOreGathering { get; set; } = 0;
+        public float copperOreGathering { get; set; } = 0;
+        public float silverOreGathering { get; set; } = 0;
+        public float chitinGathering { get; set; } = 0;
+
         // Kiln
         public bool kilnSettingsEnabled { get; set; } = false;
         public float kilnProductionSpeed { get; set; } = 30;

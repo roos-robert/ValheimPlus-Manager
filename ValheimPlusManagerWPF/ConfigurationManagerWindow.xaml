@@ -57,6 +57,7 @@
                 <CheckBox IsChecked="{Binding foodSettingsEnabled}" Content="Enable food settings" />
                 <CheckBox IsChecked="{Binding furnaceSettingsEnabled}" Content="Enable furnace settings" />
                 <CheckBox IsChecked="{Binding gameSettingsEnabled}" Content="Enable game settings" />
+                <CheckBox IsChecked="{Binding gatheringSettingsEnabled}" Content="Enable gathering settings" />
                 <CheckBox IsChecked="{Binding hotkeysSettingsEnabled}" Content="Enable hotkeys settings" />
                 <CheckBox IsChecked="{Binding hudSettingsEnabled}" Content="Enable HUD settings" />
                 <CheckBox IsChecked="{Binding kilnSettingsEnabled}" Content="Enable kiln settings" />
@@ -191,6 +192,22 @@
                         <CheckBox Content="Show small notifications about all skill experienced gained in the top left corner" IsChecked="{Binding experienceGainedNotifications}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Shows current and max stamina numerically underneath the stamina bar" IsChecked="{Binding displayStaminaValue}" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Set to true to remove the red screen flash overlay when the player takes damage" IsChecked="{Binding removeDamageFlash}" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding gatheringSettingsEnabled}" Header="Gathering">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Each of these values increase or reduce the dropped items from destroyed objects with tools (Stones, Trees, Resource nodes, etc.) by %" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Gathering" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding woodGathering}" materialDesign:HintAssist.Hint="Wood" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding stoneGathering}" materialDesign:HintAssist.Hint="Stone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding fineWoodGathering}" materialDesign:HintAssist.Hint="Finewood" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding coreWoodGathering}" materialDesign:HintAssist.Hint="Corewood" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding elderBarkGathering}" materialDesign:HintAssist.Hint="Elder bark" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding ironScrapGathering}" materialDesign:HintAssist.Hint="Iron scrap" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding tinOreGathering}" materialDesign:HintAssist.Hint="Tin ore" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,370,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding copperOreGathering}" materialDesign:HintAssist.Hint="Copper ore" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,420,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding silverOreGathering}" materialDesign:HintAssist.Hint="Silver ore" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,470,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding chitinGathering}" materialDesign:HintAssist.Hint="Chitin" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,520,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding kilnSettingsEnabled}" Header="Kiln">
