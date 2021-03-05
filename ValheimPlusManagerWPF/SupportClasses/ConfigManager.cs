@@ -119,6 +119,49 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Building
 
+            #region Durability
+            if (bool.TryParse(data["Durability"]["enabled"], out bool durabilitySettingsEnabled))
+            {
+                valheimPlusConfiguration.durabilitySettingsEnabled = durabilitySettingsEnabled;
+            }
+            if (float.TryParse(data["Durability"]["axes"], NumberStyles.Any, ci, out float axesDurability))
+            {
+                valheimPlusConfiguration.axesDurability = axesDurability;
+            }
+            if (float.TryParse(data["Durability"]["pickaxes"], NumberStyles.Any, ci, out float pickaxesDurability))
+            {
+                valheimPlusConfiguration.pickaxesDurability = pickaxesDurability;
+            }
+            if (float.TryParse(data["Durability"]["hammer"], NumberStyles.Any, ci, out float hammerDurability))
+            {
+                valheimPlusConfiguration.hammerDurability = hammerDurability;
+            }
+            if (float.TryParse(data["Durability"]["cultivator"], NumberStyles.Any, ci, out float cultivatorDurability))
+            {
+                valheimPlusConfiguration.cultivatorDurability = cultivatorDurability;
+            }
+            if (float.TryParse(data["Durability"]["hoe"], NumberStyles.Any, ci, out float hoeDurability))
+            {
+                valheimPlusConfiguration.hoeDurability = hoeDurability;
+            }
+            if (float.TryParse(data["Durability"]["weapons"], NumberStyles.Any, ci, out float weaponsDurability))
+            {
+                valheimPlusConfiguration.weaponsDurability = weaponsDurability;
+            }
+            if (float.TryParse(data["Durability"]["armor"], NumberStyles.Any, ci, out float armorDurability))
+            {
+                valheimPlusConfiguration.armorDurability = armorDurability;
+            }
+            if (float.TryParse(data["Durability"]["bows"], NumberStyles.Any, ci, out float bowsDurability))
+            {
+                valheimPlusConfiguration.bowsDurability = bowsDurability;
+            }
+            if (float.TryParse(data["Durability"]["shields"], NumberStyles.Any, ci, out float shieldsDurability))
+            {
+                valheimPlusConfiguration.shieldsDurability = shieldsDurability;
+            }
+            #endregion Durability
+
             #region Inventory
             if (bool.TryParse(data["Inventory"]["enabled"], out bool inventorySettingsEnabled))
             {
@@ -781,6 +824,18 @@ namespace ValheimPlusManager.SupportClasses
             data["Building"]["maximumPlacementDistance"] = valheimPlusConfiguration.maximumPlacementDistance.ToString().ToLower();
             data["Building"]["noWeatherDamage"] = valheimPlusConfiguration.noWeatherDamage.ToString();
             data["Building"]["noInvalidPlacementRestriction"] = valheimPlusConfiguration.noInvalidPlacementRestriction.ToString();
+
+            // Durability
+            data["Durability"]["enabled"] = valheimPlusConfiguration.durabilitySettingsEnabled.ToString().ToLower();
+            data["Durability"]["axes"] = valheimPlusConfiguration.axesDurability.ToString();
+            data["Durability"]["pickaxes"] = valheimPlusConfiguration.pickaxesDurability.ToString();
+            data["Durability"]["hammer"] = valheimPlusConfiguration.hammerDurability.ToString();
+            data["Durability"]["cultivator"] = valheimPlusConfiguration.cultivatorDurability.ToString();
+            data["Durability"]["hoe"] = valheimPlusConfiguration.hoeDurability.ToString();
+            data["Durability"]["weapons"] = valheimPlusConfiguration.weaponsDurability.ToString();
+            data["Durability"]["armor"] = valheimPlusConfiguration.armorDurability.ToString();
+            data["Durability"]["bows"] = valheimPlusConfiguration.bowsDurability.ToString();
+            data["Durability"]["shields"] = valheimPlusConfiguration.shieldsDurability.ToString();
 
             // Inventory
             data["Inventory"]["enabled"] = valheimPlusConfiguration.inventorySettingsEnabled.ToString().ToLower();

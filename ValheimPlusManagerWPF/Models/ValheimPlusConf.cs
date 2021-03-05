@@ -29,6 +29,18 @@
         public bool noWeatherDamage { get; set; } = false;
         public float maximumPlacementDistance { get; set; } = 5;
 
+        // Durability
+        public bool durabilitySettingsEnabled { get; set; } = false;
+        public float axesDurability { get; set; } = 0;
+        public float pickaxesDurability { get; set; } = 0;
+        public float hammerDurability { get; set; } = 0;
+        public float cultivatorDurability { get; set; } = 0;
+        public float hoeDurability { get; set; } = 0;
+        public float weaponsDurability { get; set; } = 0;
+        public float armorDurability { get; set; } = 0;
+        public float bowsDurability { get; set; } = 0;
+        public float shieldsDurability { get; set; } = 0;
+
         // Inventory
         public bool inventorySettingsEnabled { get; set; } = false;
         public bool inventoryFillTopToBottom { get; set; } = false;

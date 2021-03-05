@@ -50,6 +50,7 @@
                 <CheckBox IsChecked="{Binding advancedEditingModeEnabled}" Content="Enable advanced editing mode" />
                 <CheckBox IsChecked="{Binding beehiveSettingsEnabled}" Content="Enable beehive settings" />
                 <CheckBox IsChecked="{Binding buildingSettingsEnabled}" Content="Enable building settings" />
+                <CheckBox IsChecked="{Binding durabilitySettingsEnabled}" Content="Enable durability settings" />
                 <CheckBox IsChecked="{Binding inventorySettingsEnabled}" Content="Enable inventory settings" />
                 <CheckBox IsChecked="{Binding itemsSettingsEnabled}" Content="Enable item settings" />
                 <CheckBox IsChecked="{Binding fermenterSettingsEnabled}" Content="Enable fermenter settings" />
@@ -111,6 +112,21 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding maximumPlacementDistance}" materialDesign:HintAssist.Hint="The maximum range that you can place build objects at" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <CheckBox Content="No invalid placement restrictions" IsChecked="{Binding noInvalidPlacementRestriction}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="No weather damage" IsChecked="{Binding noWeatherDamage}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding durabilitySettingsEnabled}" Header="Durability">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Each of these values increase or reduce the durability of the specific item type by %" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Durability" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding axesDurability}" materialDesign:HintAssist.Hint="Axes" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding pickaxesDurability}" materialDesign:HintAssist.Hint="Pickaxes" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding hammerDurability}" materialDesign:HintAssist.Hint="Hammers" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding cultivatorDurability}" materialDesign:HintAssist.Hint="Cultivators" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding hoeDurability}" materialDesign:HintAssist.Hint="Hoes" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding weaponsDurability}" materialDesign:HintAssist.Hint="Weapons" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding armorDurability}" materialDesign:HintAssist.Hint="Armors" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,370,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding bowsDurability}" materialDesign:HintAssist.Hint="Bows" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,420,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding shieldsDurability}" materialDesign:HintAssist.Hint="Shields" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,470,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding inventorySettingsEnabled}" Header="Inventory">

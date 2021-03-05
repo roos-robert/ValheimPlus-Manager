@@ -61,7 +61,9 @@ namespace ValheimPlusManager
 
         private void FloatValidationTextBox(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[-0-9]+(\\.[-0-9]?)?");
+            //Regex regex = new Regex("[-0-9]+(\\.[0-9]?)?");
+            //e.Handled = regex.IsMatch(e.Text);
+            Regex regex = new Regex("[^-0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
     }
