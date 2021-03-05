@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ValheimPlusManager.Models"
         mc:Ignorable="d"
-        Title="ValheimPlus Manager | Configuration manager" Height="820" Width="1100"
+        Title="ValheimPlus Manager | Configuration manager" Height="920" Width="1100"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -21,7 +21,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="725"/>
+            <RowDefinition Height="825"/>
             <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
 
@@ -48,6 +48,7 @@
                 </ListView.View>
                 <CheckBox IsChecked="{Binding advancedBuildingModeEnabled}" Content="Enable advanced building mode" />
                 <CheckBox IsChecked="{Binding advancedEditingModeEnabled}" Content="Enable advanced editing mode" />
+                <CheckBox IsChecked="{Binding armorSettingsEnabled}" Content="Enable armor settings" />
                 <CheckBox IsChecked="{Binding beehiveSettingsEnabled}" Content="Enable beehive settings" />
                 <CheckBox IsChecked="{Binding buildingSettingsEnabled}" Content="Enable building settings" />
                 <CheckBox IsChecked="{Binding durabilitySettingsEnabled}" Content="Enable durability settings" />
@@ -99,6 +100,16 @@
                         <TextBox Width="382" Text="{Binding pasteObjectRotationAEM}" materialDesign:HintAssist.Hint="Apply the copied object rotation to the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
                     </Grid>
                 </TabItem>
+                <TabItem IsEnabled="{Binding armorSettingsEnabled}" Header="Armor">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Armor" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Each of these values increase or reduce the armor of the specific item type by %" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding helmetsArmor}" materialDesign:HintAssist.Hint="Helmets" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding chestsArmor}" materialDesign:HintAssist.Hint="Chests" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding legsArmor}" materialDesign:HintAssist.Hint="Legs" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding capesArmor}" materialDesign:HintAssist.Hint="Capes" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                    </Grid>
+                </TabItem>
                 <TabItem IsEnabled="{Binding beehiveSettingsEnabled}" Header="Beehive">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Beehive" TextWrapping="Wrap" VerticalAlignment="Top" />
@@ -116,8 +127,8 @@
                 </TabItem>
                 <TabItem IsEnabled="{Binding durabilitySettingsEnabled}" Header="Durability">
                     <Grid Background="#FFE5E5E5">
-                        <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Each of these values increase or reduce the durability of the specific item type by %" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Durability" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Each of these values increase or reduce the durability of the specific item type by %" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding axesDurability}" materialDesign:HintAssist.Hint="Axes" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding pickaxesDurability}" materialDesign:HintAssist.Hint="Pickaxes" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding hammerDurability}" materialDesign:HintAssist.Hint="Hammers" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />

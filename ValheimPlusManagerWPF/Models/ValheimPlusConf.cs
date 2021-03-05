@@ -18,6 +18,13 @@
         public string copyObjectRotationAEM { get; set; } = "Keypad7";
         public string pasteObjectRotationAEM { get; set; } = "Keypad8";
 
+        // Armor
+        public bool armorSettingsEnabled { get; set; } = false;
+        public float helmetsArmor { get; set; } = 0;
+        public float chestsArmor { get; set; } = 0;
+        public float legsArmor { get; set; } = 0;
+        public float capesArmor { get; set; } = 0;
+
         // Beehive
         public bool beehiveSettingsEnabled { get; set; } = false;
         public float honeyProductionSpeed { get; set; } = 1200;

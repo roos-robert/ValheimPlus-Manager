@@ -85,6 +85,29 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Advanced editing mode
 
+            #region Armor
+            if (bool.TryParse(data["Armor"]["enabled"], out bool armorSettingsEnabled))
+            {
+                valheimPlusConfiguration.armorSettingsEnabled = armorSettingsEnabled;
+            }
+            if (float.TryParse(data["Armor"]["helmets"], NumberStyles.Any, ci, out float helmetsArmor))
+            {
+                valheimPlusConfiguration.helmetsArmor = helmetsArmor;
+            }
+            if (float.TryParse(data["Armor"]["chests"], NumberStyles.Any, ci, out float chestsArmor))
+            {
+                valheimPlusConfiguration.chestsArmor = chestsArmor;
+            }
+            if (float.TryParse(data["Armor"]["legs"], NumberStyles.Any, ci, out float legsArmor))
+            {
+                valheimPlusConfiguration.legsArmor = legsArmor;
+            }
+            if (float.TryParse(data["Armor"]["capes"], NumberStyles.Any, ci, out float capesArmor))
+            {
+                valheimPlusConfiguration.capesArmor = capesArmor;
+            }
+            #endregion Armor
+
             #region Beehive
             if (bool.TryParse(data["Beehive"]["enabled"], out bool beehiveSettingsEnabled))
             {
@@ -813,6 +836,13 @@ namespace ValheimPlusManager.SupportClasses
             data["AdvancedEditingMode"]["confirmPlacementOfAdvancedEditingMode"] = valheimPlusConfiguration.confirmPlacementOfAdvancedEditingMode.ToString();
             data["AdvancedEditingMode"]["copyObjectRotation"] = valheimPlusConfiguration.copyObjectRotationAEM.ToString();
             data["AdvancedEditingMode"]["pasteObjectRotation"] = valheimPlusConfiguration.pasteObjectRotationAEM.ToString();
+
+            // Armor
+            data["Armor"]["enabled"] = valheimPlusConfiguration.armorSettingsEnabled.ToString().ToLower();
+            data["Armor"]["helmets"] = valheimPlusConfiguration.helmetsArmor.ToString();
+            data["Armor"]["chests"] = valheimPlusConfiguration.chestsArmor.ToString();
+            data["Armor"]["legs"] = valheimPlusConfiguration.legsArmor.ToString();
+            data["Armor"]["capes"] = valheimPlusConfiguration.capesArmor.ToString();
 
             // Beehive
             data["Beehive"]["enabled"] = valheimPlusConfiguration.beehiveSettingsEnabled.ToString().ToLower();
