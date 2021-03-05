@@ -6,6 +6,8 @@
         public bool advancedBuildingModeEnabled { get; set; } = false;
         public string enterAdvancedBuildingMode { get; set; } = "F1";
         public string exitAdvancedBuildingMode { get; set; } = "F3";
+        public string copyObjectRotation { get; set; } = "Keypad7";
+        public string pasteObjectRotation { get; set; } = "Keypad8";
 
         // Advanced editing mode
         public bool advancedEditingModeEnabled { get; set; } = false;
@@ -13,6 +15,15 @@
         public string resetAdvancedEditingMode { get; set; } = "F7";
         public string abortAndExitAdvancedEditingMode { get; set; } = "F8";
         public string confirmPlacementOfAdvancedEditingMode { get; set; } = "KeypadEnter";
+        public string copyObjectRotationAEM { get; set; } = "Keypad7";
+        public string pasteObjectRotationAEM { get; set; } = "Keypad8";
+
+        // Armor
+        public bool armorSettingsEnabled { get; set; } = false;
+        public float helmetsArmor { get; set; } = 0;
+        public float chestsArmor { get; set; } = 0;
+        public float legsArmor { get; set; } = 0;
+        public float capesArmor { get; set; } = 0;
 
         // Beehive
         public bool beehiveSettingsEnabled { get; set; } = false;
@@ -25,16 +36,39 @@
         public bool noWeatherDamage { get; set; } = false;
         public float maximumPlacementDistance { get; set; } = 5;
 
+        // Durability
+        public bool durabilitySettingsEnabled { get; set; } = false;
+        public float axesDurability { get; set; } = 0;
+        public float pickaxesDurability { get; set; } = 0;
+        public float hammerDurability { get; set; } = 0;
+        public float cultivatorDurability { get; set; } = 0;
+        public float hoeDurability { get; set; } = 0;
+        public float weaponsDurability { get; set; } = 0;
+        public float armorDurability { get; set; } = 0;
+        public float bowsDurability { get; set; } = 0;
+        public float shieldsDurability { get; set; } = 0;
+
+        // Inventory
+        public bool inventorySettingsEnabled { get; set; } = false;
+        public bool inventoryFillTopToBottom { get; set; } = false;
+        public int playerInventoryRows { get; set; } = 4;
+        public int woodChestColumns { get; set; } = 5;
+        public int woodChestRows { get; set; } = 2;
+        public int ironChestColumns { get; set; } = 8;
+        public int ironChestRows { get; set; } = 3;
+
         // Items
         public bool itemsSettingsEnabled { get; set; } = false;
         public bool noTeleportPrevention { get; set; } = false;
         public float baseItemWeightReduction { get; set; } = 0;
         public float itemStackMultiplier { get; set; } = 1;
+        public int droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
 
         // Fermenter
         public bool fermenterSettingsEnabled { get; set; } = false;
         public float fermenterDuration { get; set; } = 2400;
         public int fermenterItemsProduced { get; set; } = 4;
+        public bool showFermenterDuration { get; set; } = false;
 
         // Fireplace
         public bool fireplaceSettingsEnabled { get; set; } = false;
@@ -50,6 +84,8 @@
         public int maximumCoal { get; set; } = 20;
         public int coalUsedPerProduct { get; set; } = 2;
         public float furnaceProductionSpeed { get; set; } = 10;
+        public bool autoDepositFurnace { get; set; } = false;
+        public float autoDepositRangeFurnace { get; set; } = 10;
 
         // Game
         public bool gameSettingsEnabled { get; set; } = false;
@@ -57,7 +93,7 @@
         public float gameDifficultyHealthScale { get; set; } = 0.4f;
         public int extraPlayerCountNearby { get; set; } = 0;
         public int setFixedPlayerCountTo { get; set; } = 0;
-        public float autoSaveInterval { get; set; } = 1200;
+        //public float autoSaveInterval { get; set; } = 1200;
         public int difficultyScaleRange { get; set; } = 200;
 
         // Hotkeys
@@ -69,11 +105,29 @@
         public bool hudSettingsEnabled { get; set; } = false;
         public bool showRequiredItems { get; set; } = false;
         public bool experienceGainedNotifications { get; set; } = false;
+        public float chatMessageDistance { get; set; }
+        public bool displayStaminaValue { get; set; } = false;
+        public bool removeDamageFlash { get; set; } = false;
+
+        // Gathering
+        public bool gatheringSettingsEnabled { get; set; } = false;
+        public float woodGathering { get; set; } = 0;
+        public float stoneGathering { get; set; } = 0;
+        public float fineWoodGathering { get; set; } = 0;
+        public float coreWoodGathering { get; set; } = 0;
+        public float elderBarkGathering { get; set; } = 0;
+        public float ironScrapGathering { get; set; } = 0;
+        public float tinOreGathering { get; set; } = 0;
+        public float copperOreGathering { get; set; } = 0;
+        public float silverOreGathering { get; set; } = 0;
+        public float chitinGathering { get; set; } = 0;
 
         // Kiln
         public bool kilnSettingsEnabled { get; set; } = false;
         public float kilnProductionSpeed { get; set; } = 30;
         public int maximumWood { get; set; } = 25;
+        public bool autoDepositKiln { get; set; } = false;
+        public float autoDepositRangeKiln { get; set; } = 10;
 
         // Map
         public bool mapSettingsEnabled { get; set; } = false;
@@ -102,14 +156,14 @@
 
         // Stamina
         public bool staminaSettingsEnabled { get; set; } = false;
-        public float dodgeStaminaUsage { get; set; } = 10;
-        public float encumberedStaminaDrain { get; set; } = 10;
-        public float jumpStaminaDrain { get; set; } = 10;
-        public float runStaminaDrain { get; set; } = 10;
-        public float sneakStaminaDrain { get; set; } = 10;
-        public float staminaRegen { get; set; } = 5;
-        public float staminaRegenDelay { get; set; } = 0.5f;
-        public float swimStaminaDrain { get; set; } = 5;
+        public float dodgeStaminaUsage { get; set; } = 0;
+        public float encumberedStaminaDrain { get; set; } = 0;
+        public float jumpStaminaDrain { get; set; } = 0;
+        public float runStaminaDrain { get; set; } = 0;
+        public float sneakStaminaDrain { get; set; } = 0;
+        public float staminaRegen { get; set; } = 0;
+        public float staminaRegenDelay { get; set; } = 0;
+        public float swimStaminaDrain { get; set; } = 0;
 
         // Stamina usage
         public bool staminaUsageSettingsEnabled { get; set; } = false;
@@ -124,6 +178,7 @@
         public float unarmed { get; set; } = 0;
         public float hammer { get; set; } = 0;
         public float hoe { get; set; } = 0;
+        public float cultivator { get; set; } = 0;
 
         // Workbench
         public bool workbenchSettingsEnabled { get; set; } = false;

@@ -43,6 +43,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.exitAdvancedBuildingMode = data["AdvancedBuildingMode"]["exitAdvancedBuildingMode"];
             }
+            if (data["AdvancedBuildingMode"]["copyObjectRotation"] != null)
+            {
+                valheimPlusConfiguration.copyObjectRotation = data["AdvancedBuildingMode"]["copyObjectRotation"];
+            }
+            if (data["AdvancedBuildingMode"]["pasteObjectRotation"] != null)
+            {
+                valheimPlusConfiguration.pasteObjectRotation = data["AdvancedBuildingMode"]["pasteObjectRotation"];
+            }
 
             #endregion Advanced building mode
 
@@ -67,7 +75,38 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.confirmPlacementOfAdvancedEditingMode = data["AdvancedEditingMode"]["confirmPlacementOfAdvancedEditingMode"];
             }
+            if (data["AdvancedEditingMode"]["copyObjectRotation"] != null)
+            {
+                valheimPlusConfiguration.copyObjectRotationAEM = data["AdvancedEditingMode"]["copyObjectRotation"];
+            }
+            if (data["AdvancedEditingMode"]["pasteObjectRotation"] != null)
+            {
+                valheimPlusConfiguration.pasteObjectRotationAEM = data["AdvancedEditingMode"]["pasteObjectRotation"];
+            }
             #endregion Advanced editing mode
+
+            #region Armor
+            if (bool.TryParse(data["Armor"]["enabled"], out bool armorSettingsEnabled))
+            {
+                valheimPlusConfiguration.armorSettingsEnabled = armorSettingsEnabled;
+            }
+            if (float.TryParse(data["Armor"]["helmets"], NumberStyles.Any, ci, out float helmetsArmor))
+            {
+                valheimPlusConfiguration.helmetsArmor = helmetsArmor;
+            }
+            if (float.TryParse(data["Armor"]["chests"], NumberStyles.Any, ci, out float chestsArmor))
+            {
+                valheimPlusConfiguration.chestsArmor = chestsArmor;
+            }
+            if (float.TryParse(data["Armor"]["legs"], NumberStyles.Any, ci, out float legsArmor))
+            {
+                valheimPlusConfiguration.legsArmor = legsArmor;
+            }
+            if (float.TryParse(data["Armor"]["capes"], NumberStyles.Any, ci, out float capesArmor))
+            {
+                valheimPlusConfiguration.capesArmor = capesArmor;
+            }
+            #endregion Armor
 
             #region Beehive
             if (bool.TryParse(data["Beehive"]["enabled"], out bool beehiveSettingsEnabled))
@@ -103,6 +142,80 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Building
 
+            #region Durability
+            if (bool.TryParse(data["Durability"]["enabled"], out bool durabilitySettingsEnabled))
+            {
+                valheimPlusConfiguration.durabilitySettingsEnabled = durabilitySettingsEnabled;
+            }
+            if (float.TryParse(data["Durability"]["axes"], NumberStyles.Any, ci, out float axesDurability))
+            {
+                valheimPlusConfiguration.axesDurability = axesDurability;
+            }
+            if (float.TryParse(data["Durability"]["pickaxes"], NumberStyles.Any, ci, out float pickaxesDurability))
+            {
+                valheimPlusConfiguration.pickaxesDurability = pickaxesDurability;
+            }
+            if (float.TryParse(data["Durability"]["hammer"], NumberStyles.Any, ci, out float hammerDurability))
+            {
+                valheimPlusConfiguration.hammerDurability = hammerDurability;
+            }
+            if (float.TryParse(data["Durability"]["cultivator"], NumberStyles.Any, ci, out float cultivatorDurability))
+            {
+                valheimPlusConfiguration.cultivatorDurability = cultivatorDurability;
+            }
+            if (float.TryParse(data["Durability"]["hoe"], NumberStyles.Any, ci, out float hoeDurability))
+            {
+                valheimPlusConfiguration.hoeDurability = hoeDurability;
+            }
+            if (float.TryParse(data["Durability"]["weapons"], NumberStyles.Any, ci, out float weaponsDurability))
+            {
+                valheimPlusConfiguration.weaponsDurability = weaponsDurability;
+            }
+            if (float.TryParse(data["Durability"]["armor"], NumberStyles.Any, ci, out float armorDurability))
+            {
+                valheimPlusConfiguration.armorDurability = armorDurability;
+            }
+            if (float.TryParse(data["Durability"]["bows"], NumberStyles.Any, ci, out float bowsDurability))
+            {
+                valheimPlusConfiguration.bowsDurability = bowsDurability;
+            }
+            if (float.TryParse(data["Durability"]["shields"], NumberStyles.Any, ci, out float shieldsDurability))
+            {
+                valheimPlusConfiguration.shieldsDurability = shieldsDurability;
+            }
+            #endregion Durability
+
+            #region Inventory
+            if (bool.TryParse(data["Inventory"]["enabled"], out bool inventorySettingsEnabled))
+            {
+                valheimPlusConfiguration.inventorySettingsEnabled = inventorySettingsEnabled;
+            }
+            if (bool.TryParse(data["Inventory"]["inventoryFillTopToBottom"], out bool inventoryFillTopToBottom))
+            {
+                valheimPlusConfiguration.inventoryFillTopToBottom = inventoryFillTopToBottom;
+            }
+            if (int.TryParse(data["Inventory"]["playerInventoryRows"], out int playerInventoryRows))
+            {
+                valheimPlusConfiguration.playerInventoryRows = playerInventoryRows;
+            }
+            if (int.TryParse(data["Inventory"]["woodChestColumns"], out int woodChestColumns))
+            {
+                valheimPlusConfiguration.woodChestColumns = woodChestColumns;
+            }
+            if (int.TryParse(data["Inventory"]["woodChestRows"], out int woodChestRows))
+            {
+                valheimPlusConfiguration.woodChestRows = woodChestRows;
+            }
+            if (int.TryParse(data["Inventory"]["ironChestColumns"], out int ironChestColumns))
+            {
+                valheimPlusConfiguration.ironChestColumns = ironChestColumns;
+            }
+            if (int.TryParse(data["Inventory"]["ironChestRows"], out int ironChestRows))
+            {
+                valheimPlusConfiguration.ironChestRows = ironChestRows;
+            }
+            #endregion Inventory
+
             #region Items
             if (bool.TryParse(data["Items"]["enabled"], out bool itemsSettingsEnabled))
             {
@@ -120,6 +233,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.itemStackMultiplier = itemStackMultiplier;
             }
+            if (int.TryParse(data["Items"]["droppedItemOnGroundDurationInSeconds"], out int droppedItemOnGroundDurationInSeconds))
+            {
+                valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds = droppedItemOnGroundDurationInSeconds;
+            }
             #endregion Items
 
             #region Fermenter
@@ -134,6 +251,10 @@ namespace ValheimPlusManager.SupportClasses
             if (int.TryParse(data["Fermenter"]["fermenterItemsProduced"], out int fermenterItemsProduced))
             {
                 valheimPlusConfiguration.fermenterItemsProduced = fermenterItemsProduced;
+            }
+            if (bool.TryParse(data["Fermenter"]["showFermenterDuration"], out bool showFermenterDuration))
+            {
+                valheimPlusConfiguration.showFermenterDuration = showFermenterDuration;
             }
             #endregion Fermenter
 
@@ -180,6 +301,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.furnaceProductionSpeed = furnaceProductionSpeed;
             }
+            if (float.TryParse(data["Furnace"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositRangeFurnace))
+            {
+                valheimPlusConfiguration.autoDepositRangeFurnace = autoDepositRangeFurnace;
+            }
+            if (bool.TryParse(data["Furnace"]["autoDeposit"], out bool autoDepositFurnace))
+            {
+                valheimPlusConfiguration.autoDepositFurnace = autoDepositFurnace;
+            }
             #endregion Furnace
 
             #region Game
@@ -209,6 +338,53 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Game
 
+            #region Gathering
+            if (bool.TryParse(data["Gathering"]["enabled"], out bool gatheringSettingsEnabled))
+            {
+                valheimPlusConfiguration.gatheringSettingsEnabled = gatheringSettingsEnabled;
+            }
+            if (float.TryParse(data["Gathering"]["wood"], NumberStyles.Any, ci, out float woodGathering))
+            {
+                valheimPlusConfiguration.woodGathering = woodGathering;
+            }
+            if (float.TryParse(data["Gathering"]["stone"], NumberStyles.Any, ci, out float stoneGathering))
+            {
+                valheimPlusConfiguration.stoneGathering = stoneGathering;
+            }
+            if (float.TryParse(data["Gathering"]["fineWood"], NumberStyles.Any, ci, out float fineWoodGathering))
+            {
+                valheimPlusConfiguration.fineWoodGathering = fineWoodGathering;
+            }
+            if (float.TryParse(data["Gathering"]["coreWood"], NumberStyles.Any, ci, out float coreWoodGathering))
+            {
+                valheimPlusConfiguration.coreWoodGathering = coreWoodGathering;
+            }
+            if (float.TryParse(data["Gathering"]["elderBark"], NumberStyles.Any, ci, out float elderBarkGathering))
+            {
+                valheimPlusConfiguration.elderBarkGathering = elderBarkGathering;
+            }
+            if (float.TryParse(data["Gathering"]["ironScrap"], NumberStyles.Any, ci, out float ironScrapGathering))
+            {
+                valheimPlusConfiguration.ironScrapGathering = ironScrapGathering;
+            }
+            if (float.TryParse(data["Gathering"]["tinOre"], NumberStyles.Any, ci, out float tinOreGathering))
+            {
+                valheimPlusConfiguration.tinOreGathering = tinOreGathering;
+            }
+            if (float.TryParse(data["Gathering"]["copperOre"], NumberStyles.Any, ci, out float copperOreGathering))
+            {
+                valheimPlusConfiguration.copperOreGathering = copperOreGathering;
+            }
+            if (float.TryParse(data["Gathering"]["silverOre"], NumberStyles.Any, ci, out float silverOreGathering))
+            {
+                valheimPlusConfiguration.silverOreGathering = silverOreGathering;
+            }
+            if (float.TryParse(data["Gathering"]["chitin"], NumberStyles.Any, ci, out float chitinGathering))
+            {
+                valheimPlusConfiguration.chitinGathering = chitinGathering;
+            }
+            #endregion Gathering
+
             #region Hotkeys
             if (bool.TryParse(data["Hotkeys"]["enabled"], out bool hotkeysSettingsEnabled))
             {
@@ -237,6 +413,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.experienceGainedNotifications = experienceGainedNotifications;
             }
+            if (bool.TryParse(data["Hud"]["displayStaminaValue"], out bool displayStaminaValue))
+            {
+                valheimPlusConfiguration.displayStaminaValue = displayStaminaValue;
+            }
+            if (bool.TryParse(data["Hud"]["removeDamageFlash"], out bool removeDamageFlash))
+            {
+                valheimPlusConfiguration.removeDamageFlash = removeDamageFlash;
+            }
             #endregion HUD
 
             #region Kiln
@@ -251,6 +435,14 @@ namespace ValheimPlusManager.SupportClasses
             if (int.TryParse(data["Kiln"]["productionSpeed"], out int kilnProductionSpeed))
             {
                 valheimPlusConfiguration.kilnProductionSpeed = kilnProductionSpeed;
+            }
+            if (float.TryParse(data["Kiln"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositRangeKiln))
+            {
+                valheimPlusConfiguration.autoDepositRangeKiln = autoDepositRangeKiln;
+            }
+            if (bool.TryParse(data["Kiln"]["autoDeposit"], out bool autoDepositKiln))
+            {
+                valheimPlusConfiguration.autoDepositKiln = autoDepositKiln;
             }
             #endregion Kiln
 
@@ -330,10 +522,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.dataRate = dataRate;
             }
-            if (int.TryParse(data["Server"]["autoSaveInterval"], out int autoSaveInterval))
-            {
-                valheimPlusConfiguration.autoSaveInterval = autoSaveInterval;
-            }
+            //if (int.TryParse(data["Server"]["autoSaveInterval"], out int autoSaveInterval))
+            //{
+            //    valheimPlusConfiguration.autoSaveInterval = autoSaveInterval;
+            //}
             #endregion Server
 
             #region Stamina
@@ -424,6 +616,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.hoe = hoe;
             }
+            if (int.TryParse(data["StaminaUsage"]["cultivator"], out int cultivator))
+            {
+                valheimPlusConfiguration.cultivator = cultivator;
+            }
             #endregion StaminaUsage
 
             #region Workbench
@@ -442,18 +638,18 @@ namespace ValheimPlusManager.SupportClasses
             #endregion Workbench
 
             #region Time
-            if (bool.TryParse(data["Time"]["enabled"], out bool timeSettingsEnabled))
-            {
-                valheimPlusConfiguration.timeSettingsEnabled = timeSettingsEnabled;
-            }
-            if (int.TryParse(data["Time"]["totalDayTimeInSeconds"], out int totalDayTimeInSeconds))
-            {
-                valheimPlusConfiguration.totalDayTimeInSeconds = totalDayTimeInSeconds;
-            }
-            if (int.TryParse(data["Time"]["nightTimeSpeedMultiplier"], out int nightTimeSpeedMultiplier))
-            {
-                valheimPlusConfiguration.nightTimeSpeedMultiplier = nightTimeSpeedMultiplier;
-            }
+            //if (bool.TryParse(data["Time"]["enabled"], out bool timeSettingsEnabled))
+            //{
+            //    valheimPlusConfiguration.timeSettingsEnabled = timeSettingsEnabled;
+            //}
+            //if (int.TryParse(data["Time"]["totalDayTimeInSeconds"], out int totalDayTimeInSeconds))
+            //{
+            //    valheimPlusConfiguration.totalDayTimeInSeconds = totalDayTimeInSeconds;
+            //}
+            //if (int.TryParse(data["Time"]["nightTimeSpeedMultiplier"], out int nightTimeSpeedMultiplier))
+            //{
+            //    valheimPlusConfiguration.nightTimeSpeedMultiplier = nightTimeSpeedMultiplier;
+            //}
             #endregion Time
 
             #region Ward
@@ -637,6 +833,8 @@ namespace ValheimPlusManager.SupportClasses
             data["AdvancedBuildingMode"]["enabled"] = valheimPlusConfiguration.advancedBuildingModeEnabled.ToString().ToLower();
             data["AdvancedBuildingMode"]["enterAdvancedBuildingMode"] = valheimPlusConfiguration.enterAdvancedBuildingMode.ToString();
             data["AdvancedBuildingMode"]["exitAdvancedBuildingMode"] = valheimPlusConfiguration.exitAdvancedBuildingMode.ToString();
+            data["AdvancedBuildingMode"]["copyObjectRotation"] = valheimPlusConfiguration.copyObjectRotation.ToString();
+            data["AdvancedBuildingMode"]["pasteObjectRotation"] = valheimPlusConfiguration.pasteObjectRotation.ToString();
 
             // Advanced editing mode settings
             data["AdvancedEditingMode"]["enabled"] = valheimPlusConfiguration.advancedEditingModeEnabled.ToString().ToLower();
@@ -644,6 +842,15 @@ namespace ValheimPlusManager.SupportClasses
             data["AdvancedEditingMode"]["resetAdvancedEditingMode"] = valheimPlusConfiguration.resetAdvancedEditingMode.ToString();
             data["AdvancedEditingMode"]["abortAndExitAdvancedEditingMode"] = valheimPlusConfiguration.abortAndExitAdvancedEditingMode.ToString();
             data["AdvancedEditingMode"]["confirmPlacementOfAdvancedEditingMode"] = valheimPlusConfiguration.confirmPlacementOfAdvancedEditingMode.ToString();
+            data["AdvancedEditingMode"]["copyObjectRotation"] = valheimPlusConfiguration.copyObjectRotationAEM.ToString();
+            data["AdvancedEditingMode"]["pasteObjectRotation"] = valheimPlusConfiguration.pasteObjectRotationAEM.ToString();
+
+            // Armor
+            data["Armor"]["enabled"] = valheimPlusConfiguration.armorSettingsEnabled.ToString().ToLower();
+            data["Armor"]["helmets"] = valheimPlusConfiguration.helmetsArmor.ToString();
+            data["Armor"]["chests"] = valheimPlusConfiguration.chestsArmor.ToString();
+            data["Armor"]["legs"] = valheimPlusConfiguration.legsArmor.ToString();
+            data["Armor"]["capes"] = valheimPlusConfiguration.capesArmor.ToString();
 
             // Beehive
             data["Beehive"]["enabled"] = valheimPlusConfiguration.beehiveSettingsEnabled.ToString().ToLower();
@@ -656,16 +863,39 @@ namespace ValheimPlusManager.SupportClasses
             data["Building"]["noWeatherDamage"] = valheimPlusConfiguration.noWeatherDamage.ToString();
             data["Building"]["noInvalidPlacementRestriction"] = valheimPlusConfiguration.noInvalidPlacementRestriction.ToString();
 
+            // Durability
+            data["Durability"]["enabled"] = valheimPlusConfiguration.durabilitySettingsEnabled.ToString().ToLower();
+            data["Durability"]["axes"] = valheimPlusConfiguration.axesDurability.ToString();
+            data["Durability"]["pickaxes"] = valheimPlusConfiguration.pickaxesDurability.ToString();
+            data["Durability"]["hammer"] = valheimPlusConfiguration.hammerDurability.ToString();
+            data["Durability"]["cultivator"] = valheimPlusConfiguration.cultivatorDurability.ToString();
+            data["Durability"]["hoe"] = valheimPlusConfiguration.hoeDurability.ToString();
+            data["Durability"]["weapons"] = valheimPlusConfiguration.weaponsDurability.ToString();
+            data["Durability"]["armor"] = valheimPlusConfiguration.armorDurability.ToString();
+            data["Durability"]["bows"] = valheimPlusConfiguration.bowsDurability.ToString();
+            data["Durability"]["shields"] = valheimPlusConfiguration.shieldsDurability.ToString();
+
+            // Inventory
+            data["Inventory"]["enabled"] = valheimPlusConfiguration.inventorySettingsEnabled.ToString().ToLower();
+            data["Inventory"]["inventoryFillTopToBottom"] = valheimPlusConfiguration.inventoryFillTopToBottom.ToString().ToLower();
+            data["Inventory"]["playerInventoryRows"] = valheimPlusConfiguration.playerInventoryRows.ToString();
+            data["Inventory"]["woodChestColumns"] = valheimPlusConfiguration.woodChestColumns.ToString();
+            data["Inventory"]["woodChestRows"] = valheimPlusConfiguration.woodChestRows.ToString();
+            data["Inventory"]["ironChestColumns"] = valheimPlusConfiguration.ironChestColumns.ToString();
+            data["Inventory"]["ironChestRows"] = valheimPlusConfiguration.ironChestRows.ToString();
+
             // Items
             data["Items"]["enabled"] = valheimPlusConfiguration.itemsSettingsEnabled.ToString().ToLower();
             data["Items"]["noTeleportPrevention"] = valheimPlusConfiguration.noTeleportPrevention.ToString().ToLower();
             data["Items"]["baseItemWeightReduction"] = valheimPlusConfiguration.baseItemWeightReduction.ToString();
             data["Items"]["itemStackMultiplier"] = valheimPlusConfiguration.itemStackMultiplier.ToString();
+            data["Items"]["droppedItemOnGroundDurationInSeconds"] = valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds.ToString();
 
             // Fermenter
             data["Fermenter"]["enabled"] = valheimPlusConfiguration.fermenterSettingsEnabled.ToString().ToLower();
             data["Fermenter"]["fermenterDuration"] = valheimPlusConfiguration.fermenterDuration.ToString();
             data["Fermenter"]["fermenterItemsProduced"] = valheimPlusConfiguration.fermenterItemsProduced.ToString();
+            data["Fermenter"]["showFermenterDuration"] = valheimPlusConfiguration.showFermenterDuration.ToString().ToLower();
 
             // Fireplace
             data["Fireplace"]["enabled"] = valheimPlusConfiguration.fireplaceSettingsEnabled.ToString().ToLower();
@@ -681,6 +911,8 @@ namespace ValheimPlusManager.SupportClasses
             data["Furnace"]["maximumCoal"] = valheimPlusConfiguration.maximumCoal.ToString();
             data["Furnace"]["coalUsedPerProduct"] = valheimPlusConfiguration.coalUsedPerProduct.ToString();
             data["Furnace"]["productionSpeed"] = valheimPlusConfiguration.furnaceProductionSpeed.ToString();
+            data["Furnace"]["autoDeposit"] = valheimPlusConfiguration.autoDepositFurnace.ToString().ToLower();
+            data["Furnace"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
 
             // Game
             data["Game"]["enabled"] = valheimPlusConfiguration.gameSettingsEnabled.ToString().ToLower();
@@ -689,6 +921,19 @@ namespace ValheimPlusManager.SupportClasses
             data["Game"]["extraPlayerCountNearby"] = valheimPlusConfiguration.extraPlayerCountNearby.ToString();
             data["Game"]["setFixedPlayerCountTo"] = valheimPlusConfiguration.setFixedPlayerCountTo.ToString();
             data["Game"]["difficultyScaleRange"] = valheimPlusConfiguration.difficultyScaleRange.ToString();
+
+            // Gathering
+            data["Gathering"]["enabled"] = valheimPlusConfiguration.gatheringSettingsEnabled.ToString().ToLower();
+            data["Gathering"]["wood"] = valheimPlusConfiguration.woodGathering.ToString();
+            data["Gathering"]["stone"] = valheimPlusConfiguration.stoneGathering.ToString();
+            data["Gathering"]["fineWood"] = valheimPlusConfiguration.fineWoodGathering.ToString();
+            data["Gathering"]["coreWood"] = valheimPlusConfiguration.coreWoodGathering.ToString();
+            data["Gathering"]["elderBark"] = valheimPlusConfiguration.elderBarkGathering.ToString();
+            data["Gathering"]["ironScrap"] = valheimPlusConfiguration.ironScrapGathering.ToString();
+            data["Gathering"]["tinOre"] = valheimPlusConfiguration.tinOreGathering.ToString();
+            data["Gathering"]["copperOre"] = valheimPlusConfiguration.copperOreGathering.ToString();
+            data["Gathering"]["silverOre"] = valheimPlusConfiguration.silverOreGathering.ToString();
+            data["Gathering"]["chitin"] = valheimPlusConfiguration.chitinGathering.ToString();
 
             // Hotkeys
             data["Hotkeys"]["enabled"] = valheimPlusConfiguration.hotkeysSettingsEnabled.ToString().ToLower();
@@ -699,11 +944,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Hud"]["enabled"] = valheimPlusConfiguration.hudSettingsEnabled.ToString().ToLower();
             data["Hud"]["showRequiredItems"] = valheimPlusConfiguration.showRequiredItems.ToString().ToLower();
             data["Hud"]["experienceGainedNotifications"] = valheimPlusConfiguration.experienceGainedNotifications.ToString().ToLower();
+            data["Hud"]["displayStaminaValue"] = valheimPlusConfiguration.displayStaminaValue.ToString().ToLower();
+            data["Hud"]["removeDamageFlash"] = valheimPlusConfiguration.removeDamageFlash.ToString().ToLower();
 
             // Kiln
             data["Kiln"]["enabled"] = valheimPlusConfiguration.kilnSettingsEnabled.ToString().ToLower();
             data["Kiln"]["maximumWood"] = valheimPlusConfiguration.maximumWood.ToString();
             data["Kiln"]["productionSpeed"] = valheimPlusConfiguration.kilnProductionSpeed.ToString();
+            data["Kiln"]["autoDeposit"] = valheimPlusConfiguration.autoDepositKiln.ToString().ToLower();
+            data["Kiln"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeKiln.ToString();
 
             // Map
             data["Map"]["enabled"] = valheimPlusConfiguration.mapSettingsEnabled.ToString().ToLower();
@@ -727,7 +976,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Server"]["disableServerPassword"] = valheimPlusConfiguration.disableServerPassword.ToString().ToLower();
             data["Server"]["enforceMod"] = valheimPlusConfiguration.enforceMod.ToString().ToLower();
             data["Server"]["dataRate"] = valheimPlusConfiguration.dataRate.ToString();
-            data["Server"]["autoSaveInterval"] = valheimPlusConfiguration.autoSaveInterval.ToString();
+            //data["Server"]["autoSaveInterval"] = valheimPlusConfiguration.autoSaveInterval.ToString();
 
             // Stamina
             data["Stamina"]["enabled"] = valheimPlusConfiguration.staminaSettingsEnabled.ToString().ToLower();
@@ -753,6 +1002,7 @@ namespace ValheimPlusManager.SupportClasses
             data["StaminaUsage"]["unarmed"] = valheimPlusConfiguration.unarmed.ToString();
             data["StaminaUsage"]["hammer"] = valheimPlusConfiguration.hammer.ToString();
             data["StaminaUsage"]["hoe"] = valheimPlusConfiguration.hoe.ToString();
+            data["StaminaUsage"]["cultivator"] = valheimPlusConfiguration.cultivator.ToString();
 
             // Workbench
             data["Workbench"]["enabled"] = valheimPlusConfiguration.workbenchSettingsEnabled.ToString().ToLower();
@@ -760,9 +1010,9 @@ namespace ValheimPlusManager.SupportClasses
             data["Workbench"]["disableRoofCheck"] = valheimPlusConfiguration.disableRoofCheck.ToString().ToLower();
 
             // Time
-            data["Time"]["enabled"] = valheimPlusConfiguration.timeSettingsEnabled.ToString().ToLower();
-            data["Time"]["totalDayTimeInSeconds"] = valheimPlusConfiguration.totalDayTimeInSeconds.ToString();
-            data["Time"]["nightTimeSpeedMultiplier"] = valheimPlusConfiguration.nightTimeSpeedMultiplier.ToString();
+            //data["Time"]["enabled"] = valheimPlusConfiguration.timeSettingsEnabled.ToString().ToLower();
+            //data["Time"]["totalDayTimeInSeconds"] = valheimPlusConfiguration.totalDayTimeInSeconds.ToString();
+            //data["Time"]["nightTimeSpeedMultiplier"] = valheimPlusConfiguration.nightTimeSpeedMultiplier.ToString();
 
             // Ward
             data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
