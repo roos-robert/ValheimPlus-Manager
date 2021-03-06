@@ -16,7 +16,6 @@ namespace ValheimPlusManager.SupportClasses
             {
                 System.Diagnostics.FileVersionInfo serverClientVersion =
                 System.Diagnostics.FileVersionInfo.GetVersionInfo(String.Format("{0}BepInEx/plugins/ValheimPlus.dll", settings.ServerInstallationPath));
-                settings.ValheimPlusServerClientVersion = serverClientVersion.FileVersion;
 
                 if (serverClientVersion.FileVersion != settings.ValheimPlusServerClientVersion)
                 {
