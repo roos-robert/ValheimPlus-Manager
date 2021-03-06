@@ -992,13 +992,14 @@ namespace ValheimPlusManager.SupportClasses
             data["Player"]["cropNotifier"] = valheimPlusConfiguration.cropNotifier.ToString().ToLower();
             #endregion Player
 
-            // Server
+            #region Server
             data["Server"]["enabled"] = valheimPlusConfiguration.serverSettingsEnabled.ToString().ToLower();
             data["Server"]["maxPlayers"] = valheimPlusConfiguration.maxPlayers.ToString();
             data["Server"]["disableServerPassword"] = valheimPlusConfiguration.disableServerPassword.ToString().ToLower();
             data["Server"]["enforceMod"] = valheimPlusConfiguration.enforceMod.ToString().ToLower();
             data["Server"]["dataRate"] = valheimPlusConfiguration.dataRate.ToString();
             //data["Server"]["autoSaveInterval"] = valheimPlusConfiguration.autoSaveInterval.ToString();
+            #endregion Server
 
             // Stamina
             data["Stamina"]["enabled"] = valheimPlusConfiguration.staminaSettingsEnabled.ToString().ToLower();
