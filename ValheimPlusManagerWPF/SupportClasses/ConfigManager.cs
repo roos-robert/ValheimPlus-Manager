@@ -336,6 +336,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.difficultyScaleRange = difficultyScaleRange;
             }
+            if (bool.TryParse(data["Game"]["disablePortals"], out bool disablePortals))
+            {
+                valheimPlusConfiguration.disablePortals = disablePortals;
+            }
             #endregion Game
 
             #region Gathering
@@ -914,13 +918,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Furnace"]["autoDeposit"] = valheimPlusConfiguration.autoDepositFurnace.ToString().ToLower();
             data["Furnace"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
 
-            // Game
+            #region Game
             data["Game"]["enabled"] = valheimPlusConfiguration.gameSettingsEnabled.ToString().ToLower();
             data["Game"]["gameDifficultyDamageScale"] = valheimPlusConfiguration.gameDifficultyDamageScale.ToString();
             data["Game"]["gameDifficultyHealthScale"] = valheimPlusConfiguration.gameDifficultyHealthScale.ToString();
             data["Game"]["extraPlayerCountNearby"] = valheimPlusConfiguration.extraPlayerCountNearby.ToString();
             data["Game"]["setFixedPlayerCountTo"] = valheimPlusConfiguration.setFixedPlayerCountTo.ToString();
             data["Game"]["difficultyScaleRange"] = valheimPlusConfiguration.difficultyScaleRange.ToString();
+            data["Game"]["disablePortals"] = valheimPlusConfiguration.disablePortals.ToString().ToLower();
+            #endregion Game
 
             // Gathering
             data["Gathering"]["enabled"] = valheimPlusConfiguration.gatheringSettingsEnabled.ToString().ToLower();

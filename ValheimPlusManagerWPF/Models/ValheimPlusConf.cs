@@ -95,6 +95,7 @@
         public int setFixedPlayerCountTo { get; set; } = 0;
         //public float autoSaveInterval { get; set; } = 1200;
         public int difficultyScaleRange { get; set; } = 200;
+        public bool disablePortals { get; set; } = false;
 
         // Hotkeys
         public bool hotkeysSettingsEnabled { get; set; } = false;
