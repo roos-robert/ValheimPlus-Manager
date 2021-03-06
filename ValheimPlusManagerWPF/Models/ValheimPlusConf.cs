@@ -146,6 +146,7 @@
         public float baseAutoPickUpRange { get; set; } = 2;
         public bool disableCameraShake { get; set; } = false;
         public float baseUnarmedDamage { get; set; } = 0;
+        public bool cropNotifier { get; set; } = false;
 
         // Server
         public bool serverSettingsEnabled { get; set; } = false;

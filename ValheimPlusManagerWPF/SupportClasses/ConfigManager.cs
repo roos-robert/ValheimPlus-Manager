@@ -506,6 +506,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.baseUnarmedDamage = baseUnarmedDamage;
             }
+            if (bool.TryParse(data["Player"]["cropNotifier"], out bool cropNotifier))
+            {
+                valheimPlusConfiguration.cropNotifier = cropNotifier;
+            }
             #endregion Player
 
             #region Server
@@ -974,13 +978,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Map"]["preventPlayerFromTurningOffPublicPosition"] = valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition.ToString().ToLower();
             data["Map"]["removeDeathPinOnTombstoneEmpty"] = valheimPlusConfiguration.removeDeathPinOnTombstoneEmpty.ToString().ToLower();
 
-            // Player
+            #region Player
             data["Player"]["enabled"] = valheimPlusConfiguration.playerSettingsEnabled.ToString().ToLower();
             data["Player"]["baseMaximumWeight"] = valheimPlusConfiguration.baseMaximumWeight.ToString();
             data["Player"]["baseMegingjordBuff"] = valheimPlusConfiguration.baseMegingjordBuff.ToString();
             data["Player"]["baseAutoPickUpRange"] = valheimPlusConfiguration.baseAutoPickUpRange.ToString();
             data["Player"]["disableCameraShake"] = valheimPlusConfiguration.disableCameraShake.ToString().ToLower();
             data["Player"]["baseUnarmedDamage"] = valheimPlusConfiguration.baseUnarmedDamage.ToString();
+            data["Player"]["cropNotifier"] = valheimPlusConfiguration.cropNotifier.ToString().ToLower();
+            #endregion Player
 
             // Server
             data["Server"]["enabled"] = valheimPlusConfiguration.serverSettingsEnabled.ToString().ToLower();

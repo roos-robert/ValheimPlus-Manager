@@ -266,6 +266,7 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding baseAutoPickUpRange}" materialDesign:HintAssist.Hint="Increase auto pickup range of all items" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding baseUnarmedDamage}" materialDesign:HintAssist.Hint="The base unarmed damage multiplied by your skill level" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <CheckBox Content="Disable all types of camera shake" IsChecked="{Binding disableCameraShake}" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Do not permit to place a crop within the grow radius of another crop" IsChecked="{Binding cropNotifier}" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding serverSettingsEnabled}" Header="Server">
