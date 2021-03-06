@@ -118,6 +118,7 @@ namespace ValheimPlusManager
                     statusSnackBar.MessageQueue.Enqueue("Success! Game client updated to latest version");
                     installClientUpdateButton.Content = "Update installed!";
                     installClientUpdateButton.IsEnabled = false;
+                    statusLabel.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -250,6 +251,7 @@ namespace ValheimPlusManager
                     statusSnackBar.MessageQueue.Enqueue("Success! Server client updated to latest version");
                     installServerUpdateButton.Content = "Update installed!";
                     installServerUpdateButton.IsEnabled = false;
+                    statusLabel.Visibility = Visibility.Hidden;
                 }
             }
         }

@@ -1,4 +1,6 @@
-﻿namespace ValheimPlusManager.SupportClasses
+﻿using System;
+
+namespace ValheimPlusManager.SupportClasses
 {
     public sealed class FileManager
     {
@@ -15,6 +17,13 @@
             {
                 System.IO.File.Copy(file_name, System.IO.Path.Combine(toPath, file_name.Substring(fromPath.Length + 1)), true);
             }
+
+            return true;
+        }
+
+        public static bool OldConfigBackup(string installationPath)
+        {
+            System.IO.File.Exists(String.Format("{0}{1}", installationPath, "BepInEx/config/valheim_plus.cfg"));
 
             return true;
         }
