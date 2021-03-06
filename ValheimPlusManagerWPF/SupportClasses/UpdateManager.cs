@@ -19,10 +19,10 @@ namespace ValheimPlusManager.SupportClasses
             System.Diagnostics.FileVersionInfo gameClientVersion =
                 System.Diagnostics.FileVersionInfo.GetVersionInfo(String.Format("{0}BepInEx/plugins/ValheimPlus.dll", settings.ClientInstallationPath));
 
-            if(gameClientVersion.FileVersion != settings.ValheimPlusGameClientVersion)
+            if (gameClientVersion.FileVersion != settings.ValheimPlusGameClientVersion)
             {
                 // This is a special case, since versions before 0.9 reported all clients as 1.0.0.0
-                if(gameClientVersion.FileVersion == "1.0.0.0")
+                if (gameClientVersion.FileVersion == "1.0.0.0")
                 {
                     settings.ValheimPlusGameClientVersion = "0.9.0";
                     SettingsDAL.UpdateSettings(settings, true);
