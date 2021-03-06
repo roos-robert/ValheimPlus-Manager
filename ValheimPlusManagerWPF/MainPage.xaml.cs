@@ -1,20 +1,10 @@
 ﻿using MaterialDesignThemes.Wpf;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ValheimPlusManager.Data;
 using ValheimPlusManager.Models;
 using ValheimPlusManager.SupportClasses;
@@ -46,12 +36,8 @@ namespace ValheimPlusManager
                 // Fetching path settings
                 Settings = SettingsDAL.GetSettings();
 
-                //System.Diagnostics.FileVersionInfo fvo =
-                //System.Diagnostics.FileVersionInfo.GetVersionInfo(String.Format("{0}BepInEx/plugins/ValheimPlus.dll", Settings.ClientInstallationPath));
-
-                //string versionNumber = fvo.FileVersion;
-
-                //statusLabel.Content = versionNumber;
+                // Fetch current versions and update settings if needed
+                UpdateManager.CheckCurrentVersion(Settings);
 
                 // Checking paths and installation status
                 UISettingsInit();
@@ -118,6 +104,7 @@ namespace ValheimPlusManager
                     statusSnackBar.MessageQueue.Enqueue("Success! Game client updated to latest version");
                     installClientUpdateButton.Content = "Update installed!";
                     installClientUpdateButton.IsEnabled = false;
+                    statusLabel.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -250,6 +237,7 @@ namespace ValheimPlusManager
                     statusSnackBar.MessageQueue.Enqueue("Success! Server client updated to latest version");
                     installServerUpdateButton.Content = "Update installed!";
                     installServerUpdateButton.IsEnabled = false;
+                    statusLabel.Visibility = Visibility.Hidden;
                 }
             }
         }

@@ -1,12 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
-using System;
-using System.Diagnostics;
-using System.IO;
 using System.Windows;
-using System.Windows.Media;
-using ValheimPlusManager.Data;
-using ValheimPlusManager.Models;
-using ValheimPlusManager.SupportClasses;
 
 namespace ValheimPlusManager
 {

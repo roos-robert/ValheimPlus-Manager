@@ -336,6 +336,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.difficultyScaleRange = difficultyScaleRange;
             }
+            if (bool.TryParse(data["Game"]["disablePortals"], out bool disablePortals))
+            {
+                valheimPlusConfiguration.disablePortals = disablePortals;
+            }
             #endregion Game
 
             #region Gathering
@@ -382,6 +386,10 @@ namespace ValheimPlusManager.SupportClasses
             if (float.TryParse(data["Gathering"]["chitin"], NumberStyles.Any, ci, out float chitinGathering))
             {
                 valheimPlusConfiguration.chitinGathering = chitinGathering;
+            }
+            if (float.TryParse(data["Gathering"]["dropChance"], NumberStyles.Any, ci, out float dropChanceGathering))
+            {
+                valheimPlusConfiguration.dropChanceGathering = dropChanceGathering;
             }
             #endregion Gathering
 
@@ -497,6 +505,10 @@ namespace ValheimPlusManager.SupportClasses
             if (float.TryParse(data["Player"]["baseUnarmedDamage"], NumberStyles.Any, ci, out float baseUnarmedDamage))
             {
                 valheimPlusConfiguration.baseUnarmedDamage = baseUnarmedDamage;
+            }
+            if (bool.TryParse(data["Player"]["cropNotifier"], out bool cropNotifier))
+            {
+                valheimPlusConfiguration.cropNotifier = cropNotifier;
             }
             #endregion Player
 
@@ -687,6 +699,10 @@ namespace ValheimPlusManager.SupportClasses
             if (int.TryParse(data["StructuralIntegrity"]["hardWood"], out int hardWood))
             {
                 valheimPlusConfiguration.hardWood = hardWood;
+            }
+            if (bool.TryParse(data["StructuralIntegrity"]["disableDamageToPlayerStructures"], out bool disableDamageToPlayerStructures))
+            {
+                valheimPlusConfiguration.disableDamageToPlayerStructures = disableDamageToPlayerStructures;
             }
             #endregion StructuralIntegrity
 
@@ -914,15 +930,17 @@ namespace ValheimPlusManager.SupportClasses
             data["Furnace"]["autoDeposit"] = valheimPlusConfiguration.autoDepositFurnace.ToString().ToLower();
             data["Furnace"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
 
-            // Game
+            #region Game
             data["Game"]["enabled"] = valheimPlusConfiguration.gameSettingsEnabled.ToString().ToLower();
             data["Game"]["gameDifficultyDamageScale"] = valheimPlusConfiguration.gameDifficultyDamageScale.ToString();
             data["Game"]["gameDifficultyHealthScale"] = valheimPlusConfiguration.gameDifficultyHealthScale.ToString();
             data["Game"]["extraPlayerCountNearby"] = valheimPlusConfiguration.extraPlayerCountNearby.ToString();
             data["Game"]["setFixedPlayerCountTo"] = valheimPlusConfiguration.setFixedPlayerCountTo.ToString();
             data["Game"]["difficultyScaleRange"] = valheimPlusConfiguration.difficultyScaleRange.ToString();
+            data["Game"]["disablePortals"] = valheimPlusConfiguration.disablePortals.ToString().ToLower();
+            #endregion Game
 
-            // Gathering
+            #region Gathering
             data["Gathering"]["enabled"] = valheimPlusConfiguration.gatheringSettingsEnabled.ToString().ToLower();
             data["Gathering"]["wood"] = valheimPlusConfiguration.woodGathering.ToString();
             data["Gathering"]["stone"] = valheimPlusConfiguration.stoneGathering.ToString();
@@ -934,6 +952,8 @@ namespace ValheimPlusManager.SupportClasses
             data["Gathering"]["copperOre"] = valheimPlusConfiguration.copperOreGathering.ToString();
             data["Gathering"]["silverOre"] = valheimPlusConfiguration.silverOreGathering.ToString();
             data["Gathering"]["chitin"] = valheimPlusConfiguration.chitinGathering.ToString();
+            data["Gathering"]["dropChance"] = valheimPlusConfiguration.dropChanceGathering.ToString();
+            #endregion Gathering
 
             // Hotkeys
             data["Hotkeys"]["enabled"] = valheimPlusConfiguration.hotkeysSettingsEnabled.ToString().ToLower();
@@ -962,13 +982,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Map"]["preventPlayerFromTurningOffPublicPosition"] = valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition.ToString().ToLower();
             data["Map"]["removeDeathPinOnTombstoneEmpty"] = valheimPlusConfiguration.removeDeathPinOnTombstoneEmpty.ToString().ToLower();
 
-            // Player
+            #region Player
             data["Player"]["enabled"] = valheimPlusConfiguration.playerSettingsEnabled.ToString().ToLower();
             data["Player"]["baseMaximumWeight"] = valheimPlusConfiguration.baseMaximumWeight.ToString();
             data["Player"]["baseMegingjordBuff"] = valheimPlusConfiguration.baseMegingjordBuff.ToString();
             data["Player"]["baseAutoPickUpRange"] = valheimPlusConfiguration.baseAutoPickUpRange.ToString();
             data["Player"]["disableCameraShake"] = valheimPlusConfiguration.disableCameraShake.ToString().ToLower();
             data["Player"]["baseUnarmedDamage"] = valheimPlusConfiguration.baseUnarmedDamage.ToString();
+            data["Player"]["cropNotifier"] = valheimPlusConfiguration.cropNotifier.ToString().ToLower();
+            #endregion Player
 
             // Server
             data["Server"]["enabled"] = valheimPlusConfiguration.serverSettingsEnabled.ToString().ToLower();
@@ -1018,12 +1040,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
             data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString().ToLower();
 
-            // StructuralIntegrity
+            #region StructuralIntegrity
             data["StructuralIntegrity"]["enabled"] = valheimPlusConfiguration.structuralIntegritySettingsEnabled.ToString().ToLower();
             data["StructuralIntegrity"]["wood"] = valheimPlusConfiguration.wood.ToString();
             data["StructuralIntegrity"]["stone"] = valheimPlusConfiguration.stone.ToString();
             data["StructuralIntegrity"]["iron"] = valheimPlusConfiguration.iron.ToString();
             data["StructuralIntegrity"]["hardWood"] = valheimPlusConfiguration.hardWood.ToString();
+            data["StructuralIntegrity"]["disableStructuralIntegrity"] = valheimPlusConfiguration.disableStructuralIntegrity.ToString().ToLower();
+            data["StructuralIntegrity"]["disableDamageToPlayerStructures"] = valheimPlusConfiguration.disableDamageToPlayerStructures.ToString().ToLower();
+            #endregion StructuralIntegrity
 
             // Experience
             data["Experience"]["enabled"] = valheimPlusConfiguration.experienceSettingsEnabled.ToString().ToLower();

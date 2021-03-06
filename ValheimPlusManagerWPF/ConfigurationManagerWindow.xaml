@@ -29,7 +29,7 @@
             <ColumnDefinition Width="275" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        
+
         <Grid Grid.Row="0" Grid.Column="0">
             <Label Content="Settings to enable" Style="{StaticResource MaterialDesignLabel}" FontSize="24" Margin="10,1,0,0"/>
             <ListView Grid.Column="0" Grid.ColumnSpan="2">
@@ -203,6 +203,7 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding extraPlayerCountNearby}" materialDesign:HintAssist.Hint="Adds additional players to the difficulty calculation in multiplayer unrelated to the actual amount" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding setFixedPlayerCountTo}" materialDesign:HintAssist.Hint="Sets the nearby player count always to this value + extraPlayerCountNearby" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding difficultyScaleRange}" materialDesign:HintAssist.Hint="The range in meters at which other players count towards nearby players for the difficulty scale" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
+                        <CheckBox Content="Disable all portals" IsChecked="{Binding disablePortals}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding hotkeysSettingsEnabled}" Header="Hotkeys">
@@ -235,6 +236,7 @@
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding copperOreGathering}" materialDesign:HintAssist.Hint="Copper ore" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,420,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding silverOreGathering}" materialDesign:HintAssist.Hint="Silver ore" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,470,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding chitinGathering}" materialDesign:HintAssist.Hint="Chitin" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,520,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="530" Text="{Binding dropChanceGathering}" materialDesign:HintAssist.Hint="Modify the chance to drop resources from resource nodes affected by this category" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,570,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding kilnSettingsEnabled}" Header="Kiln">
@@ -264,6 +266,7 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding baseAutoPickUpRange}" materialDesign:HintAssist.Hint="Increase auto pickup range of all items" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding baseUnarmedDamage}" materialDesign:HintAssist.Hint="The base unarmed damage multiplied by your skill level" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <CheckBox Content="Disable all types of camera shake" IsChecked="{Binding disableCameraShake}" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Do not permit to place a crop within the grow radius of another crop" IsChecked="{Binding cropNotifier}" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding serverSettingsEnabled}" Header="Server">
@@ -339,7 +342,8 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding stone}" materialDesign:HintAssist.Hint="Stone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,140,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding iron}" materialDesign:HintAssist.Hint="Iron" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,190,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding hardWood}" materialDesign:HintAssist.Hint="Hardwood" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,240,0,0" />
-                        <CheckBox Content="Disables the entire structural integrity system and allows for placement in free air, does not prevent building damage." IsChecked="{Binding disableStructuralIntegrity}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disables the entire structural integrity system and allows for placement in free air, does not prevent building damage" IsChecked="{Binding disableStructuralIntegrity}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disables any damage from anything to all player built structures" IsChecked="{Binding disableDamageToPlayerStructures}" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding experienceSettingsEnabled}" Header="Experience">
@@ -383,7 +387,7 @@
                 </TabItem>
             </TabControl>
         </Grid>
-        
+
         <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Border BorderThickness="0,1,0,0" BorderBrush="#FFE5E5E5" Grid.Row="1" Grid.ColumnSpan="2" />
             <Button x:Name="saveChangesButton" Grid.Row="1" Grid.Column="1" Content="Save all changes" Margin="13" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="saveChangesButton_Click"/>

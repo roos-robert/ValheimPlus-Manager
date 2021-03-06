@@ -1,10 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ValheimPlusManager.SupportClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ValheimPlusManager.SupportClasses.Tests
 {
@@ -15,7 +10,7 @@ namespace ValheimPlusManager.SupportClasses.Tests
         public void CopyFromToServerBackupTest()
         {
             bool success = FileManager.CopyFromTo(String.Format("C:/Users/{0}/AppData/LocalLow/IronGate", Environment.UserName), String.Format("C:/ValheimServerBackups/{0}", DateTime.Now.ToString("yyyy-MM-dd-HHmm")));
-            
+
             Assert.IsTrue(success);
         }
 

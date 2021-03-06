@@ -95,6 +95,7 @@
         public int setFixedPlayerCountTo { get; set; } = 0;
         //public float autoSaveInterval { get; set; } = 1200;
         public int difficultyScaleRange { get; set; } = 200;
+        public bool disablePortals { get; set; } = false;
 
         // Hotkeys
         public bool hotkeysSettingsEnabled { get; set; } = false;
@@ -121,6 +122,7 @@
         public float copperOreGathering { get; set; } = 0;
         public float silverOreGathering { get; set; } = 0;
         public float chitinGathering { get; set; } = 0;
+        public float dropChanceGathering { get; set; } = 0;
 
         // Kiln
         public bool kilnSettingsEnabled { get; set; } = false;
@@ -144,6 +146,7 @@
         public float baseAutoPickUpRange { get; set; } = 2;
         public bool disableCameraShake { get; set; } = false;
         public float baseUnarmedDamage { get; set; } = 0;
+        public bool cropNotifier { get; set; } = false;
 
         // Server
         public bool serverSettingsEnabled { get; set; } = false;
@@ -201,6 +204,7 @@
         public float iron { get; set; } = 0;
         public float hardWood { get; set; } = 0;
         public bool disableStructuralIntegrity { get; set; } = false;
+        public bool disableDamageToPlayerStructures { get; set; } = false;
 
         // Experience
         public bool experienceSettingsEnabled { get; set; } = false;
