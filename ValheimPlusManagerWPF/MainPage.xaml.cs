@@ -62,9 +62,11 @@ namespace ValheimPlusManager
                 if (success)
                 {
                     Settings = SettingsDAL.GetSettings();
+                    statusLabel.Foreground = Brushes.Green;
                     clientInstalledLabel.Content = String.Format("ValheimPlus {0} installed on client", Settings.ValheimPlusGameClientVersion);
                     statusSnackBar.MessageQueue.Enqueue("Success! Game client updated to latest version");
                     installClientUpdateButton.IsEnabled = false;
+                    UISettingsInit();
                 }
             }
         }
@@ -192,6 +194,7 @@ namespace ValheimPlusManager
                         installServerButton.Content = "Reinstall ValheimPlus on server";
 
                         statusSnackBar.MessageQueue.Enqueue("Success! Server client has been installed");
+                        UISettingsInit();
                     }
                 }
                 catch (Exception)

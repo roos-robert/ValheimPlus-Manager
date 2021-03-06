@@ -12,39 +12,53 @@ namespace ValheimPlusManager.SupportClasses
     {
         public static void CheckCurrentVersion(Settings settings)
         {
-            System.Diagnostics.FileVersionInfo serverClientVersion =
-                System.Diagnostics.FileVersionInfo.GetVersionInfo(String.Format("{0}BepInEx/plugins/ValheimPlus.dll", settings.ServerInstallationPath));
-            settings.ValheimPlusServerClientVersion = serverClientVersion.FileVersion;
-
-            System.Diagnostics.FileVersionInfo gameClientVersion =
-                System.Diagnostics.FileVersionInfo.GetVersionInfo(String.Format("{0}BepInEx/plugins/ValheimPlus.dll", settings.ClientInstallationPath));
-
-            if (gameClientVersion.FileVersion != settings.ValheimPlusGameClientVersion)
+            try
             {
-                // This is a special case, since versions before 0.9 reported all clients as 1.0.0.0
-                if (gameClientVersion.FileVersion == "1.0.0.0")
+                System.Diagnostics.FileVersionInfo serverClientVersion =
+                System.Diagnostics.FileVersionInfo.GetVersionInfo(String.Format("{0}BepInEx/plugins/ValheimPlus.dll", settings.ServerInstallationPath));
+                settings.ValheimPlusServerClientVersion = serverClientVersion.FileVersion;
+
+                if (serverClientVersion.FileVersion != settings.ValheimPlusServerClientVersion)
                 {
-                    settings.ValheimPlusGameClientVersion = "0.9.0";
-                    SettingsDAL.UpdateSettings(settings, true);
-                }
-                else
-                {
-                    SettingsDAL.UpdateSettings(settings, true);
+                    // This is a special case, since versions before 0.9 reported all clients as 1.0.0.0
+                    if (serverClientVersion.FileVersion == "1.0.0.0")
+                    {
+                        settings.ValheimPlusServerClientVersion = "0.9.0";
+                        SettingsDAL.UpdateSettings(settings, false);
+                    }
+                    else
+                    {
+                        SettingsDAL.UpdateSettings(settings, false);
+                    }
                 }
             }
-
-            if (serverClientVersion.FileVersion != settings.ValheimPlusServerClientVersion)
+            catch (Exception)
             {
-                // This is a special case, since versions before 0.9 reported all clients as 1.0.0.0
-                if (serverClientVersion.FileVersion == "1.0.0.0")
+                // ToDo
+            }
+
+            try
+            {
+                System.Diagnostics.FileVersionInfo gameClientVersion =
+                System.Diagnostics.FileVersionInfo.GetVersionInfo(String.Format("{0}BepInEx/plugins/ValheimPlus.dll", settings.ClientInstallationPath));
+
+                if (gameClientVersion.FileVersion != settings.ValheimPlusGameClientVersion)
                 {
-                    settings.ValheimPlusServerClientVersion = "0.9.0";
-                    SettingsDAL.UpdateSettings(settings, false);
+                    // This is a special case, since versions before 0.9 reported all clients as 1.0.0.0
+                    if (gameClientVersion.FileVersion == "1.0.0.0")
+                    {
+                        settings.ValheimPlusGameClientVersion = "0.9.0";
+                        SettingsDAL.UpdateSettings(settings, true);
+                    }
+                    else
+                    {
+                        SettingsDAL.UpdateSettings(settings, true);
+                    }
                 }
-                else
-                {
-                    SettingsDAL.UpdateSettings(settings, false);
-                }
+            }
+            catch (Exception)
+            {
+                // ToDo
             }
         }
 
