@@ -102,7 +102,7 @@ namespace ValheimPlusManager
                 if (success)
                 {
                     Settings = SettingsDAL.GetSettings();
-                    clientInstalledLabel.Content = String.Format("ValheimPlus {0} installed on game client", Settings.ValheimPlusServerClientVersion);
+                    clientInstalledLabel.Content = String.Format("ValheimPlus {0} installed on game client", Settings.ValheimPlusGameClientVersion);
                     statusSnackBar.MessageQueue.Enqueue("Success! Game client updated to latest version");
                     installClientUpdateButton.Content = "Update installed!";
                     installClientUpdateButton.IsEnabled = false;
