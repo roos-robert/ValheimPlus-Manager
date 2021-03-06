@@ -126,7 +126,7 @@ namespace ValheimPlusManager
                 var modActive = File.Exists(String.Format("{0}winhttp.dll", Settings.ClientInstallationPath));
                 if (modActive)
                 {
-                    File.Move(String.Format("{0}winhttp.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath));
+                    File.Move(String.Format("{0}winhttp.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath), true);
                     enableDisableValheimPlusGameClientButton.Content = "Enable ValheimPlus";
                     enableDisableValheimPlusGameClientButton.Style = Application.Current.TryFindResource("MaterialDesignRaisedButton") as Style;
 
@@ -134,7 +134,7 @@ namespace ValheimPlusManager
                 }
                 else
                 {
-                    File.Move(String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp.dll", Settings.ClientInstallationPath));
+                    File.Move(String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp.dll", Settings.ClientInstallationPath), true);
                     enableDisableValheimPlusGameClientButton.Content = "Disable ValheimPlus";
                     enableDisableValheimPlusGameClientButton.Style = Application.Current.TryFindResource("MaterialDesignOutlinedButton") as Style;
 
