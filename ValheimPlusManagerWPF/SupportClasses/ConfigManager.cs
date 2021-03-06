@@ -700,6 +700,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.hardWood = hardWood;
             }
+            if (bool.TryParse(data["StructuralIntegrity"]["disableDamageToPlayerStructures"], out bool disableDamageToPlayerStructures))
+            {
+                valheimPlusConfiguration.disableDamageToPlayerStructures = disableDamageToPlayerStructures;
+            }
             #endregion StructuralIntegrity
 
             #region Experience
@@ -1036,12 +1040,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
             data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString().ToLower();
 
-            // StructuralIntegrity
+            #region StructuralIntegrity
             data["StructuralIntegrity"]["enabled"] = valheimPlusConfiguration.structuralIntegritySettingsEnabled.ToString().ToLower();
             data["StructuralIntegrity"]["wood"] = valheimPlusConfiguration.wood.ToString();
             data["StructuralIntegrity"]["stone"] = valheimPlusConfiguration.stone.ToString();
             data["StructuralIntegrity"]["iron"] = valheimPlusConfiguration.iron.ToString();
             data["StructuralIntegrity"]["hardWood"] = valheimPlusConfiguration.hardWood.ToString();
+            data["StructuralIntegrity"]["disableStructuralIntegrity"] = valheimPlusConfiguration.disableStructuralIntegrity.ToString().ToLower();
+            data["StructuralIntegrity"]["disableDamageToPlayerStructures"] = valheimPlusConfiguration.disableDamageToPlayerStructures.ToString().ToLower();
+            #endregion StructuralIntegrity
 
             // Experience
             data["Experience"]["enabled"] = valheimPlusConfiguration.experienceSettingsEnabled.ToString().ToLower();

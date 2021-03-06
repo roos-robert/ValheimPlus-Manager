@@ -342,7 +342,8 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding stone}" materialDesign:HintAssist.Hint="Stone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,140,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding iron}" materialDesign:HintAssist.Hint="Iron" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,190,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding hardWood}" materialDesign:HintAssist.Hint="Hardwood" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,240,0,0" />
-                        <CheckBox Content="Disables the entire structural integrity system and allows for placement in free air, does not prevent building damage." IsChecked="{Binding disableStructuralIntegrity}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disables the entire structural integrity system and allows for placement in free air, does not prevent building damage" IsChecked="{Binding disableStructuralIntegrity}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disables any damage from anything to all player built structures" IsChecked="{Binding disableDamageToPlayerStructures}" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding experienceSettingsEnabled}" Header="Experience">
