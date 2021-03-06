@@ -29,7 +29,7 @@
             <ColumnDefinition Width="275" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        
+
         <Grid Grid.Row="0" Grid.Column="0">
             <Label Content="Settings to enable" Style="{StaticResource MaterialDesignLabel}" FontSize="24" Margin="10,1,0,0"/>
             <ListView Grid.Column="0" Grid.ColumnSpan="2">
@@ -236,6 +236,7 @@
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding copperOreGathering}" materialDesign:HintAssist.Hint="Copper ore" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,420,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding silverOreGathering}" materialDesign:HintAssist.Hint="Silver ore" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,470,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding chitinGathering}" materialDesign:HintAssist.Hint="Chitin" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,520,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="530" Text="{Binding dropChanceGathering}" materialDesign:HintAssist.Hint="Modify the chance to drop resources from resource nodes affected by this category" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,570,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding kilnSettingsEnabled}" Header="Kiln">
@@ -384,7 +385,7 @@
                 </TabItem>
             </TabControl>
         </Grid>
-        
+
         <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Border BorderThickness="0,1,0,0" BorderBrush="#FFE5E5E5" Grid.Row="1" Grid.ColumnSpan="2" />
             <Button x:Name="saveChangesButton" Grid.Row="1" Grid.Column="1" Content="Save all changes" Margin="13" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="saveChangesButton_Click"/>

@@ -122,6 +122,7 @@
         public float copperOreGathering { get; set; } = 0;
         public float silverOreGathering { get; set; } = 0;
         public float chitinGathering { get; set; } = 0;
+        public float dropChanceGathering { get; set; } = 0;
 
         // Kiln
         public bool kilnSettingsEnabled { get; set; } = false;

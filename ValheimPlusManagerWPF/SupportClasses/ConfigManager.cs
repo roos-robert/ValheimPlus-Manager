@@ -387,6 +387,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.chitinGathering = chitinGathering;
             }
+            if (float.TryParse(data["Gathering"]["dropChance"], NumberStyles.Any, ci, out float dropChanceGathering))
+            {
+                valheimPlusConfiguration.dropChanceGathering = dropChanceGathering;
+            }
             #endregion Gathering
 
             #region Hotkeys
@@ -928,7 +932,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Game"]["disablePortals"] = valheimPlusConfiguration.disablePortals.ToString().ToLower();
             #endregion Game
 
-            // Gathering
+            #region Gathering
             data["Gathering"]["enabled"] = valheimPlusConfiguration.gatheringSettingsEnabled.ToString().ToLower();
             data["Gathering"]["wood"] = valheimPlusConfiguration.woodGathering.ToString();
             data["Gathering"]["stone"] = valheimPlusConfiguration.stoneGathering.ToString();
@@ -940,6 +944,8 @@ namespace ValheimPlusManager.SupportClasses
             data["Gathering"]["copperOre"] = valheimPlusConfiguration.copperOreGathering.ToString();
             data["Gathering"]["silverOre"] = valheimPlusConfiguration.silverOreGathering.ToString();
             data["Gathering"]["chitin"] = valheimPlusConfiguration.chitinGathering.ToString();
+            data["Gathering"]["dropChance"] = valheimPlusConfiguration.dropChanceGathering.ToString();
+            #endregion Gathering
 
             // Hotkeys
             data["Hotkeys"]["enabled"] = valheimPlusConfiguration.hotkeysSettingsEnabled.ToString().ToLower();
