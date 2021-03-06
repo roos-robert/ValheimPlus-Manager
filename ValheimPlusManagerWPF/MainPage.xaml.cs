@@ -37,10 +37,13 @@ namespace ValheimPlusManager
                 Settings = SettingsDAL.GetSettings();
 
                 // Fetch current versions and update settings if needed
-                UpdateManager.CheckCurrentVersion(Settings);
+                bool success = UpdateManager.CheckCurrentVersion(Settings);
 
-                // Checking paths and installation status
-                UISettingsInit();
+                if(success)
+                {
+                    // Checking paths and installation status
+                    UISettingsInit();
+                }
             }
             catch (Exception)
             {

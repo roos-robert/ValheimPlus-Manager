@@ -16,7 +16,7 @@ namespace ValheimPlusManager.Data
             }
         }
 
-        public static void UpdateSettings(Settings settings, bool manageClient)
+        public static bool UpdateSettings(Settings settings, bool manageClient)
         {
             XmlDocument xml = new XmlDocument();
             xml.Load("Data/Settings.xml");
@@ -39,6 +39,8 @@ namespace ValheimPlusManager.Data
             }
 
             xml.Save("Data/Settings.xml");
+
+            return true;
         }
 
         private SettingsDAL()
