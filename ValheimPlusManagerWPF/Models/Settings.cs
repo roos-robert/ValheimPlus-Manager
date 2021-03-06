@@ -11,5 +11,6 @@ namespace ValheimPlusManager.Models
         public string ServerPath { get; set; }
         public string ValheimPlusGameClientVersion { get; set; }
         public string ValheimPlusServerClientVersion { get; set; }
+        public string ValheimPlusManagerVersion { get; set; }
     }
 }

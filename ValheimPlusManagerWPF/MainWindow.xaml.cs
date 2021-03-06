@@ -1,5 +1,8 @@
 ﻿using MaterialDesignThemes.Wpf;
 using System.Windows;
+using ValheimPlusManager.Data;
+using ValheimPlusManager.Models;
+using ValheimPlusManager.SupportClasses;
 
 namespace ValheimPlusManager
 {
@@ -8,9 +11,26 @@ namespace ValheimPlusManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Settings Settings { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+
+            // Fetching path settings
+            Settings = SettingsDAL.GetSettings();
+
+            managerVersionTextBlock.Text = "Version 0.3.3";
+
+            //ValheimPlusUpdate valheimPlusUpdate = await UpdateManager.CheckForValheimPlusUpdatesAsync(Settings.ValheimPlusGameClientVersion);
+
+            //if (valheimPlusUpdate.NewVersion)
+            //{
+            //}
+            //else
+            //{
+            //    //
+            //}
 
             _mainFrame.Navigate(new MainPage());
         }
