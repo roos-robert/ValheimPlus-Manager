@@ -46,5 +46,11 @@ namespace ValheimPlusManager
             _mainFrame.Navigate(new MainPage());
             DrawerHost.IsLeftDrawerOpen = false;
         }
+
+        private void otherModsNavigateButton_Click(object sender, RoutedEventArgs e)
+        {
+            _mainFrame.Navigate(new OtherModsPage());
+            DrawerHost.IsLeftDrawerOpen = false;
+        }
     }
 }

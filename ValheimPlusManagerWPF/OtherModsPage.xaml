@@ -17,6 +17,16 @@
         FontFamily="{DynamicResource MaterialDesignFont}">
 
     <Grid>
-        
+        <Label Content="Coming soon..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20" FontSize="26"/>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="77*" />
+            <ColumnDefinition Width="23*"/>
+        </Grid.ColumnDefinitions>
     </Grid>
 </Page>

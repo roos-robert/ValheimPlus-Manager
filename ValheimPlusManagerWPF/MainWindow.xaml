@@ -34,6 +34,7 @@
                 </Grid>
                 <Button x:Name="overviewNavigateButton" Content="Overview" Margin="0,25,0,10" Click="overviewNavigateButton_Click"/>
                 <Button x:Name="serverListManagerNavigateButton" Content="Server list manager" Margin="0,0,0,10" Click="serverListManagerNavigateButton_Click"/>
+                <Button x:Name="otherModsNavigateButton" Content="Other mods" Margin="0,0,0,10" Click="otherModsNavigateButton_Click"/>
             </StackPanel>
         </materialDesign:DrawerHost.LeftDrawerContent>
         
@@ -46,7 +47,7 @@
                     </Grid.ColumnDefinitions>
                     <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
                                   IsChecked="{Binding IsLeftDrawerOpen, ElementName=DrawerHost}"
-                                  HorizontalAlignment="Left"/>
+                                  HorizontalAlignment="Left" Cursor="Hand"/>
                     <TextBlock x:Name="WebSource"
                                HorizontalAlignment="Right"
                                VerticalAlignment="Center" 
