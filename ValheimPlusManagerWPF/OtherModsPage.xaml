@@ -18,6 +18,12 @@
 
     <Grid>
         <Label Content="Coming soon..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20" FontSize="26"/>
+        <Button Content="Install AnyPortal on Client" HorizontalAlignment="Left" Margin="20,86,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Label x:Name="statusLabel" Content="" HorizontalAlignment="Left" Margin="16,0,0,0" VerticalAlignment="Center" FontSize="14"/>
+            <materialDesign:Snackbar x:Name="statusSnackBar" Message="Status message" IsActive="False" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="2" Margin="0"/>
+        </Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>

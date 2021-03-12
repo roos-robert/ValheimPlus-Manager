@@ -42,6 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Data\OtherMods\PlaceFilesForOtherModsHere.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Settings.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
