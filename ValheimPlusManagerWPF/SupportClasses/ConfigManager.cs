@@ -316,7 +316,7 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.fermenterItemsProduced = fermenterItemsProduced;
             }
-            if (bool.TryParse(data["Fermenter"]["showFermenterDuration"], out bool showFermenterDuration))
+            if (bool.TryParse(data["Fermenter"]["showDuration"], out bool showFermenterDuration))
             {
                 valheimPlusConfiguration.showFermenterDuration = showFermenterDuration;
             }
@@ -1096,7 +1096,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Fermenter"]["enabled"] = valheimPlusConfiguration.fermenterSettingsEnabled.ToString().ToLower();
             data["Fermenter"]["fermenterDuration"] = valheimPlusConfiguration.fermenterDuration.ToString();
             data["Fermenter"]["fermenterItemsProduced"] = valheimPlusConfiguration.fermenterItemsProduced.ToString();
-            data["Fermenter"]["showFermenterDuration"] = valheimPlusConfiguration.showFermenterDuration.ToString().ToLower();
+            data["Fermenter"]["showDuration"] = valheimPlusConfiguration.showFermenterDuration.ToString().ToLower();
 
             #region FireSource
             data["FireSource"]["enabled"] = valheimPlusConfiguration.fireSourceSettingsEnabled.ToString().ToLower();
