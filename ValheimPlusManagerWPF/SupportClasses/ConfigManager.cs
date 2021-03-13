@@ -1041,6 +1041,9 @@ namespace ValheimPlusManager.SupportClasses
             data["Player"]["disableCameraShake"] = valheimPlusConfiguration.disableCameraShake.ToString().ToLower();
             data["Player"]["baseUnarmedDamage"] = valheimPlusConfiguration.baseUnarmedDamage.ToString();
             data["Player"]["cropNotifier"] = valheimPlusConfiguration.cropNotifier.ToString().ToLower();
+            data["Player"]["restSecondsPerComfortLevel"] = valheimPlusConfiguration.restSecondsPerComfortLevel.ToString();
+            data["Player"]["deathPenaltyMultiplier"] = valheimPlusConfiguration.deathPenaltyMultiplier.ToString();
+            data["Player"]["autoRepair"] = valheimPlusConfiguration.autoRepair.ToString().ToLower();
             #endregion Player
 
             #region Server
