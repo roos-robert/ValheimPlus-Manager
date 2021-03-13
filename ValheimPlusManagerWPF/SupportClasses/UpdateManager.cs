@@ -130,7 +130,7 @@ namespace ValheimPlusManager.SupportClasses
                 string extractPath = @"Data/ValheimPlusGameClient/Extracted";
 
                 await Task.Run(() => ZipFile.ExtractToDirectory(zipPath, extractPath, true));
-                System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath));
+                System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
 
                 try
                 {
@@ -149,7 +149,7 @@ namespace ValheimPlusManager.SupportClasses
                 string extractPath = @"Data/ValheimPlusServerClient/Extracted";
 
                 await Task.Run(() => ZipFile.ExtractToDirectory(zipPath, extractPath, true));
-                System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath));
+                System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
 
                 try
                 {
