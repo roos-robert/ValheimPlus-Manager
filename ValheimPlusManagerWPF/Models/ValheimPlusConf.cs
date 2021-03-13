@@ -219,6 +219,7 @@
         public float hardWood { get; set; } = 0;
         public bool disableStructuralIntegrity { get; set; } = false;
         public bool disableDamageToPlayerStructures { get; set; } = false;
+        public bool disableDamageToPlayerBoats { get; set; } = false;
 
         // Experience
         public bool experienceSettingsEnabled { get; set; } = false;

@@ -744,6 +744,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.disableDamageToPlayerStructures = disableDamageToPlayerStructures;
             }
+            if (bool.TryParse(data["StructuralIntegrity"]["disableDamageToPlayerBoats"], out bool disableDamageToPlayerBoats))
+            {
+                valheimPlusConfiguration.disableDamageToPlayerBoats = disableDamageToPlayerBoats;
+            }
             #endregion StructuralIntegrity
 
             #region Experience
@@ -1103,6 +1107,7 @@ namespace ValheimPlusManager.SupportClasses
             data["StructuralIntegrity"]["hardWood"] = valheimPlusConfiguration.hardWood.ToString();
             data["StructuralIntegrity"]["disableStructuralIntegrity"] = valheimPlusConfiguration.disableStructuralIntegrity.ToString().ToLower();
             data["StructuralIntegrity"]["disableDamageToPlayerStructures"] = valheimPlusConfiguration.disableDamageToPlayerStructures.ToString().ToLower();
+            data["StructuralIntegrity"]["disableDamageToPlayerBoats"] = valheimPlusConfiguration.disableDamageToPlayerBoats.ToString().ToLower();
             #endregion StructuralIntegrity
 
             // Experience
