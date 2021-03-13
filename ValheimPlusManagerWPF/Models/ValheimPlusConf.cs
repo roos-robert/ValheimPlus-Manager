@@ -90,6 +90,13 @@
         public bool fireSourceSettingsEnabled { get; set; } = false;
         public bool onlyTorches { get; set; } = false;
 
+        // FirstPerson
+        public bool firstPersonSettingsEnabled { get; set; } = false;
+        public string hotkey { get; set; } = "F10";
+        public string raiseFOVHotkey { get; set; } = "PageUp";
+        public float defaultFOV { get; set; } = 65.0f;
+        public string lowerFOVHotkey { get; set; } = "PageDown";
+
         // Food
         public bool foodSettingsEnabled { get; set; } = false;
         public float foodDurationMultiplier { get; set; } = 0;

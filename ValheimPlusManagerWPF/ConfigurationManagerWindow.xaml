@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ValheimPlusManager.Models"
         mc:Ignorable="d"
-        Title="ValheimPlus Manager | Configuration manager" Height="920" Width="1100"
+        Title="ValheimPlus Manager | Configuration manager" Height="950" Width="1100"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -21,7 +21,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="825"/>
+            <RowDefinition Height="855"/>
             <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
 
@@ -56,6 +56,7 @@
                 <CheckBox IsChecked="{Binding itemsSettingsEnabled}" Content="Enable item settings" />
                 <CheckBox IsChecked="{Binding fermenterSettingsEnabled}" Content="Enable fermenter settings" />
                 <CheckBox IsChecked="{Binding fireSourceSettingsEnabled}" Content="Enable fire source settings" />
+                <CheckBox IsChecked="{Binding firstPersonSettingsEnabled}" Content="Enable first person settings" />
                 <CheckBox IsChecked="{Binding foodSettingsEnabled}" Content="Enable food settings" />
                 <CheckBox IsChecked="{Binding freePlacementRotationSettingsEnabled}" Content="Enable free placement rotation" />
                 <CheckBox IsChecked="{Binding furnaceSettingsEnabled}" Content="Enable furnace settings" />
@@ -191,6 +192,15 @@
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Fireplace" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <CheckBox Content="ONLY placed torches don't need refilling" IsChecked="{Binding onlyTorches}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding fireSourceSettingsEnabled}" Header="First person">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="First person" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox Width="382" Text="{Binding hotkey}" materialDesign:HintAssist.Hint="Enter the advanced building mode with this key when building" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding defaultFOV}" materialDesign:HintAssist.Hint="Exit the advanced building mode with this key when building" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox Width="382" Text="{Binding raiseFOVHotkey}" materialDesign:HintAssist.Hint="Copy the object rotation of the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox Width="382" Text="{Binding lowerFOVHotkey}" materialDesign:HintAssist.Hint="Apply the copied object rotation to the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding foodSettingsEnabled}" Header="Food">

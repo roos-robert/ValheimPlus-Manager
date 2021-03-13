@@ -333,6 +333,29 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion FireSource
 
+            #region FirstPerson
+            if (bool.TryParse(data["FirstPerson"]["enabled"], out bool firstPersonSettingsEnabled))
+            {
+                valheimPlusConfiguration.firstPersonSettingsEnabled = firstPersonSettingsEnabled;
+            }
+            if (data["FirstPerson"]["hotkey"] != null)
+            {
+                valheimPlusConfiguration.hotkey = data["FirstPerson"]["hotkey"];
+            }
+            if (float.TryParse(data["FirstPerson"]["defaultFOV"], NumberStyles.Any, ci, out float defaultFOV))
+            {
+                valheimPlusConfiguration.defaultFOV = defaultFOV;
+            }
+            if (data["FirstPerson"]["raiseFOVHotkey"] != null)
+            {
+                valheimPlusConfiguration.raiseFOVHotkey = data["FirstPerson"]["raiseFOVHotkey"];
+            }
+            if (data["FirstPerson"]["lowerFOVHotkey"] != null)
+            {
+                valheimPlusConfiguration.lowerFOVHotkey = data["FirstPerson"]["lowerFOVHotkey"];
+            }
+            #endregion FirstPerson
+
             #region Food
             if (bool.TryParse(data["Food"]["enabled"], out bool foodSettingsEnabled))
             {
@@ -1047,6 +1070,14 @@ namespace ValheimPlusManager.SupportClasses
             data["FireSource"]["onlyTorches"] = valheimPlusConfiguration.onlyTorches.ToString().ToLower();
             #endregion FireSource
 
+            #region FirstPerson
+            data["FirstPerson"]["enabled"] = valheimPlusConfiguration.firstPersonSettingsEnabled.ToString().ToLower();
+            data["FirstPerson"]["hotkey"] = valheimPlusConfiguration.hotkey.ToString();
+            data["FirstPerson"]["defaultFOV"] = valheimPlusConfiguration.defaultFOV.ToString();
+            data["FirstPerson"]["raiseFOVHotkey"] = valheimPlusConfiguration.raiseFOVHotkey.ToString();
+            data["FirstPerson"]["lowerFOVHotkey"] = valheimPlusConfiguration.lowerFOVHotkey.ToString();
+            #endregion FirstPerson
+
             // Food
             data["Food"]["enabled"] = valheimPlusConfiguration.foodSettingsEnabled.ToString().ToLower();
             data["Food"]["foodDurationMultiplier"] = valheimPlusConfiguration.foodDurationMultiplier.ToString();
@@ -1225,9 +1256,9 @@ namespace ValheimPlusManager.SupportClasses
 
             // Camera
             data["Camera"]["enabled"] = valheimPlusConfiguration.cameraSettingsEnabled.ToString().ToLower();
-            data["Camera"]["cameraMaximumZoomDistance"] = valheimPlusConfiguration.cameraMaximumZoomDistance.ToString().ToLower();
-            data["Camera"]["cameraBoatMaximumZoomDistance"] = valheimPlusConfiguration.cameraBoatMaximumZoomDistance.ToString().ToLower();
-            data["Camera"]["cameraFOV"] = valheimPlusConfiguration.cameraFOV.ToString().ToLower();
+            data["Camera"]["cameraMaximumZoomDistance"] = valheimPlusConfiguration.cameraMaximumZoomDistance.ToString();
+            data["Camera"]["cameraBoatMaximumZoomDistance"] = valheimPlusConfiguration.cameraBoatMaximumZoomDistance.ToString();
+            data["Camera"]["cameraFOV"] = valheimPlusConfiguration.cameraFOV.ToString();
 
             // Wagon
             data["Wagon"]["enabled"] = valheimPlusConfiguration.wagonSettingsEnabled.ToString().ToLower();
