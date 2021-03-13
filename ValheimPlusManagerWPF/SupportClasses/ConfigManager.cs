@@ -121,6 +121,18 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.maximumHoneyPerBeehive = maximumHoneyPerBeehive;
             }
+            if (float.TryParse(data["Beehive"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositHoneyRange))
+            {
+                valheimPlusConfiguration.autoDepositHoneyRange = autoDepositHoneyRange;
+            }
+            if (bool.TryParse(data["Beehive"]["autoDeposit"], out bool autoDepositHoney))
+            {
+                valheimPlusConfiguration.autoDepositHoney = autoDepositHoney;
+            }
+            if (bool.TryParse(data["Beehive"]["showDuration"], out bool showDurationBeehive))
+            {
+                valheimPlusConfiguration.showDurationBeehive = showDurationBeehive;
+            }
             #endregion Beehive
 
             #region Building
@@ -139,6 +151,26 @@ namespace ValheimPlusManager.SupportClasses
             if (float.TryParse(data["Building"]["maximumPlacementDistance"], NumberStyles.Any, ci, out float maximumPlacementDistance))
             {
                 valheimPlusConfiguration.maximumPlacementDistance = maximumPlacementDistance;
+            }
+            if (float.TryParse(data["Building"]["pieceComfortRadius"], NumberStyles.Any, ci, out float pieceComfortRadius))
+            {
+                valheimPlusConfiguration.pieceComfortRadius = pieceComfortRadius;
+            }
+            if (bool.TryParse(data["Building"]["alwaysDropResources"], out bool alwaysDropResources))
+            {
+                valheimPlusConfiguration.alwaysDropResources = alwaysDropResources;
+            }
+            if (bool.TryParse(data["Building"]["alwaysDropExcludedResources"], out bool alwaysDropExcludedResources))
+            {
+                valheimPlusConfiguration.alwaysDropExcludedResources = alwaysDropExcludedResources;
+            }
+            if (bool.TryParse(data["Building"]["enableAreaRepair"], out bool enableAreaRepair))
+            {
+                valheimPlusConfiguration.enableAreaRepair = enableAreaRepair;
+            }
+            if (float.TryParse(data["Building"]["areaRepairRadius"], NumberStyles.Any, ci, out float areaRepairRadius))
+            {
+                valheimPlusConfiguration.areaRepairRadius = areaRepairRadius;
             }
             #endregion Building
 
@@ -206,6 +238,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.woodChestRows = woodChestRows;
             }
+            if (int.TryParse(data["Inventory"]["personalChestColumns"], out int personalChestColumns))
+            {
+                valheimPlusConfiguration.personalChestColumns = personalChestColumns;
+            }
+            if (int.TryParse(data["Inventory"]["personalChestRows"], out int personalChestRows))
+            {
+                valheimPlusConfiguration.personalChestRows = personalChestRows;
+            }
             if (int.TryParse(data["Inventory"]["ironChestColumns"], out int ironChestColumns))
             {
                 valheimPlusConfiguration.ironChestColumns = ironChestColumns;
@@ -213,6 +253,30 @@ namespace ValheimPlusManager.SupportClasses
             if (int.TryParse(data["Inventory"]["ironChestRows"], out int ironChestRows))
             {
                 valheimPlusConfiguration.ironChestRows = ironChestRows;
+            }
+            if (int.TryParse(data["Inventory"]["cartInventoryRows"], out int cartInventoryRows))
+            {
+                valheimPlusConfiguration.cartInventoryRows = cartInventoryRows;
+            }
+            if (int.TryParse(data["Inventory"]["cartInventoryColumns"], out int cartInventoryColumns))
+            {
+                valheimPlusConfiguration.cartInventoryColumns = cartInventoryColumns;
+            }
+            if (int.TryParse(data["Inventory"]["karveInventoryColumns"], out int karveInventoryColumns))
+            {
+                valheimPlusConfiguration.karveInventoryColumns = karveInventoryColumns;
+            }
+            if (int.TryParse(data["Inventory"]["karveInventoryRows"], out int karveInventoryRows))
+            {
+                valheimPlusConfiguration.karveInventoryRows = karveInventoryRows;
+            }
+            if (int.TryParse(data["Inventory"]["longboatInventoryColumns"], out int longboatInventoryColumns))
+            {
+                valheimPlusConfiguration.longboatInventoryColumns = longboatInventoryColumns;
+            }
+            if (int.TryParse(data["Inventory"]["longboatInventoryRows"], out int longboatInventoryRows))
+            {
+                valheimPlusConfiguration.longboatInventoryRows = longboatInventoryRows;
             }
             #endregion Inventory
 
@@ -258,16 +322,39 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Fermenter
 
-            #region Fireplace
-            if (bool.TryParse(data["Fireplace"]["enabled"], out bool fireplaceSettingsEnabled))
+            #region FireSource
+            if (bool.TryParse(data["FireSource"]["enabled"], out bool fireSourceSettingsEnabled))
             {
-                valheimPlusConfiguration.fireplaceSettingsEnabled = fireplaceSettingsEnabled;
+                valheimPlusConfiguration.fireSourceSettingsEnabled = fireSourceSettingsEnabled;
             }
-            if (bool.TryParse(data["Fireplace"]["onlyTorches"], out bool onlyTorches))
+            if (bool.TryParse(data["FireSource"]["onlyTorches"], out bool onlyTorches))
             {
                 valheimPlusConfiguration.onlyTorches = onlyTorches;
             }
-            #endregion Fireplace
+            #endregion FireSource
+
+            #region FirstPerson
+            if (bool.TryParse(data["FirstPerson"]["enabled"], out bool firstPersonSettingsEnabled))
+            {
+                valheimPlusConfiguration.firstPersonSettingsEnabled = firstPersonSettingsEnabled;
+            }
+            if (data["FirstPerson"]["hotkey"] != null)
+            {
+                valheimPlusConfiguration.hotkey = data["FirstPerson"]["hotkey"];
+            }
+            if (float.TryParse(data["FirstPerson"]["defaultFOV"], NumberStyles.Any, ci, out float defaultFOV))
+            {
+                valheimPlusConfiguration.defaultFOV = defaultFOV;
+            }
+            if (data["FirstPerson"]["raiseFOVHotkey"] != null)
+            {
+                valheimPlusConfiguration.raiseFOVHotkey = data["FirstPerson"]["raiseFOVHotkey"];
+            }
+            if (data["FirstPerson"]["lowerFOVHotkey"] != null)
+            {
+                valheimPlusConfiguration.lowerFOVHotkey = data["FirstPerson"]["lowerFOVHotkey"];
+            }
+            #endregion FirstPerson
 
             #region Food
             if (bool.TryParse(data["Food"]["enabled"], out bool foodSettingsEnabled))
@@ -278,7 +365,38 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.foodDurationMultiplier = foodDurationMultiplier;
             }
+            if (bool.TryParse(data["Food"]["disableFoodDegradation"], out bool disableFoodDegradation))
+            {
+                valheimPlusConfiguration.disableFoodDegradation = disableFoodDegradation;
+            }
             #endregion Food
+
+            #region FreePlacementRotation
+            if (bool.TryParse(data["FreePlacementRotation"]["enabled"], out bool freePlacementRotationSettingsEnabled))
+            {
+                valheimPlusConfiguration.freePlacementRotationSettingsEnabled = freePlacementRotationSettingsEnabled;
+            }
+            if (data["FreePlacementRotation"]["rotateY"] != null)
+            {
+                valheimPlusConfiguration.rotateY = data["FreePlacementRotation"]["rotateY"];
+            }
+            if (data["FreePlacementRotation"]["rotateX"] != null)
+            {
+                valheimPlusConfiguration.rotateX = data["FreePlacementRotation"]["rotateX"];
+            }
+            if (data["FreePlacementRotation"]["rotateZ"] != null)
+            {
+                valheimPlusConfiguration.rotateZ = data["FreePlacementRotation"]["rotateZ"];
+            }
+            if (data["FreePlacementRotation"]["copyRotationParallel"] != null)
+            {
+                valheimPlusConfiguration.copyRotationParallel = data["FreePlacementRotation"]["copyRotationParallel"];
+            }
+            if (data["FreePlacementRotation"]["copyRotationPerpendicular"] != null)
+            {
+                valheimPlusConfiguration.copyRotationPerpendicular = data["FreePlacementRotation"]["copyRotationPerpendicular"];
+            }
+            #endregion FreePlacementRotation
 
             #region Furnace
             if (bool.TryParse(data["Furnace"]["enabled"], out bool furnaceSettingsEnabled))
@@ -467,17 +585,9 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.exploreRadius = exploreRadius;
             }
-            if (bool.TryParse(data["Map"]["playerPositionPublicOnJoin"], out bool playerPositionPublicOnJoin))
-            {
-                valheimPlusConfiguration.playerPositionPublicOnJoin = playerPositionPublicOnJoin;
-            }
             if (bool.TryParse(data["Map"]["preventPlayerFromTurningOffPublicPosition"], out bool preventPlayerFromTurningOffPublicPosition))
             {
                 valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition = preventPlayerFromTurningOffPublicPosition;
-            }
-            if (bool.TryParse(data["Map"]["removeDeathPinOnTombstoneEmpty"], out bool removeDeathPinOnTombstoneEmpty))
-            {
-                valheimPlusConfiguration.removeDeathPinOnTombstoneEmpty = removeDeathPinOnTombstoneEmpty;
             }
             #endregion Map
 
@@ -510,6 +620,18 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.cropNotifier = cropNotifier;
             }
+            if (float.TryParse(data["Player"]["restSecondsPerComfortLevel"], NumberStyles.Any, ci, out float restSecondsPerComfortLevel))
+            {
+                valheimPlusConfiguration.restSecondsPerComfortLevel = restSecondsPerComfortLevel;
+            }
+            if (float.TryParse(data["Player"]["deathPenaltyMultiplier"], NumberStyles.Any, ci, out float deathPenaltyMultiplier))
+            {
+                valheimPlusConfiguration.deathPenaltyMultiplier = deathPenaltyMultiplier;
+            }
+            if (bool.TryParse(data["Player"]["autoRepair"], out bool autoRepair))
+            {
+                valheimPlusConfiguration.autoRepair = autoRepair;
+            }
             #endregion Player
 
             #region Server
@@ -539,6 +661,48 @@ namespace ValheimPlusManager.SupportClasses
             //    valheimPlusConfiguration.autoSaveInterval = autoSaveInterval;
             //}
             #endregion Server
+
+            #region Shields
+            if (bool.TryParse(data["Shields"]["enabled"], out bool shieldsSettingsEnabled))
+            {
+                valheimPlusConfiguration.shieldsSettingsEnabled = shieldsSettingsEnabled;
+            }
+            if (int.TryParse(data["Shields"]["blockRating"], out int blockRating))
+            {
+                valheimPlusConfiguration.blockRating = blockRating;
+            }
+            #endregion Shields
+
+            #region Smelter
+            if (bool.TryParse(data["Smelter"]["enabled"], out bool smelterSettingsEnabled))
+            {
+                valheimPlusConfiguration.smelterSettingsEnabled = smelterSettingsEnabled;
+            }
+            if (int.TryParse(data["Smelter"]["maximumOre"], out int smelterMaximumOre))
+            {
+                valheimPlusConfiguration.smelterMaximumOre = smelterMaximumOre;
+            }
+            if (int.TryParse(data["Smelter"]["maximumCoal"], out int smelterMaximumCoal))
+            {
+                valheimPlusConfiguration.smelterMaximumCoal = smelterMaximumCoal;
+            }
+            if (int.TryParse(data["Smelter"]["coalUsedPerProduct"], out int smelterCoalUsedPerProduct))
+            {
+                valheimPlusConfiguration.smelterCoalUsedPerProduct = smelterCoalUsedPerProduct;
+            }
+            if (int.TryParse(data["Smelter"]["productionSpeed"], out int smelterProductionSpeed))
+            {
+                valheimPlusConfiguration.smelterProductionSpeed = smelterProductionSpeed;
+            }
+            if (float.TryParse(data["Smelter"]["autoDepositRange"], NumberStyles.Any, ci, out float smelterAutoDepositRange))
+            {
+                valheimPlusConfiguration.smelterAutoDepositRange = smelterAutoDepositRange;
+            }
+            if (bool.TryParse(data["Smelter"]["autoDeposit"], out bool smelterAutoDeposit))
+            {
+                valheimPlusConfiguration.smelterAutoDeposit = smelterAutoDeposit;
+            }
+            #endregion Smelter
 
             #region Stamina
             if (bool.TryParse(data["Stamina"]["enabled"], out bool staminaSettingsEnabled))
@@ -643,6 +807,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.workbenchRange = workbenchRange;
             }
+            if (int.TryParse(data["Workbench"]["workbenchAttachmentRange"], out int workbenchAttachmentRange))
+            {
+                valheimPlusConfiguration.workbenchAttachmentRange = workbenchAttachmentRange;
+            }
             if (bool.TryParse(data["Workbench"]["disableRoofCheck"], out bool disableRoofCheck))
             {
                 valheimPlusConfiguration.disableRoofCheck = disableRoofCheck;
@@ -703,6 +871,10 @@ namespace ValheimPlusManager.SupportClasses
             if (bool.TryParse(data["StructuralIntegrity"]["disableDamageToPlayerStructures"], out bool disableDamageToPlayerStructures))
             {
                 valheimPlusConfiguration.disableDamageToPlayerStructures = disableDamageToPlayerStructures;
+            }
+            if (bool.TryParse(data["StructuralIntegrity"]["disableDamageToPlayerBoats"], out bool disableDamageToPlayerBoats))
+            {
+                valheimPlusConfiguration.disableDamageToPlayerBoats = disableDamageToPlayerBoats;
             }
             #endregion StructuralIntegrity
 
@@ -868,16 +1040,26 @@ namespace ValheimPlusManager.SupportClasses
             data["Armor"]["legs"] = valheimPlusConfiguration.legsArmor.ToString();
             data["Armor"]["capes"] = valheimPlusConfiguration.capesArmor.ToString();
 
-            // Beehive
+            #region Beehive
             data["Beehive"]["enabled"] = valheimPlusConfiguration.beehiveSettingsEnabled.ToString().ToLower();
             data["Beehive"]["honeyProductionSpeed"] = valheimPlusConfiguration.honeyProductionSpeed.ToString();
             data["Beehive"]["maximumHoneyPerBeehive"] = valheimPlusConfiguration.maximumHoneyPerBeehive.ToString();
+            data["Beehive"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositHoneyRange.ToString();
+            data["Beehive"]["autoDeposit"] = valheimPlusConfiguration.autoDepositHoney.ToString().ToLower();
+            data["Beehive"]["showDuration"] = valheimPlusConfiguration.showDurationBeehive.ToString().ToLower();
+            #endregion Beehive
 
-            // Building
+            #region Building
             data["Building"]["enabled"] = valheimPlusConfiguration.buildingSettingsEnabled.ToString().ToLower();
             data["Building"]["maximumPlacementDistance"] = valheimPlusConfiguration.maximumPlacementDistance.ToString().ToLower();
             data["Building"]["noWeatherDamage"] = valheimPlusConfiguration.noWeatherDamage.ToString();
             data["Building"]["noInvalidPlacementRestriction"] = valheimPlusConfiguration.noInvalidPlacementRestriction.ToString();
+            data["Building"]["pieceComfortRadius"] = valheimPlusConfiguration.pieceComfortRadius.ToString();
+            data["Building"]["alwaysDropResources"] = valheimPlusConfiguration.alwaysDropResources.ToString().ToLower();
+            data["Building"]["alwaysDropExcludedResources"] = valheimPlusConfiguration.alwaysDropExcludedResources.ToString().ToLower();
+            data["Building"]["enableAreaRepair"] = valheimPlusConfiguration.enableAreaRepair.ToString().ToLower();
+            data["Building"]["areaRepairRadius"] = valheimPlusConfiguration.areaRepairRadius.ToString();
+            #endregion Building
 
             // Durability
             data["Durability"]["enabled"] = valheimPlusConfiguration.durabilitySettingsEnabled.ToString().ToLower();
@@ -891,7 +1073,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Durability"]["bows"] = valheimPlusConfiguration.bowsDurability.ToString();
             data["Durability"]["shields"] = valheimPlusConfiguration.shieldsDurability.ToString();
 
-            // Inventory
+            #region Inventory
             data["Inventory"]["enabled"] = valheimPlusConfiguration.inventorySettingsEnabled.ToString().ToLower();
             data["Inventory"]["inventoryFillTopToBottom"] = valheimPlusConfiguration.inventoryFillTopToBottom.ToString().ToLower();
             data["Inventory"]["playerInventoryRows"] = valheimPlusConfiguration.playerInventoryRows.ToString();
@@ -899,6 +1081,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Inventory"]["woodChestRows"] = valheimPlusConfiguration.woodChestRows.ToString();
             data["Inventory"]["ironChestColumns"] = valheimPlusConfiguration.ironChestColumns.ToString();
             data["Inventory"]["ironChestRows"] = valheimPlusConfiguration.ironChestRows.ToString();
+            #endregion Inventory
 
             // Items
             data["Items"]["enabled"] = valheimPlusConfiguration.itemsSettingsEnabled.ToString().ToLower();
@@ -913,13 +1096,32 @@ namespace ValheimPlusManager.SupportClasses
             data["Fermenter"]["fermenterItemsProduced"] = valheimPlusConfiguration.fermenterItemsProduced.ToString();
             data["Fermenter"]["showFermenterDuration"] = valheimPlusConfiguration.showFermenterDuration.ToString().ToLower();
 
-            // Fireplace
-            data["Fireplace"]["enabled"] = valheimPlusConfiguration.fireplaceSettingsEnabled.ToString().ToLower();
-            data["Fireplace"]["onlyTorches"] = valheimPlusConfiguration.onlyTorches.ToString().ToLower();
+            #region FireSource
+            data["FireSource"]["enabled"] = valheimPlusConfiguration.fireSourceSettingsEnabled.ToString().ToLower();
+            data["FireSource"]["onlyTorches"] = valheimPlusConfiguration.onlyTorches.ToString().ToLower();
+            #endregion FireSource
+
+            #region FirstPerson
+            data["FirstPerson"]["enabled"] = valheimPlusConfiguration.firstPersonSettingsEnabled.ToString().ToLower();
+            data["FirstPerson"]["hotkey"] = valheimPlusConfiguration.hotkey.ToString();
+            data["FirstPerson"]["defaultFOV"] = valheimPlusConfiguration.defaultFOV.ToString();
+            data["FirstPerson"]["raiseFOVHotkey"] = valheimPlusConfiguration.raiseFOVHotkey.ToString();
+            data["FirstPerson"]["lowerFOVHotkey"] = valheimPlusConfiguration.lowerFOVHotkey.ToString();
+            #endregion FirstPerson
 
             // Food
             data["Food"]["enabled"] = valheimPlusConfiguration.foodSettingsEnabled.ToString().ToLower();
             data["Food"]["foodDurationMultiplier"] = valheimPlusConfiguration.foodDurationMultiplier.ToString();
+            data["Food"]["disableFoodDegradation"] = valheimPlusConfiguration.disableFoodDegradation.ToString().ToLower();
+
+            #region FreePlacementRotation
+            data["FreePlacementRotation"]["enabled"] = valheimPlusConfiguration.freePlacementRotationSettingsEnabled.ToString().ToLower();
+            data["FreePlacementRotation"]["rotateY"] = valheimPlusConfiguration.rotateY.ToString();
+            data["FreePlacementRotation"]["rotateX"] = valheimPlusConfiguration.rotateX.ToString();
+            data["FreePlacementRotation"]["rotateZ"] = valheimPlusConfiguration.rotateZ.ToString();
+            data["FreePlacementRotation"]["copyRotationParallel"] = valheimPlusConfiguration.copyRotationParallel.ToString();
+            data["FreePlacementRotation"]["copyRotationPerpendicular"] = valheimPlusConfiguration.copyRotationPerpendicular.ToString();
+            #endregion FreePlacementRotation
 
             // Furnace
             data["Furnace"]["enabled"] = valheimPlusConfiguration.furnaceSettingsEnabled.ToString().ToLower();
@@ -974,13 +1176,12 @@ namespace ValheimPlusManager.SupportClasses
             data["Kiln"]["autoDeposit"] = valheimPlusConfiguration.autoDepositKiln.ToString().ToLower();
             data["Kiln"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeKiln.ToString();
 
-            // Map
+            #region Map
             data["Map"]["enabled"] = valheimPlusConfiguration.mapSettingsEnabled.ToString().ToLower();
             data["Map"]["shareMapProgression"] = valheimPlusConfiguration.shareMapProgression.ToString().ToLower();
             data["Map"]["exploreRadius"] = valheimPlusConfiguration.exploreRadius.ToString();
-            data["Map"]["playerPositionPublicOnJoin"] = valheimPlusConfiguration.playerPositionPublicOnJoin.ToString().ToLower();
             data["Map"]["preventPlayerFromTurningOffPublicPosition"] = valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition.ToString().ToLower();
-            data["Map"]["removeDeathPinOnTombstoneEmpty"] = valheimPlusConfiguration.removeDeathPinOnTombstoneEmpty.ToString().ToLower();
+            #endregion Map
 
             #region Player
             data["Player"]["enabled"] = valheimPlusConfiguration.playerSettingsEnabled.ToString().ToLower();
@@ -990,15 +1191,34 @@ namespace ValheimPlusManager.SupportClasses
             data["Player"]["disableCameraShake"] = valheimPlusConfiguration.disableCameraShake.ToString().ToLower();
             data["Player"]["baseUnarmedDamage"] = valheimPlusConfiguration.baseUnarmedDamage.ToString();
             data["Player"]["cropNotifier"] = valheimPlusConfiguration.cropNotifier.ToString().ToLower();
+            data["Player"]["restSecondsPerComfortLevel"] = valheimPlusConfiguration.restSecondsPerComfortLevel.ToString();
+            data["Player"]["deathPenaltyMultiplier"] = valheimPlusConfiguration.deathPenaltyMultiplier.ToString();
+            data["Player"]["autoRepair"] = valheimPlusConfiguration.autoRepair.ToString().ToLower();
             #endregion Player
 
-            // Server
+            #region Server
             data["Server"]["enabled"] = valheimPlusConfiguration.serverSettingsEnabled.ToString().ToLower();
             data["Server"]["maxPlayers"] = valheimPlusConfiguration.maxPlayers.ToString();
             data["Server"]["disableServerPassword"] = valheimPlusConfiguration.disableServerPassword.ToString().ToLower();
             data["Server"]["enforceMod"] = valheimPlusConfiguration.enforceMod.ToString().ToLower();
             data["Server"]["dataRate"] = valheimPlusConfiguration.dataRate.ToString();
             //data["Server"]["autoSaveInterval"] = valheimPlusConfiguration.autoSaveInterval.ToString();
+            #endregion Server
+
+            #region Shields
+            data["Shields"]["enabled"] = valheimPlusConfiguration.shieldsSettingsEnabled.ToString().ToLower();
+            data["Shields"]["blockRating"] = valheimPlusConfiguration.blockRating.ToString();
+            #endregion Shields
+
+            #region Smelter
+            data["Smelter"]["enabled"] = valheimPlusConfiguration.smelterSettingsEnabled.ToString().ToLower();
+            data["Smelter"]["maximumOre"] = valheimPlusConfiguration.smelterMaximumOre.ToString();
+            data["Smelter"]["maximumCoal"] = valheimPlusConfiguration.smelterMaximumCoal.ToString();
+            data["Smelter"]["coalUsedPerProduct"] = valheimPlusConfiguration.smelterCoalUsedPerProduct.ToString();
+            data["Smelter"]["productionSpeed"] = valheimPlusConfiguration.smelterProductionSpeed.ToString();
+            data["Smelter"]["autoDeposit"] = valheimPlusConfiguration.smelterAutoDeposit.ToString().ToLower();
+            data["Smelter"]["autoDepositRange"] = valheimPlusConfiguration.smelterAutoDepositRange.ToString();
+            #endregion Smelter
 
             // Stamina
             data["Stamina"]["enabled"] = valheimPlusConfiguration.staminaSettingsEnabled.ToString().ToLower();
@@ -1026,10 +1246,12 @@ namespace ValheimPlusManager.SupportClasses
             data["StaminaUsage"]["hoe"] = valheimPlusConfiguration.hoe.ToString();
             data["StaminaUsage"]["cultivator"] = valheimPlusConfiguration.cultivator.ToString();
 
-            // Workbench
+            #region Workbench
             data["Workbench"]["enabled"] = valheimPlusConfiguration.workbenchSettingsEnabled.ToString().ToLower();
             data["Workbench"]["workbenchRange"] = valheimPlusConfiguration.workbenchRange.ToString();
+            data["Workbench"]["workbenchAttachmentRange"] = valheimPlusConfiguration.workbenchAttachmentRange.ToString();
             data["Workbench"]["disableRoofCheck"] = valheimPlusConfiguration.disableRoofCheck.ToString().ToLower();
+            #endregion Workbench
 
             // Time
             //data["Time"]["enabled"] = valheimPlusConfiguration.timeSettingsEnabled.ToString().ToLower();
@@ -1048,6 +1270,7 @@ namespace ValheimPlusManager.SupportClasses
             data["StructuralIntegrity"]["hardWood"] = valheimPlusConfiguration.hardWood.ToString();
             data["StructuralIntegrity"]["disableStructuralIntegrity"] = valheimPlusConfiguration.disableStructuralIntegrity.ToString().ToLower();
             data["StructuralIntegrity"]["disableDamageToPlayerStructures"] = valheimPlusConfiguration.disableDamageToPlayerStructures.ToString().ToLower();
+            data["StructuralIntegrity"]["disableDamageToPlayerBoats"] = valheimPlusConfiguration.disableDamageToPlayerBoats.ToString().ToLower();
             #endregion StructuralIntegrity
 
             // Experience
@@ -1074,9 +1297,9 @@ namespace ValheimPlusManager.SupportClasses
 
             // Camera
             data["Camera"]["enabled"] = valheimPlusConfiguration.cameraSettingsEnabled.ToString().ToLower();
-            data["Camera"]["cameraMaximumZoomDistance"] = valheimPlusConfiguration.cameraMaximumZoomDistance.ToString().ToLower();
-            data["Camera"]["cameraBoatMaximumZoomDistance"] = valheimPlusConfiguration.cameraBoatMaximumZoomDistance.ToString().ToLower();
-            data["Camera"]["cameraFOV"] = valheimPlusConfiguration.cameraFOV.ToString().ToLower();
+            data["Camera"]["cameraMaximumZoomDistance"] = valheimPlusConfiguration.cameraMaximumZoomDistance.ToString();
+            data["Camera"]["cameraBoatMaximumZoomDistance"] = valheimPlusConfiguration.cameraBoatMaximumZoomDistance.ToString();
+            data["Camera"]["cameraFOV"] = valheimPlusConfiguration.cameraFOV.ToString();
 
             // Wagon
             data["Wagon"]["enabled"] = valheimPlusConfiguration.wagonSettingsEnabled.ToString().ToLower();

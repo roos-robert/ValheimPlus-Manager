@@ -10,7 +10,7 @@ namespace ValheimPlusManager.SupportClasses
 {
     public sealed class UpdateManager
     {
-        public static void CheckCurrentVersion(Settings settings)
+        public static bool CheckCurrentVersion(Settings settings)
         {
             try
             {
@@ -23,17 +23,18 @@ namespace ValheimPlusManager.SupportClasses
                     if (serverClientVersion.FileVersion == "1.0.0.0")
                     {
                         settings.ValheimPlusServerClientVersion = "0.9.0";
-                        SettingsDAL.UpdateSettings(settings, false);
+                        bool success = SettingsDAL.UpdateSettings(settings, false);
                     }
                     else
                     {
-                        SettingsDAL.UpdateSettings(settings, false);
+                        settings.ValheimPlusServerClientVersion = serverClientVersion.FileVersion;
+                        bool success = SettingsDAL.UpdateSettings(settings, false);
                     }
                 }
             }
             catch (Exception)
             {
-                // ToDo
+                //
             }
 
             try
@@ -47,18 +48,21 @@ namespace ValheimPlusManager.SupportClasses
                     if (gameClientVersion.FileVersion == "1.0.0.0")
                     {
                         settings.ValheimPlusGameClientVersion = "0.9.0";
-                        SettingsDAL.UpdateSettings(settings, true);
+                        bool success = SettingsDAL.UpdateSettings(settings, true);
                     }
                     else
                     {
-                        SettingsDAL.UpdateSettings(settings, true);
+                        settings.ValheimPlusGameClientVersion = gameClientVersion.FileVersion;
+                        bool success = SettingsDAL.UpdateSettings(settings, true);
                     }
                 }
             }
             catch (Exception)
             {
-                // ToDo
+                //
             }
+
+            return true;
         }
 
         public static async Task<ValheimPlusUpdate> CheckForValheimPlusUpdatesAsync(string valheimPlusVersion)

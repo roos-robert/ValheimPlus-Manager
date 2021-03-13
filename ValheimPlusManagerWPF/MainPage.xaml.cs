@@ -37,10 +37,13 @@ namespace ValheimPlusManager
                 Settings = SettingsDAL.GetSettings();
 
                 // Fetch current versions and update settings if needed
-                UpdateManager.CheckCurrentVersion(Settings);
+                bool success = UpdateManager.CheckCurrentVersion(Settings);
 
-                // Checking paths and installation status
-                UISettingsInit();
+                if(success)
+                {
+                    // Checking paths and installation status
+                    UISettingsInit();
+                }
             }
             catch (Exception)
             {
@@ -102,7 +105,7 @@ namespace ValheimPlusManager
                 if (success)
                 {
                     Settings = SettingsDAL.GetSettings();
-                    clientInstalledLabel.Content = String.Format("ValheimPlus {0} installed on game client", Settings.ValheimPlusServerClientVersion);
+                    clientInstalledLabel.Content = String.Format("ValheimPlus {0} installed on game client", Settings.ValheimPlusGameClientVersion);
                     statusSnackBar.MessageQueue.Enqueue("Success! Game client updated to latest version");
                     installClientUpdateButton.Content = "Update installed!";
                     installClientUpdateButton.IsEnabled = false;
@@ -123,7 +126,7 @@ namespace ValheimPlusManager
                 var modActive = File.Exists(String.Format("{0}winhttp.dll", Settings.ClientInstallationPath));
                 if (modActive)
                 {
-                    File.Move(String.Format("{0}winhttp.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath));
+                    File.Move(String.Format("{0}winhttp.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath), true);
                     enableDisableValheimPlusGameClientButton.Content = "Enable ValheimPlus";
                     enableDisableValheimPlusGameClientButton.Style = Application.Current.TryFindResource("MaterialDesignRaisedButton") as Style;
 
@@ -131,7 +134,7 @@ namespace ValheimPlusManager
                 }
                 else
                 {
-                    File.Move(String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp.dll", Settings.ClientInstallationPath));
+                    File.Move(String.Format("{0}winhttp_.dll", Settings.ClientInstallationPath), String.Format("{0}winhttp.dll", Settings.ClientInstallationPath), true);
                     enableDisableValheimPlusGameClientButton.Content = "Disable ValheimPlus";
                     enableDisableValheimPlusGameClientButton.Style = Application.Current.TryFindResource("MaterialDesignOutlinedButton") as Style;
 

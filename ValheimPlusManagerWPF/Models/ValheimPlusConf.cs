@@ -29,12 +29,20 @@
         public bool beehiveSettingsEnabled { get; set; } = false;
         public float honeyProductionSpeed { get; set; } = 1200;
         public int maximumHoneyPerBeehive { get; set; } = 4;
+        public bool autoDepositHoney { get; set; } = false;
+        public float autoDepositHoneyRange { get; set; } = 10;
+        public bool showDurationBeehive { get; set; } = false;
 
         // Building
         public bool buildingSettingsEnabled { get; set; } = false;
         public bool noInvalidPlacementRestriction { get; set; } = false;
         public bool noWeatherDamage { get; set; } = false;
         public float maximumPlacementDistance { get; set; } = 5;
+        public float pieceComfortRadius { get; set; } = 10;
+        public bool alwaysDropResources { get; set; } = false;
+        public bool alwaysDropExcludedResources { get; set; } = false;
+        public bool enableAreaRepair { get; set; } = false;
+        public float areaRepairRadius { get; set; } = 7.5f;
 
         // Durability
         public bool durabilitySettingsEnabled { get; set; } = false;
@@ -54,8 +62,16 @@
         public int playerInventoryRows { get; set; } = 4;
         public int woodChestColumns { get; set; } = 5;
         public int woodChestRows { get; set; } = 2;
+        public int personalChestColumns { get; set; } = 3;
+        public int personalChestRows { get; set; } = 2;
         public int ironChestColumns { get; set; } = 8;
         public int ironChestRows { get; set; } = 3;
+        public int cartInventoryColumns { get; set; } = 8;
+        public int cartInventoryRows { get; set; } = 3;
+        public int karveInventoryColumns { get; set; } = 2;
+        public int karveInventoryRows { get; set; } = 2;
+        public int longboatInventoryColumns { get; set; } = 8;
+        public int longboatInventoryRows { get; set; } = 3;
 
         // Items
         public bool itemsSettingsEnabled { get; set; } = false;
@@ -70,20 +86,36 @@
         public int fermenterItemsProduced { get; set; } = 4;
         public bool showFermenterDuration { get; set; } = false;
 
-        // Fireplace
-        public bool fireplaceSettingsEnabled { get; set; } = false;
+        // FireSource
+        public bool fireSourceSettingsEnabled { get; set; } = false;
         public bool onlyTorches { get; set; } = false;
+
+        // FirstPerson
+        public bool firstPersonSettingsEnabled { get; set; } = false;
+        public string hotkey { get; set; } = "F10";
+        public string raiseFOVHotkey { get; set; } = "PageUp";
+        public float defaultFOV { get; set; } = 65.0f;
+        public string lowerFOVHotkey { get; set; } = "PageDown";
 
         // Food
         public bool foodSettingsEnabled { get; set; } = false;
         public float foodDurationMultiplier { get; set; } = 0;
+        public bool disableFoodDegradation { get; set; } = false;
+
+        // FreePlacementRotation
+        public bool freePlacementRotationSettingsEnabled { get; set; } = false;
+        public string rotateY { get; set; } = "LeftAlt";
+        public string rotateX { get; set; } = "C";
+        public string rotateZ { get; set; } = "V";
+        public string copyRotationParallel { get; set; } = "F";
+        public string copyRotationPerpendicular { get; set; } = "G";
 
         // Furnace
         public bool furnaceSettingsEnabled { get; set; } = false;
         public int maximumOre { get; set; } = 10;
         public int maximumCoal { get; set; } = 20;
         public int coalUsedPerProduct { get; set; } = 2;
-        public float furnaceProductionSpeed { get; set; } = 10;
+        public float furnaceProductionSpeed { get; set; } = 30;
         public bool autoDepositFurnace { get; set; } = false;
         public float autoDepositRangeFurnace { get; set; } = 10;
 
@@ -147,6 +179,11 @@
         public bool disableCameraShake { get; set; } = false;
         public float baseUnarmedDamage { get; set; } = 0;
         public bool cropNotifier { get; set; } = false;
+        public float restSecondsPerComfortLevel { get; set; } = 60;
+        public float deathPenaltyMultiplier { get; set; } = 0;
+        public bool autoRepair { get; set; } = false;
+        //public float guardianBuffDuration { get; set; } = 300;
+        //public float guardianBuffCooldown { get; set; } = 1200;
 
         // Server
         public bool serverSettingsEnabled { get; set; } = false;
@@ -156,6 +193,19 @@
         public bool enforceMod { get; set; } = true;
         public bool serverSyncsConfig { get; set; } = true;
         public int dataRate { get; set; } = 60; // 60*1024 = 614440 == 60kbs
+
+        // Shields
+        public bool shieldsSettingsEnabled { get; set; } = false;
+        public float blockRating { get; set; } = 0;
+
+        // Smelter
+        public bool smelterSettingsEnabled { get; set; } = false;
+        public int smelterMaximumOre { get; set; } = 10;
+        public int smelterMaximumCoal { get; set; } = 20;
+        public int smelterCoalUsedPerProduct { get; set; } = 2;
+        public float smelterProductionSpeed { get; set; } = 30;
+        public bool smelterAutoDeposit { get; set; } = false;
+        public float smelterAutoDepositRange { get; set; } = 10;
 
         // Stamina
         public bool staminaSettingsEnabled { get; set; } = false;
@@ -186,6 +236,7 @@
         // Workbench
         public bool workbenchSettingsEnabled { get; set; } = false;
         public float workbenchRange { get; set; } = 20;
+        public float workbenchAttachmentRange { get; set; } = 5.0f;
         public bool disableRoofCheck { get; set; } = false;
 
         // Time
@@ -205,6 +256,7 @@
         public float hardWood { get; set; } = 0;
         public bool disableStructuralIntegrity { get; set; } = false;
         public bool disableDamageToPlayerStructures { get; set; } = false;
+        public bool disableDamageToPlayerBoats { get; set; } = false;
 
         // Experience
         public bool experienceSettingsEnabled { get; set; } = false;

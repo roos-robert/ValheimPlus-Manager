@@ -5,7 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>valheim-plus.ico</ApplicationIcon>
-    <Version>0.3.2</Version>
+    <Version>0.4.0</Version>
     <Authors>Robert Roos</Authors>
     <Company>Xenolith AB</Company>
     <Product>ValheimPlusManager</Product>
@@ -42,6 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Data\OtherMods\PlaceFilesForOtherModsHere.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Settings.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

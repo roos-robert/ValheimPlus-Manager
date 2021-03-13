@@ -6,6 +6,7 @@
   <ServerPath>Data/ValheimPlusServerClient/Extracted</ServerPath>
   <ValheimPlusGameClientVersion>0.9</ValheimPlusGameClientVersion>
   <ValheimPlusServerClientVersion>0.9</ValheimPlusServerClientVersion>
+  <ValheimPlusManagerVersion>0.3.3</ValheimPlusManagerVersion>
   <Servers>
     <Server Name="Test" Address="192.168.99.176" Port="" />
   </Servers>
