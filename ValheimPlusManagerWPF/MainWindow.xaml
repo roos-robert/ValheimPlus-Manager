@@ -27,10 +27,7 @@
         <materialDesign:DrawerHost.LeftDrawerContent>
             <StackPanel Width="300" Margin="5">
                 <Grid>
-                <TextBlock Text="Navigation" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="0,15,0,0" Style="{DynamicResource MaterialDesignHeadline5TextBlock}"/>
-                <!--<ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
-                              IsChecked="{Binding IsLeftDrawerOpen, ElementName=DrawerHost}"
-                              HorizontalAlignment="Right" VerticalAlignment="Top"/>-->
+                    <TextBlock Text="Navigation" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="0,15,0,0" Style="{DynamicResource MaterialDesignHeadline5TextBlock}"/>
                 </Grid>
                 <Button x:Name="overviewNavigateButton" Content="Overview" Margin="0,25,0,10" Click="overviewNavigateButton_Click"/>
                 <Button x:Name="serverListManagerNavigateButton" Content="Server list manager" Margin="0,0,0,10" Click="serverListManagerNavigateButton_Click" Visibility="Hidden"/>
@@ -65,60 +62,12 @@
                     </materialDesign:Card>
                 </StackPanel>
             </Grid>
-            
+
             <Grid Grid.Row="2" Grid.ColumnSpan="2">
                 <DockPanel Grid.ColumnSpan="2">
                     <Frame x:Name="_mainFrame" NavigationUIVisibility="Hidden" />
                 </DockPanel>
             </Grid>
-            
-            <!--<Grid Grid.Row="2" Grid.ColumnSpan="2">
-                <materialDesign:Card Width="678" Height="270" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,10,0,0">
-                    <Grid>
-                        <TextBlock Text="ValheimPlus game client" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
-                        <Label x:Name="clientInstalledLabel" Content="Valheim plus installed on client" HorizontalAlignment="Left" Margin="16,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,-1.817"/>
-                        <Button x:Name="installClientButton" Content="Install ValheimPlus on game client" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Click="installClientButton_Click" Width="319"/>
-                        <Button x:Name="manageClientButton" Content="Manage configuration settings" HorizontalAlignment="Left" Margin="16,125,0,0" VerticalAlignment="Top" Width="319" Click="manageClientButton_Click"/>
-                        <Button x:Name="checkClientUpdatesButtons" Content="Check for updates" HorizontalAlignment="Left" Margin="345,85,0,0" VerticalAlignment="Top" Width="319" Click="checkClientUpdatesButtons_Click"/>
-                        <Button x:Name="installClientUpdateButton" Content="Install update" HorizontalAlignment="Left" Margin="345,125,0,0" VerticalAlignment="Top" Width="319" IsEnabled="False" Click="installClientUpdateButton_Click"/>
-                        <Button x:Name="enableDisableValheimPlusGameClientButton" Content="Disable ValheimPlus" HorizontalAlignment="Left" Margin="16,165,0,0" VerticalAlignment="Top" Width="319" Click="enableDisableValheimPlusGameClientButton_Click" />
-                        <Button x:Name="setClientPathButton" Content="Find and set installation path" HorizontalAlignment="Left" Margin="16,205,0,0" VerticalAlignment="Top" Width="319" Click="setClientPathButton_Click"/>
-                    </Grid>
-                </materialDesign:Card>
-                <materialDesign:Card Width="354" Height="270" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="18,10,16,0">
-                    <Grid>
-                        <TextBlock Text="Game management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
-                        <Button x:Name="backupClientButton" Content="Backup game client data" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Width="322" Click="backupClientButton_Click"/>
-                        <Button x:Name="serverListManager" Content="Server list manager" HorizontalAlignment="Left" Margin="16,125,0,0" VerticalAlignment="Top" Width="322"/>
-
-                    </Grid>
-                </materialDesign:Card>
-            </Grid>
-            
-            <Grid Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,0,0">
-                <materialDesign:Card Width="678" Height="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,10,20,20">
-                    <Grid>
-                        <TextBlock Text="ValheimPlus server client" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Normal"/>
-                        <Label x:Name="serverInstalledLabel" Content="Valheim plus installed on server" HorizontalAlignment="Left" Margin="16,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,-1.817"/>
-                        <Button x:Name="installServerButton" Content="Install ValheimPlus on server" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Click="installServerButton_Click" Width="319"/>
-                        <Button x:Name="manageServerButton" Content="Manage configuration settings" HorizontalAlignment="Left" Margin="16,125,0,0" VerticalAlignment="Top" Width="319" Click="manageServerButton_Click"/>
-                        <Button x:Name="checkServerUpdatesButton" Content="Check for updates" HorizontalAlignment="Left" Margin="345,85,0,0" VerticalAlignment="Top" Width="319" Click="checkServerUpdatesButton_Click"/>
-                        <Button x:Name="installServerUpdateButton" Content="Install update" HorizontalAlignment="Left" Margin="345,125,0,0" VerticalAlignment="Top" Width="319" IsEnabled="False" Click="installServerUpdateButton_Click"/>
-                        <Button x:Name="setServerPathButton" Content="Find and set installation path" HorizontalAlignment="Left" Margin="16,165,0,0" VerticalAlignment="Top" Width="319" Click="setServerPathButton_Click"/>
-                    </Grid>
-                </materialDesign:Card>
-                <materialDesign:Card Width="354" Height="250" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="18,10,16,0">
-                    <Grid>
-                        <TextBlock Text="Server management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
-                        <Button x:Name="backupServerButton" Content="Backup server data" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Width="322" Click="backupServerButton_Click"/>
-                    </Grid>
-                </materialDesign:Card>
-            </Grid>
-            <Grid Grid.Row="4" Grid.ColumnSpan="2">
-                <Label x:Name="statusLabel" Content="" HorizontalAlignment="Left" Margin="16,0,0,0" VerticalAlignment="Center" FontSize="14"/>
-                <materialDesign:Snackbar x:Name="statusSnackBar" Message="Status message" IsActive="False" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="2" Margin="0"/>
-                <Button x:Name="launchGameButton" Content="Launch Valheim" HorizontalAlignment="Right" Margin="0,0,16,0" VerticalAlignment="Center" Height="48" Width="137" Click="launchGameButton_Click"/>
-            </Grid>-->
             
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
