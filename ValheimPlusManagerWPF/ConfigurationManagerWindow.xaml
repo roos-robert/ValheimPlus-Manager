@@ -262,10 +262,8 @@
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Map" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding exploreRadius}" materialDesign:HintAssist.Hint="The radius of the map that you explore when moving" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
-                        <CheckBox Content="Automatically turn on the Map option to share your position when joining or starting a game" IsChecked="{Binding playerPositionPublicOnJoin}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Prevents you and other people on the server to turn off their map sharing option" IsChecked="{Binding preventPlayerFromTurningOffPublicPosition}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Remove the Map marker of your death when you have picked up your tombstone items" IsChecked="{Binding removeDeathPinOnTombstoneEmpty}" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="With this enabled you will receive the same exploration progression as other players on the server" IsChecked="{Binding shareMapProgression}" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Prevents you and other people on the server to turn off their map sharing option" IsChecked="{Binding preventPlayerFromTurningOffPublicPosition}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="With this enabled you will receive the same exploration progression as other players on the server" IsChecked="{Binding shareMapProgression}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding playerSettingsEnabled}" Header="Player">

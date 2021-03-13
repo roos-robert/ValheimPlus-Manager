@@ -92,7 +92,7 @@
         public int maximumOre { get; set; } = 10;
         public int maximumCoal { get; set; } = 20;
         public int coalUsedPerProduct { get; set; } = 2;
-        public float furnaceProductionSpeed { get; set; } = 10;
+        public float furnaceProductionSpeed { get; set; } = 30;
         public bool autoDepositFurnace { get; set; } = false;
         public float autoDepositRangeFurnace { get; set; } = 10;
 

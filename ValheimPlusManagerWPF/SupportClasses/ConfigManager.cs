@@ -503,17 +503,9 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.exploreRadius = exploreRadius;
             }
-            if (bool.TryParse(data["Map"]["playerPositionPublicOnJoin"], out bool playerPositionPublicOnJoin))
-            {
-                valheimPlusConfiguration.playerPositionPublicOnJoin = playerPositionPublicOnJoin;
-            }
             if (bool.TryParse(data["Map"]["preventPlayerFromTurningOffPublicPosition"], out bool preventPlayerFromTurningOffPublicPosition))
             {
                 valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition = preventPlayerFromTurningOffPublicPosition;
-            }
-            if (bool.TryParse(data["Map"]["removeDeathPinOnTombstoneEmpty"], out bool removeDeathPinOnTombstoneEmpty))
-            {
-                valheimPlusConfiguration.removeDeathPinOnTombstoneEmpty = removeDeathPinOnTombstoneEmpty;
             }
             #endregion Map
 
@@ -1022,13 +1014,12 @@ namespace ValheimPlusManager.SupportClasses
             data["Kiln"]["autoDeposit"] = valheimPlusConfiguration.autoDepositKiln.ToString().ToLower();
             data["Kiln"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeKiln.ToString();
 
-            // Map
+            #region Map
             data["Map"]["enabled"] = valheimPlusConfiguration.mapSettingsEnabled.ToString().ToLower();
             data["Map"]["shareMapProgression"] = valheimPlusConfiguration.shareMapProgression.ToString().ToLower();
             data["Map"]["exploreRadius"] = valheimPlusConfiguration.exploreRadius.ToString();
-            data["Map"]["playerPositionPublicOnJoin"] = valheimPlusConfiguration.playerPositionPublicOnJoin.ToString().ToLower();
             data["Map"]["preventPlayerFromTurningOffPublicPosition"] = valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition.ToString().ToLower();
-            data["Map"]["removeDeathPinOnTombstoneEmpty"] = valheimPlusConfiguration.removeDeathPinOnTombstoneEmpty.ToString().ToLower();
+            #endregion Map
 
             #region Player
             data["Player"]["enabled"] = valheimPlusConfiguration.playerSettingsEnabled.ToString().ToLower();
