@@ -62,8 +62,16 @@
         public int playerInventoryRows { get; set; } = 4;
         public int woodChestColumns { get; set; } = 5;
         public int woodChestRows { get; set; } = 2;
+        public int personalChestColumns { get; set; } = 3;
+        public int personalChestRows { get; set; } = 2;
         public int ironChestColumns { get; set; } = 8;
         public int ironChestRows { get; set; } = 3;
+        public int cartInventoryColumns { get; set; } = 8;
+        public int cartInventoryRows { get; set; } = 3;
+        public int karveInventoryColumns { get; set; } = 2;
+        public int karveInventoryRows { get; set; } = 2;
+        public int longboatInventoryColumns { get; set; } = 8;
+        public int longboatInventoryRows { get; set; } = 3;
 
         // Items
         public bool itemsSettingsEnabled { get; set; } = false;
@@ -86,6 +94,14 @@
         public bool foodSettingsEnabled { get; set; } = false;
         public float foodDurationMultiplier { get; set; } = 0;
         public bool disableFoodDegradation { get; set; } = false;
+
+        // FreePlacementRotation
+        public bool freePlacementRotationSettingsEnabled { get; set; } = false;
+        public string rotateY { get; set; } = "LeftAlt";
+        public string rotateX { get; set; } = "C";
+        public string rotateZ { get; set; } = "V";
+        public string copyRotationParallel { get; set; } = "F";
+        public string copyRotationPerpendicular { get; set; } = "G";
 
         // Furnace
         public bool furnaceSettingsEnabled { get; set; } = false;

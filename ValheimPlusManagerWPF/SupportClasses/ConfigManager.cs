@@ -238,6 +238,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.woodChestRows = woodChestRows;
             }
+            if (int.TryParse(data["Inventory"]["personalChestColumns"], out int personalChestColumns))
+            {
+                valheimPlusConfiguration.personalChestColumns = personalChestColumns;
+            }
+            if (int.TryParse(data["Inventory"]["personalChestRows"], out int personalChestRows))
+            {
+                valheimPlusConfiguration.personalChestRows = personalChestRows;
+            }
             if (int.TryParse(data["Inventory"]["ironChestColumns"], out int ironChestColumns))
             {
                 valheimPlusConfiguration.ironChestColumns = ironChestColumns;
@@ -245,6 +253,30 @@ namespace ValheimPlusManager.SupportClasses
             if (int.TryParse(data["Inventory"]["ironChestRows"], out int ironChestRows))
             {
                 valheimPlusConfiguration.ironChestRows = ironChestRows;
+            }
+            if (int.TryParse(data["Inventory"]["cartInventoryRows"], out int cartInventoryRows))
+            {
+                valheimPlusConfiguration.cartInventoryRows = cartInventoryRows;
+            }
+            if (int.TryParse(data["Inventory"]["cartInventoryColumns"], out int cartInventoryColumns))
+            {
+                valheimPlusConfiguration.cartInventoryColumns = cartInventoryColumns;
+            }
+            if (int.TryParse(data["Inventory"]["karveInventoryColumns"], out int karveInventoryColumns))
+            {
+                valheimPlusConfiguration.karveInventoryColumns = karveInventoryColumns;
+            }
+            if (int.TryParse(data["Inventory"]["karveInventoryRows"], out int karveInventoryRows))
+            {
+                valheimPlusConfiguration.karveInventoryRows = karveInventoryRows;
+            }
+            if (int.TryParse(data["Inventory"]["longboatInventoryColumns"], out int longboatInventoryColumns))
+            {
+                valheimPlusConfiguration.longboatInventoryColumns = longboatInventoryColumns;
+            }
+            if (int.TryParse(data["Inventory"]["longboatInventoryRows"], out int longboatInventoryRows))
+            {
+                valheimPlusConfiguration.longboatInventoryRows = longboatInventoryRows;
             }
             #endregion Inventory
 
@@ -949,7 +981,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Durability"]["bows"] = valheimPlusConfiguration.bowsDurability.ToString();
             data["Durability"]["shields"] = valheimPlusConfiguration.shieldsDurability.ToString();
 
-            // Inventory
+            #region Inventory
             data["Inventory"]["enabled"] = valheimPlusConfiguration.inventorySettingsEnabled.ToString().ToLower();
             data["Inventory"]["inventoryFillTopToBottom"] = valheimPlusConfiguration.inventoryFillTopToBottom.ToString().ToLower();
             data["Inventory"]["playerInventoryRows"] = valheimPlusConfiguration.playerInventoryRows.ToString();
@@ -957,6 +989,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Inventory"]["woodChestRows"] = valheimPlusConfiguration.woodChestRows.ToString();
             data["Inventory"]["ironChestColumns"] = valheimPlusConfiguration.ironChestColumns.ToString();
             data["Inventory"]["ironChestRows"] = valheimPlusConfiguration.ironChestRows.ToString();
+            #endregion Inventory
 
             // Items
             data["Items"]["enabled"] = valheimPlusConfiguration.itemsSettingsEnabled.ToString().ToLower();
