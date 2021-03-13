@@ -180,7 +180,7 @@
                         <CheckBox Content="Display the minutes and seconds until the fermenter is done on hover" IsChecked="{Binding showFermenterDuration}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
-                <TabItem IsEnabled="{Binding fireplaceSettingsEnabled}" Header="Fire source">
+                <TabItem IsEnabled="{Binding fireSourceSettingsEnabled}" Header="Fire source">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Fireplace" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <CheckBox Content="ONLY placed torches don't need refilling" IsChecked="{Binding onlyTorches}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
