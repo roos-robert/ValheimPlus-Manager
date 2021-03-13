@@ -152,6 +152,26 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.maximumPlacementDistance = maximumPlacementDistance;
             }
+            if (float.TryParse(data["Building"]["pieceComfortRadius"], NumberStyles.Any, ci, out float pieceComfortRadius))
+            {
+                valheimPlusConfiguration.pieceComfortRadius = pieceComfortRadius;
+            }
+            if (bool.TryParse(data["Building"]["alwaysDropResources"], out bool alwaysDropResources))
+            {
+                valheimPlusConfiguration.alwaysDropResources = alwaysDropResources;
+            }
+            if (bool.TryParse(data["Building"]["alwaysDropExcludedResources"], out bool alwaysDropExcludedResources))
+            {
+                valheimPlusConfiguration.alwaysDropExcludedResources = alwaysDropExcludedResources;
+            }
+            if (bool.TryParse(data["Building"]["enableAreaRepair"], out bool enableAreaRepair))
+            {
+                valheimPlusConfiguration.enableAreaRepair = enableAreaRepair;
+            }
+            if (float.TryParse(data["Building"]["areaRepairRadius"], NumberStyles.Any, ci, out float areaRepairRadius))
+            {
+                valheimPlusConfiguration.areaRepairRadius = areaRepairRadius;
+            }
             #endregion Building
 
             #region Durability
@@ -889,11 +909,17 @@ namespace ValheimPlusManager.SupportClasses
             data["Beehive"]["showDuration"] = valheimPlusConfiguration.showDurationBeehive.ToString().ToLower();
             #endregion Beehive
 
-            // Building
+            #region Building
             data["Building"]["enabled"] = valheimPlusConfiguration.buildingSettingsEnabled.ToString().ToLower();
             data["Building"]["maximumPlacementDistance"] = valheimPlusConfiguration.maximumPlacementDistance.ToString().ToLower();
             data["Building"]["noWeatherDamage"] = valheimPlusConfiguration.noWeatherDamage.ToString();
             data["Building"]["noInvalidPlacementRestriction"] = valheimPlusConfiguration.noInvalidPlacementRestriction.ToString();
+            data["Building"]["pieceComfortRadius"] = valheimPlusConfiguration.pieceComfortRadius.ToString();
+            data["Building"]["alwaysDropResources"] = valheimPlusConfiguration.buildingSettingsEnabled.ToString().ToLower();
+            data["Building"]["alwaysDropExcludedResources"] = valheimPlusConfiguration.buildingSettingsEnabled.ToString().ToLower();
+            data["Building"]["enableAreaRepair"] = valheimPlusConfiguration.buildingSettingsEnabled.ToString().ToLower();
+            data["Building"]["areaRepairRadius"] = valheimPlusConfiguration.areaRepairRadius.ToString();
+            #endregion Building
 
             // Durability
             data["Durability"]["enabled"] = valheimPlusConfiguration.durabilitySettingsEnabled.ToString().ToLower();

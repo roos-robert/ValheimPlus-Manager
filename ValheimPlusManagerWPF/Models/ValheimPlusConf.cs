@@ -38,6 +38,11 @@
         public bool noInvalidPlacementRestriction { get; set; } = false;
         public bool noWeatherDamage { get; set; } = false;
         public float maximumPlacementDistance { get; set; } = 5;
+        public float pieceComfortRadius { get; set; } = 10;
+        public bool alwaysDropResources { get; set; } = false;
+        public bool alwaysDropExcludedResources { get; set; } = false;
+        public bool enableAreaRepair { get; set; } = false;
+        public float areaRepairRadius { get; set; } = 7.5f;
 
         // Durability
         public bool durabilitySettingsEnabled { get; set; } = false;

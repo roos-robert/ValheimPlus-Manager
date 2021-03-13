@@ -124,9 +124,14 @@
                 <TabItem IsEnabled="{Binding buildingSettingsEnabled}" Header="Building">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Building" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding maximumPlacementDistance}" materialDesign:HintAssist.Hint="The maximum range that you can place build objects at" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
-                        <CheckBox Content="No invalid placement restrictions" IsChecked="{Binding noInvalidPlacementRestriction}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="No weather damage" IsChecked="{Binding noWeatherDamage}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="506" Text="{Binding maximumPlacementDistance}" materialDesign:HintAssist.Hint="The maximum range that you can place build objects at" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="506" Text="{Binding pieceComfortRadius}" materialDesign:HintAssist.Hint="The radius in meters in which a piece must be to contribute to the comfort level" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="506" Text="{Binding areaRepairRadius}" materialDesign:HintAssist.Hint="Sets the area repair radius. A value of 7.5 would mean your repair radius is 7.5m" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <CheckBox Content="No invalid placement restrictions" IsChecked="{Binding noInvalidPlacementRestriction}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="No weather damage" IsChecked="{Binding noWeatherDamage}" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="When destroying a building piece, setting this to true will ensure it always drops full resources" IsChecked="{Binding alwaysDropResources}" HorizontalAlignment="Left" Margin="10,290,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="When destroying a building piece, setting this to true will ensure it always drops pieces that the devs have marked as 'do not drop'" IsChecked="{Binding alwaysDropExcludedResources}" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Setting this to true will cause repairing with the hammer to repair in a radius" IsChecked="{Binding enableAreaRepair}" HorizontalAlignment="Left" Margin="10,350,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding durabilitySettingsEnabled}" Header="Durability">
