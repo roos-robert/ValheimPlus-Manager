@@ -20,7 +20,7 @@ namespace ValheimPlusManager
             // Fetching path settings
             Settings = SettingsDAL.GetSettings();
 
-            managerVersionTextBlock.Text = "Version 0.4.1";
+            managerVersionTextBlock.Text = "Version 0.4.2";
 
             //ValheimPlusUpdate valheimPlusUpdate = await UpdateManager.CheckForValheimPlusUpdatesAsync(Settings.ValheimPlusGameClientVersion);
 
