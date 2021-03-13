@@ -330,7 +330,8 @@
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Workbench" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding workbenchRange}" materialDesign:HintAssist.Hint="Set the workbench radius in meters" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
-                        <CheckBox Content="Disables the roof and exposure requirement to use a workbench" IsChecked="{Binding disableRoofCheck}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding workbenchAttachmentRange}" materialDesign:HintAssist.Hint="Sets the workbench attachment (e.g. anvil) radius" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <CheckBox Content="Disables the roof and exposure requirement to use a workbench" IsChecked="{Binding disableRoofCheck}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <!--<TabItem IsEnabled="{Binding timeSettingsEnabled}" Header="Time">

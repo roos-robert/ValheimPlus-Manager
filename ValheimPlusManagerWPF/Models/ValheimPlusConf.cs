@@ -200,6 +200,7 @@
         // Workbench
         public bool workbenchSettingsEnabled { get; set; } = false;
         public float workbenchRange { get; set; } = 20;
+        public float workbenchAttachmentRange { get; set; } = 5.0f;
         public bool disableRoofCheck { get; set; } = false;
 
         // Time

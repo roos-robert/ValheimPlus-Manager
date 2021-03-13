@@ -683,6 +683,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.workbenchRange = workbenchRange;
             }
+            if (int.TryParse(data["Workbench"]["workbenchAttachmentRange"], out int workbenchAttachmentRange))
+            {
+                valheimPlusConfiguration.workbenchAttachmentRange = workbenchAttachmentRange;
+            }
             if (bool.TryParse(data["Workbench"]["disableRoofCheck"], out bool disableRoofCheck))
             {
                 valheimPlusConfiguration.disableRoofCheck = disableRoofCheck;
@@ -1085,10 +1089,12 @@ namespace ValheimPlusManager.SupportClasses
             data["StaminaUsage"]["hoe"] = valheimPlusConfiguration.hoe.ToString();
             data["StaminaUsage"]["cultivator"] = valheimPlusConfiguration.cultivator.ToString();
 
-            // Workbench
+            #region Workbench
             data["Workbench"]["enabled"] = valheimPlusConfiguration.workbenchSettingsEnabled.ToString().ToLower();
             data["Workbench"]["workbenchRange"] = valheimPlusConfiguration.workbenchRange.ToString();
+            data["Workbench"]["workbenchAttachmentRange"] = valheimPlusConfiguration.workbenchAttachmentRange.ToString();
             data["Workbench"]["disableRoofCheck"] = valheimPlusConfiguration.disableRoofCheck.ToString().ToLower();
+            #endregion Workbench
 
             // Time
             //data["Time"]["enabled"] = valheimPlusConfiguration.timeSettingsEnabled.ToString().ToLower();
