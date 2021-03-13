@@ -85,6 +85,7 @@
         // Food
         public bool foodSettingsEnabled { get; set; } = false;
         public float foodDurationMultiplier { get; set; } = 0;
+        public bool disableFoodDegradation { get; set; } = false;
 
         // Furnace
         public bool furnaceSettingsEnabled { get; set; } = false;

@@ -191,6 +191,7 @@
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Food" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Increase or reduce the time that food lasts by %. The value 50 would cause food to run out 50% slower." TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding foodDurationMultiplier}" materialDesign:HintAssist.Hint="Food duration multiplier" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,80,0,0" />
+                        <CheckBox Content="If set to true, this option prevents food effects of degrading over time" IsChecked="{Binding disableFoodDegradation}" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding furnaceSettingsEnabled}" Header="Furnace">

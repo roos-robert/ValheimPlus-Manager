@@ -310,6 +310,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.foodDurationMultiplier = foodDurationMultiplier;
             }
+            if (bool.TryParse(data["Food"]["disableFoodDegradation"], out bool disableFoodDegradation))
+            {
+                valheimPlusConfiguration.disableFoodDegradation = disableFoodDegradation;
+            }
             #endregion Food
 
             #region Furnace
@@ -963,6 +967,7 @@ namespace ValheimPlusManager.SupportClasses
             // Food
             data["Food"]["enabled"] = valheimPlusConfiguration.foodSettingsEnabled.ToString().ToLower();
             data["Food"]["foodDurationMultiplier"] = valheimPlusConfiguration.foodDurationMultiplier.ToString();
+            data["Food"]["disableFoodDegradation"] = valheimPlusConfiguration.disableFoodDegradation.ToString().ToLower();
 
             // Furnace
             data["Furnace"]["enabled"] = valheimPlusConfiguration.furnaceSettingsEnabled.ToString().ToLower();
