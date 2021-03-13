@@ -348,6 +348,33 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Food
 
+            #region FreePlacementRotation
+            if (bool.TryParse(data["FreePlacementRotation"]["enabled"], out bool freePlacementRotationSettingsEnabled))
+            {
+                valheimPlusConfiguration.freePlacementRotationSettingsEnabled = freePlacementRotationSettingsEnabled;
+            }
+            if (data["FreePlacementRotation"]["rotateY"] != null)
+            {
+                valheimPlusConfiguration.rotateY = data["FreePlacementRotation"]["rotateY"];
+            }
+            if (data["FreePlacementRotation"]["rotateX"] != null)
+            {
+                valheimPlusConfiguration.rotateX = data["FreePlacementRotation"]["rotateX"];
+            }
+            if (data["FreePlacementRotation"]["rotateZ"] != null)
+            {
+                valheimPlusConfiguration.rotateZ = data["FreePlacementRotation"]["rotateZ"];
+            }
+            if (data["FreePlacementRotation"]["copyRotationParallel"] != null)
+            {
+                valheimPlusConfiguration.copyRotationParallel = data["FreePlacementRotation"]["copyRotationParallel"];
+            }
+            if (data["FreePlacementRotation"]["copyRotationPerpendicular"] != null)
+            {
+                valheimPlusConfiguration.copyRotationPerpendicular = data["FreePlacementRotation"]["copyRotationPerpendicular"];
+            }
+            #endregion FreePlacementRotation
+
             #region Furnace
             if (bool.TryParse(data["Furnace"]["enabled"], out bool furnaceSettingsEnabled))
             {
@@ -1013,6 +1040,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Food"]["enabled"] = valheimPlusConfiguration.foodSettingsEnabled.ToString().ToLower();
             data["Food"]["foodDurationMultiplier"] = valheimPlusConfiguration.foodDurationMultiplier.ToString();
             data["Food"]["disableFoodDegradation"] = valheimPlusConfiguration.disableFoodDegradation.ToString().ToLower();
+
+            #region FreePlacementRotation
+            data["FreePlacementRotation"]["enabled"] = valheimPlusConfiguration.freePlacementRotationSettingsEnabled.ToString().ToLower();
+            data["FreePlacementRotation"]["rotateY"] = valheimPlusConfiguration.rotateY.ToString();
+            data["FreePlacementRotation"]["rotateX"] = valheimPlusConfiguration.rotateX.ToString();
+            data["FreePlacementRotation"]["rotateZ"] = valheimPlusConfiguration.rotateZ.ToString();
+            data["FreePlacementRotation"]["copyRotationParallel"] = valheimPlusConfiguration.copyRotationParallel.ToString();
+            data["FreePlacementRotation"]["copyRotationPerpendicular"] = valheimPlusConfiguration.copyRotationPerpendicular.ToString();
+            #endregion FreePlacementRotation
 
             // Furnace
             data["Furnace"]["enabled"] = valheimPlusConfiguration.furnaceSettingsEnabled.ToString().ToLower();

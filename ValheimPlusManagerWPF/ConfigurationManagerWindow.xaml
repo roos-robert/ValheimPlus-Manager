@@ -203,9 +203,11 @@
                 <TabItem IsEnabled="{Binding freePlacementRotationSettingsEnabled}" Header="Free placement rotation">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Free placement rotation" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Increase or reduce the time that food lasts by %. The value 50 would cause food to run out 50% slower." TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding foodDurationMultiplier}" materialDesign:HintAssist.Hint="Food duration multiplier" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,80,0,0" />
-                        <CheckBox Content="If set to true, this option prevents food effects of degrading over time" IsChecked="{Binding disableFoodDegradation}" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
+                        <TextBox Width="382" Text="{Binding rotateY}" materialDesign:HintAssist.Hint="Rotate Y-axis" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox Width="382" Text="{Binding rotateX}" materialDesign:HintAssist.Hint="Rotate X-axis" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox Width="382" Text="{Binding rotateZ}" materialDesign:HintAssist.Hint="Rotate Z-axis" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox Width="382" Text="{Binding copyRotationParallel}" materialDesign:HintAssist.Hint="Copy rotation of placement marker from target piece in front of you" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox Width="382" Text="{Binding copyRotationPerpendicular}" materialDesign:HintAssist.Hint="Set rotation to be perpendicular to piece in front of you" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding furnaceSettingsEnabled}" Header="Furnace">
