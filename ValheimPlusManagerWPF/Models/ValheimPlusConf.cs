@@ -187,6 +187,10 @@
         public bool serverSyncsConfig { get; set; } = true;
         public int dataRate { get; set; } = 60; // 60*1024 = 614440 == 60kbs
 
+        // Shields
+        public bool shieldsSettingsEnabled { get; set; } = false;
+        public float blockRating { get; set; } = 0;
+
         // Stamina
         public bool staminaSettingsEnabled { get; set; } = false;
         public float dodgeStaminaUsage { get; set; } = 0;

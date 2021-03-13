@@ -67,6 +67,7 @@
                 <CheckBox IsChecked="{Binding mapSettingsEnabled}" Content="Enable map settings" />
                 <CheckBox IsChecked="{Binding playerSettingsEnabled}" Content="Enable player settings" />
                 <CheckBox IsChecked="{Binding serverSettingsEnabled}" Content="Enable server settings" />
+                <CheckBox IsChecked="{Binding shieldsSettingsEnabled}" Content="Enable shields settings" />
                 <CheckBox IsChecked="{Binding staminaSettingsEnabled}" Content="Enable stamina settings" />
                 <CheckBox IsChecked="{Binding staminaUsageSettingsEnabled}" Content="Enable stamina usage settings" />
                 <CheckBox IsChecked="{Binding workbenchSettingsEnabled}" Content="Enable workbench settings" />
@@ -306,6 +307,12 @@
                         <CheckBox Content="Removes the requirement to have a server password" IsChecked="{Binding disableServerPassword}" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Enable that the server will force it's config on clients that connect. Only affects servers" IsChecked="{Binding serverSyncsConfig}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Add version control to make sure that people that try to join your game or the server you try to join has V+ installed" IsChecked="{Binding enforceMod}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding shieldsSettingsEnabled}" Header="Shields">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Shields" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="480" Text="{Binding blockRating}" materialDesign:HintAssist.Hint="Increase or decrease the block value on all shields in % percentage" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding staminaSettingsEnabled}" Header="Stamina">

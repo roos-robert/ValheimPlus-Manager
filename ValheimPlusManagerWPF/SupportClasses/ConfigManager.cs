@@ -639,6 +639,17 @@ namespace ValheimPlusManager.SupportClasses
             //}
             #endregion Server
 
+            #region Shields
+            if (bool.TryParse(data["Shields"]["enabled"], out bool shieldsSettingsEnabled))
+            {
+                valheimPlusConfiguration.shieldsSettingsEnabled = shieldsSettingsEnabled;
+            }
+            if (int.TryParse(data["Shields"]["blockRating"], out int blockRating))
+            {
+                valheimPlusConfiguration.blockRating = blockRating;
+            }
+            #endregion Shields
+
             #region Stamina
             if (bool.TryParse(data["Stamina"]["enabled"], out bool staminaSettingsEnabled))
             {
@@ -1131,6 +1142,11 @@ namespace ValheimPlusManager.SupportClasses
             data["Server"]["dataRate"] = valheimPlusConfiguration.dataRate.ToString();
             //data["Server"]["autoSaveInterval"] = valheimPlusConfiguration.autoSaveInterval.ToString();
             #endregion Server
+
+            #region Shields
+            data["Shields"]["enabled"] = valheimPlusConfiguration.shieldsSettingsEnabled.ToString().ToLower();
+            data["Shields"]["blockRating"] = valheimPlusConfiguration.blockRating.ToString();
+            #endregion Shields
 
             // Stamina
             data["Stamina"]["enabled"] = valheimPlusConfiguration.staminaSettingsEnabled.ToString().ToLower();
