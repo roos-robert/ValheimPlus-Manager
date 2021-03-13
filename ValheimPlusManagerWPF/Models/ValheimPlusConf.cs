@@ -156,6 +156,11 @@
         public bool disableCameraShake { get; set; } = false;
         public float baseUnarmedDamage { get; set; } = 0;
         public bool cropNotifier { get; set; } = false;
+        public float restSecondsPerComfortLevel { get; set; } = 60;
+        public float deathPenaltyMultiplier { get; set; } = 0;
+        public bool autoRepair { get; set; } = false;
+        //public float guardianBuffDuration { get; set; } = 300;
+        //public float guardianBuffCooldown { get; set; } = 1200;
 
         // Server
         public bool serverSettingsEnabled { get; set; } = false;

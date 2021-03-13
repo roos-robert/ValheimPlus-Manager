@@ -538,6 +538,18 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.cropNotifier = cropNotifier;
             }
+            if (float.TryParse(data["Player"]["restSecondsPerComfortLevel"], NumberStyles.Any, ci, out float restSecondsPerComfortLevel))
+            {
+                valheimPlusConfiguration.restSecondsPerComfortLevel = restSecondsPerComfortLevel;
+            }
+            if (float.TryParse(data["Player"]["deathPenaltyMultiplier"], NumberStyles.Any, ci, out float deathPenaltyMultiplier))
+            {
+                valheimPlusConfiguration.deathPenaltyMultiplier = deathPenaltyMultiplier;
+            }
+            if (bool.TryParse(data["Player"]["autoRepair"], out bool autoRepair))
+            {
+                valheimPlusConfiguration.autoRepair = autoRepair;
+            }
             #endregion Player
 
             #region Server
