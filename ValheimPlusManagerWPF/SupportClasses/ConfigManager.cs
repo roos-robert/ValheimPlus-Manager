@@ -121,6 +121,18 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.maximumHoneyPerBeehive = maximumHoneyPerBeehive;
             }
+            if (float.TryParse(data["Beehive"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositHoneyRange))
+            {
+                valheimPlusConfiguration.autoDepositHoneyRange = autoDepositHoneyRange;
+            }
+            if (bool.TryParse(data["Beehive"]["autoDeposit"], out bool autoDepositHoney))
+            {
+                valheimPlusConfiguration.autoDepositHoney = autoDepositHoney;
+            }
+            if (bool.TryParse(data["Beehive"]["showDuration"], out bool showDurationBeehive))
+            {
+                valheimPlusConfiguration.showDurationBeehive = showDurationBeehive;
+            }
             #endregion Beehive
 
             #region Building
@@ -868,10 +880,14 @@ namespace ValheimPlusManager.SupportClasses
             data["Armor"]["legs"] = valheimPlusConfiguration.legsArmor.ToString();
             data["Armor"]["capes"] = valheimPlusConfiguration.capesArmor.ToString();
 
-            // Beehive
+            #region Beehive
             data["Beehive"]["enabled"] = valheimPlusConfiguration.beehiveSettingsEnabled.ToString().ToLower();
             data["Beehive"]["honeyProductionSpeed"] = valheimPlusConfiguration.honeyProductionSpeed.ToString();
             data["Beehive"]["maximumHoneyPerBeehive"] = valheimPlusConfiguration.maximumHoneyPerBeehive.ToString();
+            data["Beehive"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositHoneyRange.ToString();
+            data["Beehive"]["autoDeposit"] = valheimPlusConfiguration.autoDepositHoney.ToString().ToLower();
+            data["Beehive"]["showDuration"] = valheimPlusConfiguration.showDurationBeehive.ToString().ToLower();
+            #endregion Beehive
 
             // Building
             data["Building"]["enabled"] = valheimPlusConfiguration.buildingSettingsEnabled.ToString().ToLower();

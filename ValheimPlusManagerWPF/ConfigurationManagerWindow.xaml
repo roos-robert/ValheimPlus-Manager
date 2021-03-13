@@ -115,6 +115,10 @@
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Beehive" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding honeyProductionSpeed}" materialDesign:HintAssist.Hint="Speed at which the bees produce honey in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding maximumHoneyPerBeehive}" materialDesign:HintAssist.Hint="Maximum amount of honey in beehives" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding autoDepositHoneyRange}" materialDesign:HintAssist.Hint="Range for auto-deposit into chests" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositHoney}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Display the minutes and seconds until the beehive produces honey on hover" IsChecked="{Binding showDurationBeehive}" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding buildingSettingsEnabled}" Header="Building">

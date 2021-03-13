@@ -29,6 +29,9 @@
         public bool beehiveSettingsEnabled { get; set; } = false;
         public float honeyProductionSpeed { get; set; } = 1200;
         public int maximumHoneyPerBeehive { get; set; } = 4;
+        public bool autoDepositHoney { get; set; } = false;
+        public float autoDepositHoneyRange { get; set; } = 10;
+        public bool showDurationBeehive { get; set; } = false;
 
         // Building
         public bool buildingSettingsEnabled { get; set; } = false;
