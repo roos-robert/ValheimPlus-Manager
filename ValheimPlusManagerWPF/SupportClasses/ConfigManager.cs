@@ -673,6 +673,37 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Shields
 
+            #region Smelter
+            if (bool.TryParse(data["Smelter"]["enabled"], out bool smelterSettingsEnabled))
+            {
+                valheimPlusConfiguration.smelterSettingsEnabled = smelterSettingsEnabled;
+            }
+            if (int.TryParse(data["Smelter"]["maximumOre"], out int smelterMaximumOre))
+            {
+                valheimPlusConfiguration.smelterMaximumOre = smelterMaximumOre;
+            }
+            if (int.TryParse(data["Smelter"]["maximumCoal"], out int smelterMaximumCoal))
+            {
+                valheimPlusConfiguration.smelterMaximumCoal = smelterMaximumCoal;
+            }
+            if (int.TryParse(data["Smelter"]["coalUsedPerProduct"], out int smelterCoalUsedPerProduct))
+            {
+                valheimPlusConfiguration.smelterCoalUsedPerProduct = smelterCoalUsedPerProduct;
+            }
+            if (int.TryParse(data["Smelter"]["productionSpeed"], out int smelterProductionSpeed))
+            {
+                valheimPlusConfiguration.smelterProductionSpeed = smelterProductionSpeed;
+            }
+            if (float.TryParse(data["Smelter"]["autoDepositRange"], NumberStyles.Any, ci, out float smelterAutoDepositRange))
+            {
+                valheimPlusConfiguration.smelterAutoDepositRange = smelterAutoDepositRange;
+            }
+            if (bool.TryParse(data["Smelter"]["autoDeposit"], out bool smelterAutoDeposit))
+            {
+                valheimPlusConfiguration.smelterAutoDeposit = smelterAutoDeposit;
+            }
+            #endregion Smelter
+
             #region Stamina
             if (bool.TryParse(data["Stamina"]["enabled"], out bool staminaSettingsEnabled))
             {
@@ -1024,9 +1055,9 @@ namespace ValheimPlusManager.SupportClasses
             data["Building"]["noWeatherDamage"] = valheimPlusConfiguration.noWeatherDamage.ToString();
             data["Building"]["noInvalidPlacementRestriction"] = valheimPlusConfiguration.noInvalidPlacementRestriction.ToString();
             data["Building"]["pieceComfortRadius"] = valheimPlusConfiguration.pieceComfortRadius.ToString();
-            data["Building"]["alwaysDropResources"] = valheimPlusConfiguration.buildingSettingsEnabled.ToString().ToLower();
-            data["Building"]["alwaysDropExcludedResources"] = valheimPlusConfiguration.buildingSettingsEnabled.ToString().ToLower();
-            data["Building"]["enableAreaRepair"] = valheimPlusConfiguration.buildingSettingsEnabled.ToString().ToLower();
+            data["Building"]["alwaysDropResources"] = valheimPlusConfiguration.alwaysDropResources.ToString().ToLower();
+            data["Building"]["alwaysDropExcludedResources"] = valheimPlusConfiguration.alwaysDropExcludedResources.ToString().ToLower();
+            data["Building"]["enableAreaRepair"] = valheimPlusConfiguration.enableAreaRepair.ToString().ToLower();
             data["Building"]["areaRepairRadius"] = valheimPlusConfiguration.areaRepairRadius.ToString();
             #endregion Building
 
@@ -1178,6 +1209,16 @@ namespace ValheimPlusManager.SupportClasses
             data["Shields"]["enabled"] = valheimPlusConfiguration.shieldsSettingsEnabled.ToString().ToLower();
             data["Shields"]["blockRating"] = valheimPlusConfiguration.blockRating.ToString();
             #endregion Shields
+
+            #region Smelter
+            data["Smelter"]["enabled"] = valheimPlusConfiguration.smelterSettingsEnabled.ToString().ToLower();
+            data["Smelter"]["maximumOre"] = valheimPlusConfiguration.smelterMaximumOre.ToString();
+            data["Smelter"]["maximumCoal"] = valheimPlusConfiguration.smelterMaximumCoal.ToString();
+            data["Smelter"]["coalUsedPerProduct"] = valheimPlusConfiguration.smelterCoalUsedPerProduct.ToString();
+            data["Smelter"]["productionSpeed"] = valheimPlusConfiguration.smelterProductionSpeed.ToString();
+            data["Smelter"]["autoDeposit"] = valheimPlusConfiguration.smelterAutoDeposit.ToString().ToLower();
+            data["Smelter"]["autoDepositRange"] = valheimPlusConfiguration.smelterAutoDepositRange.ToString();
+            #endregion Smelter
 
             // Stamina
             data["Stamina"]["enabled"] = valheimPlusConfiguration.staminaSettingsEnabled.ToString().ToLower();

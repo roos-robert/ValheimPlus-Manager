@@ -198,6 +198,15 @@
         public bool shieldsSettingsEnabled { get; set; } = false;
         public float blockRating { get; set; } = 0;
 
+        // Smelter
+        public bool smelterSettingsEnabled { get; set; } = false;
+        public int smelterMaximumOre { get; set; } = 10;
+        public int smelterMaximumCoal { get; set; } = 20;
+        public int smelterCoalUsedPerProduct { get; set; } = 2;
+        public float smelterProductionSpeed { get; set; } = 30;
+        public bool smelterAutoDeposit { get; set; } = false;
+        public float smelterAutoDepositRange { get; set; } = 10;
+
         // Stamina
         public bool staminaSettingsEnabled { get; set; } = false;
         public float dodgeStaminaUsage { get; set; } = 0;
