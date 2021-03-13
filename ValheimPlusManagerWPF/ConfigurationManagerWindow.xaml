@@ -55,7 +55,7 @@
                 <CheckBox IsChecked="{Binding inventorySettingsEnabled}" Content="Enable inventory settings" />
                 <CheckBox IsChecked="{Binding itemsSettingsEnabled}" Content="Enable item settings" />
                 <CheckBox IsChecked="{Binding fermenterSettingsEnabled}" Content="Enable fermenter settings" />
-                <CheckBox IsChecked="{Binding fireplaceSettingsEnabled}" Content="Enable fireplace settings" />
+                <CheckBox IsChecked="{Binding fireSourceSettingsEnabled}" Content="Enable fire source settings" />
                 <CheckBox IsChecked="{Binding foodSettingsEnabled}" Content="Enable food settings" />
                 <CheckBox IsChecked="{Binding furnaceSettingsEnabled}" Content="Enable furnace settings" />
                 <CheckBox IsChecked="{Binding gameSettingsEnabled}" Content="Enable game settings" />
@@ -180,7 +180,7 @@
                         <CheckBox Content="Display the minutes and seconds until the fermenter is done on hover" IsChecked="{Binding showFermenterDuration}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
-                <TabItem IsEnabled="{Binding fireplaceSettingsEnabled}" Header="Fireplace">
+                <TabItem IsEnabled="{Binding fireplaceSettingsEnabled}" Header="Fire source">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Fireplace" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <CheckBox Content="ONLY placed torches don't need refilling" IsChecked="{Binding onlyTorches}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>

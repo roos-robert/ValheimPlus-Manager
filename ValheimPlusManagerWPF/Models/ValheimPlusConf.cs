@@ -78,8 +78,8 @@
         public int fermenterItemsProduced { get; set; } = 4;
         public bool showFermenterDuration { get; set; } = false;
 
-        // Fireplace
-        public bool fireplaceSettingsEnabled { get; set; } = false;
+        // FireSource
+        public bool fireSourceSettingsEnabled { get; set; } = false;
         public bool onlyTorches { get; set; } = false;
 
         // Food

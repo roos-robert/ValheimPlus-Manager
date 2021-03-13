@@ -290,16 +290,16 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Fermenter
 
-            #region Fireplace
-            if (bool.TryParse(data["Fireplace"]["enabled"], out bool fireplaceSettingsEnabled))
+            #region FireSource
+            if (bool.TryParse(data["FireSource"]["enabled"], out bool fireSourceSettingsEnabled))
             {
-                valheimPlusConfiguration.fireplaceSettingsEnabled = fireplaceSettingsEnabled;
+                valheimPlusConfiguration.fireSourceSettingsEnabled = fireSourceSettingsEnabled;
             }
-            if (bool.TryParse(data["Fireplace"]["onlyTorches"], out bool onlyTorches))
+            if (bool.TryParse(data["FireSource"]["onlyTorches"], out bool onlyTorches))
             {
                 valheimPlusConfiguration.onlyTorches = onlyTorches;
             }
-            #endregion Fireplace
+            #endregion FireSource
 
             #region Food
             if (bool.TryParse(data["Food"]["enabled"], out bool foodSettingsEnabled))
@@ -955,9 +955,10 @@ namespace ValheimPlusManager.SupportClasses
             data["Fermenter"]["fermenterItemsProduced"] = valheimPlusConfiguration.fermenterItemsProduced.ToString();
             data["Fermenter"]["showFermenterDuration"] = valheimPlusConfiguration.showFermenterDuration.ToString().ToLower();
 
-            // Fireplace
-            data["Fireplace"]["enabled"] = valheimPlusConfiguration.fireplaceSettingsEnabled.ToString().ToLower();
-            data["Fireplace"]["onlyTorches"] = valheimPlusConfiguration.onlyTorches.ToString().ToLower();
+            #region FireSource
+            data["FireSource"]["enabled"] = valheimPlusConfiguration.fireSourceSettingsEnabled.ToString().ToLower();
+            data["FireSource"]["onlyTorches"] = valheimPlusConfiguration.onlyTorches.ToString().ToLower();
+            #endregion FireSource
 
             // Food
             data["Food"]["enabled"] = valheimPlusConfiguration.foodSettingsEnabled.ToString().ToLower();
