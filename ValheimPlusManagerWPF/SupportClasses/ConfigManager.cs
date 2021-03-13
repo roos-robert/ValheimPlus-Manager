@@ -1077,6 +1077,8 @@ namespace ValheimPlusManager.SupportClasses
             data["Inventory"]["enabled"] = valheimPlusConfiguration.inventorySettingsEnabled.ToString().ToLower();
             data["Inventory"]["inventoryFillTopToBottom"] = valheimPlusConfiguration.inventoryFillTopToBottom.ToString().ToLower();
             data["Inventory"]["playerInventoryRows"] = valheimPlusConfiguration.playerInventoryRows.ToString();
+            data["Inventory"]["personalChestRows"] = valheimPlusConfiguration.personalChestRows.ToString();
+            data["Inventory"]["personalChestColumns"] = valheimPlusConfiguration.personalChestColumns.ToString();
             data["Inventory"]["woodChestColumns"] = valheimPlusConfiguration.woodChestColumns.ToString();
             data["Inventory"]["woodChestRows"] = valheimPlusConfiguration.woodChestRows.ToString();
             data["Inventory"]["ironChestColumns"] = valheimPlusConfiguration.ironChestColumns.ToString();
