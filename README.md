@@ -29,7 +29,6 @@ ValheimPlus Manager makes the installation and configuration of ValheimPlus on W
 - Start manager through the 'ValheimPlusManager.exe'
 ## Known issues
 - If using a VPN where your assigned IP has been polling the Github API over 60 times in the last hour an error will be thrown. Try changing your VPN IP-address or disabling your VPN when checking for updates.
-- On first launch/before first update through the manager the installed version reported might be incorrect, waiting for ValheimPlus dev to implement easy way to check current version.
 ## Screenshots
 
 ![Image of UI of ValheimPlus Manager](ValheimPlusManagerWPF/Gfx/ValheimPlusManager.png)
