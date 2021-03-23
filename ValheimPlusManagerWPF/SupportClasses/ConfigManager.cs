@@ -652,10 +652,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.enforceMod = enforceMod;
             }
-            if (int.TryParse(data["Server"]["dataRate"], out int dataRate))
-            {
-                valheimPlusConfiguration.dataRate = dataRate;
-            }
+            //if (int.TryParse(data["Server"]["dataRate"], out int dataRate))
+            //{
+            //    valheimPlusConfiguration.dataRate = dataRate;
+            //}
             //if (int.TryParse(data["Server"]["autoSaveInterval"], out int autoSaveInterval))
             //{
             //    valheimPlusConfiguration.autoSaveInterval = autoSaveInterval;
@@ -1203,7 +1203,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Server"]["maxPlayers"] = valheimPlusConfiguration.maxPlayers.ToString();
             data["Server"]["disableServerPassword"] = valheimPlusConfiguration.disableServerPassword.ToString().ToLower();
             data["Server"]["enforceMod"] = valheimPlusConfiguration.enforceMod.ToString().ToLower();
-            data["Server"]["dataRate"] = valheimPlusConfiguration.dataRate.ToString();
+            //data["Server"]["dataRate"] = valheimPlusConfiguration.dataRate.ToString();
             //data["Server"]["autoSaveInterval"] = valheimPlusConfiguration.autoSaveInterval.ToString();
             #endregion Server
 
