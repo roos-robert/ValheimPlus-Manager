@@ -72,6 +72,7 @@
                 <CheckBox IsChecked="{Binding smelterSettingsEnabled}" Content="Enable smelter settings" />
                 <CheckBox IsChecked="{Binding staminaSettingsEnabled}" Content="Enable stamina settings" />
                 <CheckBox IsChecked="{Binding staminaUsageSettingsEnabled}" Content="Enable stamina usage settings" />
+                <CheckBox IsChecked="{Binding valheimPlusConfigurationEnabled}" Content="Enable ValheimPlus settings" />
                 <CheckBox IsChecked="{Binding workbenchSettingsEnabled}" Content="Enable workbench settings" />
                 <!--<CheckBox IsChecked="{Binding timeSettingsEnabled}" Content="Enable time settings" />-->
                 <CheckBox IsChecked="{Binding wardSettingsEnabled}" Content="Enable ward settings" />
@@ -369,6 +370,11 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding unarmed}" materialDesign:HintAssist.Hint="Unarmed" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,470,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding hammer}" materialDesign:HintAssist.Hint="Hammer" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,520,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding hoe}" materialDesign:HintAssist.Hint="Hoe" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,570,0,0" />
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding valheimPlusConfigurationEnabled}" Header="ValheimPlus">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="ValheimPlus" TextWrapping="Wrap" VerticalAlignment="Top" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding workbenchSettingsEnabled}" Header="Workbench">

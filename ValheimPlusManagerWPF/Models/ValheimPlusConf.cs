@@ -2,12 +2,20 @@
 {
     public class ValheimPlusConf
     {
+        #region ValheimPlusConfiguration
+        public bool valheimPlusConfigurationEnabled { get; set; } = true;
+        public bool mainMenuLogo { get; set; } = true;
+        public bool serverBrowserAdvertisement { get; set; } = true;
+        #endregion ValheimPlusConfiguration
+
         // Advanced building mode
         public bool advancedBuildingModeEnabled { get; set; } = false;
         public string enterAdvancedBuildingMode { get; set; } = "F1";
         public string exitAdvancedBuildingMode { get; set; } = "F3";
         public string copyObjectRotation { get; set; } = "Keypad7";
         public string pasteObjectRotation { get; set; } = "Keypad8";
+        public string increaseScrollSpeed { get; set; } = "KeypadPlus";
+        public string decreaseScrollSpeed { get; set; } = "KeypadMinus";
 
         // Advanced editing mode
         public bool advancedEditingModeEnabled { get; set; } = false;
