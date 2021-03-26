@@ -109,7 +109,7 @@
         public float fermenterDuration { get; set; } = 2400;
         public int fermenterItemsProduced { get; set; } = 4;
         public bool showFermenterDuration { get; set; } = false;
-        public bool autoDepositFermenter { get; internal set; } = true;
+        public bool autoDepositFermenter { get; set; } = true;
         public bool autoFuelFermenter { get; set; } = true;
         public bool ignorePrivateAreaCheckFermenter { get; set; } = true;
         public float autoRangeFermenter { get; set; } = 10;
@@ -171,6 +171,28 @@
         public bool forceConsole { get; set; } = false;
         #endregion Game
 
+        #region Gathering
+        public bool gatheringSettingsEnabled { get; set; } = false;
+        public float woodGathering { get; set; } = 0;
+        public float stoneGathering { get; set; } = 0;
+        public float fineWoodGathering { get; set; } = 0;
+        public float coreWoodGathering { get; set; } = 0;
+        public float elderBarkGathering { get; set; } = 0;
+        public float ironScrapGathering { get; set; } = 0;
+        public float tinOreGathering { get; set; } = 0;
+        public float copperOreGathering { get; set; } = 0;
+        public float silverOreGathering { get; set; } = 0;
+        public float chitinGathering { get; set; } = 0;
+        public float dropChanceGathering { get; set; } = 0;
+        #endregion Gathering
+
+        #region GridAlignment
+        public bool gridAlignmentSettingsEnabled { get; set; } = false;
+        public string align { get; set; } = "LeftAlt";
+        public string alignToggle { get; set; } = "F7";
+        public string changeDefaultAlignment { get; set; } = "F6";
+        #endregion GridAlignment
+
         // Hotkeys
         public bool hotkeysSettingsEnabled { get; set; } = false;
         public string rollForwards { get; set; } = "F9";
@@ -207,20 +229,6 @@
         public float baseItemWeightReduction { get; set; } = 0;
         public float itemStackMultiplier { get; set; } = 1;
         public int droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
-
-        // Gathering
-        public bool gatheringSettingsEnabled { get; set; } = false;
-        public float woodGathering { get; set; } = 0;
-        public float stoneGathering { get; set; } = 0;
-        public float fineWoodGathering { get; set; } = 0;
-        public float coreWoodGathering { get; set; } = 0;
-        public float elderBarkGathering { get; set; } = 0;
-        public float ironScrapGathering { get; set; } = 0;
-        public float tinOreGathering { get; set; } = 0;
-        public float copperOreGathering { get; set; } = 0;
-        public float silverOreGathering { get; set; } = 0;
-        public float chitinGathering { get; set; } = 0;
-        public float dropChanceGathering { get; set; } = 0;
 
         // Kiln
         public bool kilnSettingsEnabled { get; set; } = false;

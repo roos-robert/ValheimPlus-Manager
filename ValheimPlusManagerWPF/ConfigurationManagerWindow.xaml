@@ -62,6 +62,7 @@
                 <CheckBox IsChecked="{Binding furnaceSettingsEnabled}" Content="Enable furnace settings" />
                 <CheckBox IsChecked="{Binding gameSettingsEnabled}" Content="Enable game settings" />
                 <CheckBox IsChecked="{Binding gatheringSettingsEnabled}" Content="Enable gathering settings" />
+                <CheckBox IsChecked="{Binding gridAlignmentSettingsEnabled}" Content="Enable grid alignment settings" />
                 <CheckBox IsChecked="{Binding hotkeysSettingsEnabled}" Content="Enable hotkeys settings" />
                 <CheckBox IsChecked="{Binding hudSettingsEnabled}" Content="Enable HUD settings" />
                 <CheckBox IsChecked="{Binding kilnSettingsEnabled}" Content="Enable kiln settings" />
@@ -127,7 +128,6 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding autoDepositHoneyRange}" materialDesign:HintAssist.Hint="Range for auto-deposit into chests" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositHoney}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Display the minutes and seconds until the beehive produces honey on hover" IsChecked="{Binding showDurationBeehive}" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
-
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding buildingSettingsEnabled}" Header="Building">
@@ -293,6 +293,14 @@
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding silverOreGathering}" materialDesign:HintAssist.Hint="Silver ore" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,470,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding chitinGathering}" materialDesign:HintAssist.Hint="Chitin" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,520,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="530" Text="{Binding dropChanceGathering}" materialDesign:HintAssist.Hint="Modify the chance to drop resources from resource nodes affected by this category" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,570,0,0" />
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding gridAlignmentSettingsEnabled}" Header="Grid alignment">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Grid alignment" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox Width="382" Text="{Binding align}" materialDesign:HintAssist.Hint="Key to enable grid alignment" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox Width="382" Text="{Binding alignToggle}" materialDesign:HintAssist.Hint="Key to toggle grid alignment" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox Width="382" Text="{Binding changeDefaultAlignment}" materialDesign:HintAssist.Hint="Key to change the default alignment" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding kilnSettingsEnabled}" Header="Kiln">

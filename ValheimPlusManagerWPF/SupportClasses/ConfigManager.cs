@@ -595,6 +595,25 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Gathering
 
+            #region GridAlignment
+            if (bool.TryParse(data["GridAlignment"]["enabled"], out bool gridAlignmentSettingsEnabled))
+            {
+                valheimPlusConfiguration.gridAlignmentSettingsEnabled = gridAlignmentSettingsEnabled;
+            }
+            if (data["GridAlignment"]["align"] != null)
+            {
+                valheimPlusConfiguration.align = data["GridAlignment"]["align"];
+            }
+            if (data["GridAlignment"]["alignToggle"] != null)
+            {
+                valheimPlusConfiguration.alignToggle = data["GridAlignment"]["alignToggle"];
+            }
+            if (data["GridAlignment"]["changeDefaultAlignment"] != null)
+            {
+                valheimPlusConfiguration.changeDefaultAlignment = data["GridAlignment"]["changeDefaultAlignment"];
+            }
+            #endregion GridAlignment
+
             #region Hotkeys
             if (bool.TryParse(data["Hotkeys"]["enabled"], out bool hotkeysSettingsEnabled))
             {
@@ -1261,6 +1280,13 @@ namespace ValheimPlusManager.SupportClasses
             data["Gathering"]["chitin"] = valheimPlusConfiguration.chitinGathering.ToString();
             data["Gathering"]["dropChance"] = valheimPlusConfiguration.dropChanceGathering.ToString();
             #endregion Gathering
+
+            #region GridAlignment
+            data["GridAlignment"]["enabled"] = valheimPlusConfiguration.gridAlignmentSettingsEnabled.ToString().ToLower();
+            data["GridAlignment"]["align"] = valheimPlusConfiguration.align.ToString();
+            data["GridAlignment"]["alignToggle"] = valheimPlusConfiguration.alignToggle.ToString();
+            data["GridAlignment"]["changeDefaultAlignment"] = valheimPlusConfiguration.changeDefaultAlignment.ToString();
+            #endregion GridAlignment
 
             // Hotkeys
             data["Hotkeys"]["enabled"] = valheimPlusConfiguration.hotkeysSettingsEnabled.ToString().ToLower();
