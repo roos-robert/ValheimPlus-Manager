@@ -499,6 +499,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.autoDepositFurnace = autoDepositFurnace;
             }
+            if (bool.TryParse(data["Furnace"]["autoFuel"], out bool autoFuelFurnace))
+            {
+                valheimPlusConfiguration.autoFuelFurnace = autoFuelFurnace;
+            }
+            if (bool.TryParse(data["Furnace"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckFurnace))
+            {
+                valheimPlusConfiguration.ignorePrivateAreaCheckFurnace = ignorePrivateAreaCheckFurnace;
+            }
             #endregion Furnace
 
             #region Game
@@ -1220,6 +1228,8 @@ namespace ValheimPlusManager.SupportClasses
             data["Furnace"]["productionSpeed"] = valheimPlusConfiguration.furnaceProductionSpeed.ToString();
             data["Furnace"]["autoDeposit"] = valheimPlusConfiguration.autoDepositFurnace.ToString().ToLower();
             data["Furnace"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
+            data["Furnace"]["autoFuel"] = valheimPlusConfiguration.autoFuelFurnace.ToString().ToLower();
+            data["Furnace"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckFurnace.ToString().ToLower();
             #endregion Furnace
 
             #region Game

@@ -124,34 +124,40 @@
         public float autoRangeFireSource { get; set; } = 10;
         #endregion FireSource
 
-        // FirstPerson
+        #region FirstPerson
         public bool firstPersonSettingsEnabled { get; set; } = false;
         public string hotkey { get; set; } = "F10";
         public string raiseFOVHotkey { get; set; } = "PageUp";
         public float defaultFOV { get; set; } = 65.0f;
         public string lowerFOVHotkey { get; set; } = "PageDown";
+        #endregion FirstPerson
 
-        // Food
+        #region Food
         public bool foodSettingsEnabled { get; set; } = false;
         public float foodDurationMultiplier { get; set; } = 0;
         public bool disableFoodDegradation { get; set; } = false;
+        #endregion Food
 
-        // FreePlacementRotation
+        #region FreePlacementRotation
         public bool freePlacementRotationSettingsEnabled { get; set; } = false;
         public string rotateY { get; set; } = "LeftAlt";
         public string rotateX { get; set; } = "C";
         public string rotateZ { get; set; } = "V";
         public string copyRotationParallel { get; set; } = "F";
         public string copyRotationPerpendicular { get; set; } = "G";
+        #endregion FreePlacementRotation
 
-        // Furnace
+        #region Furnace
         public bool furnaceSettingsEnabled { get; set; } = false;
         public int maximumOre { get; set; } = 10;
         public int maximumCoal { get; set; } = 20;
         public int coalUsedPerProduct { get; set; } = 2;
         public float furnaceProductionSpeed { get; set; } = 30;
         public bool autoDepositFurnace { get; set; } = false;
+        public bool autoFuelFurnace { get; set; } = false;
+        public bool ignorePrivateAreaCheckFurnace { get; set; } = true;
         public float autoDepositRangeFurnace { get; set; } = 10;
+        #endregion Furnace
 
         // Game
         public bool gameSettingsEnabled { get; set; } = false;
