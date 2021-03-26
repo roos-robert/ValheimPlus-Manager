@@ -115,33 +115,14 @@
         public float autoRangeFermenter { get; set; } = 10;
         #endregion Fermenter
 
-        // Inventory
-        public bool inventorySettingsEnabled { get; set; } = false;
-        public bool inventoryFillTopToBottom { get; set; } = false;
-        public int playerInventoryRows { get; set; } = 4;
-        public int woodChestColumns { get; set; } = 5;
-        public int woodChestRows { get; set; } = 2;
-        public int personalChestColumns { get; set; } = 3;
-        public int personalChestRows { get; set; } = 2;
-        public int ironChestColumns { get; set; } = 8;
-        public int ironChestRows { get; set; } = 3;
-        public int cartInventoryColumns { get; set; } = 8;
-        public int cartInventoryRows { get; set; } = 3;
-        public int karveInventoryColumns { get; set; } = 2;
-        public int karveInventoryRows { get; set; } = 2;
-        public int longboatInventoryColumns { get; set; } = 8;
-        public int longboatInventoryRows { get; set; } = 3;
-
-        // Items
-        public bool itemsSettingsEnabled { get; set; } = false;
-        public bool noTeleportPrevention { get; set; } = false;
-        public float baseItemWeightReduction { get; set; } = 0;
-        public float itemStackMultiplier { get; set; } = 1;
-        public int droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
-
-        // FireSource
+        #region FireSource
         public bool fireSourceSettingsEnabled { get; set; } = false;
-        public bool onlyTorches { get; set; } = false;
+        public bool torchesFireSource { get; set; } = false;
+        public bool firesFireSource { get; set; } = false;
+        public bool autoFuelFireSource { get; set; } = false;
+        public bool ignorePrivateAreaCheckFireSource { get; set; } = true;
+        public float autoRangeFireSource { get; set; } = 10;
+        #endregion FireSource
 
         // FirstPerson
         public bool firstPersonSettingsEnabled { get; set; } = false;
@@ -194,6 +175,30 @@
         public float chatMessageDistance { get; set; }
         public bool displayStaminaValue { get; set; } = false;
         public bool removeDamageFlash { get; set; } = false;
+
+        // Inventory
+        public bool inventorySettingsEnabled { get; set; } = false;
+        public bool inventoryFillTopToBottom { get; set; } = false;
+        public int playerInventoryRows { get; set; } = 4;
+        public int woodChestColumns { get; set; } = 5;
+        public int woodChestRows { get; set; } = 2;
+        public int personalChestColumns { get; set; } = 3;
+        public int personalChestRows { get; set; } = 2;
+        public int ironChestColumns { get; set; } = 8;
+        public int ironChestRows { get; set; } = 3;
+        public int cartInventoryColumns { get; set; } = 8;
+        public int cartInventoryRows { get; set; } = 3;
+        public int karveInventoryColumns { get; set; } = 2;
+        public int karveInventoryRows { get; set; } = 2;
+        public int longboatInventoryColumns { get; set; } = 8;
+        public int longboatInventoryRows { get; set; } = 3;
+
+        // Items
+        public bool itemsSettingsEnabled { get; set; } = false;
+        public bool noTeleportPrevention { get; set; } = false;
+        public float baseItemWeightReduction { get; set; } = 0;
+        public float itemStackMultiplier { get; set; } = 1;
+        public int droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
 
         // Gathering
         public bool gatheringSettingsEnabled { get; set; } = false;

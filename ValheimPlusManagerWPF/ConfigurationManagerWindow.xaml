@@ -203,7 +203,11 @@
                 <TabItem IsEnabled="{Binding fireSourceSettingsEnabled}" Header="Fire sources">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Fire sources" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <CheckBox Content="ONLY placed torches don't need refilling" IsChecked="{Binding onlyTorches}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="If set to true, torch-type fire sources will stay at max fuel level once filled" IsChecked="{Binding torchesFireSource}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="If set to true, non torch-type fire sources will stay at max fuel level once filled" IsChecked="{Binding firesFireSource}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for fuel inside nearby chests" IsChecked="{Binding autoFuelFireSource}" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckFireSource}" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding autoRangeFireSource}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto fuel features (max 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,190,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding firstPersonSettingsEnabled}" Header="First person">

@@ -360,21 +360,21 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.showFermenterDuration = showFermenterDuration;
             }
-            if (bool.TryParse(data["Fermenter"]["autoDeposit"], out bool autoDeposit))
+            if (bool.TryParse(data["Fermenter"]["autoDeposit"], out bool autoDepositFermenter))
             {
-                valheimPlusConfiguration.autoDepositFermenter = autoDeposit;
+                valheimPlusConfiguration.autoDepositFermenter = autoDepositFermenter;
             }
-            if (bool.TryParse(data["Fermenter"]["autoFuel"], out bool autoFuel))
+            if (bool.TryParse(data["Fermenter"]["autoFuel"], out bool autoFuelFermenter))
             {
-                valheimPlusConfiguration.autoFuelFermenter = autoFuel;
+                valheimPlusConfiguration.autoFuelFermenter = autoFuelFermenter;
             }
-            if (bool.TryParse(data["Fermenter"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheck))
+            if (bool.TryParse(data["Fermenter"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckFermenter))
             {
-                valheimPlusConfiguration.ignorePrivateAreaCheckFermenter = ignorePrivateAreaCheck;
+                valheimPlusConfiguration.ignorePrivateAreaCheckFermenter = ignorePrivateAreaCheckFermenter;
             }
-            if (int.TryParse(data["Fermenter"]["autoRange"], out int autoRange))
+            if (int.TryParse(data["Fermenter"]["autoRange"], out int autoRangeFermenter))
             {
-                valheimPlusConfiguration.autoRangeFermenter = autoRange;
+                valheimPlusConfiguration.autoRangeFermenter = autoRangeFermenter;
             }
             #endregion Fermenter
 
@@ -383,9 +383,25 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.fireSourceSettingsEnabled = fireSourceSettingsEnabled;
             }
-            if (bool.TryParse(data["FireSource"]["onlyTorches"], out bool onlyTorches))
+            if (bool.TryParse(data["FireSource"]["torches"], out bool torches))
             {
-                valheimPlusConfiguration.onlyTorches = onlyTorches;
+                valheimPlusConfiguration.torchesFireSource = torches;
+            }
+            if (bool.TryParse(data["FireSource"]["fires"], out bool fires))
+            {
+                valheimPlusConfiguration.torchesFireSource = fires;
+            }
+            if (bool.TryParse(data["FireSource"]["autoFuel"], out bool autoFuelFireSource))
+            {
+                valheimPlusConfiguration.autoFuelFireSource = autoFuelFireSource;
+            }
+            if (bool.TryParse(data["FireSource"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckFireSource))
+            {
+                valheimPlusConfiguration.ignorePrivateAreaCheckFireSource = ignorePrivateAreaCheckFireSource;
+            }
+            if (int.TryParse(data["FireSource"]["autoRange"], out int autoRangeFireSource))
+            {
+                valheimPlusConfiguration.autoRangeFireSource = autoRangeFireSource;
             }
             #endregion FireSource
 
@@ -1166,7 +1182,11 @@ namespace ValheimPlusManager.SupportClasses
 
             #region FireSource
             data["FireSource"]["enabled"] = valheimPlusConfiguration.fireSourceSettingsEnabled.ToString().ToLower();
-            data["FireSource"]["onlyTorches"] = valheimPlusConfiguration.onlyTorches.ToString().ToLower();
+            data["FireSource"]["torches"] = valheimPlusConfiguration.torchesFireSource.ToString().ToLower();
+            data["FireSource"]["fires"] = valheimPlusConfiguration.firesFireSource.ToString().ToLower();
+            data["FireSource"]["autoFuel"] = valheimPlusConfiguration.autoFuelFireSource.ToString().ToLower();
+            data["FireSource"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckFireSource.ToString().ToLower();
+            data["FireSource"]["autoRange"] = valheimPlusConfiguration.autoRangeFireSource.ToString();
             #endregion FireSource
 
             #region FirstPerson
@@ -1177,10 +1197,11 @@ namespace ValheimPlusManager.SupportClasses
             data["FirstPerson"]["lowerFOVHotkey"] = valheimPlusConfiguration.lowerFOVHotkey.ToString();
             #endregion FirstPerson
 
-            // Food
+            #region Food
             data["Food"]["enabled"] = valheimPlusConfiguration.foodSettingsEnabled.ToString().ToLower();
             data["Food"]["foodDurationMultiplier"] = valheimPlusConfiguration.foodDurationMultiplier.ToString();
             data["Food"]["disableFoodDegradation"] = valheimPlusConfiguration.disableFoodDegradation.ToString().ToLower();
+            #endregion Food
 
             #region FreePlacementRotation
             data["FreePlacementRotation"]["enabled"] = valheimPlusConfiguration.freePlacementRotationSettingsEnabled.ToString().ToLower();
@@ -1191,7 +1212,7 @@ namespace ValheimPlusManager.SupportClasses
             data["FreePlacementRotation"]["copyRotationPerpendicular"] = valheimPlusConfiguration.copyRotationPerpendicular.ToString();
             #endregion FreePlacementRotation
 
-            // Furnace
+            #region Furnace
             data["Furnace"]["enabled"] = valheimPlusConfiguration.furnaceSettingsEnabled.ToString().ToLower();
             data["Furnace"]["maximumOre"] = valheimPlusConfiguration.maximumOre.ToString();
             data["Furnace"]["maximumCoal"] = valheimPlusConfiguration.maximumCoal.ToString();
@@ -1199,6 +1220,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Furnace"]["productionSpeed"] = valheimPlusConfiguration.furnaceProductionSpeed.ToString();
             data["Furnace"]["autoDeposit"] = valheimPlusConfiguration.autoDepositFurnace.ToString().ToLower();
             data["Furnace"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
+            #endregion Furnace
 
             #region Game
             data["Game"]["enabled"] = valheimPlusConfiguration.gameSettingsEnabled.ToString().ToLower();
