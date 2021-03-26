@@ -303,7 +303,7 @@
         public float smelterAutoDepositRange { get; set; } = 10;
         #endregion Smelter
 
-        // Stamina
+        #region Stamina
         public bool staminaSettingsEnabled { get; set; } = false;
         public float dodgeStaminaUsage { get; set; } = 0;
         public float encumberedStaminaDrain { get; set; } = 0;
@@ -313,8 +313,9 @@
         public float staminaRegen { get; set; } = 0;
         public float staminaRegenDelay { get; set; } = 0;
         public float swimStaminaDrain { get; set; } = 0;
+        #endregion Stamina
 
-        // Stamina usage
+        #region StaminaUsage
         public bool staminaUsageSettingsEnabled { get; set; } = false;
         public float axes { get; set; } = 0;
         public float bows { get; set; } = 0;
@@ -328,23 +329,9 @@
         public float hammer { get; set; } = 0;
         public float hoe { get; set; } = 0;
         public float cultivator { get; set; } = 0;
+        #endregion StaminaUsage
 
-        // Workbench
-        public bool workbenchSettingsEnabled { get; set; } = false;
-        public float workbenchRange { get; set; } = 20;
-        public float workbenchAttachmentRange { get; set; } = 5.0f;
-        public bool disableRoofCheck { get; set; } = false;
-
-        // Time
-        public bool timeSettingsEnabled { get; set; } = false;
-        public float totalDayTimeInSeconds { get; set; } = 1800;
-        public float nightTimeSpeedMultiplier { get; set; } = 0;
-
-        // Ward
-        public bool wardSettingsEnabled { get; set; } = false;
-        public float wardRange { get; set; } = 20;
-
-        // Structural integrity
+        #region StructuralIntegrity
         public bool structuralIntegritySettingsEnabled { get; set; } = false;
         public float wood { get; set; } = 0;
         public float stone { get; set; } = 0;
@@ -353,6 +340,23 @@
         public bool disableStructuralIntegrity { get; set; } = false;
         public bool disableDamageToPlayerStructures { get; set; } = false;
         public bool disableDamageToPlayerBoats { get; set; } = false;
+        #endregion StructuralIntegrity
+
+        #region Time
+        public bool timeSettingsEnabled { get; set; } = false;
+        public float totalDayTimeInSeconds { get; set; } = 1800;
+        public float nightTimeSpeedMultiplier { get; set; } = 0;
+        #endregion Time
+
+        // Workbench
+        public bool workbenchSettingsEnabled { get; set; } = false;
+        public float workbenchRange { get; set; } = 20;
+        public float workbenchAttachmentRange { get; set; } = 5.0f;
+        public bool disableRoofCheck { get; set; } = false;
+
+        // Ward
+        public bool wardSettingsEnabled { get; set; } = false;
+        public float wardRange { get; set; } = 20;
 
         // Wagon
         public bool wagonSettingsEnabled { get; set; } = false;

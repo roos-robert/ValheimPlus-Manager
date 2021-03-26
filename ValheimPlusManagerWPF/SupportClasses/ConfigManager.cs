@@ -1050,51 +1050,6 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion StaminaUsage
 
-            #region Workbench
-            if (bool.TryParse(data["Workbench"]["enabled"], out bool workbenchSettingsEnabled))
-            {
-                valheimPlusConfiguration.workbenchSettingsEnabled = workbenchSettingsEnabled;
-            }
-            if (int.TryParse(data["Workbench"]["workbenchRange"], out int workbenchRange))
-            {
-                valheimPlusConfiguration.workbenchRange = workbenchRange;
-            }
-            if (int.TryParse(data["Workbench"]["workbenchAttachmentRange"], out int workbenchAttachmentRange))
-            {
-                valheimPlusConfiguration.workbenchAttachmentRange = workbenchAttachmentRange;
-            }
-            if (bool.TryParse(data["Workbench"]["disableRoofCheck"], out bool disableRoofCheck))
-            {
-                valheimPlusConfiguration.disableRoofCheck = disableRoofCheck;
-            }
-            #endregion Workbench
-
-            #region Time
-            //if (bool.TryParse(data["Time"]["enabled"], out bool timeSettingsEnabled))
-            //{
-            //    valheimPlusConfiguration.timeSettingsEnabled = timeSettingsEnabled;
-            //}
-            //if (int.TryParse(data["Time"]["totalDayTimeInSeconds"], out int totalDayTimeInSeconds))
-            //{
-            //    valheimPlusConfiguration.totalDayTimeInSeconds = totalDayTimeInSeconds;
-            //}
-            //if (int.TryParse(data["Time"]["nightTimeSpeedMultiplier"], out int nightTimeSpeedMultiplier))
-            //{
-            //    valheimPlusConfiguration.nightTimeSpeedMultiplier = nightTimeSpeedMultiplier;
-            //}
-            #endregion Time
-
-            #region Ward
-            if (bool.TryParse(data["Ward"]["enabled"], out bool wardSettingsEnabled))
-            {
-                valheimPlusConfiguration.wardSettingsEnabled = wardSettingsEnabled;
-            }
-            if (int.TryParse(data["Ward"]["wardRange"], out int wardRange))
-            {
-                valheimPlusConfiguration.wardRange = wardRange;
-            }
-            #endregion Ward
-
             #region StructuralIntegrity
             if (bool.TryParse(data["StructuralIntegrity"]["enabled"], out bool structuralIntegritySettingsEnabled))
             {
@@ -1129,6 +1084,51 @@ namespace ValheimPlusManager.SupportClasses
                 valheimPlusConfiguration.disableDamageToPlayerBoats = disableDamageToPlayerBoats;
             }
             #endregion StructuralIntegrity
+
+            #region Time
+            //if (bool.TryParse(data["Time"]["enabled"], out bool timeSettingsEnabled))
+            //{
+            //    valheimPlusConfiguration.timeSettingsEnabled = timeSettingsEnabled;
+            //}
+            //if (int.TryParse(data["Time"]["totalDayTimeInSeconds"], out int totalDayTimeInSeconds))
+            //{
+            //    valheimPlusConfiguration.totalDayTimeInSeconds = totalDayTimeInSeconds;
+            //}
+            //if (int.TryParse(data["Time"]["nightTimeSpeedMultiplier"], out int nightTimeSpeedMultiplier))
+            //{
+            //    valheimPlusConfiguration.nightTimeSpeedMultiplier = nightTimeSpeedMultiplier;
+            //}
+            #endregion Time
+
+            #region Workbench
+            if (bool.TryParse(data["Workbench"]["enabled"], out bool workbenchSettingsEnabled))
+            {
+                valheimPlusConfiguration.workbenchSettingsEnabled = workbenchSettingsEnabled;
+            }
+            if (int.TryParse(data["Workbench"]["workbenchRange"], out int workbenchRange))
+            {
+                valheimPlusConfiguration.workbenchRange = workbenchRange;
+            }
+            if (int.TryParse(data["Workbench"]["workbenchAttachmentRange"], out int workbenchAttachmentRange))
+            {
+                valheimPlusConfiguration.workbenchAttachmentRange = workbenchAttachmentRange;
+            }
+            if (bool.TryParse(data["Workbench"]["disableRoofCheck"], out bool disableRoofCheck))
+            {
+                valheimPlusConfiguration.disableRoofCheck = disableRoofCheck;
+            }
+            #endregion Workbench
+
+            #region Ward
+            if (bool.TryParse(data["Ward"]["enabled"], out bool wardSettingsEnabled))
+            {
+                valheimPlusConfiguration.wardSettingsEnabled = wardSettingsEnabled;
+            }
+            if (int.TryParse(data["Ward"]["wardRange"], out int wardRange))
+            {
+                valheimPlusConfiguration.wardRange = wardRange;
+            }
+            #endregion Ward
 
             #region Wagon
             if (bool.TryParse(data["Wagon"]["enabled"], out bool wagonSettingsEnabled))
@@ -1453,7 +1453,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Smelter"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckSmelter.ToString().ToLower();
             #endregion Smelter
 
-            // Stamina
+            #region Stamina
             data["Stamina"]["enabled"] = valheimPlusConfiguration.staminaSettingsEnabled.ToString().ToLower();
             data["Stamina"]["dodgeStaminaUsage"] = valheimPlusConfiguration.dodgeStaminaUsage.ToString();
             data["Stamina"]["encumberedStaminaDrain"] = valheimPlusConfiguration.encumberedStaminaDrain.ToString();
@@ -1463,8 +1463,9 @@ namespace ValheimPlusManager.SupportClasses
             data["Stamina"]["staminaRegen"] = valheimPlusConfiguration.staminaRegen.ToString();
             data["Stamina"]["staminaRegenDelay"] = valheimPlusConfiguration.staminaRegenDelay.ToString();
             data["Stamina"]["swimStaminaDrain"] = valheimPlusConfiguration.swimStaminaDrain.ToString();
+            #endregion Stamina
 
-            // StaminaUsage
+            #region StaminaUsage
             data["StaminaUsage"]["enabled"] = valheimPlusConfiguration.staminaUsageSettingsEnabled.ToString().ToLower();
             data["StaminaUsage"]["axes"] = valheimPlusConfiguration.axes.ToString();
             data["StaminaUsage"]["bows"] = valheimPlusConfiguration.bows.ToString();
@@ -1478,22 +1479,7 @@ namespace ValheimPlusManager.SupportClasses
             data["StaminaUsage"]["hammer"] = valheimPlusConfiguration.hammer.ToString();
             data["StaminaUsage"]["hoe"] = valheimPlusConfiguration.hoe.ToString();
             data["StaminaUsage"]["cultivator"] = valheimPlusConfiguration.cultivator.ToString();
-
-            #region Workbench
-            data["Workbench"]["enabled"] = valheimPlusConfiguration.workbenchSettingsEnabled.ToString().ToLower();
-            data["Workbench"]["workbenchRange"] = valheimPlusConfiguration.workbenchRange.ToString();
-            data["Workbench"]["workbenchAttachmentRange"] = valheimPlusConfiguration.workbenchAttachmentRange.ToString();
-            data["Workbench"]["disableRoofCheck"] = valheimPlusConfiguration.disableRoofCheck.ToString().ToLower();
-            #endregion Workbench
-
-            // Time
-            //data["Time"]["enabled"] = valheimPlusConfiguration.timeSettingsEnabled.ToString().ToLower();
-            //data["Time"]["totalDayTimeInSeconds"] = valheimPlusConfiguration.totalDayTimeInSeconds.ToString();
-            //data["Time"]["nightTimeSpeedMultiplier"] = valheimPlusConfiguration.nightTimeSpeedMultiplier.ToString();
-
-            // Ward
-            data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
-            data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString().ToLower();
+            #endregion StaminaUsage
 
             #region StructuralIntegrity
             data["StructuralIntegrity"]["enabled"] = valheimPlusConfiguration.structuralIntegritySettingsEnabled.ToString().ToLower();
@@ -1505,6 +1491,23 @@ namespace ValheimPlusManager.SupportClasses
             data["StructuralIntegrity"]["disableDamageToPlayerStructures"] = valheimPlusConfiguration.disableDamageToPlayerStructures.ToString().ToLower();
             data["StructuralIntegrity"]["disableDamageToPlayerBoats"] = valheimPlusConfiguration.disableDamageToPlayerBoats.ToString().ToLower();
             #endregion StructuralIntegrity
+
+            #region Time
+            //data["Time"]["enabled"] = valheimPlusConfiguration.timeSettingsEnabled.ToString().ToLower();
+            //data["Time"]["totalDayTimeInSeconds"] = valheimPlusConfiguration.totalDayTimeInSeconds.ToString();
+            //data["Time"]["nightTimeSpeedMultiplier"] = valheimPlusConfiguration.nightTimeSpeedMultiplier.ToString();
+            #endregion Time
+
+            #region Workbench
+            data["Workbench"]["enabled"] = valheimPlusConfiguration.workbenchSettingsEnabled.ToString().ToLower();
+            data["Workbench"]["workbenchRange"] = valheimPlusConfiguration.workbenchRange.ToString();
+            data["Workbench"]["workbenchAttachmentRange"] = valheimPlusConfiguration.workbenchAttachmentRange.ToString();
+            data["Workbench"]["disableRoofCheck"] = valheimPlusConfiguration.disableRoofCheck.ToString().ToLower();
+            #endregion Workbench
+
+            // Ward
+            data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
+            data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString().ToLower();
 
             // Wagon
             data["Wagon"]["enabled"] = valheimPlusConfiguration.wagonSettingsEnabled.ToString().ToLower();
