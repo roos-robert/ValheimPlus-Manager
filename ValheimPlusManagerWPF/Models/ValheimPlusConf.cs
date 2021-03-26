@@ -255,7 +255,7 @@
         public bool preventPlayerFromTurningOffPublicPosition { get; set; } = false;
         #endregion Map
 
-        // Player settings
+        #region Player
         public bool playerSettingsEnabled { get; set; } = false;
         public float baseMaximumWeight { get; set; } = 300;
         public float baseMegingjordBuff { get; set; } = 150;
@@ -266,8 +266,15 @@
         public float restSecondsPerComfortLevel { get; set; } = 60;
         public float deathPenaltyMultiplier { get; set; } = 0;
         public bool autoRepair { get; set; } = false;
-        //public float guardianBuffDuration { get; set; } = 300;
-        //public float guardianBuffCooldown { get; set; } = 1200;
+        public float guardianBuffDuration { get; set; } = 300;
+        public float guardianBuffCooldown { get; set; } = 1200;
+        public bool disableGuardianBuffAnimation { get; set; } = false;
+        public bool autoEquipShield { get; set; } = false;
+        public bool skipIntro { get; set; } = false;
+        public bool iHaveArrivedOnSpawn { get; set; } = true;
+        public bool queueWeaponChanges { get; set; } = false;
+        public bool reequipItemsAfterSwimming { get; set; } = false;
+        #endregion Player
 
         // Server
         public bool serverSettingsEnabled { get; set; } = false;

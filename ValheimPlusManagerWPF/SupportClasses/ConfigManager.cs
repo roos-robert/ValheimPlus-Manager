@@ -845,6 +845,38 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.autoRepair = autoRepair;
             }
+            if (float.TryParse(data["Player"]["guardianBuffDuration"], NumberStyles.Any, ci, out float guardianBuffDuration))
+            {
+                valheimPlusConfiguration.guardianBuffDuration = guardianBuffDuration;
+            }
+            if (float.TryParse(data["Player"]["guardianBuffCooldown"], NumberStyles.Any, ci, out float guardianBuffCooldown))
+            {
+                valheimPlusConfiguration.guardianBuffCooldown = guardianBuffCooldown;
+            }
+            if (bool.TryParse(data["Player"]["disableGuardianBuffAnimation"], out bool disableGuardianBuffAnimation))
+            {
+                valheimPlusConfiguration.disableGuardianBuffAnimation = disableGuardianBuffAnimation;
+            }
+            if (bool.TryParse(data["Player"]["autoEquipShield"], out bool autoEquipShield))
+            {
+                valheimPlusConfiguration.autoEquipShield = autoEquipShield;
+            }
+            if (bool.TryParse(data["Player"]["queueWeaponChanges"], out bool queueWeaponChanges))
+            {
+                valheimPlusConfiguration.queueWeaponChanges = queueWeaponChanges;
+            }
+            if (bool.TryParse(data["Player"]["skipIntro"], out bool skipIntro))
+            {
+                valheimPlusConfiguration.skipIntro = skipIntro;
+            }
+            if (bool.TryParse(data["Player"]["iHaveArrivedOnSpawn"], out bool iHaveArrivedOnSpawn))
+            {
+                valheimPlusConfiguration.iHaveArrivedOnSpawn = iHaveArrivedOnSpawn;
+            }
+            if (bool.TryParse(data["Player"]["reequipItemsAfterSwimming"], out bool reequipItemsAfterSwimming))
+            {
+                valheimPlusConfiguration.reequipItemsAfterSwimming = reequipItemsAfterSwimming;
+            }
             #endregion Player
 
             #region Server
@@ -1378,6 +1410,14 @@ namespace ValheimPlusManager.SupportClasses
             data["Player"]["restSecondsPerComfortLevel"] = valheimPlusConfiguration.restSecondsPerComfortLevel.ToString();
             data["Player"]["deathPenaltyMultiplier"] = valheimPlusConfiguration.deathPenaltyMultiplier.ToString();
             data["Player"]["autoRepair"] = valheimPlusConfiguration.autoRepair.ToString().ToLower();
+            data["Player"]["guardianBuffDuration"] = valheimPlusConfiguration.guardianBuffDuration.ToString();
+            data["Player"]["guardianBuffCooldown"] = valheimPlusConfiguration.guardianBuffCooldown.ToString();
+            data["Player"]["disableGuardianBuffAnimation"] = valheimPlusConfiguration.disableGuardianBuffAnimation.ToString().ToLower();
+            data["Player"]["autoEquipShield"] = valheimPlusConfiguration.autoEquipShield.ToString().ToLower();
+            data["Player"]["queueWeaponChanges"] = valheimPlusConfiguration.queueWeaponChanges.ToString().ToLower();
+            data["Player"]["skipIntro"] = valheimPlusConfiguration.skipIntro.ToString().ToLower();
+            data["Player"]["iHaveArrivedOnSpawn"] = valheimPlusConfiguration.iHaveArrivedOnSpawn.ToString().ToLower();
+            data["Player"]["reequipItemsAfterSwimming"] = valheimPlusConfiguration.reequipItemsAfterSwimming.ToString().ToLower();
             #endregion Player
 
             #region Server
