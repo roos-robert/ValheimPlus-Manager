@@ -417,6 +417,8 @@
                 <TabItem IsEnabled="{Binding valheimPlusConfigurationEnabled}" Header="ValheimPlus">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="ValheimPlus" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <CheckBox Content="Display the Valheim Plus logo in the main menu" IsChecked="{Binding mainMenuLogo}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Display advertisements of server hosting partners on the server browser menu" IsChecked="{Binding serverBrowserAdvertisement}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding workbenchSettingsEnabled}" Header="Workbench">

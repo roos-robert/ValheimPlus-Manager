@@ -1104,6 +1104,21 @@ namespace ValheimPlusManager.SupportClasses
             //}
             #endregion Time
 
+            #region ValheimPlus
+            if (bool.TryParse(data["ValheimPlus"]["enabled"], out bool valheimPlusConfigurationEnabled))
+            {
+                valheimPlusConfiguration.valheimPlusConfigurationEnabled = valheimPlusConfigurationEnabled;
+            }
+            if (bool.TryParse(data["ValheimPlus"]["mainMenuLogo"], out bool mainMenuLogo))
+            {
+                valheimPlusConfiguration.mainMenuLogo = mainMenuLogo;
+            }
+            if (bool.TryParse(data["ValheimPlus"]["serverBrowserAdvertisement"], out bool serverBrowserAdvertisement))
+            {
+                valheimPlusConfiguration.serverBrowserAdvertisement = serverBrowserAdvertisement;
+            }
+            #endregion ValheimPlus
+
             #region Wagon
             if (bool.TryParse(data["Wagon"]["enabled"], out bool wagonSettingsEnabled))
             {
@@ -1502,6 +1517,12 @@ namespace ValheimPlusManager.SupportClasses
             //data["Time"]["totalDayTimeInSeconds"] = valheimPlusConfiguration.totalDayTimeInSeconds.ToString();
             //data["Time"]["nightTimeSpeedMultiplier"] = valheimPlusConfiguration.nightTimeSpeedMultiplier.ToString();
             #endregion Time
+
+            #region ValheimPlus
+            data["ValheimPlus"]["enabled"] = valheimPlusConfiguration.valheimPlusConfigurationEnabled.ToString().ToLower();
+            data["ValheimPlus"]["mainMenuLogo"] = valheimPlusConfiguration.mainMenuLogo.ToString().ToLower();
+            data["ValheimPlus"]["serverBrowserAdvertisement"] = valheimPlusConfiguration.serverBrowserAdvertisement.ToString().ToLower();
+            #endregion ValheimPlus
 
             #region Workbench
             data["Workbench"]["enabled"] = valheimPlusConfiguration.workbenchSettingsEnabled.ToString().ToLower();

@@ -2,12 +2,6 @@
 {
     public class ValheimPlusConf
     {
-        #region ValheimPlusConfiguration
-        public bool valheimPlusConfigurationEnabled { get; set; } = true;
-        public bool mainMenuLogo { get; set; } = true;
-        public bool serverBrowserAdvertisement { get; set; } = true;
-        #endregion ValheimPlusConfiguration
-
         #region Advanced building mode
         public bool advancedBuildingModeEnabled { get; set; } = false;
         public string enterAdvancedBuildingMode { get; set; } = "F1";
@@ -359,7 +353,11 @@
         public float nightTimeSpeedMultiplier { get; set; } = 0;
         #endregion Time
 
-        
+        #region ValheimPlus
+        public bool valheimPlusConfigurationEnabled { get; set; } = true;
+        public bool mainMenuLogo { get; set; } = true;
+        public bool serverBrowserAdvertisement { get; set; } = true;
+        #endregion ValheimPlus
 
         #region Wagon
         public bool wagonSettingsEnabled { get; set; } = false;
