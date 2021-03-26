@@ -60,6 +60,13 @@
         public float areaRepairRadius { get; set; } = 7.5f;
         #endregion Building
 
+        #region Camera
+        public bool cameraSettingsEnabled { get; set; } = false;
+        public float cameraMaximumZoomDistance { get; set; } = 1146;
+        public float cameraBoatMaximumZoomDistance { get; set; } = 6;
+        public float cameraFOV { get; set; } = 65;
+        #endregion Camera
+
         // Durability
         public bool durabilitySettingsEnabled { get; set; } = false;
         public float axesDurability { get; set; } = 0;
@@ -295,12 +302,6 @@
         public float experienceSneak { get; set; } = 0;
         public float experienceRun { get; set; } = 0;
         public float experienceSwim { get; set; } = 0;
-
-        // Camera
-        public bool cameraSettingsEnabled { get; set; } = false;
-        public float cameraMaximumZoomDistance { get; set; } = 1146;
-        public float cameraBoatMaximumZoomDistance { get; set; } = 6;
-        public float cameraFOV { get; set; } = 85;
 
         // Wagon
         public bool wagonSettingsEnabled { get; set; } = false;

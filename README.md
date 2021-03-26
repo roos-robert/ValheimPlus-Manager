@@ -1,9 +1,6 @@
 # ValheimPlus Manager
 ValheimPlus Manager makes the installation and configuration of ValheimPlus on Windows a breeze!
 
-## PSA REGARDING V+ 0.9.6
-This manager has not yet been updated for ValheimPlus 0.9.6 which contains some new features and changes, I recommend you check your .conf file manually until I've released an update.
-
 ![Image of UI of ValheimPlus Manager](ValheimPlusManagerWPF/Gfx/ValheimPlusManager.png)
 
 ## Features
