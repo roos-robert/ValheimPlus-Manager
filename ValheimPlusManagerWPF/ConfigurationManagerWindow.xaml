@@ -62,6 +62,7 @@
                 <CheckBox IsChecked="{Binding furnaceSettingsEnabled}" Content="Enable furnace settings" />
                 <CheckBox IsChecked="{Binding gameSettingsEnabled}" Content="Enable game settings" />
                 <CheckBox IsChecked="{Binding gatheringSettingsEnabled}" Content="Enable gathering settings" />
+                <CheckBox IsChecked="{Binding gridAlignmentSettingsEnabled}" Content="Enable grid alignment settings" />
                 <CheckBox IsChecked="{Binding hotkeysSettingsEnabled}" Content="Enable hotkeys settings" />
                 <CheckBox IsChecked="{Binding hudSettingsEnabled}" Content="Enable HUD settings" />
                 <CheckBox IsChecked="{Binding kilnSettingsEnabled}" Content="Enable kiln settings" />
@@ -72,6 +73,7 @@
                 <CheckBox IsChecked="{Binding smelterSettingsEnabled}" Content="Enable smelter settings" />
                 <CheckBox IsChecked="{Binding staminaSettingsEnabled}" Content="Enable stamina settings" />
                 <CheckBox IsChecked="{Binding staminaUsageSettingsEnabled}" Content="Enable stamina usage settings" />
+                <CheckBox IsChecked="{Binding valheimPlusConfigurationEnabled}" Content="Enable ValheimPlus settings" />
                 <CheckBox IsChecked="{Binding workbenchSettingsEnabled}" Content="Enable workbench settings" />
                 <!--<CheckBox IsChecked="{Binding timeSettingsEnabled}" Content="Enable time settings" />-->
                 <CheckBox IsChecked="{Binding wardSettingsEnabled}" Content="Enable ward settings" />
@@ -91,6 +93,8 @@
                         <TextBox Width="382" Text="{Binding exitAdvancedBuildingMode}" materialDesign:HintAssist.Hint="Exit the advanced building mode with this key when building" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox Width="382" Text="{Binding copyObjectRotation}" materialDesign:HintAssist.Hint="Copy the object rotation of the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <TextBox Width="382" Text="{Binding pasteObjectRotation}" materialDesign:HintAssist.Hint="Apply the copied object rotation to the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox Width="382" Text="{Binding increaseScrollSpeed}" materialDesign:HintAssist.Hint="Increases the amount an object rotates and moves" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
+                        <TextBox Width="382" Text="{Binding decreaseScrollSpeed}" materialDesign:HintAssist.Hint="Decreases the amount an object rotates and moves" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding advancedEditingModeEnabled}" Header="Advanced editing mode">
@@ -102,6 +106,8 @@
                         <TextBox Width="382" Text="{Binding confirmPlacementOfAdvancedEditingMode}" materialDesign:HintAssist.Hint="Confirm the placement of the object and place it" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox Width="382" Text="{Binding copyObjectRotationAEM}" materialDesign:HintAssist.Hint="Copy the object rotation of the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                         <TextBox Width="382" Text="{Binding pasteObjectRotationAEM}" materialDesign:HintAssist.Hint="Apply the copied object rotation to the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
+                        <TextBox Width="382" Text="{Binding increaseScrollSpeedAEM}" materialDesign:HintAssist.Hint="Increases the amount an object rotates and moves" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,370,0,0" />
+                        <TextBox Width="382" Text="{Binding decreaseScrollSpeedAEM}" materialDesign:HintAssist.Hint="Decreases the amount an object rotates and moves" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,420,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding armorSettingsEnabled}" Header="Armor">
@@ -122,7 +128,6 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding autoDepositHoneyRange}" materialDesign:HintAssist.Hint="Range for auto-deposit into chests" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositHoney}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Display the minutes and seconds until the beehive produces honey on hover" IsChecked="{Binding showDurationBeehive}" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
-
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding buildingSettingsEnabled}" Header="Building">
@@ -136,6 +141,7 @@
                         <CheckBox Content="When destroying a building piece, setting this to true will ensure it always drops full resources" IsChecked="{Binding alwaysDropResources}" HorizontalAlignment="Left" Margin="10,290,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="When destroying a building piece, setting this to true will ensure it always drops pieces that the devs have marked as 'do not drop'" IsChecked="{Binding alwaysDropExcludedResources}" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Setting this to true will cause repairing with the hammer to repair in a radius" IsChecked="{Binding enableAreaRepair}" HorizontalAlignment="Left" Margin="10,350,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Removes the 'Mystical forces' building prevention and allows destruction of build objects in those areas with the hammer" IsChecked="{Binding noMysticalForcesPreventPlacementRestriction}" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding durabilitySettingsEnabled}" Header="Durability">
@@ -151,25 +157,27 @@
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding armorDurability}" materialDesign:HintAssist.Hint="Armors" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,370,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding bowsDurability}" materialDesign:HintAssist.Hint="Bows" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,420,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding shieldsDurability}" materialDesign:HintAssist.Hint="Shields" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,470,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding torchDurability}" materialDesign:HintAssist.Hint="Torches" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,520,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding inventorySettingsEnabled}" Header="Inventory">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Inventory" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding playerInventoryRows}" materialDesign:HintAssist.Hint="Player inventory number of rows (min 4, max 20, more than 6 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding woodChestRows}" materialDesign:HintAssist.Hint="Wood chest rows (min 2, max 10, more than 4 rows will add a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding woodChestColumns}" materialDesign:HintAssist.Hint="Wood chest columns (min 5, max 8)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding personalChestRows}" materialDesign:HintAssist.Hint="Personal chest rows (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding personalChestColumns}" materialDesign:HintAssist.Hint="Personal chest columns (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding ironChestRows}" materialDesign:HintAssist.Hint="Iron chest rows (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding ironChestColumns}" materialDesign:HintAssist.Hint="Iron chest columns (min 6, max 8)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,370,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding cartInventoryRows}" materialDesign:HintAssist.Hint="Cart rows (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,420,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding cartInventoryColumns}" materialDesign:HintAssist.Hint="Cart columns (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,470,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding karveInventoryRows}" materialDesign:HintAssist.Hint="Karve rows (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,520,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding karveInventoryColumns}" materialDesign:HintAssist.Hint="Karve columns (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,570,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding longboatInventoryRows}" materialDesign:HintAssist.Hint="Longboat rows (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,620,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding longboatInventoryColumns}" materialDesign:HintAssist.Hint="Longboat columns (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,670,0,0" />
-                        <CheckBox Content="Top to bottom sorting *" IsChecked="{Binding inventoryFillTopToBottom}" HorizontalAlignment="Left" Margin="10,730,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding playerInventoryRows}" materialDesign:HintAssist.Hint="Player inventory number of rows (min 4, max 20, more than 6 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding woodChestRows}" materialDesign:HintAssist.Hint="Wood chest rows (min 2, max 10, more than 4 rows will add a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding woodChestColumns}" materialDesign:HintAssist.Hint="Wood chest columns (min 5, max 8)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding personalChestRows}" materialDesign:HintAssist.Hint="Personal chest rows (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding personalChestColumns}" materialDesign:HintAssist.Hint="Personal chest columns (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding ironChestRows}" materialDesign:HintAssist.Hint="Iron chest rows (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding ironChestColumns}" materialDesign:HintAssist.Hint="Iron chest columns (min 6, max 8)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,370,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding cartInventoryRows}" materialDesign:HintAssist.Hint="Cart rows (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,420,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding cartInventoryColumns}" materialDesign:HintAssist.Hint="Cart columns (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,470,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding karveInventoryRows}" materialDesign:HintAssist.Hint="Karve rows (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,520,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding karveInventoryColumns}" materialDesign:HintAssist.Hint="Karve columns (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,570,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding longboatInventoryRows}" materialDesign:HintAssist.Hint="Longboat rows (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,620,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding longboatInventoryColumns}" materialDesign:HintAssist.Hint="Longboat columns (min 3, max 20, more than 4 will result in a scrollbar)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,670,0,0" />
+                        <CheckBox Content="Top to bottom sorting" IsChecked="{Binding inventoryFillTopToBottom}" HorizontalAlignment="Left" Margin="10,730,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Make all stacks try to merge with an existing stack (tombstone)" IsChecked="{Binding mergeWithExistingStacks}" HorizontalAlignment="Left" Margin="180,730,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding itemsSettingsEnabled}" Header="Items">
@@ -184,15 +192,23 @@
                 <TabItem IsEnabled="{Binding fermenterSettingsEnabled}" Header="Fermenter">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Fermenter" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding fermenterDuration}" materialDesign:HintAssist.Hint="Speed at which the fermenter produce product in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding fermenterItemsProduced}" materialDesign:HintAssist.Hint="Amount produced items" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="552" Text="{Binding fermenterDuration}" materialDesign:HintAssist.Hint="Speed at which the fermenter produce product in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="552" Text="{Binding fermenterItemsProduced}" materialDesign:HintAssist.Hint="Amount produced items" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <CheckBox Content="Display the minutes and seconds until the fermenter is done on hover" IsChecked="{Binding showFermenterDuration}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests" IsChecked="{Binding autoDepositFermenter}" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for mead inside nearby chests" IsChecked="{Binding autoFuelFermenter}" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disable to enable private area check when looking for chests" IsChecked="{Binding ignorePrivateAreaCheckFermenter}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="552" Text="{Binding autoRangeFermenter}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit and fuel features (Maximum is 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,310,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding fireSourceSettingsEnabled}" Header="Fire sources">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Fire sources" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <CheckBox Content="ONLY placed torches don't need refilling" IsChecked="{Binding onlyTorches}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="If set to true, torch-type fire sources will stay at max fuel level once filled" IsChecked="{Binding torchesFireSource}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="If set to true, non torch-type fire sources will stay at max fuel level once filled" IsChecked="{Binding firesFireSource}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for fuel inside nearby chests" IsChecked="{Binding autoFuelFireSource}" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckFireSource}" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding autoRangeFireSource}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto fuel features (max 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,190,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding firstPersonSettingsEnabled}" Header="First person">
@@ -231,6 +247,8 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="420" Text="{Binding furnaceProductionSpeed}" materialDesign:HintAssist.Hint="The time it takes for the furnace to produce a single ingot in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="420" Text="{Binding autoDepositRangeFurnace}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit feature (max 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                         <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositFurnace}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for fuel inside nearby chests" IsChecked="{Binding autoFuelFurnace}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckFurnace}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding gameSettingsEnabled}" Header="Game">
@@ -242,6 +260,7 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding setFixedPlayerCountTo}" materialDesign:HintAssist.Hint="Sets the nearby player count always to this value + extraPlayerCountNearby" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding difficultyScaleRange}" materialDesign:HintAssist.Hint="The range in meters at which other players count towards nearby players for the difficulty scale" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                         <CheckBox Content="Disable all portals" IsChecked="{Binding disablePortals}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Force the console to be enabled in-game" IsChecked="{Binding forceConsole}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding hotkeysSettingsEnabled}" Header="Hotkeys">
@@ -277,13 +296,27 @@
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="530" Text="{Binding dropChanceGathering}" materialDesign:HintAssist.Hint="Modify the chance to drop resources from resource nodes affected by this category" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,570,0,0" />
                     </Grid>
                 </TabItem>
+                <TabItem IsEnabled="{Binding gridAlignmentSettingsEnabled}" Header="Grid alignment">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Grid alignment" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox Width="382" Text="{Binding align}" materialDesign:HintAssist.Hint="Key to enable grid alignment" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox Width="382" Text="{Binding alignToggle}" materialDesign:HintAssist.Hint="Key to toggle grid alignment" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox Width="382" Text="{Binding changeDefaultAlignment}" materialDesign:HintAssist.Hint="Key to change the default alignment" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                    </Grid>
+                </TabItem>
                 <TabItem IsEnabled="{Binding kilnSettingsEnabled}" Header="Kiln">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Kiln" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="413" Text="{Binding maximumWood}" materialDesign:HintAssist.Hint="Maximum amount of wood in a Kiln" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="413" Text="{Binding kilnProductionSpeed}" materialDesign:HintAssist.Hint="The time it takes for the Kiln to produce a single piece of coal in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
-                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="413" Text="{Binding autoDepositRangeKiln}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit feature (max 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
-                        <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositKiln}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="646" Text="{Binding maximumWood}" materialDesign:HintAssist.Hint="Maximum amount of wood in a Kiln" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="646" Text="{Binding kilnProductionSpeed}" materialDesign:HintAssist.Hint="The time it takes for the Kiln to produce a single piece of coal in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="646" Text="{Binding autoDepositRangeKiln}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit feature (max 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox PreviewTextInput="FloatValidationTextBox" Width="646" Text="{Binding stopAutoFuelThresholdKiln}" materialDesign:HintAssist.Hint="Stop looking for fuel when there is at leasts this quantity of Coal in nearby chests (ignored if set to 0)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositKiln}" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Prevent using finewood" IsChecked="{Binding dontProcessFineWoodKiln}" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Prevent using roundlogs" IsChecked="{Binding dontProcessRoundLogKiln}" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for fuel inside nearby chests" IsChecked="{Binding autoFuelKiln}" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckKiln}" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top"/>
+
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding mapSettingsEnabled}" Header="Map">
@@ -303,21 +336,29 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="641" Text="{Binding baseUnarmedDamage}" materialDesign:HintAssist.Hint="The base unarmed damage multiplied by your skill level" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="641" Text="{Binding restSecondsPerComfortLevel}" materialDesign:HintAssist.Hint="How many seconds each comfort level contributes to the rested bonus" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="641" Text="{Binding deathPenaltyMultiplier}" materialDesign:HintAssist.Hint="Change the death penalty in percentage, where higher will increase the death penalty and lower will reduce it" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="641" Text="{Binding guardianBuffDuration}" materialDesign:HintAssist.Hint="Guardian buff duration" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,370,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="641" Text="{Binding guardianBuffCooldown}" materialDesign:HintAssist.Hint="Guardian buff cooldown duration" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,420,0,0" />
 
-                        <CheckBox Content="Disable all types of camera shake" IsChecked="{Binding disableCameraShake}" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Do not permit to place a crop within the grow radius of another crop" IsChecked="{Binding cropNotifier}" HorizontalAlignment="Left" Margin="10,410,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="If set to true, this option will automatically repair your equipment when you interact with the appropriate workbench" IsChecked="{Binding autoRepair}" HorizontalAlignment="Left" Margin="10,440,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disable all types of camera shake" IsChecked="{Binding disableCameraShake}" HorizontalAlignment="Left" Margin="10,480,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Do not permit to place a crop within the grow radius of another crop" IsChecked="{Binding cropNotifier}" HorizontalAlignment="Left" Margin="10,510,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="If enabled, this option will automatically repair your equipment when you interact with the appropriate workbench" IsChecked="{Binding autoRepair}" HorizontalAlignment="Left" Margin="10,540,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="When equipping a one-handed weapon, the best shield from your inventory is automatically equipped" IsChecked="{Binding autoEquipShield}" HorizontalAlignment="Left" Margin="10,570,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Weapon switches requested mid-attack will be carried out when the current attack is finished" IsChecked="{Binding queueWeaponChanges}" HorizontalAlignment="Left" Margin="10,600,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Skip the intro of the game" IsChecked="{Binding skipIntro}" HorizontalAlignment="Left" Margin="10,630,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disables the 'I have arrived!' message on player spawn" IsChecked="{Binding iHaveArrivedOnSpawn}" HorizontalAlignment="Left" Margin="10,660,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Items will be re-equipped when you exit water after swimming" IsChecked="{Binding reequipItemsAfterSwimming}" HorizontalAlignment="Left" Margin="10,690,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disable the Guardian Buff animation" IsChecked="{Binding disableGuardianBuffAnimation}" HorizontalAlignment="Left" Margin="10,720,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding serverSettingsEnabled}" Header="Server">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Server" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="480" Text="{Binding maxPlayers}" materialDesign:HintAssist.Hint="Modify the amount of players on your server" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="480" Text="{Binding dataRate}" materialDesign:HintAssist.Hint="The total amount of data that the server and client can send per second in kilobytes" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
-                        <!--<TextBox PreviewTextInput="IntValidationTextBox" Width="480" Text="{Binding autoSaveInterval}" materialDesign:HintAssist.Hint="The interval in seconds that the game auto saves at (client only)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />-->
-                        <CheckBox Content="Removes the requirement to have a server password" IsChecked="{Binding disableServerPassword}" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Enable that the server will force it's config on clients that connect. Only affects servers" IsChecked="{Binding serverSyncsConfig}" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Add version control to make sure that people that try to join your game or the server you try to join has V+ installed" IsChecked="{Binding enforceMod}" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top"/>
+                        <!--<TextBox PreviewTextInput="IntValidationTextBox" Width="480" Text="{Binding dataRate}" materialDesign:HintAssist.Hint="The total amount of data that the server and client can send per second in kilobytes" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />-->
+                        <CheckBox Content="Removes the requirement to have a server password" IsChecked="{Binding disableServerPassword}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Enable that the server will force it's config on clients that connect. Only affects servers" IsChecked="{Binding serverSyncsConfig}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Add version control to make sure that people that try to join your game or the server you try to join has V+ installed" IsChecked="{Binding enforceMod}" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="If false allows you to keep your own defined hotkeys instead of synchronising the ones declared for the server. &#10;Sections need to be enabled in your local configuration to load hotkeys. This is a client side setting and not affected by server settings." IsChecked="{Binding serverSyncHotkeys}" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding shieldsSettingsEnabled}" Header="Shields">
@@ -335,6 +376,8 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="420" Text="{Binding smelterProductionSpeed}" materialDesign:HintAssist.Hint="The time it takes for the smelter to produce a single ingot in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="420" Text="{Binding smelterAutoDepositRange}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit feature (max 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                         <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding smelterAutoDeposit}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for fuel inside nearby chests" IsChecked="{Binding autoFuelSmelter}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckSmelter}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding staminaSettingsEnabled}" Header="Stamina">
@@ -369,6 +412,11 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding unarmed}" materialDesign:HintAssist.Hint="Unarmed" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,470,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding hammer}" materialDesign:HintAssist.Hint="Hammer" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,520,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding hoe}" materialDesign:HintAssist.Hint="Hoe" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,570,0,0" />
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding valheimPlusConfigurationEnabled}" Header="ValheimPlus">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="ValheimPlus" TextWrapping="Wrap" VerticalAlignment="Top" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding workbenchSettingsEnabled}" Header="Workbench">
