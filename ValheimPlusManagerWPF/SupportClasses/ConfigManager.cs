@@ -956,6 +956,10 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Smelter
 
+            #region SpinningWheel
+
+            #endregion SpinningWheel
+
             #region Stamina
             if (bool.TryParse(data["Stamina"]["enabled"], out bool staminaSettingsEnabled))
             {
@@ -1144,6 +1148,10 @@ namespace ValheimPlusManager.SupportClasses
                 valheimPlusConfiguration.wardRange = wardRange;
             }
             #endregion Ward
+
+            #region Windmill
+
+            #endregion Windmill
 
             #region Workbench
             if (bool.TryParse(data["Workbench"]["enabled"], out bool workbenchSettingsEnabled))
@@ -1472,6 +1480,10 @@ namespace ValheimPlusManager.SupportClasses
             data["Smelter"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckSmelter.ToString().ToLower();
             #endregion Smelter
 
+            #region SpinningWheel
+
+            #endregion SpinningWheel
+
             #region Stamina
             data["Stamina"]["enabled"] = valheimPlusConfiguration.staminaSettingsEnabled.ToString().ToLower();
             data["Stamina"]["dodgeStaminaUsage"] = valheimPlusConfiguration.dodgeStaminaUsage.ToString();
@@ -1524,13 +1536,6 @@ namespace ValheimPlusManager.SupportClasses
             data["ValheimPlus"]["serverBrowserAdvertisement"] = valheimPlusConfiguration.serverBrowserAdvertisement.ToString().ToLower();
             #endregion ValheimPlus
 
-            #region Workbench
-            data["Workbench"]["enabled"] = valheimPlusConfiguration.workbenchSettingsEnabled.ToString().ToLower();
-            data["Workbench"]["workbenchRange"] = valheimPlusConfiguration.workbenchRange.ToString();
-            data["Workbench"]["workbenchAttachmentRange"] = valheimPlusConfiguration.workbenchAttachmentRange.ToString();
-            data["Workbench"]["disableRoofCheck"] = valheimPlusConfiguration.disableRoofCheck.ToString().ToLower();
-            #endregion Workbench
-
             #region Wagon
             data["Wagon"]["enabled"] = valheimPlusConfiguration.wagonSettingsEnabled.ToString().ToLower();
             data["Wagon"]["wagonBaseMass"] = valheimPlusConfiguration.wagonBaseMass.ToString();
@@ -1541,6 +1546,17 @@ namespace ValheimPlusManager.SupportClasses
             data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
             data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString().ToLower();
             #endregion Ward
+
+            #region Windmill
+
+            #endregion Windmill
+
+            #region Workbench
+            data["Workbench"]["enabled"] = valheimPlusConfiguration.workbenchSettingsEnabled.ToString().ToLower();
+            data["Workbench"]["workbenchRange"] = valheimPlusConfiguration.workbenchRange.ToString();
+            data["Workbench"]["workbenchAttachmentRange"] = valheimPlusConfiguration.workbenchAttachmentRange.ToString();
+            data["Workbench"]["disableRoofCheck"] = valheimPlusConfiguration.disableRoofCheck.ToString().ToLower();
+            #endregion Workbench
 
             // Writing the new settings to configuration file
             try
