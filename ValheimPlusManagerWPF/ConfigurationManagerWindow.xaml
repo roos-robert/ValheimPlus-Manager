@@ -92,6 +92,8 @@
                         <TextBox Width="382" Text="{Binding exitAdvancedBuildingMode}" materialDesign:HintAssist.Hint="Exit the advanced building mode with this key when building" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox Width="382" Text="{Binding copyObjectRotation}" materialDesign:HintAssist.Hint="Copy the object rotation of the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <TextBox Width="382" Text="{Binding pasteObjectRotation}" materialDesign:HintAssist.Hint="Apply the copied object rotation to the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox Width="382" Text="{Binding increaseScrollSpeed}" materialDesign:HintAssist.Hint="Increases the amount an object rotates and moves" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
+                        <TextBox Width="382" Text="{Binding decreaseScrollSpeed}" materialDesign:HintAssist.Hint="Decreases the amount an object rotates and moves" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding advancedEditingModeEnabled}" Header="Advanced editing mode">

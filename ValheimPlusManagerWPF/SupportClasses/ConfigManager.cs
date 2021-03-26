@@ -51,6 +51,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.pasteObjectRotation = data["AdvancedBuildingMode"]["pasteObjectRotation"];
             }
+            if (data["AdvancedBuildingMode"]["increaseScrollSpeed"] != null)
+            {
+                valheimPlusConfiguration.increaseScrollSpeed = data["AdvancedBuildingMode"]["increaseScrollSpeed"];
+            }
+            if (data["AdvancedBuildingMode"]["decreaseScrollSpeed"] != null)
+            {
+                valheimPlusConfiguration.decreaseScrollSpeed = data["AdvancedBuildingMode"]["decreaseScrollSpeed"];
+            }
 
             #endregion Advanced building mode
 
@@ -1023,6 +1031,8 @@ namespace ValheimPlusManager.SupportClasses
             data["AdvancedBuildingMode"]["exitAdvancedBuildingMode"] = valheimPlusConfiguration.exitAdvancedBuildingMode.ToString();
             data["AdvancedBuildingMode"]["copyObjectRotation"] = valheimPlusConfiguration.copyObjectRotation.ToString();
             data["AdvancedBuildingMode"]["pasteObjectRotation"] = valheimPlusConfiguration.pasteObjectRotation.ToString();
+            data["AdvancedBuildingMode"]["increaseScrollSpeed"] = valheimPlusConfiguration.increaseScrollSpeed.ToString();
+            data["AdvancedBuildingMode"]["decreaseScrollSpeed"] = valheimPlusConfiguration.decreaseScrollSpeed.ToString();
 
             // Advanced editing mode settings
             data["AdvancedEditingMode"]["enabled"] = valheimPlusConfiguration.advancedEditingModeEnabled.ToString().ToLower();
