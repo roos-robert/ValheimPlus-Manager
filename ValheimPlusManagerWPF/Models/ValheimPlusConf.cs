@@ -248,13 +248,12 @@
         public float autoDepositRangeKiln { get; set; } = 10;
         #endregion Kiln
 
-        // Map
+        #region Map
         public bool mapSettingsEnabled { get; set; } = false;
         public bool shareMapProgression { get; set; } = false;
         public float exploreRadius { get; set; } = 100;
-        public bool playerPositionPublicOnJoin { get; set; } = false;
         public bool preventPlayerFromTurningOffPublicPosition { get; set; } = false;
-        public bool removeDeathPinOnTombstoneEmpty { get; set; } = false;
+        #endregion Map
 
         // Player settings
         public bool playerSettingsEnabled { get; set; } = false;
