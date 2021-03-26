@@ -105,6 +105,8 @@
                         <TextBox Width="382" Text="{Binding confirmPlacementOfAdvancedEditingMode}" materialDesign:HintAssist.Hint="Confirm the placement of the object and place it" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox Width="382" Text="{Binding copyObjectRotationAEM}" materialDesign:HintAssist.Hint="Copy the object rotation of the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                         <TextBox Width="382" Text="{Binding pasteObjectRotationAEM}" materialDesign:HintAssist.Hint="Apply the copied object rotation to the currently selected object" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,320,0,0" />
+                        <TextBox Width="382" Text="{Binding increaseScrollSpeedAEM}" materialDesign:HintAssist.Hint="Increases the amount an object rotates and moves" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,370,0,0" />
+                        <TextBox Width="382" Text="{Binding decreaseScrollSpeedAEM}" materialDesign:HintAssist.Hint="Decreases the amount an object rotates and moves" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,420,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding armorSettingsEnabled}" Header="Armor">

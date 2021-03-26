@@ -25,6 +25,8 @@
         public string confirmPlacementOfAdvancedEditingMode { get; set; } = "KeypadEnter";
         public string copyObjectRotationAEM { get; set; } = "Keypad7";
         public string pasteObjectRotationAEM { get; set; } = "Keypad8";
+        public string increaseScrollSpeedAEM { get; set; } = "KeypadPlus";
+        public string decreaseScrollSpeedAEM { get; set; } = "KeypadMinus";
 
         // Armor
         public bool armorSettingsEnabled { get; set; } = false;

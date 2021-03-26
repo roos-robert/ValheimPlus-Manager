@@ -91,6 +91,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.pasteObjectRotationAEM = data["AdvancedEditingMode"]["pasteObjectRotation"];
             }
+            if (data["AdvancedEditingMode"]["increaseScrollSpeed"] != null)
+            {
+                valheimPlusConfiguration.increaseScrollSpeedAEM = data["AdvancedEditingMode"]["increaseScrollSpeed"];
+            }
+            if (data["AdvancedEditingMode"]["decreaseScrollSpeed"] != null)
+            {
+                valheimPlusConfiguration.decreaseScrollSpeedAEM = data["AdvancedEditingMode"]["decreaseScrollSpeed"];
+            }
             #endregion Advanced editing mode
 
             #region Armor
@@ -1025,7 +1033,7 @@ namespace ValheimPlusManager.SupportClasses
                 data = parser.ReadFile(string.Format("{0}BepInEx/config/valheim_plus.cfg", settings.ServerInstallationPath));
             }
 
-            // Advanced building mode settings
+            #region Advanced building mode
             data["AdvancedBuildingMode"]["enabled"] = valheimPlusConfiguration.advancedBuildingModeEnabled.ToString().ToLower();
             data["AdvancedBuildingMode"]["enterAdvancedBuildingMode"] = valheimPlusConfiguration.enterAdvancedBuildingMode.ToString();
             data["AdvancedBuildingMode"]["exitAdvancedBuildingMode"] = valheimPlusConfiguration.exitAdvancedBuildingMode.ToString();
@@ -1033,8 +1041,9 @@ namespace ValheimPlusManager.SupportClasses
             data["AdvancedBuildingMode"]["pasteObjectRotation"] = valheimPlusConfiguration.pasteObjectRotation.ToString();
             data["AdvancedBuildingMode"]["increaseScrollSpeed"] = valheimPlusConfiguration.increaseScrollSpeed.ToString();
             data["AdvancedBuildingMode"]["decreaseScrollSpeed"] = valheimPlusConfiguration.decreaseScrollSpeed.ToString();
+            #endregion Advanced building mode
 
-            // Advanced editing mode settings
+            #region Advanced editing mode
             data["AdvancedEditingMode"]["enabled"] = valheimPlusConfiguration.advancedEditingModeEnabled.ToString().ToLower();
             data["AdvancedEditingMode"]["enterAdvancedEditingMode"] = valheimPlusConfiguration.enterAdvancedEditingMode.ToString();
             data["AdvancedEditingMode"]["resetAdvancedEditingMode"] = valheimPlusConfiguration.resetAdvancedEditingMode.ToString();
@@ -1042,6 +1051,9 @@ namespace ValheimPlusManager.SupportClasses
             data["AdvancedEditingMode"]["confirmPlacementOfAdvancedEditingMode"] = valheimPlusConfiguration.confirmPlacementOfAdvancedEditingMode.ToString();
             data["AdvancedEditingMode"]["copyObjectRotation"] = valheimPlusConfiguration.copyObjectRotationAEM.ToString();
             data["AdvancedEditingMode"]["pasteObjectRotation"] = valheimPlusConfiguration.pasteObjectRotationAEM.ToString();
+            data["AdvancedEditingMode"]["increaseScrollSpeed"] = valheimPlusConfiguration.increaseScrollSpeedAEM.ToString();
+            data["AdvancedEditingMode"]["decreaseScrollSpeed"] = valheimPlusConfiguration.decreaseScrollSpeedAEM.ToString();
+            #endregion Advanced editing mode
 
             // Armor
             data["Armor"]["enabled"] = valheimPlusConfiguration.armorSettingsEnabled.ToString().ToLower();
