@@ -137,7 +137,7 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.maximumHoneyPerBeehive = maximumHoneyPerBeehive;
             }
-            if (float.TryParse(data["Beehive"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositHoneyRange))
+            if (float.TryParse(data["Beehive"]["autoRange"], NumberStyles.Any, ci, out float autoDepositHoneyRange))
             {
                 valheimPlusConfiguration.autoDepositHoneyRange = autoDepositHoneyRange;
             }
@@ -491,7 +491,7 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.furnaceProductionSpeed = furnaceProductionSpeed;
             }
-            if (float.TryParse(data["Furnace"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositRangeFurnace))
+            if (float.TryParse(data["Furnace"]["autoRange"], NumberStyles.Any, ci, out float autoDepositRangeFurnace))
             {
                 valheimPlusConfiguration.autoDepositRangeFurnace = autoDepositRangeFurnace;
             }
@@ -779,7 +779,7 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.ignorePrivateAreaCheckKiln = ignorePrivateAreaCheckKiln;
             }
-            if (float.TryParse(data["Kiln"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositRangeKiln))
+            if (float.TryParse(data["Kiln"]["autoRange"], NumberStyles.Any, ci, out float autoDepositRangeKiln))
             {
                 valheimPlusConfiguration.autoDepositRangeKiln = autoDepositRangeKiln;
             }
@@ -938,13 +938,21 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.smelterProductionSpeed = smelterProductionSpeed;
             }
-            if (float.TryParse(data["Smelter"]["autoDepositRange"], NumberStyles.Any, ci, out float smelterAutoDepositRange))
+            if (float.TryParse(data["Smelter"]["autoRange"], NumberStyles.Any, ci, out float smelterAutoDepositRange))
             {
                 valheimPlusConfiguration.smelterAutoDepositRange = smelterAutoDepositRange;
             }
             if (bool.TryParse(data["Smelter"]["autoDeposit"], out bool smelterAutoDeposit))
             {
                 valheimPlusConfiguration.smelterAutoDeposit = smelterAutoDeposit;
+            }
+            if (bool.TryParse(data["Smelter"]["autoFuel"], out bool autoFuelSmelter))
+            {
+                valheimPlusConfiguration.autoFuelSmelter = autoFuelSmelter;
+            }
+            if (bool.TryParse(data["Smelter"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckSmelter))
+            {
+                valheimPlusConfiguration.ignorePrivateAreaCheckSmelter = ignorePrivateAreaCheckSmelter;
             }
             #endregion Smelter
 
@@ -1193,7 +1201,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Beehive"]["enabled"] = valheimPlusConfiguration.beehiveSettingsEnabled.ToString().ToLower();
             data["Beehive"]["honeyProductionSpeed"] = valheimPlusConfiguration.honeyProductionSpeed.ToString();
             data["Beehive"]["maximumHoneyPerBeehive"] = valheimPlusConfiguration.maximumHoneyPerBeehive.ToString();
-            data["Beehive"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositHoneyRange.ToString();
+            data["Beehive"]["autoRange"] = valheimPlusConfiguration.autoDepositHoneyRange.ToString();
             data["Beehive"]["autoDeposit"] = valheimPlusConfiguration.autoDepositHoney.ToString().ToLower();
             data["Beehive"]["showDuration"] = valheimPlusConfiguration.showDurationBeehive.ToString().ToLower();
             #endregion Beehive
@@ -1305,7 +1313,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Furnace"]["coalUsedPerProduct"] = valheimPlusConfiguration.coalUsedPerProduct.ToString();
             data["Furnace"]["productionSpeed"] = valheimPlusConfiguration.furnaceProductionSpeed.ToString();
             data["Furnace"]["autoDeposit"] = valheimPlusConfiguration.autoDepositFurnace.ToString().ToLower();
-            data["Furnace"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
+            data["Furnace"]["autoRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
             data["Furnace"]["autoFuel"] = valheimPlusConfiguration.autoFuelFurnace.ToString().ToLower();
             data["Furnace"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckFurnace.ToString().ToLower();
             #endregion Furnace
@@ -1388,7 +1396,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Kiln"]["autoFuel"] = valheimPlusConfiguration.autoFuelKiln.ToString().ToLower();
             data["Kiln"]["stopAutoFuelThreshold"] = valheimPlusConfiguration.stopAutoFuelThresholdKiln.ToString();
             data["Kiln"]["ignorePrivateArea"] = valheimPlusConfiguration.ignorePrivateAreaCheckKiln.ToString().ToLower();
-            data["Kiln"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeKiln.ToString();
+            data["Kiln"]["autoRange"] = valheimPlusConfiguration.autoDepositRangeKiln.ToString();
             #endregion Kiln
 
             #region Map
@@ -1440,7 +1448,9 @@ namespace ValheimPlusManager.SupportClasses
             data["Smelter"]["coalUsedPerProduct"] = valheimPlusConfiguration.smelterCoalUsedPerProduct.ToString();
             data["Smelter"]["productionSpeed"] = valheimPlusConfiguration.smelterProductionSpeed.ToString();
             data["Smelter"]["autoDeposit"] = valheimPlusConfiguration.smelterAutoDeposit.ToString().ToLower();
-            data["Smelter"]["autoDepositRange"] = valheimPlusConfiguration.smelterAutoDepositRange.ToString();
+            data["Smelter"]["autoRange"] = valheimPlusConfiguration.smelterAutoDepositRange.ToString();
+            data["Smelter"]["autoFuel"] = valheimPlusConfiguration.autoFuelSmelter.ToString().ToLower();
+            data["Smelter"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckSmelter.ToString().ToLower();
             #endregion Smelter
 
             // Stamina

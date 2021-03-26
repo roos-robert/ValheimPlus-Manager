@@ -376,6 +376,8 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="420" Text="{Binding smelterProductionSpeed}" materialDesign:HintAssist.Hint="The time it takes for the smelter to produce a single ingot in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="420" Text="{Binding smelterAutoDepositRange}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit feature (max 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                         <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding smelterAutoDeposit}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for fuel inside nearby chests" IsChecked="{Binding autoFuelSmelter}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckSmelter}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding staminaSettingsEnabled}" Header="Stamina">
