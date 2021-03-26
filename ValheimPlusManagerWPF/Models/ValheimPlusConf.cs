@@ -193,21 +193,24 @@
         public string changeDefaultAlignment { get; set; } = "F6";
         #endregion GridAlignment
 
-        // Hotkeys
+        #region Hotkeys
         public bool hotkeysSettingsEnabled { get; set; } = false;
         public string rollForwards { get; set; } = "F9";
         public string rollBackwards { get; set; } = "F10";
+        #endregion Hotkeys
 
-        // Hud
+        #region HUD
         public bool hudSettingsEnabled { get; set; } = false;
         public bool showRequiredItems { get; set; } = false;
         public bool experienceGainedNotifications { get; set; } = false;
         public float chatMessageDistance { get; set; }
         public bool displayStaminaValue { get; set; } = false;
         public bool removeDamageFlash { get; set; } = false;
+        #endregion HUD
 
-        // Inventory
+        #region Inventory
         public bool inventorySettingsEnabled { get; set; } = false;
+        public bool mergeWithExistingStacks { get; set; } = false;
         public bool inventoryFillTopToBottom { get; set; } = false;
         public int playerInventoryRows { get; set; } = 4;
         public int woodChestColumns { get; set; } = 5;
@@ -215,13 +218,14 @@
         public int personalChestColumns { get; set; } = 3;
         public int personalChestRows { get; set; } = 2;
         public int ironChestColumns { get; set; } = 8;
-        public int ironChestRows { get; set; } = 3;
+        public int ironChestRows { get; set; } = 4;
         public int cartInventoryColumns { get; set; } = 8;
         public int cartInventoryRows { get; set; } = 3;
         public int karveInventoryColumns { get; set; } = 2;
         public int karveInventoryRows { get; set; } = 2;
         public int longboatInventoryColumns { get; set; } = 8;
         public int longboatInventoryRows { get; set; } = 3;
+        #endregion Inventory
 
         // Items
         public bool itemsSettingsEnabled { get; set; } = false;

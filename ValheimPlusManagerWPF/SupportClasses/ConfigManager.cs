@@ -661,6 +661,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.inventoryFillTopToBottom = inventoryFillTopToBottom;
             }
+            if (bool.TryParse(data["Inventory"]["mergeWithExistingStacks"], out bool mergeWithExistingStacks))
+            {
+                valheimPlusConfiguration.mergeWithExistingStacks = mergeWithExistingStacks;
+            }
             if (int.TryParse(data["Inventory"]["playerInventoryRows"], out int playerInventoryRows))
             {
                 valheimPlusConfiguration.playerInventoryRows = playerInventoryRows;
@@ -1288,21 +1292,24 @@ namespace ValheimPlusManager.SupportClasses
             data["GridAlignment"]["changeDefaultAlignment"] = valheimPlusConfiguration.changeDefaultAlignment.ToString();
             #endregion GridAlignment
 
-            // Hotkeys
+            #region Hotkeys
             data["Hotkeys"]["enabled"] = valheimPlusConfiguration.hotkeysSettingsEnabled.ToString().ToLower();
             data["Hotkeys"]["rollForwards"] = valheimPlusConfiguration.rollForwards.ToString();
             data["Hotkeys"]["rollBackwards"] = valheimPlusConfiguration.rollBackwards.ToString();
+            #endregion Hotkeys
 
-            // Hud
+            #region HUD
             data["Hud"]["enabled"] = valheimPlusConfiguration.hudSettingsEnabled.ToString().ToLower();
             data["Hud"]["showRequiredItems"] = valheimPlusConfiguration.showRequiredItems.ToString().ToLower();
             data["Hud"]["experienceGainedNotifications"] = valheimPlusConfiguration.experienceGainedNotifications.ToString().ToLower();
             data["Hud"]["displayStaminaValue"] = valheimPlusConfiguration.displayStaminaValue.ToString().ToLower();
             data["Hud"]["removeDamageFlash"] = valheimPlusConfiguration.removeDamageFlash.ToString().ToLower();
+            #endregion HUD
 
             #region Inventory
             data["Inventory"]["enabled"] = valheimPlusConfiguration.inventorySettingsEnabled.ToString().ToLower();
             data["Inventory"]["inventoryFillTopToBottom"] = valheimPlusConfiguration.inventoryFillTopToBottom.ToString().ToLower();
+            data["Inventory"]["mergeWithExistingStacks"] = valheimPlusConfiguration.mergeWithExistingStacks.ToString().ToLower();
             data["Inventory"]["playerInventoryRows"] = valheimPlusConfiguration.playerInventoryRows.ToString();
             data["Inventory"]["personalChestRows"] = valheimPlusConfiguration.personalChestRows.ToString();
             data["Inventory"]["personalChestColumns"] = valheimPlusConfiguration.personalChestColumns.ToString();
