@@ -8,7 +8,7 @@
         public bool serverBrowserAdvertisement { get; set; } = true;
         #endregion ValheimPlusConfiguration
 
-        // Advanced building mode
+        #region Advanced building mode
         public bool advancedBuildingModeEnabled { get; set; } = false;
         public string enterAdvancedBuildingMode { get; set; } = "F1";
         public string exitAdvancedBuildingMode { get; set; } = "F3";
@@ -16,8 +16,9 @@
         public string pasteObjectRotation { get; set; } = "Keypad8";
         public string increaseScrollSpeed { get; set; } = "KeypadPlus";
         public string decreaseScrollSpeed { get; set; } = "KeypadMinus";
+        #endregion Advanced building mode
 
-        // Advanced editing mode
+        #region Advanced editing mode
         public bool advancedEditingModeEnabled { get; set; } = false;
         public string enterAdvancedEditingMode { get; set; } = "Keypad0";
         public string resetAdvancedEditingMode { get; set; } = "F7";
@@ -27,25 +28,29 @@
         public string pasteObjectRotationAEM { get; set; } = "Keypad8";
         public string increaseScrollSpeedAEM { get; set; } = "KeypadPlus";
         public string decreaseScrollSpeedAEM { get; set; } = "KeypadMinus";
+        #endregion Advanced editing mode
 
-        // Armor
+        #region Armor
         public bool armorSettingsEnabled { get; set; } = false;
         public float helmetsArmor { get; set; } = 0;
         public float chestsArmor { get; set; } = 0;
         public float legsArmor { get; set; } = 0;
         public float capesArmor { get; set; } = 0;
+        #endregion Armor
 
-        // Beehive
+        #region Beehive
         public bool beehiveSettingsEnabled { get; set; } = false;
         public float honeyProductionSpeed { get; set; } = 1200;
         public int maximumHoneyPerBeehive { get; set; } = 4;
         public bool autoDepositHoney { get; set; } = false;
         public float autoDepositHoneyRange { get; set; } = 10;
         public bool showDurationBeehive { get; set; } = false;
+        #endregion Beehive
 
-        // Building
+        #region Building
         public bool buildingSettingsEnabled { get; set; } = false;
         public bool noInvalidPlacementRestriction { get; set; } = false;
+        public bool noMysticalForcesPreventPlacementRestriction { get; set; } = false;
         public bool noWeatherDamage { get; set; } = false;
         public float maximumPlacementDistance { get; set; } = 5;
         public float pieceComfortRadius { get; set; } = 10;
@@ -53,6 +58,7 @@
         public bool alwaysDropExcludedResources { get; set; } = false;
         public bool enableAreaRepair { get; set; } = false;
         public float areaRepairRadius { get; set; } = 7.5f;
+        #endregion Building
 
         // Durability
         public bool durabilitySettingsEnabled { get; set; } = false;

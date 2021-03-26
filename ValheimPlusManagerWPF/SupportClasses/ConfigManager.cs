@@ -160,6 +160,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.noInvalidPlacementRestriction = noInvalidPlacementRestriction;
             }
+            if (bool.TryParse(data["Building"]["noMysticalForcesPreventPlacementRestriction"], out bool noMysticalForcesPreventPlacementRestriction))
+            {
+                valheimPlusConfiguration.noMysticalForcesPreventPlacementRestriction = noMysticalForcesPreventPlacementRestriction;
+            }
             if (bool.TryParse(data["Building"]["noWeatherDamage"], out bool noWeatherDamage))
             {
                 valheimPlusConfiguration.noWeatherDamage = noWeatherDamage;
@@ -1055,12 +1059,13 @@ namespace ValheimPlusManager.SupportClasses
             data["AdvancedEditingMode"]["decreaseScrollSpeed"] = valheimPlusConfiguration.decreaseScrollSpeedAEM.ToString();
             #endregion Advanced editing mode
 
-            // Armor
+            #region Armor
             data["Armor"]["enabled"] = valheimPlusConfiguration.armorSettingsEnabled.ToString().ToLower();
             data["Armor"]["helmets"] = valheimPlusConfiguration.helmetsArmor.ToString();
             data["Armor"]["chests"] = valheimPlusConfiguration.chestsArmor.ToString();
             data["Armor"]["legs"] = valheimPlusConfiguration.legsArmor.ToString();
             data["Armor"]["capes"] = valheimPlusConfiguration.capesArmor.ToString();
+            #endregion Armor
 
             #region Beehive
             data["Beehive"]["enabled"] = valheimPlusConfiguration.beehiveSettingsEnabled.ToString().ToLower();
@@ -1076,6 +1081,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Building"]["maximumPlacementDistance"] = valheimPlusConfiguration.maximumPlacementDistance.ToString().ToLower();
             data["Building"]["noWeatherDamage"] = valheimPlusConfiguration.noWeatherDamage.ToString();
             data["Building"]["noInvalidPlacementRestriction"] = valheimPlusConfiguration.noInvalidPlacementRestriction.ToString();
+            data["Building"]["noMysticalForcesPreventPlacementRestriction"] = valheimPlusConfiguration.noMysticalForcesPreventPlacementRestriction.ToString();
             data["Building"]["pieceComfortRadius"] = valheimPlusConfiguration.pieceComfortRadius.ToString();
             data["Building"]["alwaysDropResources"] = valheimPlusConfiguration.alwaysDropResources.ToString().ToLower();
             data["Building"]["alwaysDropExcludedResources"] = valheimPlusConfiguration.alwaysDropExcludedResources.ToString().ToLower();
