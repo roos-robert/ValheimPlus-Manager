@@ -736,7 +736,7 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.itemStackMultiplier = itemStackMultiplier;
             }
-            if (int.TryParse(data["Items"]["droppedItemOnGroundDurationInSeconds"], out int droppedItemOnGroundDurationInSeconds))
+            if (float.TryParse(data["Items"]["droppedItemOnGroundDurationInSeconds"], NumberStyles.Any, ci, out float droppedItemOnGroundDurationInSeconds))
             {
                 valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds = droppedItemOnGroundDurationInSeconds;
             }
@@ -1319,12 +1319,13 @@ namespace ValheimPlusManager.SupportClasses
             data["Inventory"]["ironChestRows"] = valheimPlusConfiguration.ironChestRows.ToString();
             #endregion Inventory
 
-            // Items
+            #region Items
             data["Items"]["enabled"] = valheimPlusConfiguration.itemsSettingsEnabled.ToString().ToLower();
             data["Items"]["noTeleportPrevention"] = valheimPlusConfiguration.noTeleportPrevention.ToString().ToLower();
             data["Items"]["baseItemWeightReduction"] = valheimPlusConfiguration.baseItemWeightReduction.ToString();
             data["Items"]["itemStackMultiplier"] = valheimPlusConfiguration.itemStackMultiplier.ToString();
             data["Items"]["droppedItemOnGroundDurationInSeconds"] = valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds.ToString();
+            #endregion Items
 
             // Kiln
             data["Kiln"]["enabled"] = valheimPlusConfiguration.kilnSettingsEnabled.ToString().ToLower();

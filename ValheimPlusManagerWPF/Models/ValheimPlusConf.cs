@@ -227,12 +227,13 @@
         public int longboatInventoryRows { get; set; } = 3;
         #endregion Inventory
 
-        // Items
+        #region Items
         public bool itemsSettingsEnabled { get; set; } = false;
         public bool noTeleportPrevention { get; set; } = false;
         public float baseItemWeightReduction { get; set; } = 0;
         public float itemStackMultiplier { get; set; } = 1;
-        public int droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
+        public float droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
+        #endregion Items
 
         // Kiln
         public bool kilnSettingsEnabled { get; set; } = false;
