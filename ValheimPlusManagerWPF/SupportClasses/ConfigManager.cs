@@ -194,6 +194,25 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Building
 
+            #region Camera
+            if (bool.TryParse(data["Camera"]["enabled"], out bool cameraSettingsEnabled))
+            {
+                valheimPlusConfiguration.cameraSettingsEnabled = cameraSettingsEnabled;
+            }
+            if (Int32.TryParse(data["Camera"]["cameraMaximumZoomDistance"], out int cameraMaximumZoomDistance)) // Added in case Iron Gate adds XP for hoes
+            {
+                valheimPlusConfiguration.cameraMaximumZoomDistance = cameraMaximumZoomDistance;
+            }
+            if (Int32.TryParse(data["Camera"]["cameraBoatMaximumZoomDistance"], out int cameraBoatMaximumZoomDistance)) // Added in case Iron Gate adds XP for hoes
+            {
+                valheimPlusConfiguration.cameraBoatMaximumZoomDistance = cameraBoatMaximumZoomDistance;
+            }
+            if (Int32.TryParse(data["Camera"]["cameraFOV"], out int cameraFOV)) // Added in case Iron Gate adds XP for hoes
+            {
+                valheimPlusConfiguration.cameraFOV = cameraFOV;
+            }
+            #endregion Camera
+
             #region Durability
             if (bool.TryParse(data["Durability"]["enabled"], out bool durabilitySettingsEnabled))
             {
@@ -234,6 +253,10 @@ namespace ValheimPlusManager.SupportClasses
             if (float.TryParse(data["Durability"]["shields"], NumberStyles.Any, ci, out float shieldsDurability))
             {
                 valheimPlusConfiguration.shieldsDurability = shieldsDurability;
+            }
+            if (float.TryParse(data["Durability"]["torch"], NumberStyles.Any, ci, out float torch))
+            {
+                valheimPlusConfiguration.torchDurability = torch;
             }
             #endregion Durability
 
@@ -981,25 +1004,6 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Experience
 
-            #region Camera
-            if (bool.TryParse(data["Camera"]["enabled"], out bool cameraSettingsEnabled))
-            {
-                valheimPlusConfiguration.cameraSettingsEnabled = cameraSettingsEnabled;
-            }
-            if (Int32.TryParse(data["Camera"]["cameraMaximumZoomDistance"], out int cameraMaximumZoomDistance)) // Added in case Iron Gate adds XP for hoes
-            {
-                valheimPlusConfiguration.cameraMaximumZoomDistance = cameraMaximumZoomDistance;
-            }
-            if (Int32.TryParse(data["Camera"]["cameraBoatMaximumZoomDistance"], out int cameraBoatMaximumZoomDistance)) // Added in case Iron Gate adds XP for hoes
-            {
-                valheimPlusConfiguration.cameraBoatMaximumZoomDistance = cameraBoatMaximumZoomDistance;
-            }
-            if (Int32.TryParse(data["Camera"]["cameraFOV"], out int cameraFOV)) // Added in case Iron Gate adds XP for hoes
-            {
-                valheimPlusConfiguration.cameraFOV = cameraFOV;
-            }
-            #endregion Camera
-
             #region Wagon
             if (bool.TryParse(data["Wagon"]["enabled"], out bool wagonSettingsEnabled))
             {
@@ -1089,7 +1093,14 @@ namespace ValheimPlusManager.SupportClasses
             data["Building"]["areaRepairRadius"] = valheimPlusConfiguration.areaRepairRadius.ToString();
             #endregion Building
 
-            // Durability
+            #region Camera
+            data["Camera"]["enabled"] = valheimPlusConfiguration.cameraSettingsEnabled.ToString().ToLower();
+            data["Camera"]["cameraMaximumZoomDistance"] = valheimPlusConfiguration.cameraMaximumZoomDistance.ToString();
+            data["Camera"]["cameraBoatMaximumZoomDistance"] = valheimPlusConfiguration.cameraBoatMaximumZoomDistance.ToString();
+            data["Camera"]["cameraFOV"] = valheimPlusConfiguration.cameraFOV.ToString();
+            #endregion Camera
+
+            #region Durability
             data["Durability"]["enabled"] = valheimPlusConfiguration.durabilitySettingsEnabled.ToString().ToLower();
             data["Durability"]["axes"] = valheimPlusConfiguration.axesDurability.ToString();
             data["Durability"]["pickaxes"] = valheimPlusConfiguration.pickaxesDurability.ToString();
@@ -1100,6 +1111,8 @@ namespace ValheimPlusManager.SupportClasses
             data["Durability"]["armor"] = valheimPlusConfiguration.armorDurability.ToString();
             data["Durability"]["bows"] = valheimPlusConfiguration.bowsDurability.ToString();
             data["Durability"]["shields"] = valheimPlusConfiguration.shieldsDurability.ToString();
+            data["Durability"]["torch"] = valheimPlusConfiguration.torchDurability.ToString();
+            #endregion Durability
 
             #region Inventory
             data["Inventory"]["enabled"] = valheimPlusConfiguration.inventorySettingsEnabled.ToString().ToLower();
@@ -1324,12 +1337,6 @@ namespace ValheimPlusManager.SupportClasses
             data["Experience"]["swim"] = valheimPlusConfiguration.experienceSwim.ToString();
             data["Experience"]["hammer"] = valheimPlusConfiguration.experienceHammer.ToString();
             data["Experience"]["hoe"] = valheimPlusConfiguration.experienceHoe.ToString();
-
-            // Camera
-            data["Camera"]["enabled"] = valheimPlusConfiguration.cameraSettingsEnabled.ToString().ToLower();
-            data["Camera"]["cameraMaximumZoomDistance"] = valheimPlusConfiguration.cameraMaximumZoomDistance.ToString();
-            data["Camera"]["cameraBoatMaximumZoomDistance"] = valheimPlusConfiguration.cameraBoatMaximumZoomDistance.ToString();
-            data["Camera"]["cameraFOV"] = valheimPlusConfiguration.cameraFOV.ToString();
 
             // Wagon
             data["Wagon"]["enabled"] = valheimPlusConfiguration.wagonSettingsEnabled.ToString().ToLower();

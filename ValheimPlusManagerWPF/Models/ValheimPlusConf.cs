@@ -67,7 +67,7 @@
         public float cameraFOV { get; set; } = 65;
         #endregion Camera
 
-        // Durability
+        #region Durability
         public bool durabilitySettingsEnabled { get; set; } = false;
         public float axesDurability { get; set; } = 0;
         public float pickaxesDurability { get; set; } = 0;
@@ -78,6 +78,8 @@
         public float armorDurability { get; set; } = 0;
         public float bowsDurability { get; set; } = 0;
         public float shieldsDurability { get; set; } = 0;
+        public float torchDurability { get; set; } = 0;
+        #endregion Durability
 
         // Inventory
         public bool inventorySettingsEnabled { get; set; } = false;
