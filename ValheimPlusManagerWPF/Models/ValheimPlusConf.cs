@@ -276,18 +276,20 @@
         public bool reequipItemsAfterSwimming { get; set; } = false;
         #endregion Player
 
-        // Server
+        #region Server
         public bool serverSettingsEnabled { get; set; } = false;
         public int maxPlayers { get; set; } = 10;
         public bool disableServerPassword { get; set; } = false;
-        public bool enforceConfiguration { get; set; } = true;
         public bool enforceMod { get; set; } = true;
         public bool serverSyncsConfig { get; set; } = true;
-        public int dataRate { get; set; } = 60; // 60*1024 = 614440 == 60kbs
+        public bool serverSyncHotkeys { get; set; } = true;
+        //public int dataRate { get; set; } = 60; // 60*1024 = 614440 == 60kbs
+        #endregion Server
 
-        // Shields
+        #region Shields
         public bool shieldsSettingsEnabled { get; set; } = false;
         public float blockRating { get; set; } = 0;
+        #endregion Shields
 
         // Smelter
         public bool smelterSettingsEnabled { get; set; } = false;

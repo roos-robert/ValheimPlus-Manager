@@ -892,18 +892,17 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.disableServerPassword = disableServerPassword;
             }
-            //valheimPlusConfiguration.enforceConfiguration = bool.Parse(data["Server"]["enforceConfiguration"]); // Won't add backwards compatibility
             if (bool.TryParse(data["Server"]["enforceMod"], out bool enforceMod))
             {
                 valheimPlusConfiguration.enforceMod = enforceMod;
             }
+            if (bool.TryParse(data["Server"]["serverSyncHotkeys"], out bool serverSyncHotkeys))
+            {
+                valheimPlusConfiguration.serverSyncHotkeys = serverSyncHotkeys;
+            }
             //if (int.TryParse(data["Server"]["dataRate"], out int dataRate))
             //{
             //    valheimPlusConfiguration.dataRate = dataRate;
-            //}
-            //if (int.TryParse(data["Server"]["autoSaveInterval"], out int autoSaveInterval))
-            //{
-            //    valheimPlusConfiguration.autoSaveInterval = autoSaveInterval;
             //}
             #endregion Server
 
@@ -1425,8 +1424,8 @@ namespace ValheimPlusManager.SupportClasses
             data["Server"]["maxPlayers"] = valheimPlusConfiguration.maxPlayers.ToString();
             data["Server"]["disableServerPassword"] = valheimPlusConfiguration.disableServerPassword.ToString().ToLower();
             data["Server"]["enforceMod"] = valheimPlusConfiguration.enforceMod.ToString().ToLower();
+            data["Server"]["serverSyncHotkeys"] = valheimPlusConfiguration.serverSyncHotkeys.ToString().ToLower();
             //data["Server"]["dataRate"] = valheimPlusConfiguration.dataRate.ToString();
-            //data["Server"]["autoSaveInterval"] = valheimPlusConfiguration.autoSaveInterval.ToString();
             #endregion Server
 
             #region Shields
