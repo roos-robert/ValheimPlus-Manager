@@ -259,6 +259,7 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding setFixedPlayerCountTo}" materialDesign:HintAssist.Hint="Sets the nearby player count always to this value + extraPlayerCountNearby" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding difficultyScaleRange}" materialDesign:HintAssist.Hint="The range in meters at which other players count towards nearby players for the difficulty scale" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                         <CheckBox Content="Disable all portals" IsChecked="{Binding disablePortals}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Force the console to be enabled in-game" IsChecked="{Binding forceConsole}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding hotkeysSettingsEnabled}" Header="Hotkeys">

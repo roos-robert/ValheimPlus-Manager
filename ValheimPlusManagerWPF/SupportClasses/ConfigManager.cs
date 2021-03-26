@@ -538,6 +538,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.disablePortals = disablePortals;
             }
+            if (bool.TryParse(data["Game"]["forceConsole"], out bool forceConsole))
+            {
+                valheimPlusConfiguration.forceConsole = forceConsole;
+            }
             #endregion Game
 
             #region Gathering
@@ -1240,6 +1244,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Game"]["setFixedPlayerCountTo"] = valheimPlusConfiguration.setFixedPlayerCountTo.ToString();
             data["Game"]["difficultyScaleRange"] = valheimPlusConfiguration.difficultyScaleRange.ToString();
             data["Game"]["disablePortals"] = valheimPlusConfiguration.disablePortals.ToString().ToLower();
+            data["Game"]["forceConsole"] = valheimPlusConfiguration.forceConsole.ToString().ToLower();
             #endregion Game
 
             #region Gathering

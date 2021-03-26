@@ -159,15 +159,17 @@
         public float autoDepositRangeFurnace { get; set; } = 10;
         #endregion Furnace
 
-        // Game
+        #region Game
         public bool gameSettingsEnabled { get; set; } = false;
-        public float gameDifficultyDamageScale { get; set; } = 0.4f;
+        public float gameDifficultyDamageScale { get; set; } = 0.04f;
         public float gameDifficultyHealthScale { get; set; } = 0.4f;
         public int extraPlayerCountNearby { get; set; } = 0;
         public int setFixedPlayerCountTo { get; set; } = 0;
         //public float autoSaveInterval { get; set; } = 1200;
         public int difficultyScaleRange { get; set; } = 200;
         public bool disablePortals { get; set; } = false;
+        public bool forceConsole { get; set; } = false;
+        #endregion Game
 
         // Hotkeys
         public bool hotkeysSettingsEnabled { get; set; } = false;
