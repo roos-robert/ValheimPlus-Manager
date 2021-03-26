@@ -303,6 +303,16 @@
         public float smelterAutoDepositRange { get; set; } = 10;
         #endregion Smelter
 
+        #region SpinningWheel
+        public bool spinningWheelSettingsEnabled { get; set; } = false;
+        public int maximumFlaxSpinningWheel { get; set; } = 40;
+        public float productionSpeedSpinningWheel { get; set; } = 30;
+        public bool autoDepositSpinningWheel { get; set; } = true;
+        public bool autoFuelSpinningWheel { get; set; } = true;
+        public bool ignorePrivateAreaCheckSpinningWheel { get; set; } = true;
+        public float autoRangeSpinningWheel { get; set; } = 10;
+        #endregion SpinningWheel
+
         #region Stamina
         public bool staminaSettingsEnabled { get; set; } = false;
         public float dodgeStaminaUsage { get; set; } = 0;
@@ -340,6 +350,7 @@
         public bool disableStructuralIntegrity { get; set; } = false;
         public bool disableDamageToPlayerStructures { get; set; } = false;
         public bool disableDamageToPlayerBoats { get; set; } = false;
+        public bool disableWaterDamageToPlayerBoats { get; set; } = false;
         #endregion StructuralIntegrity
 
         #region Time
@@ -348,19 +359,28 @@
         public float nightTimeSpeedMultiplier { get; set; } = 0;
         #endregion Time
 
-        // Workbench
+        
+
+        #region Wagon
+        public bool wagonSettingsEnabled { get; set; } = false;
+        public float wagonExtraMassFromItems { get; set; } = 0;
+        public float wagonBaseMass { get; set; } = 20;
+        #endregion Wagon
+
+        #region Ward
+        public bool wardSettingsEnabled { get; set; } = false;
+        public float wardRange { get; set; } = 20;
+        #endregion Ward
+
+        #region Windmill
+
+        #endregion Windmill
+
+        #region Workbench
         public bool workbenchSettingsEnabled { get; set; } = false;
         public float workbenchRange { get; set; } = 20;
         public float workbenchAttachmentRange { get; set; } = 5.0f;
         public bool disableRoofCheck { get; set; } = false;
-
-        // Ward
-        public bool wardSettingsEnabled { get; set; } = false;
-        public float wardRange { get; set; } = 20;
-
-        // Wagon
-        public bool wagonSettingsEnabled { get; set; } = false;
-        public float wagonExtraMassFromItems { get; set; } = 0;
-        public float wagonBaseMass { get; set; } = 20;
+        #endregion Workbench
     }
 }

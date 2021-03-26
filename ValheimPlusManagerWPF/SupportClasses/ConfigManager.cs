@@ -1083,6 +1083,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.disableDamageToPlayerBoats = disableDamageToPlayerBoats;
             }
+            if (bool.TryParse(data["StructuralIntegrity"]["disableWaterDamageToPlayerBoats"], out bool disableWaterDamageToPlayerBoats))
+            {
+                valheimPlusConfiguration.disableWaterDamageToPlayerBoats = disableWaterDamageToPlayerBoats;
+            }
             #endregion StructuralIntegrity
 
             #region Time
@@ -1099,6 +1103,32 @@ namespace ValheimPlusManager.SupportClasses
             //    valheimPlusConfiguration.nightTimeSpeedMultiplier = nightTimeSpeedMultiplier;
             //}
             #endregion Time
+
+            #region Wagon
+            if (bool.TryParse(data["Wagon"]["enabled"], out bool wagonSettingsEnabled))
+            {
+                valheimPlusConfiguration.wagonSettingsEnabled = wagonSettingsEnabled;
+            }
+            if (Int32.TryParse(data["Wagon"]["wagonBaseMass"], out int wagonBaseMass))
+            {
+                valheimPlusConfiguration.wagonBaseMass = wagonBaseMass;
+            }
+            if (Int32.TryParse(data["Wagon"]["wagonExtraMassFromItems"], out int wagonExtraMassFromItems))
+            {
+                valheimPlusConfiguration.wagonExtraMassFromItems = wagonExtraMassFromItems;
+            }
+            #endregion Wagon
+
+            #region Ward
+            if (bool.TryParse(data["Ward"]["enabled"], out bool wardSettingsEnabled))
+            {
+                valheimPlusConfiguration.wardSettingsEnabled = wardSettingsEnabled;
+            }
+            if (int.TryParse(data["Ward"]["wardRange"], out int wardRange))
+            {
+                valheimPlusConfiguration.wardRange = wardRange;
+            }
+            #endregion Ward
 
             #region Workbench
             if (bool.TryParse(data["Workbench"]["enabled"], out bool workbenchSettingsEnabled))
@@ -1118,32 +1148,6 @@ namespace ValheimPlusManager.SupportClasses
                 valheimPlusConfiguration.disableRoofCheck = disableRoofCheck;
             }
             #endregion Workbench
-
-            #region Ward
-            if (bool.TryParse(data["Ward"]["enabled"], out bool wardSettingsEnabled))
-            {
-                valheimPlusConfiguration.wardSettingsEnabled = wardSettingsEnabled;
-            }
-            if (int.TryParse(data["Ward"]["wardRange"], out int wardRange))
-            {
-                valheimPlusConfiguration.wardRange = wardRange;
-            }
-            #endregion Ward
-
-            #region Wagon
-            if (bool.TryParse(data["Wagon"]["enabled"], out bool wagonSettingsEnabled))
-            {
-                valheimPlusConfiguration.wagonSettingsEnabled = wagonSettingsEnabled;
-            }
-            if (Int32.TryParse(data["Wagon"]["wagonBaseMass"], out int wagonBaseMass))
-            {
-                valheimPlusConfiguration.wagonBaseMass = wagonBaseMass;
-            }
-            if (Int32.TryParse(data["Wagon"]["wagonExtraMassFromItems"], out int wagonExtraMassFromItems))
-            {
-                valheimPlusConfiguration.wagonExtraMassFromItems = wagonExtraMassFromItems;
-            }
-            #endregion Wagon
 
             return valheimPlusConfiguration;
         }
@@ -1490,6 +1494,7 @@ namespace ValheimPlusManager.SupportClasses
             data["StructuralIntegrity"]["disableStructuralIntegrity"] = valheimPlusConfiguration.disableStructuralIntegrity.ToString().ToLower();
             data["StructuralIntegrity"]["disableDamageToPlayerStructures"] = valheimPlusConfiguration.disableDamageToPlayerStructures.ToString().ToLower();
             data["StructuralIntegrity"]["disableDamageToPlayerBoats"] = valheimPlusConfiguration.disableDamageToPlayerBoats.ToString().ToLower();
+            data["StructuralIntegrity"]["disableWaterDamageToPlayerBoats"] = valheimPlusConfiguration.disableWaterDamageToPlayerBoats.ToString().ToLower();
             #endregion StructuralIntegrity
 
             #region Time
@@ -1505,14 +1510,16 @@ namespace ValheimPlusManager.SupportClasses
             data["Workbench"]["disableRoofCheck"] = valheimPlusConfiguration.disableRoofCheck.ToString().ToLower();
             #endregion Workbench
 
-            // Ward
-            data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
-            data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString().ToLower();
-
-            // Wagon
+            #region Wagon
             data["Wagon"]["enabled"] = valheimPlusConfiguration.wagonSettingsEnabled.ToString().ToLower();
             data["Wagon"]["wagonBaseMass"] = valheimPlusConfiguration.wagonBaseMass.ToString();
             data["Wagon"]["wagonExtraMassFromItems"] = valheimPlusConfiguration.wagonExtraMassFromItems.ToString();
+            #endregion Wagon
+
+            #region Ward
+            data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
+            data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString().ToLower();
+            #endregion Ward
 
             // Writing the new settings to configuration file
             try

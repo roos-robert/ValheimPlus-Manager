@@ -451,6 +451,7 @@
                         <CheckBox Content="Disables the entire structural integrity system and allows for placement in free air, does not prevent building damage" IsChecked="{Binding disableStructuralIntegrity}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Disables any damage from anything to all player built structures" IsChecked="{Binding disableDamageToPlayerStructures}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Disables any damage from anything to all player built boats" IsChecked="{Binding disableDamageToPlayerBoats}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disables water force damage to all player built boats" IsChecked="{Binding disableWaterDamageToPlayerBoats}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding experienceSettingsEnabled}" Header="Experience">
