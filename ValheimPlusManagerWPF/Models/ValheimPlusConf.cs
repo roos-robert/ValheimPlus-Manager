@@ -235,12 +235,18 @@
         public float droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
         #endregion Items
 
-        // Kiln
+        #region Kiln
         public bool kilnSettingsEnabled { get; set; } = false;
-        public float kilnProductionSpeed { get; set; } = 30;
+        public float kilnProductionSpeed { get; set; } = 16;
         public int maximumWood { get; set; } = 25;
+        public bool dontProcessFineWoodKiln { get; set; } = false;
+        public bool dontProcessRoundLogKiln { get; set; } = false;
         public bool autoDepositKiln { get; set; } = false;
+        public bool autoFuelKiln { get; set; } = false;
+        public int stopAutoFuelThresholdKiln { get; set; } = 0;
+        public bool ignorePrivateAreaCheckKiln { get; set; } = true;
         public float autoDepositRangeKiln { get; set; } = 10;
+        #endregion Kiln
 
         // Map
         public bool mapSettingsEnabled { get; set; } = false;

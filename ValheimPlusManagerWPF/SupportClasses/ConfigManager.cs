@@ -751,17 +751,37 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.maximumWood = maximumWood;
             }
+            if (bool.TryParse(data["Kiln"]["dontProcessFineWood"], out bool dontProcessFineWoodKiln))
+            {
+                valheimPlusConfiguration.dontProcessFineWoodKiln = dontProcessFineWoodKiln;
+            }
+            if (bool.TryParse(data["Kiln"]["dontProcessRoundLog"], out bool dontProcessRoundLogKiln))
+            {
+                valheimPlusConfiguration.dontProcessRoundLogKiln = dontProcessRoundLogKiln;
+            }
             if (int.TryParse(data["Kiln"]["productionSpeed"], out int kilnProductionSpeed))
             {
                 valheimPlusConfiguration.kilnProductionSpeed = kilnProductionSpeed;
             }
-            if (float.TryParse(data["Kiln"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositRangeKiln))
-            {
-                valheimPlusConfiguration.autoDepositRangeKiln = autoDepositRangeKiln;
-            }
             if (bool.TryParse(data["Kiln"]["autoDeposit"], out bool autoDepositKiln))
             {
                 valheimPlusConfiguration.autoDepositKiln = autoDepositKiln;
+            }
+            if (bool.TryParse(data["Kiln"]["autoFuel"], out bool autoFuelKiln))
+            {
+                valheimPlusConfiguration.autoFuelKiln = autoFuelKiln;
+            }
+            if (int.TryParse(data["Kiln"]["stopAutoFuelThreshold"], out int stopAutoFuelThresholdKiln))
+            {
+                valheimPlusConfiguration.stopAutoFuelThresholdKiln = stopAutoFuelThresholdKiln;
+            }
+            if (bool.TryParse(data["Kiln"]["ignorePrivateArea"], out bool ignorePrivateAreaCheckKiln))
+            {
+                valheimPlusConfiguration.ignorePrivateAreaCheckKiln = ignorePrivateAreaCheckKiln;
+            }
+            if (float.TryParse(data["Kiln"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositRangeKiln))
+            {
+                valheimPlusConfiguration.autoDepositRangeKiln = autoDepositRangeKiln;
             }
             #endregion Kiln
 
@@ -1327,12 +1347,18 @@ namespace ValheimPlusManager.SupportClasses
             data["Items"]["droppedItemOnGroundDurationInSeconds"] = valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds.ToString();
             #endregion Items
 
-            // Kiln
+            #region Kiln
             data["Kiln"]["enabled"] = valheimPlusConfiguration.kilnSettingsEnabled.ToString().ToLower();
             data["Kiln"]["maximumWood"] = valheimPlusConfiguration.maximumWood.ToString();
+            data["Kiln"]["dontProcessFineWood"] = valheimPlusConfiguration.dontProcessFineWoodKiln.ToString().ToLower();
+            data["Kiln"]["dontProcessRoundLog"] = valheimPlusConfiguration.dontProcessRoundLogKiln.ToString().ToLower();
             data["Kiln"]["productionSpeed"] = valheimPlusConfiguration.kilnProductionSpeed.ToString();
             data["Kiln"]["autoDeposit"] = valheimPlusConfiguration.autoDepositKiln.ToString().ToLower();
+            data["Kiln"]["autoFuel"] = valheimPlusConfiguration.autoFuelKiln.ToString().ToLower();
+            data["Kiln"]["stopAutoFuelThreshold"] = valheimPlusConfiguration.stopAutoFuelThresholdKiln.ToString();
+            data["Kiln"]["ignorePrivateArea"] = valheimPlusConfiguration.ignorePrivateAreaCheckKiln.ToString().ToLower();
             data["Kiln"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositRangeKiln.ToString();
+            #endregion Kiln
 
             #region Map
             data["Map"]["enabled"] = valheimPlusConfiguration.mapSettingsEnabled.ToString().ToLower();
