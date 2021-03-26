@@ -191,9 +191,13 @@
                 <TabItem IsEnabled="{Binding fermenterSettingsEnabled}" Header="Fermenter">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Fermenter" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding fermenterDuration}" materialDesign:HintAssist.Hint="Speed at which the fermenter produce product in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding fermenterItemsProduced}" materialDesign:HintAssist.Hint="Amount produced items" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="552" Text="{Binding fermenterDuration}" materialDesign:HintAssist.Hint="Speed at which the fermenter produce product in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="552" Text="{Binding fermenterItemsProduced}" materialDesign:HintAssist.Hint="Amount produced items" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <CheckBox Content="Display the minutes and seconds until the fermenter is done on hover" IsChecked="{Binding showFermenterDuration}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests" IsChecked="{Binding autoDepositFermenter}" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for mead inside nearby chests" IsChecked="{Binding autoFuelFermenter}" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disable to enable private area check when looking for chests" IsChecked="{Binding ignorePrivateAreaCheckFermenter}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="552" Text="{Binding autoRangeFermenter}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit and fuel features (Maximum is 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,310,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding fireSourceSettingsEnabled}" Header="Fire sources">

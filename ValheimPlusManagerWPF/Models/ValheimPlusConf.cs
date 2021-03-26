@@ -81,6 +81,40 @@
         public float torchDurability { get; set; } = 0;
         #endregion Durability
 
+        #region Experience
+        public bool experienceSettingsEnabled { get; set; } = false;
+        public float experienceSwords { get; set; } = 0;
+        public float experienceKnives { get; set; } = 0;
+        public float experienceClubs { get; set; } = 0;
+        public float experiencePolearms { get; set; } = 0;
+        public float experienceSpears { get; set; } = 0;
+        public float experienceBlocking { get; set; } = 0;
+        public float experienceAxes { get; set; } = 0;
+        public float experienceBows { get; set; } = 0;
+        public float experienceHammer { get; set; } = 0;
+        public float experienceHoe { get; set; } = 0;
+        public float experienceFireMagic { get; set; } = 0;
+        public float experienceFrostMagic { get; set; } = 0;
+        public float experienceUnarmed { get; set; } = 0;
+        public float experiencePickaxes { get; set; } = 0;
+        public float experienceWoodCutting { get; set; } = 0;
+        public float experienceJump { get; set; } = 0;
+        public float experienceSneak { get; set; } = 0;
+        public float experienceRun { get; set; } = 0;
+        public float experienceSwim { get; set; } = 0;
+        #endregion Experience
+
+        #region Fermenter
+        public bool fermenterSettingsEnabled { get; set; } = false;
+        public float fermenterDuration { get; set; } = 2400;
+        public int fermenterItemsProduced { get; set; } = 4;
+        public bool showFermenterDuration { get; set; } = false;
+        public bool autoDepositFermenter { get; internal set; } = true;
+        public bool autoFuelFermenter { get; set; } = true;
+        public bool ignorePrivateAreaCheckFermenter { get; set; } = true;
+        public float autoRangeFermenter { get; set; } = 10;
+        #endregion Fermenter
+
         // Inventory
         public bool inventorySettingsEnabled { get; set; } = false;
         public bool inventoryFillTopToBottom { get; set; } = false;
@@ -104,12 +138,6 @@
         public float baseItemWeightReduction { get; set; } = 0;
         public float itemStackMultiplier { get; set; } = 1;
         public int droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
-
-        // Fermenter
-        public bool fermenterSettingsEnabled { get; set; } = false;
-        public float fermenterDuration { get; set; } = 2400;
-        public int fermenterItemsProduced { get; set; } = 4;
-        public bool showFermenterDuration { get; set; } = false;
 
         // FireSource
         public bool fireSourceSettingsEnabled { get; set; } = false;
@@ -282,28 +310,6 @@
         public bool disableStructuralIntegrity { get; set; } = false;
         public bool disableDamageToPlayerStructures { get; set; } = false;
         public bool disableDamageToPlayerBoats { get; set; } = false;
-
-        // Experience
-        public bool experienceSettingsEnabled { get; set; } = false;
-        public float experienceSwords { get; set; } = 0;
-        public float experienceKnives { get; set; } = 0;
-        public float experienceClubs { get; set; } = 0;
-        public float experiencePolearms { get; set; } = 0;
-        public float experienceSpears { get; set; } = 0;
-        public float experienceBlocking { get; set; } = 0;
-        public float experienceAxes { get; set; } = 0;
-        public float experienceBows { get; set; } = 0;
-        public float experienceHammer { get; set; } = 0;
-        public float experienceHoe { get; set; } = 0;
-        public float experienceFireMagic { get; set; } = 0;
-        public float experienceFrostMagic { get; set; } = 0;
-        public float experienceUnarmed { get; set; } = 0;
-        public float experiencePickaxes { get; set; } = 0;
-        public float experienceWoodCutting { get; set; } = 0;
-        public float experienceJump { get; set; } = 0;
-        public float experienceSneak { get; set; } = 0;
-        public float experienceRun { get; set; } = 0;
-        public float experienceSwim { get; set; } = 0;
 
         // Wagon
         public bool wagonSettingsEnabled { get; set; } = false;
