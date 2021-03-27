@@ -52,6 +52,7 @@
                 <CheckBox IsChecked="{Binding beehiveSettingsEnabled}" Content="Enable beehive settings" />
                 <CheckBox IsChecked="{Binding buildingSettingsEnabled}" Content="Enable building settings" />
                 <CheckBox IsChecked="{Binding cameraSettingsEnabled}" Content="Enable camera settings" />
+                <CheckBox IsChecked="{Binding craftFromChestSettingsEnabled}" Content="Enable craft from chest settings" />
                 <CheckBox IsChecked="{Binding durabilitySettingsEnabled}" Content="Enable durability settings" />
                 <CheckBox IsChecked="{Binding experienceSettingsEnabled}" Content="Enable experience settings" />
                 <CheckBox IsChecked="{Binding fermenterSettingsEnabled}" Content="Enable fermenter settings" />
@@ -496,7 +497,6 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceSneak}" materialDesign:HintAssist.Hint="Sneaking" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,220,100,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceRun}" materialDesign:HintAssist.Hint="Running" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,270,100,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceSwim}" materialDesign:HintAssist.Hint="Swimming" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,320,100,0" />
-
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceBows}" materialDesign:HintAssist.Hint="Bows" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceClubs}" materialDesign:HintAssist.Hint="Clubs" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceKnives}" materialDesign:HintAssist.Hint="Knives" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
@@ -515,6 +515,16 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding cameraMaximumZoomDistance}" materialDesign:HintAssist.Hint="The maximum zoom distance to your character" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding cameraBoatMaximumZoomDistance}" materialDesign:HintAssist.Hint="The maximum zoom distance to your character when in a boat" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding cameraFOV}" materialDesign:HintAssist.Hint="The game camera FOV" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding craftFromChestSettingsEnabled}" Header="Craft from chest">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Camera" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding rangeCraftFromChest}" materialDesign:HintAssist.Hint="The range of the chest detection (min: 1, max: 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding lookupIntervalCraftFromChest}" materialDesign:HintAssist.Hint="Interval in seconds between each nearby chests discovery (min: 1, max: 10)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <CheckBox Content="Disable this feature when using a Cooking Station" IsChecked="{Binding disableCookingStationCraftFromChest}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="If in a workbench area, uses it as reference point when scanning for chests" IsChecked="{Binding checkFromWorkbenchCraftFromChest}" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckCraftFromChest}" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding wagonSettingsEnabled}" Header="Wagon">

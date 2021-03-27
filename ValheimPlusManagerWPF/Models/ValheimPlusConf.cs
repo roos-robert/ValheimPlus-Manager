@@ -61,6 +61,15 @@
         public float cameraFOV { get; set; } = 65;
         #endregion Camera
 
+        #region CraftFromChest
+        public bool craftFromChestSettingsEnabled { get; set; } = false;
+        public float rangeCraftFromChest { get; set; } = 20;
+        public bool disableCookingStationCraftFromChest { get; set; } = false;
+        public bool checkFromWorkbenchCraftFromChest { get; set; } = true;
+        public bool ignorePrivateAreaCheckCraftFromChest { get; set; } = true;
+        public int lookupIntervalCraftFromChest { get; set; } = 3;
+        #endregion CraftFromChest
+
         #region Durability
         public bool durabilitySettingsEnabled { get; set; } = false;
         public float axesDurability { get; set; } = 0;

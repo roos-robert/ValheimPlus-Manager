@@ -213,6 +213,33 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Camera
 
+            #region CraftFromChest
+            if (bool.TryParse(data["CraftFromChest"]["enabled"], out bool craftFromChestSettingsEnabled))
+            {
+                valheimPlusConfiguration.craftFromChestSettingsEnabled = craftFromChestSettingsEnabled;
+            }
+            if (Int32.TryParse(data["CraftFromChest"]["lookupInterval"], out int lookupIntervalCraftFromChest))
+            {
+                valheimPlusConfiguration.lookupIntervalCraftFromChest = lookupIntervalCraftFromChest;
+            }
+            if (float.TryParse(data["CraftFromChest"]["range"], NumberStyles.Any, ci, out float rangeCraftFromChest))
+            {
+                valheimPlusConfiguration.rangeCraftFromChest = rangeCraftFromChest;
+            }
+            if (bool.TryParse(data["CraftFromChest"]["disableCookingStation"], out bool disableCookingStationCraftFromChest))
+            {
+                valheimPlusConfiguration.disableCookingStationCraftFromChest = disableCookingStationCraftFromChest;
+            }
+            if (bool.TryParse(data["CraftFromChest"]["checkFromWorkbench"], out bool checkFromWorkbenchCraftFromChest))
+            {
+                valheimPlusConfiguration.checkFromWorkbenchCraftFromChest = checkFromWorkbenchCraftFromChest;
+            }
+            if (bool.TryParse(data["CraftFromChest"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckCraftFromChest))
+            {
+                valheimPlusConfiguration.ignorePrivateAreaCheckCraftFromChest = ignorePrivateAreaCheckCraftFromChest;
+            }
+            #endregion CraftFromChest
+
             #region Durability
             if (bool.TryParse(data["Durability"]["enabled"], out bool durabilitySettingsEnabled))
             {
@@ -1310,6 +1337,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Camera"]["cameraBoatMaximumZoomDistance"] = valheimPlusConfiguration.cameraBoatMaximumZoomDistance.ToString();
             data["Camera"]["cameraFOV"] = valheimPlusConfiguration.cameraFOV.ToString();
             #endregion Camera
+
+            #region CraftFromChest
+            data["CraftFromChest"]["enabled"] = valheimPlusConfiguration.craftFromChestSettingsEnabled.ToString().ToLower();
+            data["CraftFromChest"]["range"] = valheimPlusConfiguration.rangeCraftFromChest.ToString();
+            data["CraftFromChest"]["lookupInterval"] = valheimPlusConfiguration.lookupIntervalCraftFromChest.ToString();
+            data["CraftFromChest"]["disableCookingStation"] = valheimPlusConfiguration.disableCookingStationCraftFromChest.ToString().ToLower();
+            data["CraftFromChest"]["checkFromWorkbench"] = valheimPlusConfiguration.checkFromWorkbenchCraftFromChest.ToString().ToLower();
+            data["CraftFromChest"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckCraftFromChest.ToString().ToLower();
+            #endregion CraftFromChest
 
             #region Durability
             data["Durability"]["enabled"] = valheimPlusConfiguration.durabilitySettingsEnabled.ToString().ToLower();
