@@ -73,12 +73,16 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusUpdate.NewVersion = false;
                 valheimPlusUpdate.Version = latest.TagName;
+                valheimPlusUpdate.WindowsServerClientDownloadURL = latest.Assets.Single(x => x.Name == "WindowsServer.zip").BrowserDownloadUrl;
+                valheimPlusUpdate.WindowsGameClientDownloadURL = latest.Assets.Single(x => x.Name == "WindowsClient.zip").BrowserDownloadUrl;
                 return valheimPlusUpdate;
             }
             else
             {
                 valheimPlusUpdate.NewVersion = false;
                 valheimPlusUpdate.Version = latest.TagName;
+                valheimPlusUpdate.WindowsServerClientDownloadURL = latest.Assets.Single(x => x.Name == "WindowsServer.zip").BrowserDownloadUrl;
+                valheimPlusUpdate.WindowsGameClientDownloadURL = latest.Assets.Single(x => x.Name == "WindowsClient.zip").BrowserDownloadUrl;
                 return valheimPlusUpdate;
             }
         }

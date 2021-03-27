@@ -170,7 +170,7 @@ namespace ValheimPlusManager
             }
         }
 
-        private void installServerButton_Click(object sender, RoutedEventArgs e)
+        private async void installServerButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult messageBoxResult;
 
@@ -181,23 +181,26 @@ namespace ValheimPlusManager
             else
             {
                 messageBoxResult = MessageBox
-                    .Show("Are you sure you wish to reinstall ValheimPlus on your server? This will overwrite your current configurations!", "Confirm");
+                    .Show("Are you sure you wish to reinstall ValheimPlus on your server? This will overwrite your current configurations!", "Confirm", MessageBoxButton.YesNo);
             }
 
-            if (messageBoxResult == MessageBoxResult.OK)
+            if (messageBoxResult == MessageBoxResult.Yes)
             {
                 try
                 {
-                    FileManager.CopyFromTo(Settings.ServerPath, Settings.ServerInstallationPath);
-                    ValheimPlusInstalledServer = ValidationManager.CheckInstallationStatus(Settings.ServerInstallationPath);
-                    if (ValheimPlusInstalledServer)
+                    bool success = await UpdateManager.DownloadValheimPlusUpdateAsync(Settings.ValheimPlusServerClientVersion, false);
+                    if(success)
                     {
-                        serverInstalledLabel.Content = String.Format("ValheimPlus {0} installed on server", Settings.ValheimPlusServerClientVersion);
-                        serverInstalledLabel.Foreground = Brushes.Green;
-                        installServerButton.Content = "Reinstall ValheimPlus on server";
+                        ValheimPlusInstalledServer = ValidationManager.CheckInstallationStatus(Settings.ServerInstallationPath);
+                        if (ValheimPlusInstalledServer)
+                        {
+                            serverInstalledLabel.Content = String.Format("ValheimPlus {0} installed on server", Settings.ValheimPlusServerClientVersion);
+                            serverInstalledLabel.Foreground = Brushes.Green;
+                            installServerButton.Content = "Reinstall ValheimPlus on server";
 
-                        statusSnackBar.MessageQueue.Enqueue("Success! Server client has been installed");
-                        UISettingsInit();
+                            statusSnackBar.MessageQueue.Enqueue("Success! Server client has been installed");
+                            UISettingsInit();
+                        }
                     }
                 }
                 catch (Exception)
