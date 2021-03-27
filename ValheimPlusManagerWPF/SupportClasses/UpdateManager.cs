@@ -19,17 +19,8 @@ namespace ValheimPlusManager.SupportClasses
 
                 if (serverClientVersion.FileVersion != settings.ValheimPlusServerClientVersion)
                 {
-                    // This is a special case, since versions before 0.9 reported all clients as 1.0.0.0
-                    if (serverClientVersion.FileVersion == "1.0.0.0")
-                    {
-                        settings.ValheimPlusServerClientVersion = "0.9.0";
-                        bool success = SettingsDAL.UpdateSettings(settings, false);
-                    }
-                    else
-                    {
                         settings.ValheimPlusServerClientVersion = serverClientVersion.FileVersion;
                         bool success = SettingsDAL.UpdateSettings(settings, false);
-                    }
                 }
             }
             catch (Exception)
@@ -44,17 +35,8 @@ namespace ValheimPlusManager.SupportClasses
 
                 if (gameClientVersion.FileVersion != settings.ValheimPlusGameClientVersion)
                 {
-                    // This is a special case, since versions before 0.9 reported all clients as 1.0.0.0
-                    if (gameClientVersion.FileVersion == "1.0.0.0")
-                    {
-                        settings.ValheimPlusGameClientVersion = "0.9.0";
-                        bool success = SettingsDAL.UpdateSettings(settings, true);
-                    }
-                    else
-                    {
                         settings.ValheimPlusGameClientVersion = gameClientVersion.FileVersion;
                         bool success = SettingsDAL.UpdateSettings(settings, true);
-                    }
                 }
             }
             catch (Exception)
@@ -91,17 +73,21 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusUpdate.NewVersion = false;
                 valheimPlusUpdate.Version = latest.TagName;
+                valheimPlusUpdate.WindowsServerClientDownloadURL = latest.Assets.Single(x => x.Name == "WindowsServer.zip").BrowserDownloadUrl;
+                valheimPlusUpdate.WindowsGameClientDownloadURL = latest.Assets.Single(x => x.Name == "WindowsClient.zip").BrowserDownloadUrl;
                 return valheimPlusUpdate;
             }
             else
             {
                 valheimPlusUpdate.NewVersion = false;
                 valheimPlusUpdate.Version = latest.TagName;
+                valheimPlusUpdate.WindowsServerClientDownloadURL = latest.Assets.Single(x => x.Name == "WindowsServer.zip").BrowserDownloadUrl;
+                valheimPlusUpdate.WindowsGameClientDownloadURL = latest.Assets.Single(x => x.Name == "WindowsClient.zip").BrowserDownloadUrl;
                 return valheimPlusUpdate;
             }
         }
 
-        public static async Task<bool> DownloadValheimPlusUpdateAsync(string valheimPlusVersion, bool manageClient)
+        public static async Task<bool> DownloadValheimPlusUpdateAsync(string valheimPlusVersion, bool manageClient, bool freshInstall)
         {
             ValheimPlusUpdate valheimPlusUpdate = await CheckForValheimPlusUpdatesAsync(valheimPlusVersion);
 
@@ -110,18 +96,18 @@ namespace ValheimPlusManager.SupportClasses
             if (manageClient)
             {
                 wc.DownloadFile(valheimPlusUpdate.WindowsGameClientDownloadURL, @"Data/ValheimPlusGameClient/WindowsClient.zip");
-                await InstallValheimPlusUpdateAsync(true, valheimPlusUpdate.Version);
+                await InstallValheimPlusUpdateAsync(true, valheimPlusUpdate.Version, freshInstall);
                 return true;
             }
             else
             {
                 wc.DownloadFile(valheimPlusUpdate.WindowsServerClientDownloadURL, @"Data/ValheimPlusServerClient/WindowsServer.zip");
-                await InstallValheimPlusUpdateAsync(false, valheimPlusUpdate.Version);
+                await InstallValheimPlusUpdateAsync(false, valheimPlusUpdate.Version, freshInstall);
                 return true;
             }
         }
 
-        public static async Task<bool> InstallValheimPlusUpdateAsync(bool manageClient, string valheimPlusVersion)
+        public static async Task<bool> InstallValheimPlusUpdateAsync(bool manageClient, string valheimPlusVersion, bool freshInstall)
         {
             var settings = SettingsDAL.GetSettings();
             if (manageClient)
@@ -130,7 +116,10 @@ namespace ValheimPlusManager.SupportClasses
                 string extractPath = @"Data/ValheimPlusGameClient/Extracted";
 
                 await Task.Run(() => ZipFile.ExtractToDirectory(zipPath, extractPath, true));
-                System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
+                if (!freshInstall)
+                {
+                    System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
+                }
 
                 try
                 {
@@ -149,7 +138,10 @@ namespace ValheimPlusManager.SupportClasses
                 string extractPath = @"Data/ValheimPlusServerClient/Extracted";
 
                 await Task.Run(() => ZipFile.ExtractToDirectory(zipPath, extractPath, true));
-                System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
+                if (!freshInstall)
+                {
+                    System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
+                }
 
                 try
                 {
