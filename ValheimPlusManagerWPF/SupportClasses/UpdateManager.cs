@@ -19,17 +19,8 @@ namespace ValheimPlusManager.SupportClasses
 
                 if (serverClientVersion.FileVersion != settings.ValheimPlusServerClientVersion)
                 {
-                    // This is a special case, since versions before 0.9 reported all clients as 1.0.0.0
-                    if (serverClientVersion.FileVersion == "1.0.0.0")
-                    {
-                        settings.ValheimPlusServerClientVersion = "0.9.0";
-                        bool success = SettingsDAL.UpdateSettings(settings, false);
-                    }
-                    else
-                    {
                         settings.ValheimPlusServerClientVersion = serverClientVersion.FileVersion;
                         bool success = SettingsDAL.UpdateSettings(settings, false);
-                    }
                 }
             }
             catch (Exception)
@@ -44,17 +35,8 @@ namespace ValheimPlusManager.SupportClasses
 
                 if (gameClientVersion.FileVersion != settings.ValheimPlusGameClientVersion)
                 {
-                    // This is a special case, since versions before 0.9 reported all clients as 1.0.0.0
-                    if (gameClientVersion.FileVersion == "1.0.0.0")
-                    {
-                        settings.ValheimPlusGameClientVersion = "0.9.0";
-                        bool success = SettingsDAL.UpdateSettings(settings, true);
-                    }
-                    else
-                    {
                         settings.ValheimPlusGameClientVersion = gameClientVersion.FileVersion;
                         bool success = SettingsDAL.UpdateSettings(settings, true);
-                    }
                 }
             }
             catch (Exception)
