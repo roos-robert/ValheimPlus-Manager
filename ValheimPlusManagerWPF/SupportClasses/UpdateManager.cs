@@ -87,7 +87,7 @@ namespace ValheimPlusManager.SupportClasses
             }
         }
 
-        public static async Task<bool> DownloadValheimPlusUpdateAsync(string valheimPlusVersion, bool manageClient)
+        public static async Task<bool> DownloadValheimPlusUpdateAsync(string valheimPlusVersion, bool manageClient, bool freshInstall)
         {
             ValheimPlusUpdate valheimPlusUpdate = await CheckForValheimPlusUpdatesAsync(valheimPlusVersion);
 
@@ -96,18 +96,18 @@ namespace ValheimPlusManager.SupportClasses
             if (manageClient)
             {
                 wc.DownloadFile(valheimPlusUpdate.WindowsGameClientDownloadURL, @"Data/ValheimPlusGameClient/WindowsClient.zip");
-                await InstallValheimPlusUpdateAsync(true, valheimPlusUpdate.Version);
+                await InstallValheimPlusUpdateAsync(true, valheimPlusUpdate.Version, freshInstall);
                 return true;
             }
             else
             {
                 wc.DownloadFile(valheimPlusUpdate.WindowsServerClientDownloadURL, @"Data/ValheimPlusServerClient/WindowsServer.zip");
-                await InstallValheimPlusUpdateAsync(false, valheimPlusUpdate.Version);
+                await InstallValheimPlusUpdateAsync(false, valheimPlusUpdate.Version, freshInstall);
                 return true;
             }
         }
 
-        public static async Task<bool> InstallValheimPlusUpdateAsync(bool manageClient, string valheimPlusVersion)
+        public static async Task<bool> InstallValheimPlusUpdateAsync(bool manageClient, string valheimPlusVersion, bool freshInstall)
         {
             var settings = SettingsDAL.GetSettings();
             if (manageClient)
@@ -116,7 +116,10 @@ namespace ValheimPlusManager.SupportClasses
                 string extractPath = @"Data/ValheimPlusGameClient/Extracted";
 
                 await Task.Run(() => ZipFile.ExtractToDirectory(zipPath, extractPath, true));
-                System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
+                if (!freshInstall)
+                {
+                    System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
+                }
 
                 try
                 {
@@ -135,7 +138,10 @@ namespace ValheimPlusManager.SupportClasses
                 string extractPath = @"Data/ValheimPlusServerClient/Extracted";
 
                 await Task.Run(() => ZipFile.ExtractToDirectory(zipPath, extractPath, true));
-                System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
+                if (!freshInstall)
+                {
+                    System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
+                }
 
                 try
                 {

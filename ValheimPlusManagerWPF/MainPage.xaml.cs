@@ -70,7 +70,7 @@ namespace ValheimPlusManager
             {
                 try
                 {
-                    bool success = await UpdateManager.DownloadValheimPlusUpdateAsync(Settings.ValheimPlusServerClientVersion, true);
+                    bool success = await UpdateManager.DownloadValheimPlusUpdateAsync(Settings.ValheimPlusServerClientVersion, true, true);
                     if (success)
                     {
                         ValheimPlusInstalledClient = ValidationManager.CheckInstallationStatus(Settings.ClientInstallationPath);
@@ -118,7 +118,7 @@ namespace ValheimPlusManager
 
             if (valheimPlusUpdate.NewVersion)
             {
-                bool success = await UpdateManager.DownloadValheimPlusUpdateAsync(Settings.ValheimPlusGameClientVersion, true);
+                bool success = await UpdateManager.DownloadValheimPlusUpdateAsync(Settings.ValheimPlusGameClientVersion, true, false);
 
                 if (success)
                 {
@@ -206,7 +206,7 @@ namespace ValheimPlusManager
             {
                 try
                 {
-                    bool success = await UpdateManager.DownloadValheimPlusUpdateAsync(Settings.ValheimPlusServerClientVersion, false);
+                    bool success = await UpdateManager.DownloadValheimPlusUpdateAsync(Settings.ValheimPlusServerClientVersion, false, true);
                     if(success)
                     {
                         ValheimPlusInstalledServer = ValidationManager.CheckInstallationStatus(Settings.ServerInstallationPath);
@@ -254,7 +254,7 @@ namespace ValheimPlusManager
 
             if (valheimPlusUpdate.NewVersion)
             {
-                bool success = await UpdateManager.DownloadValheimPlusUpdateAsync(Settings.ValheimPlusServerClientVersion, false);
+                bool success = await UpdateManager.DownloadValheimPlusUpdateAsync(Settings.ValheimPlusServerClientVersion, false, false);
 
                 if (success)
                 {
