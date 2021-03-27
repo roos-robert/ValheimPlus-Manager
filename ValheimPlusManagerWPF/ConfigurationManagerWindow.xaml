@@ -394,7 +394,7 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding productionSpeedSpinningWheel}" materialDesign:HintAssist.Hint="The time it takes for the spinning wheel to produce linen thread" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" Grid.ColumnSpan="2" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding autoRangeSpinningWheel}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit and fuel features (Maximum is 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" Grid.ColumnSpan="2" />
                         <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositSpinningWheel}" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Look for flax inside nearby chests" IsChecked="{Binding autoDepositSpinningWheel}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for flax inside nearby chests" IsChecked="{Binding autoFuelSpinningWheel}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckSpinningWheel}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
