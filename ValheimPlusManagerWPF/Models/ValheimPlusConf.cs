@@ -2,12 +2,6 @@
 {
     public class ValheimPlusConf
     {
-        #region ValheimPlusConfiguration
-        public bool valheimPlusConfigurationEnabled { get; set; } = true;
-        public bool mainMenuLogo { get; set; } = true;
-        public bool serverBrowserAdvertisement { get; set; } = true;
-        #endregion ValheimPlusConfiguration
-
         #region Advanced building mode
         public bool advancedBuildingModeEnabled { get; set; } = false;
         public string enterAdvancedBuildingMode { get; set; } = "F1";
@@ -66,6 +60,15 @@
         public float cameraBoatMaximumZoomDistance { get; set; } = 6;
         public float cameraFOV { get; set; } = 65;
         #endregion Camera
+
+        #region CraftFromChest
+        public bool craftFromChestSettingsEnabled { get; set; } = false;
+        public float rangeCraftFromChest { get; set; } = 20;
+        public bool disableCookingStationCraftFromChest { get; set; } = false;
+        public bool checkFromWorkbenchCraftFromChest { get; set; } = true;
+        public bool ignorePrivateAreaCheckCraftFromChest { get; set; } = true;
+        public int lookupIntervalCraftFromChest { get; set; } = 3;
+        #endregion CraftFromChest
 
         #region Durability
         public bool durabilitySettingsEnabled { get; set; } = false;
@@ -303,6 +306,16 @@
         public float smelterAutoDepositRange { get; set; } = 10;
         #endregion Smelter
 
+        #region SpinningWheel
+        public bool spinningWheelSettingsEnabled { get; set; } = false;
+        public int maximumFlaxSpinningWheel { get; set; } = 40;
+        public float productionSpeedSpinningWheel { get; set; } = 30;
+        public bool autoDepositSpinningWheel { get; set; } = true;
+        public bool autoFuelSpinningWheel { get; set; } = true;
+        public bool ignorePrivateAreaCheckSpinningWheel { get; set; } = true;
+        public float autoRangeSpinningWheel { get; set; } = 10;
+        #endregion SpinningWheel
+
         #region Stamina
         public bool staminaSettingsEnabled { get; set; } = false;
         public float dodgeStaminaUsage { get; set; } = 0;
@@ -340,6 +353,7 @@
         public bool disableStructuralIntegrity { get; set; } = false;
         public bool disableDamageToPlayerStructures { get; set; } = false;
         public bool disableDamageToPlayerBoats { get; set; } = false;
+        public bool disableWaterDamageToPlayerBoats { get; set; } = false;
         #endregion StructuralIntegrity
 
         #region Time
@@ -348,19 +362,39 @@
         public float nightTimeSpeedMultiplier { get; set; } = 0;
         #endregion Time
 
-        // Workbench
+        #region ValheimPlus
+        public bool valheimPlusConfigurationEnabled { get; set; } = true;
+        public bool mainMenuLogo { get; set; } = true;
+        public bool serverBrowserAdvertisement { get; set; } = true;
+        #endregion ValheimPlus
+
+        #region Wagon
+        public bool wagonSettingsEnabled { get; set; } = false;
+        public float wagonExtraMassFromItems { get; set; } = 0;
+        public float wagonBaseMass { get; set; } = 20;
+        #endregion Wagon
+
+        #region Ward
+        public bool wardSettingsEnabled { get; set; } = false;
+        public float wardRange { get; set; } = 20;
+        #endregion Ward
+
+        #region Windmill
+        public bool windmillConfigurationEnabled { get; set; } = false;
+        public int maximumBarleyWindmill { get; set; } = 50;
+        public float productionSpeedWindmill { get; set; } = 10;
+        public bool ignoreWindIntensityWindmill { get; set; } = false;
+        public bool autoDepositWindmill { get; set; } = false;
+        public bool autoFuelWindmill { get; set; } = false;
+        public bool ignorePrivateAreaCheckWindmill { get; set; } = true;
+        public float autoRangeWindmill { get; set; } = 10;
+        #endregion Windmill
+
+        #region Workbench
         public bool workbenchSettingsEnabled { get; set; } = false;
         public float workbenchRange { get; set; } = 20;
         public float workbenchAttachmentRange { get; set; } = 5.0f;
         public bool disableRoofCheck { get; set; } = false;
-
-        // Ward
-        public bool wardSettingsEnabled { get; set; } = false;
-        public float wardRange { get; set; } = 20;
-
-        // Wagon
-        public bool wagonSettingsEnabled { get; set; } = false;
-        public float wagonExtraMassFromItems { get; set; } = 0;
-        public float wagonBaseMass { get; set; } = 20;
+        #endregion Workbench
     }
 }

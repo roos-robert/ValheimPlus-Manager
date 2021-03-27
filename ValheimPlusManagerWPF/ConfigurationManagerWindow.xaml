@@ -51,9 +51,10 @@
                 <CheckBox IsChecked="{Binding armorSettingsEnabled}" Content="Enable armor settings" />
                 <CheckBox IsChecked="{Binding beehiveSettingsEnabled}" Content="Enable beehive settings" />
                 <CheckBox IsChecked="{Binding buildingSettingsEnabled}" Content="Enable building settings" />
+                <CheckBox IsChecked="{Binding cameraSettingsEnabled}" Content="Enable camera settings" />
+                <CheckBox IsChecked="{Binding craftFromChestSettingsEnabled}" Content="Enable craft from chest settings" />
                 <CheckBox IsChecked="{Binding durabilitySettingsEnabled}" Content="Enable durability settings" />
-                <CheckBox IsChecked="{Binding inventorySettingsEnabled}" Content="Enable inventory settings" />
-                <CheckBox IsChecked="{Binding itemsSettingsEnabled}" Content="Enable item settings" />
+                <CheckBox IsChecked="{Binding experienceSettingsEnabled}" Content="Enable experience settings" />
                 <CheckBox IsChecked="{Binding fermenterSettingsEnabled}" Content="Enable fermenter settings" />
                 <CheckBox IsChecked="{Binding fireSourceSettingsEnabled}" Content="Enable fire source settings" />
                 <CheckBox IsChecked="{Binding firstPersonSettingsEnabled}" Content="Enable first person settings" />
@@ -65,22 +66,24 @@
                 <CheckBox IsChecked="{Binding gridAlignmentSettingsEnabled}" Content="Enable grid alignment settings" />
                 <CheckBox IsChecked="{Binding hotkeysSettingsEnabled}" Content="Enable hotkeys settings" />
                 <CheckBox IsChecked="{Binding hudSettingsEnabled}" Content="Enable HUD settings" />
+                <CheckBox IsChecked="{Binding inventorySettingsEnabled}" Content="Enable inventory settings" />
+                <CheckBox IsChecked="{Binding itemsSettingsEnabled}" Content="Enable item settings" />
                 <CheckBox IsChecked="{Binding kilnSettingsEnabled}" Content="Enable kiln settings" />
                 <CheckBox IsChecked="{Binding mapSettingsEnabled}" Content="Enable map settings" />
                 <CheckBox IsChecked="{Binding playerSettingsEnabled}" Content="Enable player settings" />
                 <CheckBox IsChecked="{Binding serverSettingsEnabled}" Content="Enable server settings" />
                 <CheckBox IsChecked="{Binding shieldsSettingsEnabled}" Content="Enable shields settings" />
                 <CheckBox IsChecked="{Binding smelterSettingsEnabled}" Content="Enable smelter settings" />
+                <CheckBox IsChecked="{Binding spinningWheelSettingsEnabled}" Content="Enable spinning wheel settings" />
                 <CheckBox IsChecked="{Binding staminaSettingsEnabled}" Content="Enable stamina settings" />
                 <CheckBox IsChecked="{Binding staminaUsageSettingsEnabled}" Content="Enable stamina usage settings" />
-                <CheckBox IsChecked="{Binding valheimPlusConfigurationEnabled}" Content="Enable ValheimPlus settings" />
-                <CheckBox IsChecked="{Binding workbenchSettingsEnabled}" Content="Enable workbench settings" />
-                <!--<CheckBox IsChecked="{Binding timeSettingsEnabled}" Content="Enable time settings" />-->
-                <CheckBox IsChecked="{Binding wardSettingsEnabled}" Content="Enable ward settings" />
                 <CheckBox IsChecked="{Binding structuralIntegritySettingsEnabled}" Content="Enable structural integrity settings" />
-                <CheckBox IsChecked="{Binding experienceSettingsEnabled}" Content="Enable experience settings" />
-                <CheckBox IsChecked="{Binding cameraSettingsEnabled}" Content="Enable camera settings" />
+                <!--<CheckBox IsChecked="{Binding timeSettingsEnabled}" Content="Enable time settings" />-->
+                <CheckBox IsChecked="{Binding valheimPlusConfigurationEnabled}" Content="Enable ValheimPlus settings" />
                 <CheckBox IsChecked="{Binding wagonSettingsEnabled}" Content="Enable wagon settings" />
+                <CheckBox IsChecked="{Binding wardSettingsEnabled}" Content="Enable ward settings" />
+                <CheckBox IsChecked="{Binding windmillConfigurationEnabled}" Content="Enable windmill settings" />
+                <CheckBox IsChecked="{Binding workbenchSettingsEnabled}" Content="Enable workbench settings" />
             </ListView>
         </Grid>
 
@@ -380,6 +383,21 @@
                         <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckSmelter}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
+                <TabItem IsEnabled="{Binding spinningWheelSettingsEnabled}" Header="Spinning wheel">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="163*"/>
+                            <ColumnDefinition Width="110*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Spinning wheel" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding maximumFlaxSpinningWheel}" materialDesign:HintAssist.Hint="Maximum amount of flax in a spinning wheel" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" Grid.ColumnSpan="2" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding productionSpeedSpinningWheel}" materialDesign:HintAssist.Hint="The time it takes for the spinning wheel to produce linen thread" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" Grid.ColumnSpan="2" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding autoRangeSpinningWheel}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit and fuel features (Maximum is 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" Grid.ColumnSpan="2" />
+                        <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositSpinningWheel}" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for flax inside nearby chests" IsChecked="{Binding autoDepositSpinningWheel}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckSpinningWheel}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
                 <TabItem IsEnabled="{Binding staminaSettingsEnabled}" Header="Stamina">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Each of these values modifies the stamina drain by %. The value -50 would result in 50% less stamina cost" TextWrapping="Wrap" VerticalAlignment="Top" />
@@ -417,6 +435,8 @@
                 <TabItem IsEnabled="{Binding valheimPlusConfigurationEnabled}" Header="ValheimPlus">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="ValheimPlus" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <CheckBox Content="Display the Valheim Plus logo in the main menu" IsChecked="{Binding mainMenuLogo}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Display advertisements of server hosting partners on the server browser menu" IsChecked="{Binding serverBrowserAdvertisement}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding workbenchSettingsEnabled}" Header="Workbench">
@@ -440,6 +460,18 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding wardRange}" materialDesign:HintAssist.Hint="The range of wards by meters" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                     </Grid>
                 </TabItem>
+                <TabItem IsEnabled="{Binding windmillConfigurationEnabled}" Header="Windmill">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Windmill" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="482" Text="{Binding maximumBarleyWindmill}" materialDesign:HintAssist.Hint="Maximum amount of barley in a windmill" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="482" Text="{Binding productionSpeedWindmill}" materialDesign:HintAssist.Hint="The time it takes for the windmill to produce a single ingot in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="482" Text="{Binding autoRangeWindmill}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit and fuel features. (Maximum is 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <CheckBox Content="Ignore wind intensity so it always takes the production speed value to process one barley" IsChecked="{Binding ignoreWindIntensityWindmill}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests" IsChecked="{Binding autoDepositWindmill}" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for barley inside nearby chests" IsChecked="{Binding autoFuelWindmill}" HorizontalAlignment="Left" Margin="10,290,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckWindmill}" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
                 <TabItem IsEnabled="{Binding structuralIntegritySettingsEnabled}" Header="Structural integrity">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Structural integrity" TextWrapping="Wrap" VerticalAlignment="Top" />
@@ -451,6 +483,7 @@
                         <CheckBox Content="Disables the entire structural integrity system and allows for placement in free air, does not prevent building damage" IsChecked="{Binding disableStructuralIntegrity}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Disables any damage from anything to all player built structures" IsChecked="{Binding disableDamageToPlayerStructures}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Disables any damage from anything to all player built boats" IsChecked="{Binding disableDamageToPlayerBoats}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disables water force damage to all player built boats" IsChecked="{Binding disableWaterDamageToPlayerBoats}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding experienceSettingsEnabled}" Header="Experience">
@@ -464,7 +497,6 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceSneak}" materialDesign:HintAssist.Hint="Sneaking" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,220,100,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceRun}" materialDesign:HintAssist.Hint="Running" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,270,100,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceSwim}" materialDesign:HintAssist.Hint="Swimming" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,320,100,0" />
-
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceBows}" materialDesign:HintAssist.Hint="Bows" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceClubs}" materialDesign:HintAssist.Hint="Clubs" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="300" Text="{Binding experienceKnives}" materialDesign:HintAssist.Hint="Knives" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
@@ -483,6 +515,16 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding cameraMaximumZoomDistance}" materialDesign:HintAssist.Hint="The maximum zoom distance to your character" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding cameraBoatMaximumZoomDistance}" materialDesign:HintAssist.Hint="The maximum zoom distance to your character when in a boat" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding cameraFOV}" materialDesign:HintAssist.Hint="The game camera FOV" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding craftFromChestSettingsEnabled}" Header="Craft from chest">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Camera" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding rangeCraftFromChest}" materialDesign:HintAssist.Hint="The range of the chest detection (min: 1, max: 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding lookupIntervalCraftFromChest}" materialDesign:HintAssist.Hint="Interval in seconds between each nearby chests discovery (min: 1, max: 10)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <CheckBox Content="Disable this feature when using a Cooking Station" IsChecked="{Binding disableCookingStationCraftFromChest}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="If in a workbench area, uses it as reference point when scanning for chests" IsChecked="{Binding checkFromWorkbenchCraftFromChest}" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckCraftFromChest}" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding wagonSettingsEnabled}" Header="Wagon">

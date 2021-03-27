@@ -213,6 +213,33 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Camera
 
+            #region CraftFromChest
+            if (bool.TryParse(data["CraftFromChest"]["enabled"], out bool craftFromChestSettingsEnabled))
+            {
+                valheimPlusConfiguration.craftFromChestSettingsEnabled = craftFromChestSettingsEnabled;
+            }
+            if (Int32.TryParse(data["CraftFromChest"]["lookupInterval"], out int lookupIntervalCraftFromChest))
+            {
+                valheimPlusConfiguration.lookupIntervalCraftFromChest = lookupIntervalCraftFromChest;
+            }
+            if (float.TryParse(data["CraftFromChest"]["range"], NumberStyles.Any, ci, out float rangeCraftFromChest))
+            {
+                valheimPlusConfiguration.rangeCraftFromChest = rangeCraftFromChest;
+            }
+            if (bool.TryParse(data["CraftFromChest"]["disableCookingStation"], out bool disableCookingStationCraftFromChest))
+            {
+                valheimPlusConfiguration.disableCookingStationCraftFromChest = disableCookingStationCraftFromChest;
+            }
+            if (bool.TryParse(data["CraftFromChest"]["checkFromWorkbench"], out bool checkFromWorkbenchCraftFromChest))
+            {
+                valheimPlusConfiguration.checkFromWorkbenchCraftFromChest = checkFromWorkbenchCraftFromChest;
+            }
+            if (bool.TryParse(data["CraftFromChest"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckCraftFromChest))
+            {
+                valheimPlusConfiguration.ignorePrivateAreaCheckCraftFromChest = ignorePrivateAreaCheckCraftFromChest;
+            }
+            #endregion CraftFromChest
+
             #region Durability
             if (bool.TryParse(data["Durability"]["enabled"], out bool durabilitySettingsEnabled))
             {
@@ -956,6 +983,37 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Smelter
 
+            #region SpinningWheel
+            if (bool.TryParse(data["SpinningWheel"]["enabled"], out bool spinningWheelSettingsEnabled))
+            {
+                valheimPlusConfiguration.spinningWheelSettingsEnabled = spinningWheelSettingsEnabled;
+            }
+            if (int.TryParse(data["SpinningWheel"]["maximumFlax"], out int maximumFlaxSpinningWheel))
+            {
+                valheimPlusConfiguration.maximumFlaxSpinningWheel = maximumFlaxSpinningWheel;
+            }
+            if (float.TryParse(data["SpinningWheel"]["productionSpeed"], NumberStyles.Any, ci, out float productionSpeedSpinningWheel))
+            {
+                valheimPlusConfiguration.productionSpeedSpinningWheel = productionSpeedSpinningWheel;
+            }
+            if (bool.TryParse(data["SpinningWheel"]["autoDeposit"], out bool autoDepositSpinningWheel))
+            {
+                valheimPlusConfiguration.autoDepositSpinningWheel = autoDepositSpinningWheel;
+            }
+            if (bool.TryParse(data["SpinningWheel"]["autoFuel"], out bool autoFuelSpinningWheel))
+            {
+                valheimPlusConfiguration.autoFuelSpinningWheel = autoFuelSpinningWheel;
+            }
+            if (bool.TryParse(data["SpinningWheel"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckSpinningWheel))
+            {
+                valheimPlusConfiguration.ignorePrivateAreaCheckSpinningWheel = ignorePrivateAreaCheckSpinningWheel;
+            }
+            if (float.TryParse(data["SpinningWheel"]["autoRange"], NumberStyles.Any, ci, out float autoRangeSpinningWheel))
+            {
+                valheimPlusConfiguration.autoRangeSpinningWheel = autoRangeSpinningWheel;
+            }
+            #endregion SpinningWheel
+
             #region Stamina
             if (bool.TryParse(data["Stamina"]["enabled"], out bool staminaSettingsEnabled))
             {
@@ -1083,6 +1141,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.disableDamageToPlayerBoats = disableDamageToPlayerBoats;
             }
+            if (bool.TryParse(data["StructuralIntegrity"]["disableWaterDamageToPlayerBoats"], out bool disableWaterDamageToPlayerBoats))
+            {
+                valheimPlusConfiguration.disableWaterDamageToPlayerBoats = disableWaterDamageToPlayerBoats;
+            }
             #endregion StructuralIntegrity
 
             #region Time
@@ -1099,6 +1161,82 @@ namespace ValheimPlusManager.SupportClasses
             //    valheimPlusConfiguration.nightTimeSpeedMultiplier = nightTimeSpeedMultiplier;
             //}
             #endregion Time
+
+            #region ValheimPlus
+            if (bool.TryParse(data["ValheimPlus"]["enabled"], out bool valheimPlusConfigurationEnabled))
+            {
+                valheimPlusConfiguration.valheimPlusConfigurationEnabled = valheimPlusConfigurationEnabled;
+            }
+            if (bool.TryParse(data["ValheimPlus"]["mainMenuLogo"], out bool mainMenuLogo))
+            {
+                valheimPlusConfiguration.mainMenuLogo = mainMenuLogo;
+            }
+            if (bool.TryParse(data["ValheimPlus"]["serverBrowserAdvertisement"], out bool serverBrowserAdvertisement))
+            {
+                valheimPlusConfiguration.serverBrowserAdvertisement = serverBrowserAdvertisement;
+            }
+            #endregion ValheimPlus
+
+            #region Wagon
+            if (bool.TryParse(data["Wagon"]["enabled"], out bool wagonSettingsEnabled))
+            {
+                valheimPlusConfiguration.wagonSettingsEnabled = wagonSettingsEnabled;
+            }
+            if (Int32.TryParse(data["Wagon"]["wagonBaseMass"], out int wagonBaseMass))
+            {
+                valheimPlusConfiguration.wagonBaseMass = wagonBaseMass;
+            }
+            if (Int32.TryParse(data["Wagon"]["wagonExtraMassFromItems"], out int wagonExtraMassFromItems))
+            {
+                valheimPlusConfiguration.wagonExtraMassFromItems = wagonExtraMassFromItems;
+            }
+            #endregion Wagon
+
+            #region Ward
+            if (bool.TryParse(data["Ward"]["enabled"], out bool wardSettingsEnabled))
+            {
+                valheimPlusConfiguration.wardSettingsEnabled = wardSettingsEnabled;
+            }
+            if (int.TryParse(data["Ward"]["wardRange"], out int wardRange))
+            {
+                valheimPlusConfiguration.wardRange = wardRange;
+            }
+            #endregion Ward
+
+            #region Windmill
+            if (bool.TryParse(data["Windmill"]["enabled"], out bool windmillConfigurationEnabled))
+            {
+                valheimPlusConfiguration.windmillConfigurationEnabled = windmillConfigurationEnabled;
+            }
+            if (int.TryParse(data["Windmill"]["maximumBarley"], out int maximumBarleyWindmill))
+            {
+                valheimPlusConfiguration.maximumBarleyWindmill = maximumBarleyWindmill;
+            }
+            if (float.TryParse(data["Windmill"]["productionSpeed"], NumberStyles.Any, ci, out float productionSpeedWindmill))
+            {
+                valheimPlusConfiguration.productionSpeedWindmill = productionSpeedWindmill;
+            }
+            if (float.TryParse(data["Windmill"]["autoRange"], NumberStyles.Any, ci, out float autoRangeWindmill))
+            {
+                valheimPlusConfiguration.autoRangeWindmill = autoRangeWindmill;
+            }
+            if (bool.TryParse(data["Windmill"]["ignoreWindIntensity"], out bool ignoreWindIntensityWindmill))
+            {
+                valheimPlusConfiguration.ignoreWindIntensityWindmill = ignoreWindIntensityWindmill;
+            }
+            if (bool.TryParse(data["Windmill"]["autoDeposit"], out bool autoDepositWindmill))
+            {
+                valheimPlusConfiguration.autoDepositWindmill = autoDepositWindmill;
+            }
+            if (bool.TryParse(data["Windmill"]["autoFuel"], out bool autoFuelWindmill))
+            {
+                valheimPlusConfiguration.autoFuelWindmill = autoFuelWindmill;
+            }
+            if (bool.TryParse(data["Windmill"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckWindmill))
+            {
+                valheimPlusConfiguration.ignorePrivateAreaCheckWindmill = ignorePrivateAreaCheckWindmill;
+            }
+            #endregion Windmill
 
             #region Workbench
             if (bool.TryParse(data["Workbench"]["enabled"], out bool workbenchSettingsEnabled))
@@ -1118,32 +1256,6 @@ namespace ValheimPlusManager.SupportClasses
                 valheimPlusConfiguration.disableRoofCheck = disableRoofCheck;
             }
             #endregion Workbench
-
-            #region Ward
-            if (bool.TryParse(data["Ward"]["enabled"], out bool wardSettingsEnabled))
-            {
-                valheimPlusConfiguration.wardSettingsEnabled = wardSettingsEnabled;
-            }
-            if (int.TryParse(data["Ward"]["wardRange"], out int wardRange))
-            {
-                valheimPlusConfiguration.wardRange = wardRange;
-            }
-            #endregion Ward
-
-            #region Wagon
-            if (bool.TryParse(data["Wagon"]["enabled"], out bool wagonSettingsEnabled))
-            {
-                valheimPlusConfiguration.wagonSettingsEnabled = wagonSettingsEnabled;
-            }
-            if (Int32.TryParse(data["Wagon"]["wagonBaseMass"], out int wagonBaseMass))
-            {
-                valheimPlusConfiguration.wagonBaseMass = wagonBaseMass;
-            }
-            if (Int32.TryParse(data["Wagon"]["wagonExtraMassFromItems"], out int wagonExtraMassFromItems))
-            {
-                valheimPlusConfiguration.wagonExtraMassFromItems = wagonExtraMassFromItems;
-            }
-            #endregion Wagon
 
             return valheimPlusConfiguration;
         }
@@ -1225,6 +1337,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Camera"]["cameraBoatMaximumZoomDistance"] = valheimPlusConfiguration.cameraBoatMaximumZoomDistance.ToString();
             data["Camera"]["cameraFOV"] = valheimPlusConfiguration.cameraFOV.ToString();
             #endregion Camera
+
+            #region CraftFromChest
+            data["CraftFromChest"]["enabled"] = valheimPlusConfiguration.craftFromChestSettingsEnabled.ToString().ToLower();
+            data["CraftFromChest"]["range"] = valheimPlusConfiguration.rangeCraftFromChest.ToString();
+            data["CraftFromChest"]["lookupInterval"] = valheimPlusConfiguration.lookupIntervalCraftFromChest.ToString();
+            data["CraftFromChest"]["disableCookingStation"] = valheimPlusConfiguration.disableCookingStationCraftFromChest.ToString().ToLower();
+            data["CraftFromChest"]["checkFromWorkbench"] = valheimPlusConfiguration.checkFromWorkbenchCraftFromChest.ToString().ToLower();
+            data["CraftFromChest"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckCraftFromChest.ToString().ToLower();
+            #endregion CraftFromChest
 
             #region Durability
             data["Durability"]["enabled"] = valheimPlusConfiguration.durabilitySettingsEnabled.ToString().ToLower();
@@ -1453,6 +1574,16 @@ namespace ValheimPlusManager.SupportClasses
             data["Smelter"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckSmelter.ToString().ToLower();
             #endregion Smelter
 
+            #region SpinningWheel
+            data["SpinningWheel"]["enabled"] = valheimPlusConfiguration.spinningWheelSettingsEnabled.ToString().ToLower();
+            data["SpinningWheel"]["maximumFlax"] = valheimPlusConfiguration.maximumFlaxSpinningWheel.ToString();
+            data["SpinningWheel"]["productionSpeed"] = valheimPlusConfiguration.productionSpeedSpinningWheel.ToString();
+            data["SpinningWheel"]["autoDeposit"] = valheimPlusConfiguration.autoDepositSpinningWheel.ToString().ToLower();
+            data["SpinningWheel"]["autoFuel"] = valheimPlusConfiguration.autoFuelSpinningWheel.ToString().ToLower();
+            data["SpinningWheel"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckSpinningWheel.ToString().ToLower();
+            data["SpinningWheel"]["autoRange"] = valheimPlusConfiguration.autoRangeSpinningWheel.ToString();
+            #endregion SpinningWheel
+
             #region Stamina
             data["Stamina"]["enabled"] = valheimPlusConfiguration.staminaSettingsEnabled.ToString().ToLower();
             data["Stamina"]["dodgeStaminaUsage"] = valheimPlusConfiguration.dodgeStaminaUsage.ToString();
@@ -1490,6 +1621,7 @@ namespace ValheimPlusManager.SupportClasses
             data["StructuralIntegrity"]["disableStructuralIntegrity"] = valheimPlusConfiguration.disableStructuralIntegrity.ToString().ToLower();
             data["StructuralIntegrity"]["disableDamageToPlayerStructures"] = valheimPlusConfiguration.disableDamageToPlayerStructures.ToString().ToLower();
             data["StructuralIntegrity"]["disableDamageToPlayerBoats"] = valheimPlusConfiguration.disableDamageToPlayerBoats.ToString().ToLower();
+            data["StructuralIntegrity"]["disableWaterDamageToPlayerBoats"] = valheimPlusConfiguration.disableWaterDamageToPlayerBoats.ToString().ToLower();
             #endregion StructuralIntegrity
 
             #region Time
@@ -1498,21 +1630,40 @@ namespace ValheimPlusManager.SupportClasses
             //data["Time"]["nightTimeSpeedMultiplier"] = valheimPlusConfiguration.nightTimeSpeedMultiplier.ToString();
             #endregion Time
 
+            #region ValheimPlus
+            data["ValheimPlus"]["enabled"] = valheimPlusConfiguration.valheimPlusConfigurationEnabled.ToString().ToLower();
+            data["ValheimPlus"]["mainMenuLogo"] = valheimPlusConfiguration.mainMenuLogo.ToString().ToLower();
+            data["ValheimPlus"]["serverBrowserAdvertisement"] = valheimPlusConfiguration.serverBrowserAdvertisement.ToString().ToLower();
+            #endregion ValheimPlus
+
+            #region Wagon
+            data["Wagon"]["enabled"] = valheimPlusConfiguration.wagonSettingsEnabled.ToString().ToLower();
+            data["Wagon"]["wagonBaseMass"] = valheimPlusConfiguration.wagonBaseMass.ToString();
+            data["Wagon"]["wagonExtraMassFromItems"] = valheimPlusConfiguration.wagonExtraMassFromItems.ToString();
+            #endregion Wagon
+
+            #region Ward
+            data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
+            data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString();
+            #endregion Ward
+
+            #region Windmill
+            data["Windmill"]["enabled"] = valheimPlusConfiguration.windmillConfigurationEnabled.ToString().ToLower();
+            data["Windmill"]["maximumBarley"] = valheimPlusConfiguration.maximumBarleyWindmill.ToString();
+            data["Windmill"]["productionSpeed"] = valheimPlusConfiguration.productionSpeedWindmill.ToString();
+            data["Windmill"]["autoRange"] = valheimPlusConfiguration.autoRangeWindmill.ToString();
+            data["Windmill"]["ignoreWindIntensity"] = valheimPlusConfiguration.ignoreWindIntensityWindmill.ToString().ToLower();
+            data["Windmill"]["autoDeposit"] = valheimPlusConfiguration.autoDepositWindmill.ToString().ToLower();
+            data["Windmill"]["autoFuel"] = valheimPlusConfiguration.autoFuelWindmill.ToString().ToLower();
+            data["Windmill"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckWindmill.ToString().ToLower();
+            #endregion Windmill
+
             #region Workbench
             data["Workbench"]["enabled"] = valheimPlusConfiguration.workbenchSettingsEnabled.ToString().ToLower();
             data["Workbench"]["workbenchRange"] = valheimPlusConfiguration.workbenchRange.ToString();
             data["Workbench"]["workbenchAttachmentRange"] = valheimPlusConfiguration.workbenchAttachmentRange.ToString();
             data["Workbench"]["disableRoofCheck"] = valheimPlusConfiguration.disableRoofCheck.ToString().ToLower();
             #endregion Workbench
-
-            // Ward
-            data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
-            data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString().ToLower();
-
-            // Wagon
-            data["Wagon"]["enabled"] = valheimPlusConfiguration.wagonSettingsEnabled.ToString().ToLower();
-            data["Wagon"]["wagonBaseMass"] = valheimPlusConfiguration.wagonBaseMass.ToString();
-            data["Wagon"]["wagonExtraMassFromItems"] = valheimPlusConfiguration.wagonExtraMassFromItems.ToString();
 
             // Writing the new settings to configuration file
             try
