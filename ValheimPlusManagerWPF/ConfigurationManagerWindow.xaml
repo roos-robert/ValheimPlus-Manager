@@ -519,7 +519,7 @@
                 </TabItem>
                 <TabItem IsEnabled="{Binding craftFromChestSettingsEnabled}" Header="Craft from chest">
                     <Grid Background="#FFE5E5E5">
-                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Camera" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Craft from chest" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding rangeCraftFromChest}" materialDesign:HintAssist.Hint="The range of the chest detection (min: 1, max: 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding lookupIntervalCraftFromChest}" materialDesign:HintAssist.Hint="Interval in seconds between each nearby chests discovery (min: 1, max: 10)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <CheckBox Content="Disable this feature when using a Cooking Station" IsChecked="{Binding disableCookingStationCraftFromChest}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
