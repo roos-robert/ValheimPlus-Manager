@@ -381,6 +381,17 @@
                         <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckSmelter}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
+                <TabItem IsEnabled="{Binding spinningWheelSettingsEnabled}" Header="Spinning wheel">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Spinning wheel" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding maximumFlaxSpinningWheel}" materialDesign:HintAssist.Hint="Maximum amount of flax in a spinning wheel" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding productionSpeedSpinningWheel}" materialDesign:HintAssist.Hint="The time it takes for the spinning wheel to produce linen thread" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding autoRangeSpinningWheel}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit and fuel features (Maximum is 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositSpinningWheel}" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for flax inside nearby chests" IsChecked="{Binding autoDepositSpinningWheel}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckSpinningWheel}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
                 <TabItem IsEnabled="{Binding staminaSettingsEnabled}" Header="Stamina">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Each of these values modifies the stamina drain by %. The value -50 would result in 50% less stamina cost" TextWrapping="Wrap" VerticalAlignment="Top" />

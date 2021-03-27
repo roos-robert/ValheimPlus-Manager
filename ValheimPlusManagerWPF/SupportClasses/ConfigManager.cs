@@ -957,7 +957,34 @@ namespace ValheimPlusManager.SupportClasses
             #endregion Smelter
 
             #region SpinningWheel
-
+            if (bool.TryParse(data["SpinningWheel"]["enabled"], out bool spinningWheelSettingsEnabled))
+            {
+                valheimPlusConfiguration.spinningWheelSettingsEnabled = spinningWheelSettingsEnabled;
+            }
+            if (int.TryParse(data["SpinningWheel"]["maximumFlax"], out int maximumFlaxSpinningWheel))
+            {
+                valheimPlusConfiguration.maximumFlaxSpinningWheel = maximumFlaxSpinningWheel;
+            }
+            if (float.TryParse(data["SpinningWheel"]["productionSpeed"], NumberStyles.Any, ci, out float productionSpeedSpinningWheel))
+            {
+                valheimPlusConfiguration.productionSpeedSpinningWheel = productionSpeedSpinningWheel;
+            }
+            if (bool.TryParse(data["SpinningWheel"]["autoDeposit"], out bool autoDepositSpinningWheel))
+            {
+                valheimPlusConfiguration.autoDepositSpinningWheel = autoDepositSpinningWheel;
+            }
+            if (bool.TryParse(data["SpinningWheel"]["autoFuel"], out bool autoFuelSpinningWheel))
+            {
+                valheimPlusConfiguration.autoFuelSpinningWheel = autoFuelSpinningWheel;
+            }
+            if (bool.TryParse(data["SpinningWheel"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckSpinningWheel))
+            {
+                valheimPlusConfiguration.ignorePrivateAreaCheckSpinningWheel = ignorePrivateAreaCheckSpinningWheel;
+            }
+            if (float.TryParse(data["SpinningWheel"]["autoRange"], NumberStyles.Any, ci, out float autoRangeSpinningWheel))
+            {
+                valheimPlusConfiguration.autoRangeSpinningWheel = autoRangeSpinningWheel;
+            }
             #endregion SpinningWheel
 
             #region Stamina
@@ -1481,7 +1508,13 @@ namespace ValheimPlusManager.SupportClasses
             #endregion Smelter
 
             #region SpinningWheel
-
+            data["SpinningWheel"]["enabled"] = valheimPlusConfiguration.spinningWheelSettingsEnabled.ToString().ToLower();
+            data["SpinningWheel"]["maximumFlax"] = valheimPlusConfiguration.maximumFlaxSpinningWheel.ToString();
+            data["SpinningWheel"]["productionSpeed"] = valheimPlusConfiguration.productionSpeedSpinningWheel.ToString();
+            data["SpinningWheel"]["autoDeposit"] = valheimPlusConfiguration.autoDepositSpinningWheel.ToString().ToLower();
+            data["SpinningWheel"]["autoFuel"] = valheimPlusConfiguration.autoFuelSpinningWheel.ToString().ToLower();
+            data["SpinningWheel"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckSpinningWheel.ToString().ToLower();
+            data["SpinningWheel"]["autoRange"] = valheimPlusConfiguration.autoRangeSpinningWheel.ToString();
             #endregion SpinningWheel
 
             #region Stamina
