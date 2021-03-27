@@ -1177,7 +1177,38 @@ namespace ValheimPlusManager.SupportClasses
             #endregion Ward
 
             #region Windmill
-
+            if (bool.TryParse(data["Windmill"]["enabled"], out bool windmillConfigurationEnabled))
+            {
+                valheimPlusConfiguration.windmillConfigurationEnabled = windmillConfigurationEnabled;
+            }
+            if (int.TryParse(data["Windmill"]["maximumBarley"], out int maximumBarleyWindmill))
+            {
+                valheimPlusConfiguration.maximumBarleyWindmill = maximumBarleyWindmill;
+            }
+            if (float.TryParse(data["Windmill"]["productionSpeed"], NumberStyles.Any, ci, out float productionSpeedWindmill))
+            {
+                valheimPlusConfiguration.productionSpeedWindmill = productionSpeedWindmill;
+            }
+            if (float.TryParse(data["Windmill"]["autoRange"], NumberStyles.Any, ci, out float autoRangeWindmill))
+            {
+                valheimPlusConfiguration.autoRangeWindmill = autoRangeWindmill;
+            }
+            if (bool.TryParse(data["Windmill"]["ignoreWindIntensity"], out bool ignoreWindIntensityWindmill))
+            {
+                valheimPlusConfiguration.ignoreWindIntensityWindmill = ignoreWindIntensityWindmill;
+            }
+            if (bool.TryParse(data["Windmill"]["autoDeposit"], out bool autoDepositWindmill))
+            {
+                valheimPlusConfiguration.autoDepositWindmill = autoDepositWindmill;
+            }
+            if (bool.TryParse(data["Windmill"]["autoFuel"], out bool autoFuelWindmill))
+            {
+                valheimPlusConfiguration.autoFuelWindmill = autoFuelWindmill;
+            }
+            if (bool.TryParse(data["Windmill"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckWindmill))
+            {
+                valheimPlusConfiguration.ignorePrivateAreaCheckWindmill = ignorePrivateAreaCheckWindmill;
+            }
             #endregion Windmill
 
             #region Workbench
@@ -1577,11 +1608,18 @@ namespace ValheimPlusManager.SupportClasses
 
             #region Ward
             data["Ward"]["enabled"] = valheimPlusConfiguration.wardSettingsEnabled.ToString().ToLower();
-            data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString().ToLower();
+            data["Ward"]["wardRange"] = valheimPlusConfiguration.wardRange.ToString();
             #endregion Ward
 
             #region Windmill
-
+            data["Windmill"]["enabled"] = valheimPlusConfiguration.windmillConfigurationEnabled.ToString().ToLower();
+            data["Windmill"]["maximumBarley"] = valheimPlusConfiguration.maximumBarleyWindmill.ToString();
+            data["Windmill"]["productionSpeed"] = valheimPlusConfiguration.productionSpeedWindmill.ToString();
+            data["Windmill"]["autoRange"] = valheimPlusConfiguration.autoRangeWindmill.ToString();
+            data["Windmill"]["ignoreWindIntensity"] = valheimPlusConfiguration.ignoreWindIntensityWindmill.ToString().ToLower();
+            data["Windmill"]["autoDeposit"] = valheimPlusConfiguration.autoDepositWindmill.ToString().ToLower();
+            data["Windmill"]["autoFuel"] = valheimPlusConfiguration.autoFuelWindmill.ToString().ToLower();
+            data["Windmill"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckWindmill.ToString().ToLower();
             #endregion Windmill
 
             #region Workbench

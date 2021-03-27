@@ -81,6 +81,7 @@
                 <CheckBox IsChecked="{Binding valheimPlusConfigurationEnabled}" Content="Enable ValheimPlus settings" />
                 <CheckBox IsChecked="{Binding wagonSettingsEnabled}" Content="Enable wagon settings" />
                 <CheckBox IsChecked="{Binding wardSettingsEnabled}" Content="Enable ward settings" />
+                <CheckBox IsChecked="{Binding windmillConfigurationEnabled}" Content="Enable windmill settings" />
                 <CheckBox IsChecked="{Binding workbenchSettingsEnabled}" Content="Enable workbench settings" />
             </ListView>
         </Grid>
@@ -383,10 +384,14 @@
                 </TabItem>
                 <TabItem IsEnabled="{Binding spinningWheelSettingsEnabled}" Header="Spinning wheel">
                     <Grid Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="163*"/>
+                            <ColumnDefinition Width="110*"/>
+                        </Grid.ColumnDefinitions>
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Spinning wheel" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding maximumFlaxSpinningWheel}" materialDesign:HintAssist.Hint="Maximum amount of flax in a spinning wheel" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding productionSpeedSpinningWheel}" materialDesign:HintAssist.Hint="The time it takes for the spinning wheel to produce linen thread" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
-                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding autoRangeSpinningWheel}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit and fuel features (Maximum is 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding maximumFlaxSpinningWheel}" materialDesign:HintAssist.Hint="Maximum amount of flax in a spinning wheel" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" Grid.ColumnSpan="2" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding productionSpeedSpinningWheel}" materialDesign:HintAssist.Hint="The time it takes for the spinning wheel to produce linen thread" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" Grid.ColumnSpan="2" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="572" Text="{Binding autoRangeSpinningWheel}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit and fuel features (Maximum is 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" Grid.ColumnSpan="2" />
                         <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositSpinningWheel}" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Look for flax inside nearby chests" IsChecked="{Binding autoDepositSpinningWheel}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckSpinningWheel}" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
@@ -452,6 +457,18 @@
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Ward" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding wardRange}" materialDesign:HintAssist.Hint="The range of wards by meters" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding windmillConfigurationEnabled}" Header="Windmill">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Windmill" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="482" Text="{Binding maximumBarleyWindmill}" materialDesign:HintAssist.Hint="Maximum amount of barley in a windmill" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="482" Text="{Binding productionSpeedWindmill}" materialDesign:HintAssist.Hint="The time it takes for the windmill to produce a single ingot in seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="482" Text="{Binding autoRangeWindmill}" materialDesign:HintAssist.Hint="The range of the chest detection for the auto deposit and fuel features. (Maximum is 50)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <CheckBox Content="Ignore wind intensity so it always takes the production speed value to process one barley" IsChecked="{Binding ignoreWindIntensityWindmill}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests" IsChecked="{Binding autoDepositWindmill}" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Look for barley inside nearby chests" IsChecked="{Binding autoFuelWindmill}" HorizontalAlignment="Left" Margin="10,290,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckWindmill}" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding structuralIntegritySettingsEnabled}" Header="Structural integrity">
