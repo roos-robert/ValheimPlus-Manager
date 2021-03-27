@@ -371,7 +371,14 @@
         #endregion Ward
 
         #region Windmill
-
+        public bool windmillConfigurationEnabled { get; set; } = false;
+        public int maximumBarleyWindmill { get; set; } = 50;
+        public float productionSpeedWindmill { get; set; } = 10;
+        public bool ignoreWindIntensityWindmill { get; set; } = false;
+        public bool autoDepositWindmill { get; set; } = false;
+        public bool autoFuelWindmill { get; set; } = false;
+        public bool ignorePrivateAreaCheckWindmill { get; set; } = true;
+        public float autoRangeWindmill { get; set; } = 10;
         #endregion Windmill
 
         #region Workbench

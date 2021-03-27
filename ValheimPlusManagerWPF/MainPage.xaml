@@ -17,7 +17,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}">
 
     <Grid>
-        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <materialDesign:Card Width="678" Height="270" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,10,0,0">
                 <Grid>
                     <TextBlock Text="ValheimPlus game client" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
@@ -30,15 +30,16 @@
                     <Button x:Name="setClientPathButton" Content="Find and set installation path" HorizontalAlignment="Left" Margin="16,205,0,0" VerticalAlignment="Top" Width="319" Click="setClientPathButton_Click"/>
                 </Grid>
             </materialDesign:Card>
-            <materialDesign:Card Width="354" Height="270" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="18,10,16,0">
+            <materialDesign:Card Width="354" Height="533" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="18,10,16,0">
                 <Grid>
-                    <TextBlock Text="Game management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <TextBlock Text="Management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
                     <Button x:Name="backupClientButton" Content="Backup game client data" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Width="322" Click="backupClientButton_Click"/>
+                    <Button x:Name="backupServerButton" Content="Backup server data" HorizontalAlignment="Left" Margin="16,125,0,0" VerticalAlignment="Top" Width="322" Click="backupServerButton_Click"/>
                     <!--<Button x:Name="serverListManager" Content="Server list manager" HorizontalAlignment="Left" Margin="16,125,0,0" VerticalAlignment="Top" Width="322"/>-->
                 </Grid>
             </materialDesign:Card>
         </Grid>
-        <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,0">
+        <Grid Grid.Row="1" Grid.ColumnSpan="1" Margin="0,0,0,0">
             <materialDesign:Card Width="678" Height="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,10,20,20">
                 <Grid>
                     <TextBlock Text="ValheimPlus server client" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Normal"/>
@@ -48,12 +49,6 @@
                     <Button x:Name="checkServerUpdatesButton" Content="Check for updates" HorizontalAlignment="Left" Margin="345,85,0,0" VerticalAlignment="Top" Width="319" Click="checkServerUpdatesButton_Click"/>
                     <Button x:Name="installServerUpdateButton" Content="Install update" HorizontalAlignment="Left" Margin="345,125,0,0" VerticalAlignment="Top" Width="319" IsEnabled="False" Click="installServerUpdateButton_Click"/>
                     <Button x:Name="setServerPathButton" Content="Find and set installation path" HorizontalAlignment="Left" Margin="16,165,0,0" VerticalAlignment="Top" Width="319" Click="setServerPathButton_Click"/>
-                </Grid>
-            </materialDesign:Card>
-            <materialDesign:Card Width="354" Height="250" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="18,10,16,0">
-                <Grid>
-                    <TextBlock Text="Server management" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
-                    <Button x:Name="backupServerButton" Content="Backup server data" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top" Width="322" Click="backupServerButton_Click"/>
                 </Grid>
             </materialDesign:Card>
         </Grid>

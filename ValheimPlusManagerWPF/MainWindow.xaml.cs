@@ -22,16 +22,6 @@ namespace ValheimPlusManager
 
             managerVersionTextBlock.Text = "Version 0.5.0";
 
-            //ValheimPlusUpdate valheimPlusUpdate = await UpdateManager.CheckForValheimPlusUpdatesAsync(Settings.ValheimPlusGameClientVersion);
-
-            //if (valheimPlusUpdate.NewVersion)
-            //{
-            //}
-            //else
-            //{
-            //    //
-            //}
-
             _mainFrame.Navigate(new MainPage());
         }
 

@@ -20,7 +20,7 @@ namespace ValheimPlusManager
         private bool ValheimPlusInstalledServer { get; set; } = false;
         private Settings Settings { get; set; }
 
-        SnackbarMessageQueue myMessageQueue = new SnackbarMessageQueue(TimeSpan.FromMilliseconds(3000));
+        SnackbarMessageQueue myMessageQueue = new SnackbarMessageQueue(TimeSpan.FromMilliseconds(2500));
 
         public MainPage()
         {
