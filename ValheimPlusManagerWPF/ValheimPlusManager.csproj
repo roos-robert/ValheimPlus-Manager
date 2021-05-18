@@ -5,7 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>valheim-plus.ico</ApplicationIcon>
-    <Version>0.5.1</Version>
+    <Version>0.5.2</Version>
     <Authors>Robert Roos</Authors>
     <Company>Xenolith AB</Company>
     <Product>ValheimPlusManager</Product>
