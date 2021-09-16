@@ -112,8 +112,8 @@
         public float fermenterDuration { get; set; } = 2400;
         public int fermenterItemsProduced { get; set; } = 4;
         public bool showFermenterDuration { get; set; } = false;
-        public bool autoDepositFermenter { get; set; } = true;
-        public bool autoFuelFermenter { get; set; } = true;
+        public bool autoDepositFermenter { get; set; } = false;
+        public bool autoFuelFermenter { get; set; } = false;
         public bool ignorePrivateAreaCheckFermenter { get; set; } = true;
         public float autoRangeFermenter { get; set; } = 10;
         #endregion Fermenter
