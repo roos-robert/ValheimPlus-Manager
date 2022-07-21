@@ -696,13 +696,13 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.experienceGainedNotifications = experienceGainedNotifications;
             }
-            if (bool.TryParse(data["Hud"]["displayStaminaValue"], out bool displayStaminaValue))
-            {
-                valheimPlusConfiguration.displayStaminaValue = displayStaminaValue;
-            }
             if (bool.TryParse(data["Hud"]["removeDamageFlash"], out bool removeDamageFlash))
             {
                 valheimPlusConfiguration.removeDamageFlash = removeDamageFlash;
+            }
+            if (int.TryParse(data["Hud"]["displayBowAmmoCounts"], out int displayBowAmmoCounts))
+            {
+                valheimPlusConfiguration.displayBowAmmoCounts = displayBowAmmoCounts;
             }
             #endregion HUD
 
@@ -1522,7 +1522,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Hud"]["enabled"] = valheimPlusConfiguration.hudSettingsEnabled.ToString().ToLower();
             data["Hud"]["showRequiredItems"] = valheimPlusConfiguration.showRequiredItems.ToString().ToLower();
             data["Hud"]["experienceGainedNotifications"] = valheimPlusConfiguration.experienceGainedNotifications.ToString().ToLower();
-            data["Hud"]["displayStaminaValue"] = valheimPlusConfiguration.displayStaminaValue.ToString().ToLower();
+            data["Hud"]["displayBowAmmoCounts"] = valheimPlusConfiguration.displayBowAmmoCounts.ToString();
             data["Hud"]["removeDamageFlash"] = valheimPlusConfiguration.removeDamageFlash.ToString().ToLower();
             #endregion HUD
 

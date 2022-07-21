@@ -215,8 +215,7 @@
         public bool hudSettingsEnabled { get; set; } = false;
         public bool showRequiredItems { get; set; } = false;
         public bool experienceGainedNotifications { get; set; } = false;
-        public float chatMessageDistance { get; set; }
-        public bool displayStaminaValue { get; set; } = false;
+        public int displayBowAmmoCounts { get; set; } = 0;
         public bool removeDamageFlash { get; set; } = false;
         #endregion HUD
 

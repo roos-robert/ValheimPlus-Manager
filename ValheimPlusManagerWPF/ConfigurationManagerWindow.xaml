@@ -289,10 +289,10 @@
                 <TabItem IsEnabled="{Binding hudSettingsEnabled}" Header="HUD">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="HUD" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <CheckBox Content="Show the required amount of items AND the amount of items in your inventory in build mode and while crafting" IsChecked="{Binding showRequiredItems}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Show small notifications about all skill experienced gained in the top left corner" IsChecked="{Binding experienceGainedNotifications}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Shows current and max stamina numerically underneath the stamina bar" IsChecked="{Binding displayStaminaValue}" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Set to true to remove the red screen flash overlay when the player takes damage" IsChecked="{Binding removeDamageFlash}" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding displayBowAmmoCounts}" materialDesign:HintAssist.Hint="If bow is in hotbar, display ammo - never (0), when equipped (1), or always (2)." Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,60,10,0" />
+                        <CheckBox Content="Show the required amount of items AND the amount of items in your inventory in build mode and while crafting" IsChecked="{Binding showRequiredItems}" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Show small notifications about all skill experienced gained in the top left corner" IsChecked="{Binding experienceGainedNotifications}" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Set to true to remove the red screen flash overlay when the player takes damage" IsChecked="{Binding removeDamageFlash}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding gatheringSettingsEnabled}" Header="Gathering">
