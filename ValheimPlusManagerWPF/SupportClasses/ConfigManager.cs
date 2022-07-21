@@ -124,6 +124,21 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Armor
 
+            #region Bed
+            if (bool.TryParse(data["Bed"]["enabled"], out bool bedSettingsEnabled))
+            {
+                valheimPlusConfiguration.bedSettingsEnabled = bedSettingsEnabled;
+            }
+            if (bool.TryParse(data["Bed"]["sleepWithoutSpawn"], out bool sleepWithoutSpawn))
+            {
+                valheimPlusConfiguration.sleepWithoutSpawn = sleepWithoutSpawn;
+            }
+            if (bool.TryParse(data["Bed"]["unclaimedBedsOnly"], out bool unclaimedBedsOnly))
+            {
+                valheimPlusConfiguration.unclaimedBedsOnly = unclaimedBedsOnly;
+            }
+            #endregion Bed
+
             #region Beehive
             if (bool.TryParse(data["Beehive"]["enabled"], out bool beehiveSettingsEnabled))
             {
@@ -137,7 +152,7 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.maximumHoneyPerBeehive = maximumHoneyPerBeehive;
             }
-            if (float.TryParse(data["Beehive"]["autoRange"], NumberStyles.Any, ci, out float autoDepositHoneyRange))
+            if (float.TryParse(data["Beehive"]["autoDepositRange"], NumberStyles.Any, ci, out float autoDepositHoneyRange))
             {
                 valheimPlusConfiguration.autoDepositHoneyRange = autoDepositHoneyRange;
             }
@@ -533,6 +548,10 @@ namespace ValheimPlusManager.SupportClasses
             if (bool.TryParse(data["Furnace"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckFurnace))
             {
                 valheimPlusConfiguration.ignorePrivateAreaCheckFurnace = ignorePrivateAreaCheckFurnace;
+            }
+            if (bool.TryParse(data["Furnace"]["allowAllOres"], out bool allowAllOresFurnace))
+            {
+                valheimPlusConfiguration.allowAllOresFurnace = allowAllOresFurnace;
             }
             #endregion Furnace
 
@@ -1314,9 +1333,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Beehive"]["honeyProductionSpeed"] = valheimPlusConfiguration.honeyProductionSpeed.ToString();
             data["Beehive"]["maximumHoneyPerBeehive"] = valheimPlusConfiguration.maximumHoneyPerBeehive.ToString();
             data["Beehive"]["autoRange"] = valheimPlusConfiguration.autoDepositHoneyRange.ToString();
-            data["Beehive"]["autoDeposit"] = valheimPlusConfiguration.autoDepositHoney.ToString().ToLower();
+            data["Beehive"]["autoDepositRange"] = valheimPlusConfiguration.autoDepositHoney.ToString().ToLower();
             data["Beehive"]["showDuration"] = valheimPlusConfiguration.showDurationBeehive.ToString().ToLower();
             #endregion Beehive
+
+            #region Bed
+            data["Bed"]["enabled"] = valheimPlusConfiguration.beehiveSettingsEnabled.ToString().ToLower();
+            data["Bed"]["sleepWithoutSpawn"] = valheimPlusConfiguration.sleepWithoutSpawn.ToString().ToLower();
+            data["Bed"]["unclaimedBedsOnly"] = valheimPlusConfiguration.unclaimedBedsOnly.ToString().ToLower();
+            #endregion Bed
 
             #region Building
             data["Building"]["enabled"] = valheimPlusConfiguration.buildingSettingsEnabled.ToString().ToLower();
@@ -1437,6 +1462,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Furnace"]["autoRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
             data["Furnace"]["autoFuel"] = valheimPlusConfiguration.autoFuelFurnace.ToString().ToLower();
             data["Furnace"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckFurnace.ToString().ToLower();
+            data["Furnace"]["allowAllOres"] = valheimPlusConfiguration.allowAllOresFurnace.ToString().ToLower();
             #endregion Furnace
 
             #region Game

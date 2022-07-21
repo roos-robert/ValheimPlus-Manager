@@ -32,6 +32,12 @@
         public float capesArmor { get; set; } = 0;
         #endregion Armor
 
+        #region Bed
+        public bool bedSettingsEnabled { get; set; } = false;
+        public bool sleepWithoutSpawn { get; set; } = false;
+        public bool unclaimedBedsOnly { get; set; } = false;
+        #endregion Bed
+
         #region Beehive
         public bool beehiveSettingsEnabled { get; set; } = false;
         public float honeyProductionSpeed { get; set; } = 1200;
@@ -160,6 +166,7 @@
         public bool autoFuelFurnace { get; set; } = false;
         public bool ignorePrivateAreaCheckFurnace { get; set; } = true;
         public float autoDepositRangeFurnace { get; set; } = 10;
+        public bool allowAllOresFurnace { get; set; } = false;
         #endregion Furnace
 
         #region Game

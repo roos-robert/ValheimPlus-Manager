@@ -5,7 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>valheim-plus.ico</ApplicationIcon>
-    <Version>0.5.2</Version>
+    <Version>0.6.0</Version>
     <Authors>Robert Roos</Authors>
     <Company>Xenolith AB</Company>
     <Product>ValheimPlusManager</Product>
@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
-    <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
     <PackageReference Include="Octokit" Version="0.50.0" />
   </ItemGroup>
 

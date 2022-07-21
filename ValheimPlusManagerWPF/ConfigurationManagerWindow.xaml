@@ -49,6 +49,7 @@
                 <CheckBox IsChecked="{Binding advancedBuildingModeEnabled}" Content="Enable advanced building mode" />
                 <CheckBox IsChecked="{Binding advancedEditingModeEnabled}" Content="Enable advanced editing mode" />
                 <CheckBox IsChecked="{Binding armorSettingsEnabled}" Content="Enable armor settings" />
+                <CheckBox IsChecked="{Binding bedSettingsEnabled}" Content="Enable bed settings" />
                 <CheckBox IsChecked="{Binding beehiveSettingsEnabled}" Content="Enable beehive settings" />
                 <CheckBox IsChecked="{Binding buildingSettingsEnabled}" Content="Enable building settings" />
                 <CheckBox IsChecked="{Binding cameraSettingsEnabled}" Content="Enable camera settings" />
@@ -121,6 +122,14 @@
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding chestsArmor}" materialDesign:HintAssist.Hint="Chests" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding legsArmor}" materialDesign:HintAssist.Hint="Legs" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <TextBox PreviewTextInput="FloatValidationTextBox" Width="350" Text="{Binding capesArmor}" materialDesign:HintAssist.Hint="Capes" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding bedSettingsEnabled}" Header="Bed">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Bed" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Settings for how beds work" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <CheckBox Content="When hovering over a bed you will be presented with a Hot-Key 'LShift+E' to sleep without setting spawn point" IsChecked="{Binding sleepWithoutSpawn}" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="With this option enabled only beds that are not claimed by other players can be slept on without setting spawn-point using 'Shift+E'" IsChecked="{Binding unclaimedBedsOnly}" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding beehiveSettingsEnabled}" Header="Beehive">
@@ -252,6 +261,7 @@
                         <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositFurnace}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Look for fuel inside nearby chests" IsChecked="{Binding autoFuelFurnace}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckFurnace}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="This option allows all ores inside the Furnace" IsChecked="{Binding allowAllOresFurnace}" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding gameSettingsEnabled}" Header="Game">
