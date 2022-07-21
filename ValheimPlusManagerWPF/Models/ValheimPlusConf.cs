@@ -267,6 +267,15 @@
         public bool preventPlayerFromTurningOffPublicPosition { get; set; } = false;
         #endregion Map
 
+        #region Pickable
+        public bool pickableSettingsEnabled { get; set; } = false;
+        public float edibles { get; set; } = 0;
+        public float flowersAndIngredients { get; set; } = 0;
+        public float materials { get; set; } = 0;
+        public float valuables { get; set; } = 0;
+        public float surtlingCores { get; set; } = 0;
+        #endregion
+
         #region Player
         public bool playerSettingsEnabled { get; set; } = false;
         public float baseMaximumWeight { get; set; } = 300;

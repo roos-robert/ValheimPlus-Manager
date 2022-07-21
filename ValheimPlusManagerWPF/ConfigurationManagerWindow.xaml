@@ -71,6 +71,7 @@
                 <CheckBox IsChecked="{Binding itemsSettingsEnabled}" Content="Enable item settings" />
                 <CheckBox IsChecked="{Binding kilnSettingsEnabled}" Content="Enable kiln settings" />
                 <CheckBox IsChecked="{Binding mapSettingsEnabled}" Content="Enable map settings" />
+                <CheckBox IsChecked="{Binding pickableSettingsEnabled}" Content="Enable pickable settings" />
                 <CheckBox IsChecked="{Binding playerSettingsEnabled}" Content="Enable player settings" />
                 <CheckBox IsChecked="{Binding serverSettingsEnabled}" Content="Enable server settings" />
                 <CheckBox IsChecked="{Binding shieldsSettingsEnabled}" Content="Enable shields settings" />
@@ -341,6 +342,11 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding exploreRadius}" materialDesign:HintAssist.Hint="The radius of the map that you explore when moving" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <CheckBox Content="Prevents you and other people on the server to turn off their map sharing option" IsChecked="{Binding preventPlayerFromTurningOffPublicPosition}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="With this enabled you will receive the same exploration progression as other players on the server" IsChecked="{Binding shareMapProgression}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding pickableSettingsEnabled}" Header="Pickable">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Pickable" TextWrapping="Wrap" VerticalAlignment="Top" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding playerSettingsEnabled}" Header="Player">
