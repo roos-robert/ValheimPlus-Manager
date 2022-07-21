@@ -10,6 +10,12 @@ namespace ValheimPlusManager.SupportClasses
 {
     public sealed class UpdateManager
     {
+        private static string AssureCorrectVersionString(string value)
+        {
+            var allowedChars = "01234567890.";
+            return new string(value.Where(c => allowedChars.Contains(c)).ToArray());
+        }
+        
         public static bool CheckCurrentVersion(Settings settings)
         {
             try
@@ -51,14 +57,16 @@ namespace ValheimPlusManager.SupportClasses
         {
             ValheimPlusUpdate valheimPlusUpdate = new ValheimPlusUpdate();
 
+            valheimPlusVersion = AssureCorrectVersionString(valheimPlusVersion);
+
             // Calling Github API to fetch versions of ValheimPlus
             var github = new GitHubClient(new ProductHeaderValue("ValheimPlusManager"));
             var releases = await github.Repository.Release.GetAll("valheimPlus", "ValheimPlus");
             var latest = releases[0];
 
             // Comparing latest release on ValheimPlus Github to currently installed locally
-            var latestVersion = new Version(latest.TagName);
-            var currentVersion = new Version(valheimPlusVersion);
+            var latestVersion = new Version(AssureCorrectVersionString(latest.TagName));
+            var currentVersion = new Version(AssureCorrectVersionString(valheimPlusVersion));
             var result = latestVersion.CompareTo(currentVersion);
 
             if (result > 0) // If a new version is available
