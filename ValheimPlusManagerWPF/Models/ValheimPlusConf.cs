@@ -166,6 +166,7 @@
         public bool autoFuelFurnace { get; set; } = false;
         public bool ignorePrivateAreaCheckFurnace { get; set; } = true;
         public float autoDepositRangeFurnace { get; set; } = 10;
+        public bool allowAllOresFurnace { get; set; } = false;
         #endregion Furnace
 
         #region Game

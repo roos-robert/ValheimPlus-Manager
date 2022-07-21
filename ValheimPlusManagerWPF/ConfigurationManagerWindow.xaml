@@ -261,6 +261,7 @@
                         <CheckBox Content="Instead of dropping the items, they will be placed inside nearby chests instead" IsChecked="{Binding autoDepositFurnace}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Look for fuel inside nearby chests" IsChecked="{Binding autoFuelFurnace}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Ignore private area check" IsChecked="{Binding ignorePrivateAreaCheckFurnace}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="This option allows all ores inside the Furnace" IsChecked="{Binding allowAllOresFurnace}" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding gameSettingsEnabled}" Header="Game">

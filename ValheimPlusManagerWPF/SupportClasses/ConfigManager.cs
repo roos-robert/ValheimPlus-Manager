@@ -139,7 +139,6 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Bed
 
-
             #region Beehive
             if (bool.TryParse(data["Beehive"]["enabled"], out bool beehiveSettingsEnabled))
             {
@@ -549,6 +548,10 @@ namespace ValheimPlusManager.SupportClasses
             if (bool.TryParse(data["Furnace"]["ignorePrivateAreaCheck"], out bool ignorePrivateAreaCheckFurnace))
             {
                 valheimPlusConfiguration.ignorePrivateAreaCheckFurnace = ignorePrivateAreaCheckFurnace;
+            }
+            if (bool.TryParse(data["Furnace"]["allowAllOres"], out bool allowAllOresFurnace))
+            {
+                valheimPlusConfiguration.allowAllOresFurnace = allowAllOresFurnace;
             }
             #endregion Furnace
 
@@ -1459,6 +1462,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Furnace"]["autoRange"] = valheimPlusConfiguration.autoDepositRangeFurnace.ToString();
             data["Furnace"]["autoFuel"] = valheimPlusConfiguration.autoFuelFurnace.ToString().ToLower();
             data["Furnace"]["ignorePrivateAreaCheck"] = valheimPlusConfiguration.ignorePrivateAreaCheckFurnace.ToString().ToLower();
+            data["Furnace"]["allowAllOres"] = valheimPlusConfiguration.allowAllOresFurnace.ToString().ToLower();
             #endregion Furnace
 
             #region Game
