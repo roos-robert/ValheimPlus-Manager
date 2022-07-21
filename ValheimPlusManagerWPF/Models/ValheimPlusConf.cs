@@ -171,7 +171,9 @@
         //public float autoSaveInterval { get; set; } = 1200;
         public int difficultyScaleRange { get; set; } = 200;
         public bool disablePortals { get; set; } = false;
-        public bool forceConsole { get; set; } = false;
+        public bool disableConsole { get; set; } = false;
+        public bool bigPortalNames { get; set; } = false;
+        public bool disableFog { get; set; } = false;
         #endregion Game
 
         #region Gathering

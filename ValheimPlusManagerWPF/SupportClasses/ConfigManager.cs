@@ -565,9 +565,17 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.disablePortals = disablePortals;
             }
-            if (bool.TryParse(data["Game"]["forceConsole"], out bool forceConsole))
+            if (bool.TryParse(data["Game"]["disableConsole"], out bool disableConsole))
             {
-                valheimPlusConfiguration.forceConsole = forceConsole;
+                valheimPlusConfiguration.disableConsole = disableConsole;
+            }
+            if (bool.TryParse(data["Game"]["bigPortalNames"], out bool bigPortalNames))
+            {
+                valheimPlusConfiguration.bigPortalNames = bigPortalNames;
+            }
+            if (bool.TryParse(data["Game"]["disableFog"], out bool disableFog))
+            {
+                valheimPlusConfiguration.disableFog = disableFog;
             }
             #endregion Game
 
@@ -1447,7 +1455,9 @@ namespace ValheimPlusManager.SupportClasses
             data["Game"]["setFixedPlayerCountTo"] = valheimPlusConfiguration.setFixedPlayerCountTo.ToString();
             data["Game"]["difficultyScaleRange"] = valheimPlusConfiguration.difficultyScaleRange.ToString();
             data["Game"]["disablePortals"] = valheimPlusConfiguration.disablePortals.ToString().ToLower();
-            data["Game"]["forceConsole"] = valheimPlusConfiguration.forceConsole.ToString().ToLower();
+            data["Game"]["disableConsole"] = valheimPlusConfiguration.disableConsole.ToString().ToLower();
+            data["Game"]["bigPortalNames"] = valheimPlusConfiguration.bigPortalNames.ToString().ToLower();
+            data["Game"]["disableFog"] = valheimPlusConfiguration.disableFog.ToString().ToLower();
             #endregion Game
 
             #region Gathering
