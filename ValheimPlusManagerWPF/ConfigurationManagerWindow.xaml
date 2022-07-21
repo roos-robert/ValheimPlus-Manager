@@ -190,6 +190,7 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding itemStackMultiplier}" materialDesign:HintAssist.Hint="Increase the size of all item stacks by %. The value 50 would set a usual item stack of 100 to be 150" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding droppedItemOnGroundDurationInSeconds}" materialDesign:HintAssist.Hint="Set duration that dropped items live before despawning, default is 3600 seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <CheckBox Content="Enable teleport with ores and other usually restricted objects" IsChecked="{Binding noTeleportPrevention}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Items float in water" IsChecked="{Binding itemsFloatInWater}" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding fermenterSettingsEnabled}" Header="Fermenter">

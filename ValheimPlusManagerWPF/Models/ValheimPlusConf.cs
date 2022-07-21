@@ -238,6 +238,7 @@
         public float baseItemWeightReduction { get; set; } = 0;
         public float itemStackMultiplier { get; set; } = 1;
         public float droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
+        public bool itemsFloatInWater { get; set; } = false;
         #endregion Items
 
         #region Kiln

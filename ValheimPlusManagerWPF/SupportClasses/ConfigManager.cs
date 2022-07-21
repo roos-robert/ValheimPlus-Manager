@@ -775,6 +775,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds = droppedItemOnGroundDurationInSeconds;
             }
+            if (bool.TryParse(data["Items"]["itemsFloatInWater"], out bool itemsFloatInWater))
+            {
+                valheimPlusConfiguration.itemsFloatInWater = itemsFloatInWater;
+            }
             #endregion Items
 
             #region Kiln
@@ -1515,6 +1519,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Items"]["baseItemWeightReduction"] = valheimPlusConfiguration.baseItemWeightReduction.ToString();
             data["Items"]["itemStackMultiplier"] = valheimPlusConfiguration.itemStackMultiplier.ToString();
             data["Items"]["droppedItemOnGroundDurationInSeconds"] = valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds.ToString();
+            data["Items"]["itemsFloatInWater"] = valheimPlusConfiguration.itemsFloatInWater.ToString().ToLower();
             #endregion Items
 
             #region Kiln
