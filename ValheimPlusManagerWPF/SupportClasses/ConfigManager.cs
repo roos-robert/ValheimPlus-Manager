@@ -860,6 +860,14 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition = preventPlayerFromTurningOffPublicPosition;
             }
+            if (bool.TryParse(data["Map"]["shareAllPins"], out bool shareAllPins))
+            {
+                valheimPlusConfiguration.shareAllPins = shareAllPins;
+            }
+            if (bool.TryParse(data["Map"]["displayCartsAndBoats"], out bool displayCartsAndBoats))
+            {
+                valheimPlusConfiguration.displayCartsAndBoats = displayCartsAndBoats;
+            }
             #endregion Map
 
             #region Pickable
@@ -1593,6 +1601,8 @@ namespace ValheimPlusManager.SupportClasses
             data["Map"]["shareMapProgression"] = valheimPlusConfiguration.shareMapProgression.ToString().ToLower();
             data["Map"]["exploreRadius"] = valheimPlusConfiguration.exploreRadius.ToString();
             data["Map"]["preventPlayerFromTurningOffPublicPosition"] = valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition.ToString().ToLower();
+            data["Map"]["shareAllPins"] = valheimPlusConfiguration.shareAllPins.ToString().ToLower();
+            data["Map"]["displayCartsAndBoats"] = valheimPlusConfiguration.displayCartsAndBoats.ToString().ToLower();
             #endregion Map
 
             #region Pickable

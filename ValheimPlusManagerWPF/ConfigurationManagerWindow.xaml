@@ -342,6 +342,8 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding exploreRadius}" materialDesign:HintAssist.Hint="The radius of the map that you explore when moving" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <CheckBox Content="Prevents you and other people on the server to turn off their map sharing option" IsChecked="{Binding preventPlayerFromTurningOffPublicPosition}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="With this enabled you will receive the same exploration progression as other players on the server" IsChecked="{Binding shareMapProgression}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Share created pins with everyone playing on the server" IsChecked="{Binding shareAllPins}" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Display carts and boats on the map" IsChecked="{Binding displayCartsAndBoats}" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding pickableSettingsEnabled}" Header="Pickable">

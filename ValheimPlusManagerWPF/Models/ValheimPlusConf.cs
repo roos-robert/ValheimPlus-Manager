@@ -265,6 +265,8 @@
         public bool shareMapProgression { get; set; } = false;
         public float exploreRadius { get; set; } = 100;
         public bool preventPlayerFromTurningOffPublicPosition { get; set; } = false;
+        public bool shareAllPins { get; set; } = false;
+        public bool displayCartsAndBoats { get; set; } = false;
         #endregion Map
 
         #region Pickable
