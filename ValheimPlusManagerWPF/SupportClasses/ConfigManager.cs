@@ -862,6 +862,33 @@ namespace ValheimPlusManager.SupportClasses
             }
             #endregion Map
 
+            #region Pickable
+            if (bool.TryParse(data["Pickable"]["enabled"], out bool pickableSettingsEnabled))
+            {
+                valheimPlusConfiguration.pickableSettingsEnabled = pickableSettingsEnabled;
+            }
+            if (float.TryParse(data["Pickable"]["edibles"], NumberStyles.Any, ci, out float edibles))
+            {
+                valheimPlusConfiguration.edibles = edibles;
+            }
+            if (float.TryParse(data["Pickable"]["flowersAndIngredients"], NumberStyles.Any, ci, out float flowersAndIngredients))
+            {
+                valheimPlusConfiguration.flowersAndIngredients = flowersAndIngredients;
+            }
+            if (float.TryParse(data["Pickable"]["materials"], NumberStyles.Any, ci, out float materials))
+            {
+                valheimPlusConfiguration.materials = materials;
+            }
+            if (float.TryParse(data["Pickable"]["valuables"], NumberStyles.Any, ci, out float valuables))
+            {
+                valheimPlusConfiguration.valuables = valuables;
+            }
+            if (float.TryParse(data["Pickable"]["surtlingCores"], NumberStyles.Any, ci, out float surtlingCores))
+            {
+                valheimPlusConfiguration.surtlingCores = surtlingCores;
+            }
+            #endregion Pickable
+
             #region Player
             if (bool.TryParse(data["Player"]["enabled"], out bool playerSettingsEnabled))
             {
@@ -1567,6 +1594,15 @@ namespace ValheimPlusManager.SupportClasses
             data["Map"]["exploreRadius"] = valheimPlusConfiguration.exploreRadius.ToString();
             data["Map"]["preventPlayerFromTurningOffPublicPosition"] = valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition.ToString().ToLower();
             #endregion Map
+
+            #region Pickable
+            data["Pickable"]["enabled"] = valheimPlusConfiguration.pickableSettingsEnabled.ToString().ToLower();
+            data["Pickable"]["edibles"] = valheimPlusConfiguration.edibles.ToString();
+            data["Pickable"]["flowersAndIngredients"] = valheimPlusConfiguration.flowersAndIngredients.ToString();
+            data["Pickable"]["materials"] = valheimPlusConfiguration.materials.ToString();
+            data["Pickable"]["valuables"] = valheimPlusConfiguration.valuables.ToString();
+            data["Pickable"]["surtlingCores"] = valheimPlusConfiguration.surtlingCores.ToString();
+            #endregion Pickable
 
             #region Player
             data["Player"]["enabled"] = valheimPlusConfiguration.playerSettingsEnabled.ToString().ToLower();

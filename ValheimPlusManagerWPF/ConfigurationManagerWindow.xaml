@@ -347,6 +347,12 @@
                 <TabItem IsEnabled="{Binding pickableSettingsEnabled}" Header="Pickable">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Pickable" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Each value below (in percent) will modify the yield when 'picking' items such as berries and flowers. Increase by %" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding edibles}" materialDesign:HintAssist.Hint="All berries, all mushrooms, onions and carrots" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding flowersAndIngredients}" materialDesign:HintAssist.Hint="Barley, Flax, Dandelion, Thistle, Carrot Seeds, Turnip Seeds, Turnip, Onion Seeds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding materials}" materialDesign:HintAssist.Hint="Bone Fragments, Flint, Stone, Wood (branches on the ground)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding valuables}" materialDesign:HintAssist.Hint="Amber, Amber Pearl, Coins, Ruby" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding surtlingCores}" materialDesign:HintAssist.Hint="Surtling Core only" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding playerSettingsEnabled}" Header="Player">
