@@ -293,10 +293,17 @@
         public float guardianBuffCooldown { get; set; } = 1200;
         public bool disableGuardianBuffAnimation { get; set; } = false;
         public bool autoEquipShield { get; set; } = false;
+        public bool autoUnequipShield { get; set; } = false;
+        public bool queueWeaponChanges { get; set; } = false;
         public bool skipIntro { get; set; } = false;
         public bool iHaveArrivedOnSpawn { get; set; } = true;
-        public bool queueWeaponChanges { get; set; } = false;
+        public bool dontUnequipItemsWhenSwimming { get; set; } = false;
         public bool reequipItemsAfterSwimming { get; set; } = false;
+        public float fallDamageScalePercent { get; set; } = 0;
+        public float maxFallDamage { get; set; } = 100;
+        public bool skipTutorials { get; set; } = false;
+        public bool disableEncumbered { get; set; } = false;
+        public bool autoPickUpWhenEncumbered { get; set; } = false;
         #endregion Player
 
         #region Server
@@ -306,7 +313,6 @@
         public bool enforceMod { get; set; } = true;
         public bool serverSyncsConfig { get; set; } = true;
         public bool serverSyncHotkeys { get; set; } = true;
-        //public int dataRate { get; set; } = 60; // 60*1024 = 614440 == 60kbs
         #endregion Server
 
         #region Shields
