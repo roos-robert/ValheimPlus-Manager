@@ -20,7 +20,7 @@ namespace ValheimPlusManager
             // Fetching path settings
             Settings = SettingsDAL.GetSettings();
 
-            managerVersionTextBlock.Text = "Version 0.9.9.8";
+            managerVersionTextBlock.Text = "Version 0.9.9.17";
 
             _mainFrame.Navigate(new MainPage());
         }

@@ -1,5 +1,6 @@
 ﻿using Octokit;
 using System;
+using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
@@ -61,7 +62,7 @@ namespace ValheimPlusManager.SupportClasses
 
             // Calling Github API to fetch versions of ValheimPlus
             var github = new GitHubClient(new ProductHeaderValue("ValheimPlusManager"));
-            var releases = await github.Repository.Release.GetAll("valheimPlus", "ValheimPlus");
+            var releases = await github.Repository.Release.GetAll("Grantapher", "ValheimPlus");
             var latest = releases[0];
 
             // Comparing latest release on ValheimPlus Github to currently installed locally
@@ -124,9 +125,20 @@ namespace ValheimPlusManager.SupportClasses
                 string extractPath = @"Data/ValheimPlusGameClient/Extracted";
 
                 await Task.Run(() => ZipFile.ExtractToDirectory(zipPath, extractPath, true));
+
+                string configFile = String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath);
+
+                if (!File.Exists(configFile))
+                {
+                    using (StreamWriter sw = File.CreateText(configFile))
+                    {
+                        sw.WriteLine();
+                    }
+                }
+
                 if (!freshInstall)
                 {
-                    System.IO.File.Move(String.Format("{0}/BepInEx/config/valheim_plus.cfg", extractPath), String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
+                    File.Move(configFile, String.Format("{0}/BepInEx/config/valheim_plus_latest.cfg", extractPath), true);
                 }
 
                 try
