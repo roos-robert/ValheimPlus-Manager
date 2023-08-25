@@ -1,5 +1,5 @@
 # ValheimPlus Manager
-ValheimPlus Manager makes the installation and configuration of ValheimPlus on Windows a breeze!
+ValheimPlus Manager makes the installation and configuration of [ValheimPlus](https://github.com/valheimPlus/ValheimPlus) on Windows a breeze!
 
 The version of ValheimPlus Manager matches the version of ValheimPlus meaning, if the version of the manager is 0.9.8.8 it's made for the corresponding version
 of ValheimPlus and fully supports it's features. The manager might work for newer/older versions as well but it's always recommended to keep matching versions.
