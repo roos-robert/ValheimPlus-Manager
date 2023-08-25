@@ -4,9 +4,9 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>valheim-plus.ico</ApplicationIcon>
-    <Version>0.9.9.8</Version>
+    <Version>0.9.9.11</Version>
     <Authors>Robert Roos</Authors>
-    <Company>Xenolith AB</Company>
+    <Company>XENOLITH AB</Company>
     <Product>ValheimPlusManager</Product>
     <Copyright>Robert Roos</Copyright>
   </PropertyGroup>
