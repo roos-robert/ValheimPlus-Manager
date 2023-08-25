@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ValheimPlusManager.Models"
         mc:Ignorable="d"
-        Title="ValheimPlus Manager | Configuration manager" Height="750" Width="1050"
+        Title="ValheimPlus Manager | Configuration manager" Height="900" Width="1050"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -21,7 +21,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="655"/>
+            <RowDefinition Height="805"/>
             <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
 
@@ -71,6 +71,7 @@
                 <CheckBox IsChecked="{Binding itemsSettingsEnabled}" Content="Enable item settings" />
                 <CheckBox IsChecked="{Binding kilnSettingsEnabled}" Content="Enable kiln settings" />
                 <CheckBox IsChecked="{Binding mapSettingsEnabled}" Content="Enable map settings" />
+                <CheckBox IsChecked="{Binding pickableSettingsEnabled}" Content="Enable pickable settings" />
                 <CheckBox IsChecked="{Binding playerSettingsEnabled}" Content="Enable player settings" />
                 <CheckBox IsChecked="{Binding serverSettingsEnabled}" Content="Enable server settings" />
                 <CheckBox IsChecked="{Binding shieldsSettingsEnabled}" Content="Enable shields settings" />
@@ -199,6 +200,7 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding itemStackMultiplier}" materialDesign:HintAssist.Hint="Increase the size of all item stacks by %. The value 50 would set a usual item stack of 100 to be 150" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="563" Text="{Binding droppedItemOnGroundDurationInSeconds}" materialDesign:HintAssist.Hint="Set duration that dropped items live before despawning, default is 3600 seconds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
                         <CheckBox Content="Enable teleport with ores and other usually restricted objects" IsChecked="{Binding noTeleportPrevention}" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Items float in water" IsChecked="{Binding itemsFloatInWater}" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding fermenterSettingsEnabled}" Header="Fermenter">
@@ -273,7 +275,9 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding setFixedPlayerCountTo}" materialDesign:HintAssist.Hint="Sets the nearby player count always to this value + extraPlayerCountNearby" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="450" Text="{Binding difficultyScaleRange}" materialDesign:HintAssist.Hint="The range in meters at which other players count towards nearby players for the difficulty scale" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                         <CheckBox Content="Disable all portals" IsChecked="{Binding disablePortals}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Force the console to be enabled in-game" IsChecked="{Binding forceConsole}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Force the console to be disabled in-game" IsChecked="{Binding disableConsole}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Show portal names in big text in center of screen" IsChecked="{Binding bigPortalNames}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Remove dense fog from the game" IsChecked="{Binding disableFog}" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding hotkeysSettingsEnabled}" Header="Hotkeys">
@@ -286,10 +290,10 @@
                 <TabItem IsEnabled="{Binding hudSettingsEnabled}" Header="HUD">
                     <Grid Background="#FFE5E5E5">
                         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="HUD" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <CheckBox Content="Show the required amount of items AND the amount of items in your inventory in build mode and while crafting" IsChecked="{Binding showRequiredItems}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Show small notifications about all skill experienced gained in the top left corner" IsChecked="{Binding experienceGainedNotifications}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Shows current and max stamina numerically underneath the stamina bar" IsChecked="{Binding displayStaminaValue}" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Set to true to remove the red screen flash overlay when the player takes damage" IsChecked="{Binding removeDamageFlash}" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="500" Text="{Binding displayBowAmmoCounts}" materialDesign:HintAssist.Hint="If bow is in hotbar, display ammo - never (0), when equipped (1), or always (2)." Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,60,10,0" />
+                        <CheckBox Content="Show the required amount of items AND the amount of items in your inventory in build mode and while crafting" IsChecked="{Binding showRequiredItems}" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Show small notifications about all skill experienced gained in the top left corner" IsChecked="{Binding experienceGainedNotifications}" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Set to true to remove the red screen flash overlay when the player takes damage" IsChecked="{Binding removeDamageFlash}" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding gatheringSettingsEnabled}" Header="Gathering">
@@ -338,6 +342,19 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="382" Text="{Binding exploreRadius}" materialDesign:HintAssist.Hint="The radius of the map that you explore when moving" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
                         <CheckBox Content="Prevents you and other people on the server to turn off their map sharing option" IsChecked="{Binding preventPlayerFromTurningOffPublicPosition}" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="With this enabled you will receive the same exploration progression as other players on the server" IsChecked="{Binding shareMapProgression}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Share created pins with everyone playing on the server" IsChecked="{Binding shareAllPins}" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Display carts and boats on the map" IsChecked="{Binding displayCartsAndBoats}" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
+                <TabItem IsEnabled="{Binding pickableSettingsEnabled}" Header="Pickable">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Pickable" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Each value below (in percent) will modify the yield when 'picking' items such as berries and flowers. Increase by %" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding edibles}" materialDesign:HintAssist.Hint="All berries, all mushrooms, onions and carrots" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,70,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding flowersAndIngredients}" materialDesign:HintAssist.Hint="Barley, Flax, Dandelion, Thistle, Carrot Seeds, Turnip Seeds, Turnip, Onion Seeds" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,120,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding materials}" materialDesign:HintAssist.Hint="Bone Fragments, Flint, Stone, Wood (branches on the ground)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,170,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding valuables}" materialDesign:HintAssist.Hint="Amber, Amber Pearl, Coins, Ruby" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding surtlingCores}" materialDesign:HintAssist.Hint="Surtling Core only" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding playerSettingsEnabled}" Header="Player">
@@ -351,16 +368,18 @@
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding deathPenaltyMultiplier}" materialDesign:HintAssist.Hint="Death penalty in percentage" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,170,10,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding guardianBuffDuration}" materialDesign:HintAssist.Hint="Guardian buff duration" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,220,0,0" />
                         <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding guardianBuffCooldown}" materialDesign:HintAssist.Hint="Guardian buff cooldown duration" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,220,10,0" />
-
-                        <CheckBox Content="Disable all types of camera shake" IsChecked="{Binding disableCameraShake}" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Do not permit to place a crop within the grow radius of another crop" IsChecked="{Binding cropNotifier}" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="If enabled, this option will automatically repair your equipment when you interact with the appropriate workbench" IsChecked="{Binding autoRepair}" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="When equipping a one-handed weapon, the best shield from your inventory is automatically equipped" IsChecked="{Binding autoEquipShield}" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Weapon switches requested mid-attack will be carried out when the current attack is finished" IsChecked="{Binding queueWeaponChanges}" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Skip the intro of the game" IsChecked="{Binding skipIntro}" HorizontalAlignment="Left" Margin="10,430,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Disables the 'I have arrived!' message on player spawn" IsChecked="{Binding iHaveArrivedOnSpawn}" HorizontalAlignment="Left" Margin="10,460,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Items will be re-equipped when you exit water after swimming" IsChecked="{Binding reequipItemsAfterSwimming}" HorizontalAlignment="Left" Margin="10,490,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Disable the Guardian Buff animation" IsChecked="{Binding disableGuardianBuffAnimation}" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top"/>
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding fallDamageScalePercent}" materialDesign:HintAssist.Hint="Fall damage scale, 50 would result in 50% increased fall damage" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,270,0,0" />
+                        <TextBox PreviewTextInput="IntValidationTextBox" Width="350" Text="{Binding maxFallDamage}" materialDesign:HintAssist.Hint="Max fall damage, game default is 100" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,270,10,0" />
+                        
+                        <CheckBox Content="Disable all types of camera shake" IsChecked="{Binding disableCameraShake}" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Do not permit to place a crop within the grow radius of another crop" IsChecked="{Binding cropNotifier}" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="If enabled, this option will automatically repair your equipment when you interact with the appropriate workbench" IsChecked="{Binding autoRepair}" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="When equipping a one-handed weapon, the best shield from your inventory is automatically equipped" IsChecked="{Binding autoEquipShield}" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Weapon switches requested mid-attack will be carried out when the current attack is finished" IsChecked="{Binding queueWeaponChanges}" HorizontalAlignment="Left" Margin="10,450,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Skip the intro of the game" IsChecked="{Binding skipIntro}" HorizontalAlignment="Left" Margin="10,480,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disables the 'I have arrived!' message on player spawn" IsChecked="{Binding iHaveArrivedOnSpawn}" HorizontalAlignment="Left" Margin="10,510,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Items will be re-equipped when you exit water after swimming" IsChecked="{Binding reequipItemsAfterSwimming}" HorizontalAlignment="Left" Margin="10,540,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Disable the Guardian Buff animation" IsChecked="{Binding disableGuardianBuffAnimation}" HorizontalAlignment="Left" Margin="10,570,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
                 <TabItem IsEnabled="{Binding serverSettingsEnabled}" Header="Server">

@@ -584,9 +584,17 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.disablePortals = disablePortals;
             }
-            if (bool.TryParse(data["Game"]["forceConsole"], out bool forceConsole))
+            if (bool.TryParse(data["Game"]["disableConsole"], out bool disableConsole))
             {
-                valheimPlusConfiguration.forceConsole = forceConsole;
+                valheimPlusConfiguration.disableConsole = disableConsole;
+            }
+            if (bool.TryParse(data["Game"]["bigPortalNames"], out bool bigPortalNames))
+            {
+                valheimPlusConfiguration.bigPortalNames = bigPortalNames;
+            }
+            if (bool.TryParse(data["Game"]["disableFog"], out bool disableFog))
+            {
+                valheimPlusConfiguration.disableFog = disableFog;
             }
             #endregion Game
 
@@ -688,13 +696,13 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.experienceGainedNotifications = experienceGainedNotifications;
             }
-            if (bool.TryParse(data["Hud"]["displayStaminaValue"], out bool displayStaminaValue))
-            {
-                valheimPlusConfiguration.displayStaminaValue = displayStaminaValue;
-            }
             if (bool.TryParse(data["Hud"]["removeDamageFlash"], out bool removeDamageFlash))
             {
                 valheimPlusConfiguration.removeDamageFlash = removeDamageFlash;
+            }
+            if (int.TryParse(data["Hud"]["displayBowAmmoCounts"], out int displayBowAmmoCounts))
+            {
+                valheimPlusConfiguration.displayBowAmmoCounts = displayBowAmmoCounts;
             }
             #endregion HUD
 
@@ -786,6 +794,10 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds = droppedItemOnGroundDurationInSeconds;
             }
+            if (bool.TryParse(data["Items"]["itemsFloatInWater"], out bool itemsFloatInWater))
+            {
+                valheimPlusConfiguration.itemsFloatInWater = itemsFloatInWater;
+            }
             #endregion Items
 
             #region Kiln
@@ -848,7 +860,42 @@ namespace ValheimPlusManager.SupportClasses
             {
                 valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition = preventPlayerFromTurningOffPublicPosition;
             }
+            if (bool.TryParse(data["Map"]["shareAllPins"], out bool shareAllPins))
+            {
+                valheimPlusConfiguration.shareAllPins = shareAllPins;
+            }
+            if (bool.TryParse(data["Map"]["displayCartsAndBoats"], out bool displayCartsAndBoats))
+            {
+                valheimPlusConfiguration.displayCartsAndBoats = displayCartsAndBoats;
+            }
             #endregion Map
+
+            #region Pickable
+            if (bool.TryParse(data["Pickable"]["enabled"], out bool pickableSettingsEnabled))
+            {
+                valheimPlusConfiguration.pickableSettingsEnabled = pickableSettingsEnabled;
+            }
+            if (float.TryParse(data["Pickable"]["edibles"], NumberStyles.Any, ci, out float edibles))
+            {
+                valheimPlusConfiguration.edibles = edibles;
+            }
+            if (float.TryParse(data["Pickable"]["flowersAndIngredients"], NumberStyles.Any, ci, out float flowersAndIngredients))
+            {
+                valheimPlusConfiguration.flowersAndIngredients = flowersAndIngredients;
+            }
+            if (float.TryParse(data["Pickable"]["materials"], NumberStyles.Any, ci, out float materials))
+            {
+                valheimPlusConfiguration.materials = materials;
+            }
+            if (float.TryParse(data["Pickable"]["valuables"], NumberStyles.Any, ci, out float valuables))
+            {
+                valheimPlusConfiguration.valuables = valuables;
+            }
+            if (float.TryParse(data["Pickable"]["surtlingCores"], NumberStyles.Any, ci, out float surtlingCores))
+            {
+                valheimPlusConfiguration.surtlingCores = surtlingCores;
+            }
+            #endregion Pickable
 
             #region Player
             if (bool.TryParse(data["Player"]["enabled"], out bool playerSettingsEnabled))
@@ -1473,7 +1520,9 @@ namespace ValheimPlusManager.SupportClasses
             data["Game"]["setFixedPlayerCountTo"] = valheimPlusConfiguration.setFixedPlayerCountTo.ToString();
             data["Game"]["difficultyScaleRange"] = valheimPlusConfiguration.difficultyScaleRange.ToString();
             data["Game"]["disablePortals"] = valheimPlusConfiguration.disablePortals.ToString().ToLower();
-            data["Game"]["forceConsole"] = valheimPlusConfiguration.forceConsole.ToString().ToLower();
+            data["Game"]["disableConsole"] = valheimPlusConfiguration.disableConsole.ToString().ToLower();
+            data["Game"]["bigPortalNames"] = valheimPlusConfiguration.bigPortalNames.ToString().ToLower();
+            data["Game"]["disableFog"] = valheimPlusConfiguration.disableFog.ToString().ToLower();
             #endregion Game
 
             #region Gathering
@@ -1508,7 +1557,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Hud"]["enabled"] = valheimPlusConfiguration.hudSettingsEnabled.ToString().ToLower();
             data["Hud"]["showRequiredItems"] = valheimPlusConfiguration.showRequiredItems.ToString().ToLower();
             data["Hud"]["experienceGainedNotifications"] = valheimPlusConfiguration.experienceGainedNotifications.ToString().ToLower();
-            data["Hud"]["displayStaminaValue"] = valheimPlusConfiguration.displayStaminaValue.ToString().ToLower();
+            data["Hud"]["displayBowAmmoCounts"] = valheimPlusConfiguration.displayBowAmmoCounts.ToString();
             data["Hud"]["removeDamageFlash"] = valheimPlusConfiguration.removeDamageFlash.ToString().ToLower();
             #endregion HUD
 
@@ -1531,6 +1580,7 @@ namespace ValheimPlusManager.SupportClasses
             data["Items"]["baseItemWeightReduction"] = valheimPlusConfiguration.baseItemWeightReduction.ToString();
             data["Items"]["itemStackMultiplier"] = valheimPlusConfiguration.itemStackMultiplier.ToString();
             data["Items"]["droppedItemOnGroundDurationInSeconds"] = valheimPlusConfiguration.droppedItemOnGroundDurationInSeconds.ToString();
+            data["Items"]["itemsFloatInWater"] = valheimPlusConfiguration.itemsFloatInWater.ToString().ToLower();
             #endregion Items
 
             #region Kiln
@@ -1551,7 +1601,18 @@ namespace ValheimPlusManager.SupportClasses
             data["Map"]["shareMapProgression"] = valheimPlusConfiguration.shareMapProgression.ToString().ToLower();
             data["Map"]["exploreRadius"] = valheimPlusConfiguration.exploreRadius.ToString();
             data["Map"]["preventPlayerFromTurningOffPublicPosition"] = valheimPlusConfiguration.preventPlayerFromTurningOffPublicPosition.ToString().ToLower();
+            data["Map"]["shareAllPins"] = valheimPlusConfiguration.shareAllPins.ToString().ToLower();
+            data["Map"]["displayCartsAndBoats"] = valheimPlusConfiguration.displayCartsAndBoats.ToString().ToLower();
             #endregion Map
+
+            #region Pickable
+            data["Pickable"]["enabled"] = valheimPlusConfiguration.pickableSettingsEnabled.ToString().ToLower();
+            data["Pickable"]["edibles"] = valheimPlusConfiguration.edibles.ToString();
+            data["Pickable"]["flowersAndIngredients"] = valheimPlusConfiguration.flowersAndIngredients.ToString();
+            data["Pickable"]["materials"] = valheimPlusConfiguration.materials.ToString();
+            data["Pickable"]["valuables"] = valheimPlusConfiguration.valuables.ToString();
+            data["Pickable"]["surtlingCores"] = valheimPlusConfiguration.surtlingCores.ToString();
+            #endregion Pickable
 
             #region Player
             data["Player"]["enabled"] = valheimPlusConfiguration.playerSettingsEnabled.ToString().ToLower();

@@ -178,7 +178,9 @@
         //public float autoSaveInterval { get; set; } = 1200;
         public int difficultyScaleRange { get; set; } = 200;
         public bool disablePortals { get; set; } = false;
-        public bool forceConsole { get; set; } = false;
+        public bool disableConsole { get; set; } = false;
+        public bool bigPortalNames { get; set; } = false;
+        public bool disableFog { get; set; } = false;
         #endregion Game
 
         #region Gathering
@@ -213,8 +215,7 @@
         public bool hudSettingsEnabled { get; set; } = false;
         public bool showRequiredItems { get; set; } = false;
         public bool experienceGainedNotifications { get; set; } = false;
-        public float chatMessageDistance { get; set; }
-        public bool displayStaminaValue { get; set; } = false;
+        public int displayBowAmmoCounts { get; set; } = 0;
         public bool removeDamageFlash { get; set; } = false;
         #endregion HUD
 
@@ -243,6 +244,7 @@
         public float baseItemWeightReduction { get; set; } = 0;
         public float itemStackMultiplier { get; set; } = 1;
         public float droppedItemOnGroundDurationInSeconds { get; set; } = 3600;
+        public bool itemsFloatInWater { get; set; } = false;
         #endregion Items
 
         #region Kiln
@@ -263,7 +265,18 @@
         public bool shareMapProgression { get; set; } = false;
         public float exploreRadius { get; set; } = 100;
         public bool preventPlayerFromTurningOffPublicPosition { get; set; } = false;
+        public bool shareAllPins { get; set; } = false;
+        public bool displayCartsAndBoats { get; set; } = false;
         #endregion Map
+
+        #region Pickable
+        public bool pickableSettingsEnabled { get; set; } = false;
+        public float edibles { get; set; } = 0;
+        public float flowersAndIngredients { get; set; } = 0;
+        public float materials { get; set; } = 0;
+        public float valuables { get; set; } = 0;
+        public float surtlingCores { get; set; } = 0;
+        #endregion
 
         #region Player
         public bool playerSettingsEnabled { get; set; } = false;
@@ -280,10 +293,17 @@
         public float guardianBuffCooldown { get; set; } = 1200;
         public bool disableGuardianBuffAnimation { get; set; } = false;
         public bool autoEquipShield { get; set; } = false;
+        public bool autoUnequipShield { get; set; } = false;
+        public bool queueWeaponChanges { get; set; } = false;
         public bool skipIntro { get; set; } = false;
         public bool iHaveArrivedOnSpawn { get; set; } = true;
-        public bool queueWeaponChanges { get; set; } = false;
+        public bool dontUnequipItemsWhenSwimming { get; set; } = false;
         public bool reequipItemsAfterSwimming { get; set; } = false;
+        public float fallDamageScalePercent { get; set; } = 0;
+        public float maxFallDamage { get; set; } = 100;
+        public bool skipTutorials { get; set; } = false;
+        public bool disableEncumbered { get; set; } = false;
+        public bool autoPickUpWhenEncumbered { get; set; } = false;
         #endregion Player
 
         #region Server
@@ -293,7 +313,6 @@
         public bool enforceMod { get; set; } = true;
         public bool serverSyncsConfig { get; set; } = true;
         public bool serverSyncHotkeys { get; set; } = true;
-        //public int dataRate { get; set; } = 60; // 60*1024 = 614440 == 60kbs
         #endregion Server
 
         #region Shields
