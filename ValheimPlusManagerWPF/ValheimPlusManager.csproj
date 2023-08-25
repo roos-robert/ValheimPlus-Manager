@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>valheim-plus.ico</ApplicationIcon>
     <Version>0.9.9.8</Version>
@@ -11,21 +10,17 @@
     <Product>ValheimPlusManager</Product>
     <Copyright>Robert Roos</Copyright>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="valheim-plus.png" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
     <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
     <PackageReference Include="Octokit" Version="0.50.0" />
   </ItemGroup>
-
   <ItemGroup>
     <Resource Include="valheim-plus.png" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -33,14 +28,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <None Update="Data\OtherMods\PlaceFilesForOtherModsHere.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -55,5 +48,4 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>
