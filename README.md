@@ -23,8 +23,8 @@ of ValheimPlus and fully supports it's features. The manager might work for newe
 - Uninstall ValheimPlus from game client/server client
 - Automatic updates for the ValheimPlus Manager
 ## Requirements
-- .NET 5 available for download at: https://dotnet.microsoft.com/download/dotnet/5.0/runtime
-- Windows 7, Windows 8.1 or Windows 10
+- .NET 6 available for download at: [https://dotnet.microsoft.com/download/dotnet/5.0/runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- Windows 10 or Windows 11
 - x64 operating system (you have this if you have more than 4GB of RAM)
 ## Installation
 - Download 'ValheimPlusManager.zip'
